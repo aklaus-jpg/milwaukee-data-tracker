@@ -192,6 +192,7 @@
         <option value="enrollment">Enrollment</option>
         <option value="chronic_absenteeism">Chronic Absenteeism</option>
         <option value="discipline">Discipline (Suspensions/Expulsions)</option>
+        <option value="report_card">Report Card Score</option>
       </select>
     </div>
     <div class="field">
@@ -225,12 +226,14 @@ const METRIC_FILES = {
   enrollment: `${REPO_RAW_BASE}/data/processed/enrollment_trend.csv`,
   chronic_absenteeism: `${REPO_RAW_BASE}/data/processed/chronic_absenteeism_trend.csv`,
   discipline: `${REPO_RAW_BASE}/data/processed/discipline_trend.csv`,
+  report_card: `${REPO_RAW_BASE}/data/processed/report_card_trend.csv`,
 };
 
 const METRIC_LABELS = {
   enrollment: { unit: "Students", suffix: "" },
   chronic_absenteeism: { unit: "% Chronically Absent", suffix: "%" },
   discipline: { unit: "Disciplinary Removals", suffix: "" },
+  report_card: { unit: "Accountability Score", suffix: "" },
 };
 
 const metricSelect = document.getElementById("metric");
