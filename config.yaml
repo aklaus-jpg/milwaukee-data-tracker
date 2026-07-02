@@ -1,0 +1,53 @@
+# Milwaukee Education Data Tracker — config
+#
+# HOW TO GET EACH URL (takes ~1 min per topic):
+# 1. Go to https://dpi.wi.gov/wisedash/download-files
+# 2. Pick "School Year" (or "All Years"/"Multiple Years" if offered) and the topic
+#    listed below (Enrollment / Attendance / Discipline).
+# 3. Right-click the CSV download link or button and choose "Copy Link Address".
+# 4. Paste it as the `url` value for that source below.
+#
+# If a url is left as "PASTE_..._HERE", that source is skipped automatically —
+# nothing breaks, it just won't fetch until you fill it in.
+
+district_filter: "Milwaukee"   # matches DISTRICT_NAME containing this text (catches "Milwaukee" MPS)
+flag_threshold_pct: 5          # flag any year-over-year change of this % or more (tune to taste)
+
+sources:
+  enrollment:
+    url: "PASTE_ENROLLMENT_CSV_URL_HERE"
+    local_file: "enrollment_raw.csv"
+    metric_type: "count"              # count = raw number (sum across rows), rate = percentage (average)
+    year_col: "SCHOOL_YEAR"
+    district_col: "DISTRICT_NAME"
+    school_col: "SCHOOL_NAME"
+    group_col: "GROUP_BY"
+    group_value_col: "GROUP_BY_VALUE"
+    value_col: "STUDENT_COUNT"
+
+  chronic_absenteeism:
+    url: "PASTE_ATTENDANCE_CSV_URL_HERE"
+    local_file: "chronic_absenteeism_raw.csv"
+    metric_type: "rate"
+    year_col: "SCHOOL_YEAR"
+    district_col: "DISTRICT_NAME"
+    school_col: "SCHOOL_NAME"
+    group_col: "GROUP_BY"
+    group_value_col: "GROUP_BY_VALUE"
+    value_col: "PERCENT_CHRONIC_ABSENTEEISM"
+
+  discipline:
+    url: "PASTE_DISCIPLINE_CSV_URL_HERE"
+    local_file: "discipline_raw.csv"
+    metric_type: "count"
+    year_col: "SCHOOL_YEAR"
+    district_col: "DISTRICT_NAME"
+    school_col: "SCHOOL_NAME"
+    group_col: "GROUP_BY"
+    group_value_col: "GROUP_BY_VALUE"
+    value_col: "STUDENT_COUNT"
+
+# NOTE: DPI's exact column names vary a bit by topic and have changed across years.
+# If analyze.py errors out or reports "no rows matched", run:
+#     python inspect_csv.py data/raw/enrollment_raw.csv
+# and update the *_col values above to match what's actually in the file.
