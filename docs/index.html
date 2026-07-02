@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Milwaukee Data Tracker</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+<style>
+  :root {
+    --ink: #1c2333;
+    --ink-soft: #3d465c;
+    --paper: #f6f3ec;
+    --paper-raised: #ffffff;
+    --rule: #d8d2c2;
+    --gold: #b8873b;
+    --gold-deep: #8f6526;
+    --up: #6b7a4f;
+    --down: #a4482f;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+    line-height: 1.5;
+  }
+
+  header {
+    border-bottom: 3px solid var(--ink);
+    padding: 2rem 1.5rem 1.25rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .eyebrow {
+    font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--gold-deep);
+    margin: 0 0 0.4rem;
+  }
+
+  h1 {
+    margin: 0 0 0.35rem;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  .sub {
+    font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    margin: 0;
+  }
+
+  main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1.75rem 1.5rem 4rem;
+  }
+
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: flex-end;
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .field label {
+    font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-soft);
+    font-weight: 600;
+  }
+
+  select {
+    font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.95rem;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--ink);
+    background: var(--paper);
+    color: var(--ink);
+    min-width: 220px;
+    border-radius: 0;
+  }
+
+  select:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 1px;
+  }
+
+  .chart-wrap {
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    padding: 1.75rem;
+  }
+
+  .chart-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.85rem;
+  }
+
+  .chart-head h2 {
+    margin: 0;
+    font-size: 1.35rem;
+    font-weight: 600;
+  }
+
+  .latest-value {
+    font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+    text-align: right;
+  }
+
+  .latest-value .num {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  .latest-value .delta {
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  .delta.up { color: var(--down); }
+  .delta.down { color: var(--up); }
+  .latest-value .yr {
+    font-size: 0.75rem;
+    color: var(--ink-soft);
+    display: block;
+  }
+
+  canvas { max-height: 420px; }
+
+  .empty {
+    font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+    color: var(--ink-soft);
+    text-align: center;
+    padding: 3rem 1rem;
+  }
+
+  footer {
+    font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem 3rem;
+    color: var(--ink-soft);
+    font-size: 0.8rem;
+  }
+
+  footer a { color: var(--gold-deep); }
+</style>
+</head>
+<body>
+
+<header>
+  <p class="eyebrow">Milwaukee County &middot; Public Schools</p>
+  <h1>Data Tracker</h1>
+  <p class="sub">Enrollment, chronic absenteeism, and discipline trends &mdash; refreshed weekly from Wisconsin DPI</p>
+</header>
+
+<main>
+  <div class="controls">
+    <div class="field">
+      <label for="metric">Metric</label>
+      <select id="metric">
+        <option value="enrollment">Enrollment</option>
+        <option value="chronic_absenteeism">Chronic Absenteeism</option>
+        <option value="discipline">Discipline (Suspensions/Expulsions)</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="district">District or Charter</label>
+      <select id="district"></select>
+    </div>
+  </div>
+
+  <div class="chart-wrap">
+    <div class="chart-head">
+      <h2 id="chartTitle">&nbsp;</h2>
+      <div class="latest-value" id="latestValue"></div>
+    </div>
+    <canvas id="trendChart"></canvas>
+    <p class="empty" id="emptyMsg" style="display:none;">No data found for this selection yet.</p>
+  </div>
+</main>
+
+<footer>
+  Source data: <a href="https://dpi.wi.gov/wisedash" target="_blank" rel="noopener">Wisconsin DPI / WISEdash</a>.
+  Numbers here are a starting point for reporting, not a final published figure &mdash; verify against
+  <a href="https://dpi.wi.gov/wisedash/public" target="_blank" rel="noopener">WISEdash Public Portal</a>
+  before citing. Full data and source code on
+  <a href="https://github.com/aklaus-jpg/milwaukee-data-tracker" target="_blank" rel="noopener">GitHub</a>.
+</footer>
+
+<script>
+const REPO_RAW_BASE = "https://raw.githubusercontent.com/aklaus-jpg/milwaukee-data-tracker/main";
+
+const METRIC_FILES = {
+  enrollment: `${REPO_RAW_BASE}/data/processed/enrollment_trend.csv`,
+  chronic_absenteeism: `${REPO_RAW_BASE}/data/processed/chronic_absenteeism_trend.csv`,
+  discipline: `${REPO_RAW_BASE}/data/processed/discipline_trend.csv`,
+};
+
+const METRIC_LABELS = {
+  enrollment: { unit: "Students", suffix: "" },
+  chronic_absenteeism: { unit: "% Chronically Absent", suffix: "%" },
+  discipline: { unit: "Disciplinary Removals", suffix: "" },
+};
+
+const metricSelect = document.getElementById("metric");
+const districtSelect = document.getElementById("district");
+const chartTitle = document.getElementById("chartTitle");
+const latestValueEl = document.getElementById("latestValue");
+const emptyMsg = document.getElementById("emptyMsg");
+const canvas = document.getElementById("trendChart");
+
+let currentChart = null;
+let cache = {}; // metric -> parsed rows
+
+async function loadMetric(metric) {
+  if (cache[metric]) return cache[metric];
+  const res = await fetch(METRIC_FILES[metric]);
+  if (!res.ok) {
+    cache[metric] = [];
+    return [];
+  }
+  const text = await res.text();
+  const parsed = Papa.parse(text, { header: true, dynamicTyping: true, skipEmptyLines: true });
+  cache[metric] = parsed.data;
+  return parsed.data;
+}
+
+function districtsFor(rows) {
+  // labels look like "Milwaukee — All Students" — pull the district name out,
+  // put MPS first since it's the primary beat, then alphabetize the rest.
+  const names = new Set();
+  rows.forEach(r => {
+    if (!r.group) return;
+    const name = r.group.replace(/\s*—\s*All Students\s*$/, "").trim();
+    if (name) names.add(name);
+  });
+  const list = Array.from(names);
+  list.sort((a, b) => {
+    if (a === "Milwaukee") return -1;
+    if (b === "Milwaukee") return 1;
+    return a.localeCompare(b);
+  });
+  return list;
+}
+
+function populateDistrictOptions(districts, keepSelection) {
+  const prior = keepSelection ? districtSelect.value : null;
+  districtSelect.innerHTML = "";
+  districts.forEach(name => {
+    const opt = document.createElement("option");
+    opt.value = name;
+    opt.textContent = name;
+    districtSelect.appendChild(opt);
+  });
+  if (prior && districts.includes(prior)) {
+    districtSelect.value = prior;
+  }
+}
+
+function renderChart(metric, district) {
+  const rows = cache[metric] || [];
+  const groupLabel = `${district} — All Students`;
+  const series = rows
+    .filter(r => r.group === groupLabel)
+    .sort((a, b) => String(a.year).localeCompare(String(b.year)));
+
+  const labelInfo = METRIC_LABELS[metric];
+  chartTitle.textContent = `${district} — ${metricSelect.options[metricSelect.selectedIndex].text}`;
+
+  if (series.length === 0) {
+    if (currentChart) { currentChart.destroy(); currentChart = null; }
+    canvas.style.display = "none";
+    emptyMsg.style.display = "block";
+    latestValueEl.innerHTML = "";
+    return;
+  }
+  canvas.style.display = "block";
+  emptyMsg.style.display = "none";
+
+  const latest = series[series.length - 1];
+  const deltaClass = latest.pct_change > 0 ? "up" : latest.pct_change < 0 ? "down" : "";
+  const deltaSign = latest.pct_change > 0 ? "+" : "";
+  latestValueEl.innerHTML = `
+    <span class="yr">${latest.year}</span>
+    <span class="num">${formatValue(latest.value, metric)}${labelInfo.suffix}</span>
+    ${latest.pct_change != null && !isNaN(latest.pct_change)
+      ? `<span class="delta ${deltaClass}">${deltaSign}${Number(latest.pct_change).toFixed(1)}% vs prior year</span>`
+      : ""}
+  `;
+
+  const ctx = canvas.getContext("2d");
+  if (currentChart) currentChart.destroy();
+  currentChart = new Chart(ctx, {
+    type: "line",
+    data: {
+      labels: series.map(r => r.year),
+      datasets: [{
+        label: labelInfo.unit,
+        data: series.map(r => r.value),
+        borderColor: "#8f6526",
+        backgroundColor: "rgba(184, 135, 59, 0.12)",
+        borderWidth: 2.5,
+        pointRadius: 4,
+        pointBackgroundColor: "#1c2333",
+        pointBorderColor: "#f6f3ec",
+        pointBorderWidth: 1.5,
+        tension: 0.15,
+        fill: true,
+      }],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: true,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: "#1c2333",
+          titleFont: { family: "-apple-system, Helvetica Neue, Arial, sans-serif" },
+          bodyFont: { family: "-apple-system, Helvetica Neue, Arial, sans-serif" },
+          callbacks: {
+            label: (ctx) => `${formatValue(ctx.raw, metric)}${labelInfo.suffix}`,
+          },
+        },
+      },
+      scales: {
+        y: {
+          ticks: { font: { family: "-apple-system, Helvetica Neue, Arial, sans-serif" } },
+          grid: { color: "#e5e0d3" },
+        },
+        x: {
+          ticks: { font: { family: "-apple-system, Helvetica Neue, Arial, sans-serif" } },
+          grid: { display: false },
+        },
+      },
+    },
+  });
+}
+
+function formatValue(v, metric) {
+  if (v == null || isNaN(v)) return "—";
+  if (metric === "chronic_absenteeism") return Number(v).toFixed(1);
+  return Math.round(v).toLocaleString();
+}
+
+async function onMetricChange(keepDistrict) {
+  const metric = metricSelect.value;
+  const rows = await loadMetric(metric);
+  const districts = districtsFor(rows);
+  populateDistrictOptions(districts, keepDistrict);
+  if (districts.length === 0) {
+    chartTitle.textContent = "No data available";
+    canvas.style.display = "none";
+    emptyMsg.style.display = "block";
+    latestValueEl.innerHTML = "";
+    return;
+  }
+  renderChart(metric, districtSelect.value);
+}
+
+metricSelect.addEventListener("change", () => onMetricChange(false));
+districtSelect.addEventListener("change", () => renderChart(metricSelect.value, districtSelect.value));
+
+onMetricChange(false);
+</script>
+
+</body>
+</html>
