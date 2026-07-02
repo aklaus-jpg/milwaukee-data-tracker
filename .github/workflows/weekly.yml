@@ -8,6 +8,10 @@ on:
 permissions:
   contents: write   # needed so the workflow can commit updated data/charts back to the repo
 
+concurrency:
+  group: weekly-milwaukee-data-pull
+  cancel-in-progress: false   # let an in-flight run finish rather than racing a new one to push
+
 jobs:
   run-pipeline:
     runs-on: ubuntu-latest
@@ -23,6 +27,9 @@ jobs:
 
       - name: Run pipeline
         run: python run_pipeline.py
+
+      - name: Sync with any commits made since this run started
+        run: git pull --rebase origin main
 
       - name: Commit updated data, charts, and summary
         uses: stefanzweifel/git-auto-commit-action@v5
