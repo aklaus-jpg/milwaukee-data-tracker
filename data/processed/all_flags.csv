@@ -36,11 +36,11 @@ chronic_absenteeism,Fox Point J2 — All Students,2023-24,6.3999999999999995,-15
 chronic_absenteeism,Fox Point J2 — All Students,2024-25,4.6000000000000005,-28.1
 chronic_absenteeism,Franklin Public — All Students,2024-25,13.855555555555556,-25.2
 chronic_absenteeism,Glendale-River Hills — All Students,2020-21,2.7999999999999994,-60.6
-chronic_absenteeism,Glendale-River Hills — All Students,2021-22,10.466666666666667,273.8
+chronic_absenteeism,Glendale-River Hills — All Students,2021-22,10.466666666666669,273.8
 chronic_absenteeism,Glendale-River Hills — All Students,2022-23,13.5,29.0
 chronic_absenteeism,Glendale-River Hills — All Students,2024-25,8.799999999999999,-34.3
 chronic_absenteeism,Greendale — All Students,2019-20,5.316666666666666,28.1
-chronic_absenteeism,Greendale — All Students,2020-21,47.300000000000004,789.7
+chronic_absenteeism,Greendale — All Students,2020-21,47.3,789.7
 chronic_absenteeism,Greendale — All Students,2021-22,5.616666666666666,-88.1
 chronic_absenteeism,Greendale — All Students,2022-23,6.966666666666666,24.0
 chronic_absenteeism,Greendale — All Students,2023-24,5.883333333333333,-15.6
@@ -48,7 +48,7 @@ chronic_absenteeism,Greenfield — All Students,2019-20,4.042857142857143,-50.9
 chronic_absenteeism,Greenfield — All Students,2020-21,10.742857142857144,165.7
 chronic_absenteeism,Greenfield — All Students,2021-22,16.442857142857143,53.1
 chronic_absenteeism,Greenfield — All Students,2023-24,11.671428571428573,-17.6
-chronic_absenteeism,Maple Dale-Indian Hill — All Students,2020-21,1.4000000000000001,-78.6
+chronic_absenteeism,Maple Dale-Indian Hill — All Students,2020-21,1.4,-78.6
 chronic_absenteeism,Maple Dale-Indian Hill — All Students,2021-22,10.766666666666666,669.0
 chronic_absenteeism,Maple Dale-Indian Hill — All Students,2022-23,7.366666666666667,-31.6
 chronic_absenteeism,Maple Dale-Indian Hill — All Students,2024-25,3.866666666666667,-41.7
@@ -63,8 +63,8 @@ chronic_absenteeism,Nicolet UHS — All Students,2019-20,4.8,-41.5
 chronic_absenteeism,Nicolet Union High School — All Students,2022-23,8.1,42.1
 chronic_absenteeism,Nicolet Union High School — All Students,2023-24,3.0,-63.0
 chronic_absenteeism,Oak Creek-Franklin Joint — All Students,2019-20,8.963636363636363,27.4
-chronic_absenteeism,Oak Creek-Franklin Joint — All Students,2021-22,14.272727272727273,66.7
-chronic_absenteeism,Oak Creek-Franklin Joint — All Students,2022-23,12.045454545454545,-15.6
+chronic_absenteeism,Oak Creek-Franklin Joint — All Students,2021-22,14.272727272727272,66.7
+chronic_absenteeism,Oak Creek-Franklin Joint — All Students,2022-23,12.045454545454543,-15.6
 chronic_absenteeism,Rocketship Education Wisconsin Inc — All Students,2021-22,47.4,-18.4
 chronic_absenteeism,Rocketship Education Wisconsin Inc — All Students,2024-25,35.43333333333333,-30.8
 chronic_absenteeism,Saint Francis — All Students,2019-20,18.825,24.9
@@ -82,7 +82,7 @@ chronic_absenteeism,South Milwaukee — All Students,2023-24,23.414285714285715,
 chronic_absenteeism,Stellar Collegiate Charter School — All Students,2019-20,5.1,537.5
 chronic_absenteeism,Stellar Collegiate Charter School — All Students,2020-21,33.5,556.9
 chronic_absenteeism,United Community Center Inc — All Students,2024-25,17.23333333333333,-28.2
-chronic_absenteeism,Wauwatosa — All Students,2019-20,10.072222222222223,36.4
+chronic_absenteeism,Wauwatosa — All Students,2019-20,10.072222222222225,36.4
 chronic_absenteeism,Wauwatosa — All Students,2020-21,14.72777777777778,46.2
 chronic_absenteeism,Wauwatosa — All Students,2023-24,8.538888888888888,-47.3
 chronic_absenteeism,West Allis-West Milwaukee — All Students,2019-20,25.927777777777777,35.0
@@ -218,3 +218,6 @@ discipline,Woodlands School — All Students,2021-22,20.0,inf
 discipline,Woodlands School - State Street Campus — All Students,2019-20,4.0,-94.6
 discipline,Woodlands School - State Street Campus — All Students,2020-21,0.0,-100.0
 discipline,Woodlands School Inc — All Students,2024-25,126.0,43.2
+report_card,Cudahy — All Students,2020-21,57.5,-16.5
+report_card,South Milwaukee — All Students,2020-21,58.7,-18.0
+report_card,West Allis-West Milwaukee — All Students,2020-21,55.9,-21.6

@@ -6,6 +6,8 @@ Run directly:  python run_pipeline.py
 """
 import fetch_dpi
 import analyze
+import fetch_report_cards
+import analyze_report_cards
 import make_charts
 
 
@@ -13,6 +15,10 @@ def main():
     cfg = fetch_dpi.load_config()
     fetch_dpi.fetch_all(cfg)
     analyze.run_all()
+
+    fetch_report_cards.run_all()
+    analyze_report_cards.run()
+
     make_charts.run_all()
 
 

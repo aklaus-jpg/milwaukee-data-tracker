@@ -1,0 +1,97 @@
+metric,group,year,value,yoy_change,pct_change
+report_card,Cudahy — All Students,2018-19,68.9,,
+report_card,Cudahy — All Students,2020-21,57.5,-11.400000000000006,-16.545718432510892
+report_card,Cudahy — All Students,2021-22,57.2,-0.29999999999999716,-0.5217391304347729
+report_card,Cudahy — All Students,2022-23,56.2,-1.0,-1.7482517482517501
+report_card,Cudahy — All Students,2023-24,58.7,2.5,4.448398576512447
+report_card,Cudahy — All Students,2024-25,59.9,1.1999999999999957,2.044293015332199
+report_card,Fox Point J2 — All Students,2018-19,90.9,,
+report_card,Fox Point J2 — All Students,2020-21,84.1,-6.800000000000011,-7.480748074807497
+report_card,Fox Point J2 — All Students,2021-22,91.7,7.6000000000000085,9.036860879904896
+report_card,Fox Point J2 — All Students,2022-23,94.0,2.299999999999997,2.5081788440566966
+report_card,Fox Point J2 — All Students,2023-24,93.8,-0.20000000000000284,-0.21276595744681437
+report_card,Fox Point J2 — All Students,2024-25,96.8,3.0,3.1982942430703654
+report_card,Franklin Public — All Students,2018-19,79.5,,
+report_card,Franklin Public — All Students,2020-21,78.2,-1.2999999999999972,-1.6352201257861632
+report_card,Franklin Public — All Students,2021-22,77.8,-0.4000000000000057,-0.5115089514066584
+report_card,Franklin Public — All Students,2022-23,76.0,-1.7999999999999972,-2.3136246786632397
+report_card,Franklin Public — All Students,2023-24,75.0,-1.0,-1.3157894736842146
+report_card,Franklin Public — All Students,2024-25,78.1,3.0999999999999943,4.133333333333322
+report_card,Glendale-River Hills — All Students,2018-19,72.5,,
+report_card,Glendale-River Hills — All Students,2020-21,69.2,-3.299999999999997,-4.551724137931035
+report_card,Glendale-River Hills — All Students,2021-22,68.4,-0.7999999999999972,-1.1560693641618491
+report_card,Glendale-River Hills — All Students,2022-23,67.3,-1.1000000000000085,-1.6081871345029364
+report_card,Glendale-River Hills — All Students,2023-24,68.8,1.5,2.2288261515601704
+report_card,Glendale-River Hills — All Students,2024-25,70.8,2.0,2.9069767441860517
+report_card,Greendale — All Students,2018-19,82.0,,
+report_card,Greendale — All Students,2020-21,73.6,-8.400000000000006,-10.2439024390244
+report_card,Greendale — All Students,2021-22,75.2,1.6000000000000085,2.1739130434782705
+report_card,Greendale — All Students,2022-23,75.8,0.5999999999999943,0.7978723404255206
+report_card,Greendale — All Students,2023-24,76.0,0.20000000000000284,0.26385224274407815
+report_card,Greendale — All Students,2024-25,80.3,4.299999999999997,5.657894736842106
+report_card,Greenfield — All Students,2018-19,66.8,,
+report_card,Greenfield — All Students,2020-21,64.8,-2.0,-2.9940119760479056
+report_card,Greenfield — All Students,2021-22,61.9,-2.8999999999999986,-4.475308641975307
+report_card,Greenfield — All Students,2022-23,66.0,4.100000000000001,6.623586429725359
+report_card,Greenfield — All Students,2023-24,63.2,-2.799999999999997,-4.242424242424237
+report_card,Greenfield — All Students,2024-25,68.2,5.0,7.911392405063289
+report_card,Maple Dale-Indian Hill — All Students,2018-19,86.2,,
+report_card,Maple Dale-Indian Hill — All Students,2020-21,86.2,0.0,0.0
+report_card,Maple Dale-Indian Hill — All Students,2021-22,85.8,-0.4000000000000057,-0.46403712296984034
+report_card,Maple Dale-Indian Hill — All Students,2022-23,83.2,-2.5999999999999943,-3.0303030303030276
+report_card,Maple Dale-Indian Hill — All Students,2023-24,85.5,2.299999999999997,2.7644230769230838
+report_card,Maple Dale-Indian Hill — All Students,2024-25,91.8,6.299999999999997,7.36842105263158
+report_card,Milwaukee — All Students,2018-19,58.4,,
+report_card,Milwaukee — All Students,2020-21,58.1,-0.29999999999999716,-0.5136986301369828
+report_card,Milwaukee — All Students,2021-22,56.8,-1.3000000000000043,-2.2375215146299587
+report_card,Milwaukee — All Students,2022-23,58.0,1.2000000000000028,2.1126760563380254
+report_card,Milwaukee — All Students,2023-24,58.2,0.20000000000000284,0.34482758620690834
+report_card,Milwaukee — All Students,2024-25,59.5,1.2999999999999972,2.2336769759450092
+report_card,Oak Creek-Franklin Joint — All Students,2018-19,77.5,,
+report_card,Oak Creek-Franklin Joint — All Students,2020-21,67.3,-10.200000000000003,-13.161290322580655
+report_card,Oak Creek-Franklin Joint — All Students,2021-22,69.3,2.0,2.971768202080227
+report_card,Oak Creek-Franklin Joint — All Students,2022-23,70.8,1.5,2.164502164502169
+report_card,Oak Creek-Franklin Joint — All Students,2023-24,70.9,0.10000000000000853,0.14124293785311437
+report_card,Oak Creek-Franklin Joint — All Students,2024-25,71.6,0.6999999999999886,0.9873060648800891
+report_card,Saint Francis — All Students,2018-19,72.4,,
+report_card,Saint Francis — All Students,2020-21,62.0,-10.400000000000006,-14.36464088397791
+report_card,Saint Francis — All Students,2021-22,65.2,3.200000000000003,5.161290322580658
+report_card,Saint Francis — All Students,2022-23,68.3,3.0999999999999943,4.754601226993849
+report_card,Saint Francis — All Students,2023-24,69.5,1.2000000000000028,1.7569546120058677
+report_card,Saint Francis — All Students,2024-25,66.0,-3.5,-5.035971223021585
+report_card,Shorewood — All Students,2018-19,83.8,,
+report_card,Shorewood — All Students,2020-21,82.4,-1.3999999999999915,-1.6706443914081048
+report_card,Shorewood — All Students,2021-22,79.6,-2.8000000000000114,-3.398058252427194
+report_card,Shorewood — All Students,2022-23,79.4,-0.19999999999998863,-0.2512562814070196
+report_card,Shorewood — All Students,2023-24,77.6,-1.8000000000000114,-2.267002518891703
+report_card,Shorewood — All Students,2024-25,82.8,5.200000000000003,6.70103092783505
+report_card,South Milwaukee — All Students,2018-19,71.6,,
+report_card,South Milwaukee — All Students,2020-21,58.7,-12.899999999999991,-18.016759776536308
+report_card,South Milwaukee — All Students,2021-22,59.0,0.29999999999999716,0.5110732538330387
+report_card,South Milwaukee — All Students,2022-23,62.8,3.799999999999997,6.440677966101682
+report_card,South Milwaukee — All Students,2023-24,58.6,-4.199999999999996,-6.6878980891719735
+report_card,South Milwaukee — All Students,2024-25,56.2,-2.3999999999999986,-4.095563139931735
+report_card,Wauwatosa — All Students,2018-19,79.7,,
+report_card,Wauwatosa — All Students,2020-21,74.4,-5.299999999999997,-6.649937264742778
+report_card,Wauwatosa — All Students,2021-22,72.4,-2.0,-2.6881720430107503
+report_card,Wauwatosa — All Students,2022-23,72.3,-0.10000000000000853,-0.13812154696133394
+report_card,Wauwatosa — All Students,2023-24,71.3,-1.0,-1.3831258644536604
+report_card,Wauwatosa — All Students,2024-25,75.3,4.0,5.610098176718092
+report_card,West Allis-West Milwaukee — All Students,2018-19,71.3,,
+report_card,West Allis-West Milwaukee — All Students,2020-21,55.9,-15.399999999999999,-21.59887798036465
+report_card,West Allis-West Milwaukee — All Students,2021-22,54.9,-1.0,-1.7889087656529523
+report_card,West Allis-West Milwaukee — All Students,2022-23,59.8,4.899999999999999,8.925318761384338
+report_card,West Allis-West Milwaukee — All Students,2023-24,64.2,4.400000000000006,7.3578595317725926
+report_card,West Allis-West Milwaukee — All Students,2024-25,70.3,6.099999999999994,9.50155763239875
+report_card,Whitefish Bay — All Students,2018-19,87.2,,
+report_card,Whitefish Bay — All Students,2020-21,93.1,5.8999999999999915,6.766055045871555
+report_card,Whitefish Bay — All Students,2021-22,93.1,0.0,0.0
+report_card,Whitefish Bay — All Students,2022-23,95.0,1.9000000000000057,2.0408163265306145
+report_card,Whitefish Bay — All Students,2023-24,94.3,-0.7000000000000028,-0.736842105263158
+report_card,Whitefish Bay — All Students,2024-25,97.5,3.200000000000003,3.393425238600223
+report_card,Whitnall — All Students,2018-19,77.4,,
+report_card,Whitnall — All Students,2020-21,74.5,-2.9000000000000057,-3.7467700258397962
+report_card,Whitnall — All Students,2021-22,73.9,-0.5999999999999943,-0.8053691275167751
+report_card,Whitnall — All Students,2022-23,76.1,2.1999999999999886,2.9769959404600588
+report_card,Whitnall — All Students,2023-24,74.3,-1.7999999999999972,-2.365308804204991
+report_card,Whitnall — All Students,2024-25,78.6,4.299999999999997,5.787348586810226
