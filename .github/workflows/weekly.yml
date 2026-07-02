@@ -28,9 +28,6 @@ jobs:
       - name: Run pipeline
         run: python run_pipeline.py
 
-      - name: Sync with any commits made since this run started
-        run: git pull --rebase origin main
-
       - name: Commit updated data, charts, and summary
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
