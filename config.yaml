@@ -1,23 +1,42 @@
-# Milwaukee Education Data Tracker — config
+# Milwaukee Data Tracker — config
 #
-# HOW TO GET EACH URL (takes ~1 min per topic):
-# 1. Go to https://dpi.wi.gov/wisedash/download-files
-# 2. Pick "School Year" (or "All Years"/"Multiple Years" if offered) and the topic
-#    listed below (Enrollment / Attendance / Discipline).
-# 3. Right-click the CSV download link or button and choose "Copy Link Address".
-# 4. Paste it as the `url` value for that source below.
+# DPI publishes one ZIP file per school year, per topic, at predictable URLs:
+#   https://dpi.wi.gov/sites/default/files/wise/downloads/<prefix>_<year>.zip
+# So instead of you hunting down URLs by hand, fetch_dpi.py builds them from the
+# `years` list below and downloads/unzips each one automatically.
 #
-# If a url is left as "PASTE_..._HERE", that source is skipped automatically —
-# nothing breaks, it just won't fetch until you fill it in.
+# Confirmed working prefixes (checked against DPI's live file listing):
+#   enrollment_certified           -> enrollment, by student group
+#   absenteeism_certified          -> chronic absenteeism specifically
+#   discipline_actions_certified   -> suspensions/expulsions (the "actions" file,
+#                                      not discipline_incidents, which is a different dataset)
+#
+# If you add a new source, check the real filename first at:
+#   https://dpi.wi.gov/wisedash/public/download-files
+# (search-in-page for the topic, hover the file link, confirm the exact prefix)
 
-district_filter: "Milwaukee"   # matches DISTRICT_NAME containing this text (catches "Milwaukee" MPS)
-flag_threshold_pct: 5          # flag any year-over-year change of this % or more (tune to taste)
+district_filter: "Milwaukee"   # matches DISTRICT_NAME containing this text (catches MPS)
+flag_threshold_pct: 5          # flag any year-over-year change of this % or more
+
+# Years to pull. DPI's discipline_actions files only go back to 2016-17 in this
+# naming scheme (older years use a different combined "discipline_certified" file
+# with a different structure) — stick to 2016-17 or later here unless you're
+# ready to handle that older format separately.
+years:
+  - "2018-19"
+  - "2019-20"
+  - "2020-21"
+  - "2021-22"
+  - "2022-23"
+  - "2023-24"
+  - "2024-25"
+  # 2025-26 enrollment exists already; absenteeism/discipline for 2025-26 won't
+  # be certified until partway through the school year. Add it once it's out.
 
 sources:
   enrollment:
-    url: "PASTE_ENROLLMENT_CSV_URL_HERE"
-    local_file: "enrollment_raw.csv"
-    metric_type: "count"              # count = raw number (sum across rows), rate = percentage (average)
+    url_prefix: "enrollment_certified"
+    metric_type: "count"          # count = raw number (sum across rows), rate = percentage (average)
     year_col: "SCHOOL_YEAR"
     district_col: "DISTRICT_NAME"
     school_col: "SCHOOL_NAME"
@@ -26,8 +45,7 @@ sources:
     value_col: "STUDENT_COUNT"
 
   chronic_absenteeism:
-    url: "PASTE_ATTENDANCE_CSV_URL_HERE"
-    local_file: "chronic_absenteeism_raw.csv"
+    url_prefix: "absenteeism_certified"
     metric_type: "rate"
     year_col: "SCHOOL_YEAR"
     district_col: "DISTRICT_NAME"
@@ -37,8 +55,7 @@ sources:
     value_col: "PERCENT_CHRONIC_ABSENTEEISM"
 
   discipline:
-    url: "PASTE_DISCIPLINE_CSV_URL_HERE"
-    local_file: "discipline_raw.csv"
+    url_prefix: "discipline_actions_certified"
     metric_type: "count"
     year_col: "SCHOOL_YEAR"
     district_col: "DISTRICT_NAME"
@@ -47,7 +64,7 @@ sources:
     group_value_col: "GROUP_BY_VALUE"
     value_col: "STUDENT_COUNT"
 
-# NOTE: DPI's exact column names vary a bit by topic and have changed across years.
-# If analyze.py errors out or reports "no rows matched", run:
+# NOTE: DPI's exact column names vary a bit by topic/year. If analyze.py errors
+# out or reports "no rows matched", run:
 #     python inspect_csv.py data/raw/enrollment_raw.csv
 # and update the *_col values above to match what's actually in the file.

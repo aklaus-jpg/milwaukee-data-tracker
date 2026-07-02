@@ -11,11 +11,15 @@ past MPS-only DPI data into county-level rollups, other local districts, and
 Census ACS data down the line — all as new `sources:` entries in
 `config.yaml`, not a rewrite.
 
-**Honest caveat:** this was built without live access to test the DPI
-download links, since DPI's file page is a dropdown-driven tool rather than a
-stable API. The pipeline is built to fail loudly and safely (skip a source,
-print a clear error) rather than silently produce garbage — but budget 15–20
-minutes for first-run troubleshooting with `inspect_csv.py` (see Step 3).
+**Update:** I checked DPI's live file listing directly, and their yearly ZIP
+files follow a predictable naming pattern — so this now auto-builds download
+URLs from a year list instead of requiring you to copy-paste links from the
+WISEdash dropdown UI. Confirmed the exact prefixes for enrollment, chronic
+absenteeism, and discipline actions against DPI's real page. Still budget
+some time for first-run troubleshooting with `inspect_csv.py` (Step 2 below)
+— column names inside the files can vary slightly by year, and I couldn't
+open an actual file to verify since I have no live internet access in the
+environment I built this in.
 
 ## What you get each run
 - `data/raw/*.csv` — the raw DPI files as downloaded
@@ -28,20 +32,14 @@ minutes for first-run troubleshooting with `inspect_csv.py` (see Step 3).
 ## Setup
 
 ### 1. Push this to a GitHub repo
-Create a new repo (public or private, either works) and push these files.
+Create a new repo (public or private, either works) and push these files — you've already done this part.
 
-### 2. Get the DPI CSV URLs
-For each of the three sources — **Enrollment**, **Attendance** (for chronic
-absenteeism), and **Discipline** (for suspensions/expulsions):
+### 2. First run + column-name troubleshooting
+No URLs to hunt down — `config.yaml` already has real, working DPI file
+prefixes and a list of school years. It builds each year's download URL
+automatically (`https://dpi.wi.gov/sites/default/files/wise/downloads/<prefix>_<year>.zip`),
+downloads it, unzips it, and stitches all years together.
 
-1. Go to https://dpi.wi.gov/wisedash/download-files
-2. Pick the topic and school year (or "All Years"/"Multiple Years" if offered — better, since you want a time series)
-3. Right-click the CSV download link/button → **Copy Link Address**
-4. Paste it into `config.yaml` under that source's `url:` field
-
-Commit the updated `config.yaml`.
-
-### 3. First run + column-name troubleshooting
 Run it locally once before turning on the schedule:
 
 ```bash
@@ -51,20 +49,18 @@ python run_pipeline.py
 
 If `analyze.py` prints something like `missing expected columns` or `no rows
 matched district filter`, DPI's real column names differ slightly from what's
-in `config.yaml`. Run:
+in `config.yaml` for that particular topic/year. Run:
 
 ```bash
 python inspect_csv.py data/raw/enrollment_raw.csv
 ```
 
 ...and update the `*_col` values in `config.yaml` to match what's actually in
-the file (e.g., DPI sometimes uses `DISTRICT` instead of `DISTRICT_NAME`, or
-`GROUP_BY_VALUE_TEXT` instead of `GROUP_BY_VALUE` — this varies by topic and
-has changed across years). Re-run until you see `[ok]` for all three sources.
+the file. Re-run until you see `[ok]` for all three sources with no warnings.
 
-### 4. Turn on the schedule
-Once local runs work cleanly, push your fixed `config.yaml`. The GitHub Action
-in `.github/workflows/weekly.yml` will run automatically every Monday, and
+### 3. Turn on the schedule
+Once local runs work cleanly, push any fixes to `config.yaml`. The GitHub
+Action in `.github/workflows/weekly.yml` runs automatically every Monday, and
 commits the updated data/charts/summary back into the repo. You can also
 trigger it manually anytime from the **Actions** tab → **Weekly Milwaukee
 Data Pull** → **Run workflow**.
@@ -78,10 +74,14 @@ require authentication.
   see how noisy the data is.
 - **`district_filter`** — matches on district name, defaults to `"Milwaukee"`
   which catches MPS. Change if you want a different district or a whole-county rollup.
-- **Adding more metrics** — copy one of the blocks under `sources:` in
-  `config.yaml`, point it at a new WISEdash topic (e.g., graduation rate,
-  test scores), and re-run `inspect_csv.py` on the new file to set the right
-  column names.
+- **`years`** — which school years to pull. Extend this list each fall once
+  a new year's data is certified (usually posted by DPI in March for the
+  prior year — check the file list before assuming a new year is live).
+- **Adding more metrics** — find the exact file prefix at
+  https://dpi.wi.gov/wisedash/public/download-files (hover the download link
+  for the topic you want, confirm the `<prefix>_<year>.zip` pattern), add a
+  new block under `sources:` in `config.yaml` with that `url_prefix`, then
+  run `inspect_csv.py` on the resulting raw file to set the right column names.
 
 ## A newsroom note, not a coding one
 Treat every number this spits out as a *lead*, not a publishable fact. DPI

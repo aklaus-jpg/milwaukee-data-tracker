@@ -22,7 +22,7 @@ def load_config(path="config.yaml"):
 
 
 def analyze_source(name, src, district_filter, threshold):
-    raw_path = RAW_DIR / src["local_file"]
+    raw_path = RAW_DIR / f"{name}_raw.csv"
     if not raw_path.exists():
         print(f"[skip] {name}: raw file not found — run fetch_dpi.py first")
         return None
