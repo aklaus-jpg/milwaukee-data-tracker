@@ -5,6 +5,9 @@ on:
     - cron: "0 13 * * 1"   # Mondays ~8am Central (adjust if DST matters to you)
   workflow_dispatch: {}     # lets you trigger a run manually from the Actions tab
 
+permissions:
+  contents: write   # needed so the workflow can commit updated data/charts back to the repo
+
 jobs:
   run-pipeline:
     runs-on: ubuntu-latest
