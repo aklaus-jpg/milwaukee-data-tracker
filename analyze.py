@@ -21,7 +21,7 @@ def load_config(path="config.yaml"):
         return yaml.safe_load(f)
 
 
-def analyze_source(name, src, district_filter, threshold):
+def analyze_source(name, src, geo_filter, geo_col_key, threshold, min_group_size):
     raw_path = RAW_DIR / f"{name}_raw.csv"
     if not raw_path.exists():
         print(f"[skip] {name}: raw file not found — run fetch_dpi.py first")
@@ -30,26 +30,43 @@ def analyze_source(name, src, district_filter, threshold):
     df = pd.read_csv(raw_path, low_memory=False)
     df.columns = [c.strip() for c in df.columns]
 
-    district_col = src["district_col"]
+    geo_col = src.get(geo_col_key)
     year_col = src["year_col"]
     group_col = src.get("group_col")
     group_value_col = src.get("group_value_col")
     value_col = src["value_col"]
     school_col = src.get("school_col")
+    size_col = src.get("size_col")  # optional: separate column to judge group size by, if value_col itself isn't a headcount
 
-    missing = [c for c in [district_col, year_col, value_col] if c not in df.columns]
+    required = [geo_col, year_col, value_col]
+    if size_col:
+        required.append(size_col)
+    missing = [c for c in required if c not in df.columns]
     if missing:
         print(f"[error] {name}: missing expected columns {missing}. "
               f"Run: python inspect_csv.py {raw_path}")
         return None
 
-    mask = df[district_col].astype(str).str.contains(district_filter, case=False, na=False)
+    mask = df[geo_col].astype(str).str.contains(geo_filter, case=False, na=False)
     mps = df[mask].copy()
 
     if mps.empty:
-        print(f"[warn] {name}: no rows matched district filter '{district_filter}' "
-              f"in column '{district_col}' — check inspect_csv.py output")
+        print(f"[warn] {name}: no rows matched geographic filter '{geo_filter}' "
+              f"in column '{geo_col}' — check inspect_csv.py output")
         return None
+
+    # DPI redacts small counts for student privacy (shows "*" or similar instead
+    # of a number when a group is small enough to be identifiable). Coerce to
+    # numeric and track how many rows got redacted so it's visible, not silent.
+    raw_values = mps[value_col]
+    mps[value_col] = pd.to_numeric(raw_values, errors="coerce")
+    redacted_count = mps[value_col].isna().sum() - raw_values.isna().sum()
+    if redacted_count > 0:
+        print(f"  [note] {name}: {redacted_count} row(s) had a redacted/non-numeric "
+              f"value (e.g. '*') for student privacy — excluded from sums/rates")
+
+    if size_col:
+        mps[size_col] = pd.to_numeric(mps[size_col], errors="coerce")
 
     # Prefer district-level rows (avoid double-counting individual schools) if a
     # school column exists and has an identifiable "district total" style row.
@@ -61,8 +78,26 @@ def analyze_source(name, src, district_filter, threshold):
         if not district_level.empty:
             mps = district_level
 
+    # County filtering pulls in multiple districts (MPS, Wauwatosa, Shorewood,
+    # charters, etc.). Track each district's overall trend separately — not
+    # blended into one county-wide average, which would hide exactly the
+    # district-to-district comparisons a reporter would want, and not crossed
+    # with every demographic subgroup either, which would multiply into
+    # hundreds of mostly-tiny combinations. Label is "District Name — All
+    # Students" so MPS and, say, Wauwatosa both show up clearly and
+    # comparably. For demographic breakdowns within a single district, narrow
+    # county_filter down to that district's name instead.
+    district_col = src.get("district_col")
+    has_district_split = district_col and district_col in mps.columns
+
     group_frames = {}
-    if group_col in mps.columns and group_value_col in mps.columns:
+    if has_district_split:
+        for dist, d_df in mps.groupby(district_col):
+            if group_col in d_df.columns and group_value_col in d_df.columns:
+                overall = d_df[d_df[group_value_col].astype(str).str.contains("All Students", case=False, na=False)]
+                d_df = overall if not overall.empty else d_df
+            group_frames[f"{dist} — All Students"] = d_df
+    elif group_col in mps.columns and group_value_col in mps.columns:
         overall = mps[mps[group_value_col].astype(str).str.contains("All Students", case=False, na=False)]
         group_frames["All Students"] = overall if not overall.empty else mps
         for g_val, g_df in mps.groupby(group_value_col):
@@ -77,6 +112,16 @@ def analyze_source(name, src, district_filter, threshold):
             yearly = g_df.groupby(year_col)[value_col].sum(min_count=1)
         else:
             yearly = g_df.groupby(year_col)[value_col].mean()
+
+        # group size per year, for flag-gating: use the dedicated size_col if
+        # configured, otherwise fall back to the value itself for count metrics
+        # (e.g. enrollment, where the value IS the headcount).
+        if size_col:
+            yearly_size = g_df.groupby(year_col)[size_col].sum(min_count=1)
+        elif src["metric_type"] == "count":
+            yearly_size = yearly
+        else:
+            yearly_size = None
 
         yearly = yearly.sort_index()
         yoy = yearly.diff()
@@ -93,14 +138,19 @@ def analyze_source(name, src, district_filter, threshold):
             })
 
         for yr, pct in pct_change.items():
-            if pd.notna(pct) and abs(pct) >= threshold:
-                flag_rows.append({
-                    "metric": name,
-                    "group": label,
-                    "year": yr,
-                    "value": yearly.get(yr),
-                    "pct_change": round(pct, 1),
-                })
+            if not (pd.notna(pct) and abs(pct) >= threshold):
+                continue
+            if yearly_size is not None:
+                size_this_year = yearly_size.get(yr)
+                if pd.isna(size_this_year) or size_this_year < min_group_size:
+                    continue  # too small a group — skip flagging, still in trend CSV
+            flag_rows.append({
+                "metric": name,
+                "group": label,
+                "year": yr,
+                "value": yearly.get(yr),
+                "pct_change": round(pct, 1),
+            })
 
     trend_df = pd.DataFrame(trend_rows)
     flag_df = pd.DataFrame(flag_rows)
@@ -133,11 +183,13 @@ def write_summary(flags_df):
 def run_all():
     cfg = load_config()
     threshold = cfg.get("flag_threshold_pct", 5)
-    district_filter = cfg.get("district_filter", "Milwaukee")
+    min_group_size = cfg.get("min_group_size_for_flag", 0)
+    geo_filter = cfg.get("county_filter", "Milwaukee")
+    geo_col_key = "county_col"
 
     all_flags = []
     for name, src in cfg["sources"].items():
-        result = analyze_source(name, src, district_filter, threshold)
+        result = analyze_source(name, src, geo_filter, geo_col_key, threshold, min_group_size)
         if result:
             _, flags = result
             all_flags.append(flags)

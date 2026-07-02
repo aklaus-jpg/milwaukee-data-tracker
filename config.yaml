@@ -2,21 +2,38 @@
 #
 # DPI publishes one ZIP file per school year, per topic, at predictable URLs:
 #   https://dpi.wi.gov/sites/default/files/wise/downloads/<prefix>_<year>.zip
-# So instead of you hunting down URLs by hand, fetch_dpi.py builds them from the
-# `years` list below and downloads/unzips each one automatically.
+# fetch_dpi.py builds these automatically from the `years` list below.
 #
-# Confirmed working prefixes (checked against DPI's live file listing):
-#   enrollment_certified           -> enrollment, by student group
-#   absenteeism_certified          -> chronic absenteeism specifically
-#   discipline_actions_certified   -> suspensions/expulsions (the "actions" file,
-#                                      not discipline_incidents, which is a different dataset)
-#
-# If you add a new source, check the real filename first at:
-#   https://dpi.wi.gov/wisedash/public/download-files
-# (search-in-page for the topic, hover the file link, confirm the exact prefix)
+# Column names below are CONFIRMED against DPI's real files (checked directly,
+# not guessed) as of this writing:
+#   enrollment_certified          -> value_col STUDENT_COUNT
+#   absenteeism_certified         -> value_col ABSENCE_RATE (not "PERCENT_CHRONIC_ABSENTEEISM")
+#   discipline_actions_certified  -> value_col REMOVAL_COUNT (not "STUDENT_COUNT"), and this
+#                                     file has a REMOVAL_TYPE_DESCRIPTION column breaking removals
+#                                     into Out of School Suspension / In School Suspension /
+#                                     Expulsion with-or-without Services — currently summed
+#                                     together into one "total removals" number.
 
-district_filter: "Milwaukee"   # matches DISTRICT_NAME containing this text (catches MPS)
-flag_threshold_pct: 5          # flag any year-over-year change of this % or more
+# GEOGRAPHIC FILTER: matches against the COUNTY column, catching every public
+# school district AND independent charter in Milwaukee County — not just MPS.
+# This is broader than "the city of Milwaukee" specifically: it also includes
+# suburban districts physically in the county (Wauwatosa, West Allis,
+# Shorewood, Whitefish Bay, Cudahy, etc.). DPI's public files don't have a
+# clean city-only field, so county is the closest reliable option. If you
+# want MPS only again, this is where to narrow it — no other code changes
+# needed, since each district's trend is already tracked separately (see
+# below).
+county_filter: "Milwaukee"
+
+flag_threshold_pct: 15         # flag any year-over-year change of this % or more
+
+# Groups smaller than this (by student count) are excluded from flagging —
+# not from the trend data, just from SUMMARY.md. Small groups (e.g. a tiny
+# suburban district, or a small demographic subgroup) swing wildly in percent
+# terms on totally normal year-to-year variation; this keeps that noise out
+# of the digest without hiding it from the full CSVs. Tune this up/down based
+# on how noisy SUMMARY.md still looks.
+min_group_size_for_flag: 300
 
 # Years to pull. DPI's discipline_actions files only go back to 2016-17 in this
 # naming scheme (older years use a different combined "discipline_certified" file
@@ -38,31 +55,37 @@ sources:
     url_prefix: "enrollment_certified"
     metric_type: "count"          # count = raw number (sum across rows), rate = percentage (average)
     year_col: "SCHOOL_YEAR"
+    county_col: "COUNTY"
     district_col: "DISTRICT_NAME"
     school_col: "SCHOOL_NAME"
     group_col: "GROUP_BY"
     group_value_col: "GROUP_BY_VALUE"
     value_col: "STUDENT_COUNT"
+    # no size_col needed — value_col IS the group size here
 
   chronic_absenteeism:
     url_prefix: "absenteeism_certified"
     metric_type: "rate"
     year_col: "SCHOOL_YEAR"
+    county_col: "COUNTY"
     district_col: "DISTRICT_NAME"
     school_col: "SCHOOL_NAME"
     group_col: "GROUP_BY"
     group_value_col: "GROUP_BY_VALUE"
-    value_col: "PERCENT_CHRONIC_ABSENTEEISM"
+    value_col: "ABSENCE_RATE"
+    size_col: "STUDENT_COUNT"      # this file also has the raw student count per group — use it to judge group size, not the rate itself
 
   discipline:
     url_prefix: "discipline_actions_certified"
     metric_type: "count"
     year_col: "SCHOOL_YEAR"
+    county_col: "COUNTY"
     district_col: "DISTRICT_NAME"
     school_col: "SCHOOL_NAME"
     group_col: "GROUP_BY"
     group_value_col: "GROUP_BY_VALUE"
-    value_col: "STUDENT_COUNT"
+    value_col: "REMOVAL_COUNT"
+    size_col: "TFS_ENROLLMENT_COUNT"   # removal counts are naturally small even for big groups — use total enrollment (Third Friday in September count) as the real size reference
 
 # NOTE: DPI's exact column names vary a bit by topic/year. If analyze.py errors
 # out or reports "no rows matched", run:
