@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Milwaukee Data Tracker</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <style>
   :root {
     --ink: #1c2333;
@@ -164,6 +164,16 @@
     padding: 3rem 1rem;
   }
 
+  .school-note {
+    font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.85rem;
+    color: var(--gold-deep);
+    background: rgba(184, 135, 59, 0.1);
+    border: 1px solid var(--gold);
+    padding: 0.65rem 0.9rem;
+    margin-bottom: 1rem;
+  }
+
   footer {
     font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
     max-width: 1100px;
@@ -199,6 +209,10 @@
       <label for="district">District or Charter</label>
       <select id="district"></select>
     </div>
+    <div class="field" id="schoolField" style="display:none;">
+      <label for="school">School</label>
+      <select id="school"></select>
+    </div>
   </div>
 
   <div class="chart-wrap">
@@ -206,6 +220,7 @@
       <h2 id="chartTitle">&nbsp;</h2>
       <div class="latest-value" id="latestValue"></div>
     </div>
+    <p class="school-note" id="schoolNote" style="display:none;"></p>
     <canvas id="trendChart"></canvas>
     <p class="empty" id="emptyMsg" style="display:none;">No data found for this selection yet.</p>
   </div>
@@ -236,15 +251,49 @@ const METRIC_LABELS = {
   report_card: { unit: "Accountability Score", suffix: "" },
 };
 
+// Only enrollment has school-level data so far — other metrics will get
+// entries here later. Metrics without an entry simply hide the School field.
+const SCHOOL_TREND_FILES = {
+  enrollment: `${REPO_RAW_BASE}/data/processed/enrollment_school_trend.csv`,
+};
+
 const metricSelect = document.getElementById("metric");
 const districtSelect = document.getElementById("district");
+const schoolField = document.getElementById("schoolField");
+const schoolSelect = document.getElementById("school");
 const chartTitle = document.getElementById("chartTitle");
 const latestValueEl = document.getElementById("latestValue");
 const emptyMsg = document.getElementById("emptyMsg");
+const schoolNote = document.getElementById("schoolNote");
 const canvas = document.getElementById("trendChart");
 
 let currentChart = null;
-let cache = {}; // metric -> parsed rows
+let cache = {}; // metric -> parsed district-level rows
+let schoolCache = {}; // metric -> parsed school-level rows
+
+// District-level trend files aren't deduplicated for charter-network naming
+// drift (e.g. "X Inc", "X Inc.", "X, Inc." all show up as separate district
+// entries there). The school-level file normalizes those down to one name
+// per entity, so this mirrors that normalization to match whichever raw
+// variant happens to be selected in the District dropdown.
+const DISTRICT_NAME_OVERRIDES = {
+  "Nicolet UHS": "Nicolet Union High School",
+  "Central City Cyberschool": "Central City Cyberschool of Milwaukee",
+  "Darrell Lynn Hines Academy": "Darrell L. Hines Academy",
+  "Darrell L Hines Academy": "Darrell L. Hines Academy",
+  "Dr Howard Fuller Collegiate Academy": "Dr. Howard Fuller Collegiate Academy",
+  "Downtown Montessori": "Downtown Montessori Academy",
+};
+
+function normalizeDistrictName(name) {
+  let s = String(name).trim().replace(/\s+/g, " ");
+  s = s.replace(/,?\s*Inc\.?\s*$/i, "").trim();
+  s = s.replace(/\s+/g, " ").replace(/,\s*$/, "").trim();
+  if (s.startsWith("School for Early Development and")) {
+    return "School for Early Development and Achievement (SEDA)";
+  }
+  return DISTRICT_NAME_OVERRIDES[s] || s;
+}
 
 async function loadMetric(metric) {
   if (cache[metric]) return cache[metric];
@@ -291,16 +340,47 @@ function populateDistrictOptions(districts, keepSelection) {
   }
 }
 
-function renderChart(metric, district) {
-  const rows = cache[metric] || [];
-  const groupLabel = `${district} — All Students`;
-  const series = rows
-    .filter(r => r.group === groupLabel)
-    .sort((a, b) => String(a.year).localeCompare(String(b.year)));
+async function loadSchoolMetric(metric) {
+  if (!SCHOOL_TREND_FILES[metric]) return [];
+  if (schoolCache[metric]) return schoolCache[metric];
+  const res = await fetch(SCHOOL_TREND_FILES[metric]);
+  if (!res.ok) {
+    schoolCache[metric] = [];
+    return [];
+  }
+  const text = await res.text();
+  const parsed = Papa.parse(text, { header: true, dynamicTyping: true, skipEmptyLines: true });
+  schoolCache[metric] = parsed.data;
+  return parsed.data;
+}
 
-  const labelInfo = METRIC_LABELS[metric];
-  chartTitle.textContent = `${district} — ${metricSelect.options[metricSelect.selectedIndex].text}`;
+function schoolsForDistrict(rows, normDistrict) {
+  const names = new Set();
+  rows.forEach(r => {
+    if (r.district === normDistrict && r.school) names.add(r.school);
+  });
+  return Array.from(names).sort((a, b) => a.localeCompare(b));
+}
 
+async function populateSchoolOptions(metric, district) {
+  const rows = await loadSchoolMetric(metric);
+  const schools = rows.length ? schoolsForDistrict(rows, normalizeDistrictName(district)) : [];
+
+  schoolSelect.innerHTML = "";
+  const totalOpt = document.createElement("option");
+  totalOpt.value = "";
+  totalOpt.textContent = "District total";
+  schoolSelect.appendChild(totalOpt);
+  schools.forEach(name => {
+    const opt = document.createElement("option");
+    opt.value = name;
+    opt.textContent = name;
+    schoolSelect.appendChild(opt);
+  });
+  schoolField.style.display = schools.length > 0 ? "flex" : "none";
+}
+
+function drawSeries(series, metric) {
   if (series.length === 0) {
     if (currentChart) { currentChart.destroy(); currentChart = null; }
     canvas.style.display = "none";
@@ -311,6 +391,7 @@ function renderChart(metric, district) {
   canvas.style.display = "block";
   emptyMsg.style.display = "none";
 
+  const labelInfo = METRIC_LABELS[metric];
   const latest = series[series.length - 1];
   const deltaClass = latest.pct_change > 0 ? "up" : latest.pct_change < 0 ? "down" : "";
   const deltaSign = latest.pct_change > 0 ? "+" : "";
@@ -370,10 +451,64 @@ function renderChart(metric, district) {
   });
 }
 
+function renderChart(metric, district) {
+  schoolNote.style.display = "none";
+  const rows = cache[metric] || [];
+  const groupLabel = `${district} — All Students`;
+  const series = rows
+    .filter(r => r.group === groupLabel)
+    .sort((a, b) => String(a.year).localeCompare(String(b.year)));
+
+  chartTitle.textContent = `${district} — ${metricSelect.options[metricSelect.selectedIndex].text}`;
+  drawSeries(series, metric);
+}
+
+function renderSchoolChart(metric, district, school) {
+  const rows = schoolCache[metric] || [];
+  const normDistrict = normalizeDistrictName(district);
+  const series = rows
+    .filter(r => r.district === normDistrict && r.school === school)
+    .sort((a, b) => String(a.year).localeCompare(String(b.year)));
+
+  chartTitle.textContent = `${school}, ${normDistrict} — ${metricSelect.options[metricSelect.selectedIndex].text}`;
+
+  // "No data after [year]" is identical on every row of a closed-out series —
+  // show it once. Other flags (authorizer changes, small-count privacy notes)
+  // are genuinely year-specific, so keep those tied to their year.
+  const notes = new Set();
+  series.forEach(r => {
+    if (!r.status_flag) return;
+    r.status_flag.split("; ").forEach(part => {
+      // Some flags (closures, authorizer changes) already name their own
+      // year, which may differ from this row's year — don't double it up.
+      notes.add(part.includes(String(r.year)) ? part : `${r.year}: ${part}`);
+    });
+  });
+  if (notes.size > 0) {
+    schoolNote.innerHTML = Array.from(notes).map(n => `⚠ ${n}`).join("<br>");
+    schoolNote.style.display = "block";
+  } else {
+    schoolNote.style.display = "none";
+  }
+
+  drawSeries(series, metric);
+}
+
 function formatValue(v, metric) {
   if (v == null || isNaN(v)) return "—";
   if (metric === "chronic_absenteeism") return Number(v).toFixed(1);
   return Math.round(v).toLocaleString();
+}
+
+function renderCurrent() {
+  const metric = metricSelect.value;
+  const district = districtSelect.value;
+  const school = schoolSelect.value;
+  if (school) {
+    renderSchoolChart(metric, district, school);
+  } else {
+    renderChart(metric, district);
+  }
 }
 
 async function onMetricChange(keepDistrict) {
@@ -386,13 +521,22 @@ async function onMetricChange(keepDistrict) {
     canvas.style.display = "none";
     emptyMsg.style.display = "block";
     latestValueEl.innerHTML = "";
+    schoolField.style.display = "none";
+    schoolNote.style.display = "none";
     return;
   }
-  renderChart(metric, districtSelect.value);
+  await populateSchoolOptions(metric, districtSelect.value);
+  renderCurrent();
+}
+
+async function onDistrictChange() {
+  await populateSchoolOptions(metricSelect.value, districtSelect.value);
+  renderCurrent();
 }
 
 metricSelect.addEventListener("change", () => onMetricChange(false));
-districtSelect.addEventListener("change", () => renderChart(metricSelect.value, districtSelect.value));
+districtSelect.addEventListener("change", onDistrictChange);
+schoolSelect.addEventListener("change", renderCurrent);
 
 onMetricChange(false);
 </script>
