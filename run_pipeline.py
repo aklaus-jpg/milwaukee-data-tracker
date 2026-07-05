@@ -14,6 +14,7 @@ import analyze_school_incidents
 import analyze_school_absenteeism_groups
 import analyze_school_movers
 import analyze_school_city
+import analyze_school_forward
 import fetch_report_cards
 import analyze_report_cards
 import make_charts
@@ -37,6 +38,12 @@ def main():
         analyze_school_city.run()
     except Exception as e:
         print(f"[warn] school_city update skipped ({e}); keeping existing file")
+
+    # Forward Exam fetches its own zips (two CSVs/year); keep last data on outage.
+    try:
+        analyze_school_forward.run()
+    except Exception as e:
+        print(f"[warn] forward update skipped ({e}); keeping existing files")
 
     fetch_report_cards.run_all()
     analyze_report_cards.run()
