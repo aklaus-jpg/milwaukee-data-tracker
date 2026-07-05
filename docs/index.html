@@ -629,16 +629,20 @@ const MOVERS_CONFIG = {
   discipline: {
     rankBy: "delta",
     minLatest: null,
+    minEnroll: 100, // a per-100 rate needs a real base to be stable
+    showBase: true,
     reliable: (latest, prior) => {
       const bad = /Small count|Suppressed/;
       return !bad.test(latest.status_flag || "") && !bad.test(prior.status_flag || "");
     },
     fmtChange: (delta) => `${delta >= 0 ? "+" : "−"}${Math.abs(delta).toFixed(1)} per 100`,
-    note: "removals per 100 students; small-count and suppressed years excluded",
+    note: "removals per 100 students; small-count, suppressed, and under-100-enrollment schools excluded",
   },
   enrollment: {
     rankBy: "pct",
     minLatest: 50,
+    minEnroll: null,
+    showBase: false,
     reliable: () => true,
     fmtChange: (delta, pct) => `${pct >= 0 ? "+" : "−"}${Math.abs(pct).toFixed(1)}%`,
     note: "by percent change; schools under 50 students excluded",
@@ -676,6 +680,10 @@ function computeMovers(metric) {
     const lv = latest.value, pv = prior.value;
     if (lv == null || isNaN(lv) || pv == null || isNaN(pv)) return;
     if (cfg.minLatest != null && lv < cfg.minLatest) return;
+    // base size (enrollment). discipline carries an enrollment column;
+    // enrollment's own value IS the headcount.
+    const base = latest.enrollment != null ? latest.enrollment : lv;
+    if (cfg.minEnroll != null && (base == null || isNaN(base) || base < cfg.minEnroll)) return;
     if (!cfg.reliable(latest, prior)) return;
     const delta = lv - pv;
     const pct = pv !== 0 ? (delta / pv) * 100 : null;
@@ -683,32 +691,35 @@ function computeMovers(metric) {
     if (rank == null || isNaN(rank)) return;
     movers.push({
       district: latest.district, school: latest.school, delta, pct, rank,
-      changeStr: cfg.fmtChange(delta, pct),
+      enrollment: base, changeStr: cfg.fmtChange(delta, pct),
     });
   });
 
   return { latestYear, priorYear, movers };
 }
 
-function moverRow(m, dir) {
+function moverRow(m, dir, showBase) {
   const btn = document.createElement("button");
   btn.className = "mover-row";
   btn.type = "button";
+  const base = showBase && m.enrollment != null && !isNaN(m.enrollment)
+    ? ` &middot; ${Math.round(m.enrollment).toLocaleString()} students`
+    : "";
   btn.innerHTML =
     `<span class="mover-name">${escapeHtml(m.school)}` +
-    `<span class="dist">${escapeHtml(m.district)}</span></span>` +
+    `<span class="dist">${escapeHtml(m.district)}${base}</span></span>` +
     `<span class="mover-change ${dir}">${m.changeStr}</span>`;
   btn.addEventListener("click", () => selectMoverSchool(m.district, m.school));
   return btn;
 }
 
-function renderMoversList(el, list, dir) {
+function renderMoversList(el, list, dir, showBase) {
   el.innerHTML = "";
   if (list.length === 0) {
     el.innerHTML = '<p class="movers-empty">None this year.</p>';
     return;
   }
-  list.forEach((m) => el.appendChild(moverRow(m, dir)));
+  list.forEach((m) => el.appendChild(moverRow(m, dir, showBase)));
 }
 
 async function renderMovers(metric) {
@@ -729,8 +740,9 @@ async function renderMovers(metric) {
   moversSub.textContent =
     `Change from ${priorYear} to ${latestYear}, ${MOVERS_CONFIG[metric].note}. ` +
     `A spike is a reporting lead, not a fact — verify before publishing.`;
-  renderMoversList(moversUp, ups, "up");
-  renderMoversList(moversDown, downs, "down");
+  const showBase = MOVERS_CONFIG[metric].showBase;
+  renderMoversList(moversUp, ups, "up", showBase);
+  renderMoversList(moversDown, downs, "down", showBase);
   moversPanel.style.display = "block";
 }
 

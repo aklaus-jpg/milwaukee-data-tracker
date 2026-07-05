@@ -222,9 +222,12 @@ def build_school_trend_rows(school, g_df, latest_year, stitched):
             "yoy_change": None if pd.isna(yoy.get(yr)) else yoy.get(yr),
             "pct_change": None if pd.isna(pct_change.get(yr)) else float(pct_change.get(yr)),
             "status_flag": "; ".join(notes),
-            # internal-only fields for the flags tip sheet (dropped before write)
+            # enrollment (TFS denominator behind the rate) is a real output column
+            # so the rate's base size is visible — a per-100 rate on 40 students
+            # is far shakier than the same rate on 800.
+            "enrollment": agg["enrollment"],
+            # internal-only fields for the flags/movers tip sheets (dropped before write)
             "_se_count": agg["se_count"],
-            "_enrollment": agg["enrollment"],
             "_reliable": not (agg["suppressed"] or agg["small_count"]
                               or agg["enroll_missing"] or agg["rate"] is None),
         })
@@ -265,7 +268,7 @@ def build_flags(trend_df):
         df["_reliable"]
         & df["yoy_change"].notna()
         & (df["yoy_change"] > 0)
-        & (df["_enrollment"] >= MIN_ENROLL_FOR_FLAG)
+        & (df["enrollment"] >= MIN_ENROLL_FOR_FLAG)
     ]
     df = df.sort_values("yoy_change", ascending=False).head(TOP_N_FLAGS)
 
@@ -281,12 +284,11 @@ def build_flags(trend_df):
     )
     return df[[
         "district", "school", "year", "value", "yoy_change", "pct_change",
-        "_se_count", "_enrollment", "note",
+        "_se_count", "enrollment", "note",
     ]].rename(columns={
         "value": "rate_per_100",
         "yoy_change": "rate_increase",
         "_se_count": "removals",
-        "_enrollment": "enrollment",
     })
 
 
@@ -296,8 +298,10 @@ def run():
 
     flags_df = build_flags(trend_df)
 
+    # enrollment appended after the shared enrollment-file schema so the rate's
+    # base size travels with the trend (needed to judge/gate small denominators).
     schema_cols = ["metric", "district", "school", "group", "year", "value",
-                   "yoy_change", "pct_change", "status_flag"]
+                   "yoy_change", "pct_change", "status_flag", "enrollment"]
 
     PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
     trend_df[schema_cols].to_csv(PROCESSED_DIR / "discipline_school_trend.csv", index=False)

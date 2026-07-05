@@ -9,14 +9,15 @@ This is the downloadable companion to the dashboard's "Biggest movers" panel
     which for discipline would surface the 2020-21 COVID remote-year rebound),
   - discipline ranked by absolute rate-point change (it is already a rate),
     enrollment ranked by percent change (a headcount needs normalizing),
-  - reliability gates: skip suppressed/small-count discipline years, and skip
-    enrollments under 50 whose percentages swing on a handful of students.
+  - reliability gates: skip suppressed/small-count discipline years, drop
+    enrollments under 50 whose percentages swing on a handful of students, and
+    require a ~100-student base for discipline so a per-100 rate is stable.
 
 A spike is a reporting LEAD, not a fact — verify directly before publishing.
 
 Writes: data/processed/<metric>_school_movers.csv
-  columns: metric, direction, district, school, prior_year, latest_year,
-           prior_value, latest_value, change, pct_change
+  columns: metric, direction, district, school, enrollment, prior_year,
+           latest_year, prior_value, latest_value, change, pct_change
 
 Run directly:  python analyze_school_movers.py
 """
@@ -28,10 +29,16 @@ PROCESSED_DIR = pathlib.Path("data/processed")
 
 TOP_N = 15  # per direction
 
+# A per-100 rate needs enough students behind it to be stable — a big swing on
+# ~40 students is noise, not a trend. Require a real base for discipline movers.
+DISCIPLINE_ENROLL_FLOOR = 100
+
 CONFIG = {
     "discipline": {"rank": "delta", "min_latest": None,
+                   "min_enroll": DISCIPLINE_ENROLL_FLOOR,
                    "exclude_flags": ("Small count", "Suppressed")},
-    "enrollment": {"rank": "pct", "min_latest": 50, "exclude_flags": ()},
+    "enrollment": {"rank": "pct", "min_latest": 50, "min_enroll": None,
+                   "exclude_flags": ()},
 }
 
 
@@ -46,6 +53,10 @@ def movers_for(metric, cfg):
         return pd.DataFrame()
     latest_year, prior_year = years[-1], years[-2]
 
+    # discipline carries a real enrollment column; enrollment's own value IS the
+    # headcount, so fall back to that as the base size.
+    has_enroll_col = "enrollment" in df.columns
+
     rows = []
     for (district, school), g in df.groupby(["district", "school"]):
         if len(g) < 2:
@@ -59,6 +70,11 @@ def movers_for(metric, cfg):
             continue  # a gap (suppressed / missing) — no honest change to rank
         if cfg["min_latest"] is not None and lv < cfg["min_latest"]:
             continue
+
+        base = last["enrollment"] if has_enroll_col else lv
+        if cfg["min_enroll"] is not None and (pd.isna(base) or base < cfg["min_enroll"]):
+            continue  # too few students for a per-100 rate to be stable
+
         flags = f"{last.get('status_flag', '')} {prev.get('status_flag', '')}"
         if any(f in str(flags) for f in cfg["exclude_flags"]):
             continue
@@ -71,6 +87,7 @@ def movers_for(metric, cfg):
             "metric": metric,
             "district": district,
             "school": school,
+            "enrollment": None if pd.isna(base) else int(round(base)),
             "prior_year": prev["year"],
             "latest_year": last["year"],
             "prior_value": round(pv, 2),
@@ -87,8 +104,9 @@ def movers_for(metric, cfg):
     ups = mv[mv["_rank"] > 0].head(TOP_N).assign(direction="increase")
     downs = mv[mv["_rank"] < 0].tail(TOP_N).sort_values("_rank").assign(direction="decrease")
     out = pd.concat([ups, downs]).drop(columns=["_rank"])
-    cols = ["metric", "direction", "district", "school", "prior_year",
-            "latest_year", "prior_value", "latest_value", "change", "pct_change"]
+    cols = ["metric", "direction", "district", "school", "enrollment",
+            "prior_year", "latest_year", "prior_value", "latest_value",
+            "change", "pct_change"]
     return out[cols]
 
 
