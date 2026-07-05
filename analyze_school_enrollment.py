@@ -48,6 +48,18 @@ SCHOOL_NAME_ALIASES = {
     # the full name looks like a brand-new school. (Vincent Accelerated Academy
     # is a separate co-located alt program — not this.)
     "Vincent High": "Harold S Vincent School of Agricultural Science",
+    # More DPI label expansions surfaced by find_rename_candidates.py — each is a
+    # single school recorded under a short name in earlier years and its fuller
+    # name later, with continuous enrollment across the switch and no year in
+    # which both labels co-occur. Confirmed one per district (no cross-district
+    # name collisions). Canonicalized to the current/fuller name.
+    # (Grant Elementary -> U S Grant School deliberately NOT stitched pending
+    #  direct confirmation.)
+    "Meir School": "Golda Meir School",
+    "James E Dottke Alternative School": "James E Dottke Project-Based Learning High School",
+    "Luther Elementary": "E W Luther Elementary",
+    "Maple Dale Elementary": "Maple Dale School",
+    "Indian Hill Elementary": "Indian Hill School",
 }
 
 # Exact-match overrides applied after generic ", Inc."/"Inc."/"Inc" stripping.

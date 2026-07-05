@@ -305,15 +305,15 @@ enrollment,Greenfield,Maple Grove Elementary,Maple Grove Elementary — All Stud
 enrollment,Greenfield,Maple Grove Elementary,Maple Grove Elementary — All Students,2022-23,464,13.0,2.882483370288247,
 enrollment,Greenfield,Maple Grove Elementary,Maple Grove Elementary — All Students,2023-24,457,-7.0,-1.5086206896551713,
 enrollment,Greenfield,Maple Grove Elementary,Maple Grove Elementary — All Students,2024-25,427,-30.0,-6.564551422319475,
-enrollment,Maple Dale-Indian Hill,Indian Hill Elementary,Indian Hill Elementary — All Students,2018-19,178,,,No data after 2018-19
-enrollment,Maple Dale-Indian Hill,Indian Hill School,Indian Hill School — All Students,2019-20,218,,,
+enrollment,Maple Dale-Indian Hill,Indian Hill School,Indian Hill School — All Students,2018-19,178,,,
+enrollment,Maple Dale-Indian Hill,Indian Hill School,Indian Hill School — All Students,2019-20,218,40.0,22.47191011235956,
 enrollment,Maple Dale-Indian Hill,Indian Hill School,Indian Hill School — All Students,2020-21,212,-6.0,-2.752293577981646,
 enrollment,Maple Dale-Indian Hill,Indian Hill School,Indian Hill School — All Students,2021-22,219,7.0,3.301886792452824,
 enrollment,Maple Dale-Indian Hill,Indian Hill School,Indian Hill School — All Students,2022-23,223,4.0,1.82648401826484,
 enrollment,Maple Dale-Indian Hill,Indian Hill School,Indian Hill School — All Students,2023-24,221,-2.0,-0.8968609865470878,
 enrollment,Maple Dale-Indian Hill,Indian Hill School,Indian Hill School — All Students,2024-25,223,2.0,0.9049773755656076,
-enrollment,Maple Dale-Indian Hill,Maple Dale Elementary,Maple Dale Elementary — All Students,2018-19,293,,,No data after 2018-19
-enrollment,Maple Dale-Indian Hill,Maple Dale School,Maple Dale School — All Students,2019-20,239,,,
+enrollment,Maple Dale-Indian Hill,Maple Dale School,Maple Dale School — All Students,2018-19,293,,,
+enrollment,Maple Dale-Indian Hill,Maple Dale School,Maple Dale School — All Students,2019-20,239,-54.0,-18.430034129692828,
 enrollment,Maple Dale-Indian Hill,Maple Dale School,Maple Dale School — All Students,2020-21,242,3.0,1.2552301255230214,
 enrollment,Maple Dale-Indian Hill,Maple Dale School,Maple Dale School — All Students,2021-22,219,-23.0,-9.50413223140496,
 enrollment,Maple Dale-Indian Hill,Maple Dale School,Maple Dale School — All Students,2022-23,219,0.0,0.0,
@@ -666,7 +666,9 @@ enrollment,Milwaukee,Garland Elementary,Garland Elementary — All Students,2021
 enrollment,Milwaukee,Garland Elementary,Garland Elementary — All Students,2022-23,564,34.0,6.41509433962264,
 enrollment,Milwaukee,Garland Elementary,Garland Elementary — All Students,2023-24,536,-28.0,-4.964539007092195,
 enrollment,Milwaukee,Garland Elementary,Garland Elementary — All Students,2024-25,541,5.0,0.9328358208955168,
-enrollment,Milwaukee,Golda Meir School,Golda Meir School — All Students,2020-21,1195,,,
+enrollment,Milwaukee,Golda Meir School,Golda Meir School — All Students,2018-19,1162,,,
+enrollment,Milwaukee,Golda Meir School,Golda Meir School — All Students,2019-20,1201,39.0,3.3562822719449326,
+enrollment,Milwaukee,Golda Meir School,Golda Meir School — All Students,2020-21,1195,-6.0,-0.4995836802664466,
 enrollment,Milwaukee,Golda Meir School,Golda Meir School — All Students,2021-22,1160,-35.0,-2.9288702928870314,
 enrollment,Milwaukee,Golda Meir School,Golda Meir School — All Students,2022-23,1174,14.0,1.206896551724146,
 enrollment,Milwaukee,Golda Meir School,Golda Meir School — All Students,2023-24,1211,37.0,3.151618398637135,
@@ -985,8 +987,6 @@ enrollment,Milwaukee,Maryland Montessori,Maryland Montessori — All Students,20
 enrollment,Milwaukee,Maryland Montessori,Maryland Montessori — All Students,2022-23,501,19.0,3.9419087136929543,
 enrollment,Milwaukee,Maryland Montessori,Maryland Montessori — All Students,2023-24,515,14.0,2.794411177644718,
 enrollment,Milwaukee,Maryland Montessori,Maryland Montessori — All Students,2024-25,470,-45.0,-8.737864077669899,
-enrollment,Milwaukee,Meir School,Meir School — All Students,2018-19,1162,,,No data after 2019-20
-enrollment,Milwaukee,Meir School,Meir School — All Students,2019-20,1201,39.0,3.3562822719449326,No data after 2019-20
 enrollment,Milwaukee,Metcalfe Elementary,Metcalfe Elementary — All Students,2018-19,286,,,
 enrollment,Milwaukee,Metcalfe Elementary,Metcalfe Elementary — All Students,2019-20,346,60.0,20.97902097902098,
 enrollment,Milwaukee,Metcalfe Elementary,Metcalfe Elementary — All Students,2020-21,295,-51.0,-14.739884393063585,
@@ -1627,7 +1627,10 @@ enrollment,South Milwaukee,Blakewood Elementary,Blakewood Elementary — All Stu
 enrollment,South Milwaukee,Blakewood Elementary,Blakewood Elementary — All Students,2022-23,323,-36.0,-10.027855153203348,
 enrollment,South Milwaukee,Blakewood Elementary,Blakewood Elementary — All Students,2023-24,326,3.0,0.9287925696594534,
 enrollment,South Milwaukee,Blakewood Elementary,Blakewood Elementary — All Students,2024-25,314,-12.0,-3.6809815950920255,
-enrollment,South Milwaukee,E W Luther Elementary,E W Luther Elementary — All Students,2021-22,213,,,
+enrollment,South Milwaukee,E W Luther Elementary,E W Luther Elementary — All Students,2018-19,211,,,
+enrollment,South Milwaukee,E W Luther Elementary,E W Luther Elementary — All Students,2019-20,200,-11.0,-5.213270142180093,
+enrollment,South Milwaukee,E W Luther Elementary,E W Luther Elementary — All Students,2020-21,192,-8.0,-4.0000000000000036,
+enrollment,South Milwaukee,E W Luther Elementary,E W Luther Elementary — All Students,2021-22,213,21.0,10.9375,
 enrollment,South Milwaukee,E W Luther Elementary,E W Luther Elementary — All Students,2022-23,205,-8.0,-3.7558685446009377,
 enrollment,South Milwaukee,E W Luther Elementary,E W Luther Elementary — All Students,2023-24,210,5.0,2.4390243902439046,
 enrollment,South Milwaukee,E W Luther Elementary,E W Luther Elementary — All Students,2024-25,197,-13.0,-6.190476190476191,
@@ -1638,9 +1641,6 @@ enrollment,South Milwaukee,Lakeview Elementary,Lakeview Elementary — All Stude
 enrollment,South Milwaukee,Lakeview Elementary,Lakeview Elementary — All Students,2022-23,290,16.0,5.8394160583941535,
 enrollment,South Milwaukee,Lakeview Elementary,Lakeview Elementary — All Students,2023-24,284,-6.0,-2.0689655172413834,
 enrollment,South Milwaukee,Lakeview Elementary,Lakeview Elementary — All Students,2024-25,274,-10.0,-3.5211267605633756,
-enrollment,South Milwaukee,Luther Elementary,Luther Elementary — All Students,2018-19,211,,,No data after 2020-21
-enrollment,South Milwaukee,Luther Elementary,Luther Elementary — All Students,2019-20,200,-11.0,-5.213270142180093,No data after 2020-21
-enrollment,South Milwaukee,Luther Elementary,Luther Elementary — All Students,2020-21,192,-8.0,-4.0000000000000036,No data after 2020-21
 enrollment,South Milwaukee,Rawson Elementary,Rawson Elementary — All Students,2018-19,448,,,
 enrollment,South Milwaukee,Rawson Elementary,Rawson Elementary — All Students,2019-20,427,-21.0,-4.6875,
 enrollment,South Milwaukee,Rawson Elementary,Rawson Elementary — All Students,2020-21,381,-46.0,-10.772833723653397,
@@ -1826,12 +1826,12 @@ enrollment,West Allis-West Milwaukee,Irving Elementary,Irving Elementary — All
 enrollment,West Allis-West Milwaukee,Irving Elementary,Irving Elementary — All Students,2022-23,371,40.0,12.084592145015115,
 enrollment,West Allis-West Milwaukee,Irving Elementary,Irving Elementary — All Students,2023-24,376,5.0,1.3477088948786964,
 enrollment,West Allis-West Milwaukee,Irving Elementary,Irving Elementary — All Students,2024-25,375,-1.0,-0.26595744680850686,
-enrollment,West Allis-West Milwaukee,James E Dottke Alternative School,James E Dottke Alternative School — All Students,2018-19,169,,,No data after 2022-23
-enrollment,West Allis-West Milwaukee,James E Dottke Alternative School,James E Dottke Alternative School — All Students,2019-20,162,-7.0,-4.142011834319526,No data after 2022-23
-enrollment,West Allis-West Milwaukee,James E Dottke Alternative School,James E Dottke Alternative School — All Students,2020-21,102,-60.0,-37.03703703703704,No data after 2022-23
-enrollment,West Allis-West Milwaukee,James E Dottke Alternative School,James E Dottke Alternative School — All Students,2021-22,131,29.0,28.431372549019617,No data after 2022-23
-enrollment,West Allis-West Milwaukee,James E Dottke Alternative School,James E Dottke Alternative School — All Students,2022-23,159,28.0,21.37404580152671,No data after 2022-23
-enrollment,West Allis-West Milwaukee,James E Dottke Project-Based Learning High School,James E Dottke Project-Based Learning High School — All Students,2023-24,168,,,
+enrollment,West Allis-West Milwaukee,James E Dottke Project-Based Learning High School,James E Dottke Project-Based Learning High School — All Students,2018-19,169,,,
+enrollment,West Allis-West Milwaukee,James E Dottke Project-Based Learning High School,James E Dottke Project-Based Learning High School — All Students,2019-20,162,-7.0,-4.142011834319526,
+enrollment,West Allis-West Milwaukee,James E Dottke Project-Based Learning High School,James E Dottke Project-Based Learning High School — All Students,2020-21,102,-60.0,-37.03703703703704,
+enrollment,West Allis-West Milwaukee,James E Dottke Project-Based Learning High School,James E Dottke Project-Based Learning High School — All Students,2021-22,131,29.0,28.431372549019617,
+enrollment,West Allis-West Milwaukee,James E Dottke Project-Based Learning High School,James E Dottke Project-Based Learning High School — All Students,2022-23,159,28.0,21.37404580152671,
+enrollment,West Allis-West Milwaukee,James E Dottke Project-Based Learning High School,James E Dottke Project-Based Learning High School — All Students,2023-24,168,9.0,5.660377358490565,
 enrollment,West Allis-West Milwaukee,James E Dottke Project-Based Learning High School,James E Dottke Project-Based Learning High School — All Students,2024-25,168,0.0,0.0,
 enrollment,West Allis-West Milwaukee,Jefferson Elementary,Jefferson Elementary — All Students,2018-19,494,,,
 enrollment,West Allis-West Milwaukee,Jefferson Elementary,Jefferson Elementary — All Students,2019-20,482,-12.0,-2.429149797570851,

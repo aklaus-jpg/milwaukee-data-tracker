@@ -305,15 +305,15 @@ discipline,Greenfield,Maple Grove Elementary,Maple Grove Elementary — All Stud
 discipline,Greenfield,Maple Grove Elementary,Maple Grove Elementary — All Students,2022-23,6.03,3.1500000000000004,109.375,,464.0
 discipline,Greenfield,Maple Grove Elementary,Maple Grove Elementary — All Students,2023-24,18.16,12.129999999999999,201.1608623548922,,457.0
 discipline,Greenfield,Maple Grove Elementary,Maple Grove Elementary — All Students,2024-25,15.22,-2.9399999999999995,-16.18942731277533,,427.0
-discipline,Maple Dale-Indian Hill,Indian Hill Elementary,Indian Hill Elementary — All Students,2018-19,2.81,,,Small count (<10 removals) — rate imprecise; No data after 2018-19,178.0
-discipline,Maple Dale-Indian Hill,Indian Hill School,Indian Hill School — All Students,2019-20,4.59,,,,218.0
+discipline,Maple Dale-Indian Hill,Indian Hill School,Indian Hill School — All Students,2018-19,2.81,,,Small count (<10 removals) — rate imprecise,178.0
+discipline,Maple Dale-Indian Hill,Indian Hill School,Indian Hill School — All Students,2019-20,4.59,1.7799999999999998,63.345195729537366,,218.0
 discipline,Maple Dale-Indian Hill,Indian Hill School,Indian Hill School — All Students,2020-21,0.0,-4.59,-100.0,Zero suspensions/expulsions reported,212.0
 discipline,Maple Dale-Indian Hill,Indian Hill School,Indian Hill School — All Students,2021-22,4.11,4.11,,Small count (<10 removals) — rate imprecise,219.0
 discipline,Maple Dale-Indian Hill,Indian Hill School,Indian Hill School — All Students,2022-23,0.0,-4.11,-100.0,Zero suspensions/expulsions reported,223.0
 discipline,Maple Dale-Indian Hill,Indian Hill School,Indian Hill School — All Students,2023-24,0.0,0.0,,Zero suspensions/expulsions reported,221.0
 discipline,Maple Dale-Indian Hill,Indian Hill School,Indian Hill School — All Students,2024-25,0.0,0.0,,Zero suspensions/expulsions reported,223.0
-discipline,Maple Dale-Indian Hill,Maple Dale Elementary,Maple Dale Elementary — All Students,2018-19,1.71,,,Small count (<10 removals) — rate imprecise; No data after 2018-19,293.0
-discipline,Maple Dale-Indian Hill,Maple Dale School,Maple Dale School — All Students,2019-20,2.09,,,Small count (<10 removals) — rate imprecise,239.0
+discipline,Maple Dale-Indian Hill,Maple Dale School,Maple Dale School — All Students,2018-19,1.71,,,Small count (<10 removals) — rate imprecise,293.0
+discipline,Maple Dale-Indian Hill,Maple Dale School,Maple Dale School — All Students,2019-20,2.09,0.3799999999999999,22.22222222222221,Small count (<10 removals) — rate imprecise,239.0
 discipline,Maple Dale-Indian Hill,Maple Dale School,Maple Dale School — All Students,2020-21,0.0,-2.09,-100.0,Zero suspensions/expulsions reported,242.0
 discipline,Maple Dale-Indian Hill,Maple Dale School,Maple Dale School — All Students,2021-22,4.57,4.57,,,219.0
 discipline,Maple Dale-Indian Hill,Maple Dale School,Maple Dale School — All Students,2022-23,4.11,-0.45999999999999996,-10.065645514223199,Small count (<10 removals) — rate imprecise,219.0
@@ -666,7 +666,9 @@ discipline,Milwaukee,Garland Elementary,Garland Elementary — All Students,2021
 discipline,Milwaukee,Garland Elementary,Garland Elementary — All Students,2022-23,13.65,3.2699999999999996,31.502890173410393,,564.0
 discipline,Milwaukee,Garland Elementary,Garland Elementary — All Students,2023-24,8.21,-5.4399999999999995,-39.85347985347985,,536.0
 discipline,Milwaukee,Garland Elementary,Garland Elementary — All Students,2024-25,7.76,-0.45000000000000107,-5.481120584652876,,541.0
-discipline,Milwaukee,Golda Meir School,Golda Meir School — All Students,2020-21,0.0,,,Zero suspensions/expulsions reported,1195.0
+discipline,Milwaukee,Golda Meir School,Golda Meir School — All Students,2018-19,20.91,,,,1162.0
+discipline,Milwaukee,Golda Meir School,Golda Meir School — All Students,2019-20,11.66,-9.25,-44.23720707795313,,1201.0
+discipline,Milwaukee,Golda Meir School,Golda Meir School — All Students,2020-21,0.0,-11.66,-100.0,Zero suspensions/expulsions reported,1195.0
 discipline,Milwaukee,Golda Meir School,Golda Meir School — All Students,2021-22,22.67,22.67,,,1160.0
 discipline,Milwaukee,Golda Meir School,Golda Meir School — All Students,2022-23,13.37,-9.300000000000002,-41.023378914865475,,1174.0
 discipline,Milwaukee,Golda Meir School,Golda Meir School — All Students,2023-24,19.32,5.950000000000001,44.50261780104714,,1211.0
@@ -983,8 +985,6 @@ discipline,Milwaukee,Maryland Montessori,Maryland Montessori — All Students,20
 discipline,Milwaukee,Maryland Montessori,Maryland Montessori — All Students,2022-23,1.6,1.1900000000000002,290.24390243902445,Small count (<10 removals) — rate imprecise,501.0
 discipline,Milwaukee,Maryland Montessori,Maryland Montessori — All Students,2023-24,0.97,-0.6300000000000001,-39.37500000000001,Small count (<10 removals) — rate imprecise,515.0
 discipline,Milwaukee,Maryland Montessori,Maryland Montessori — All Students,2024-25,1.28,0.31000000000000005,31.958762886597935,Small count (<10 removals) — rate imprecise,470.0
-discipline,Milwaukee,Meir School,Meir School — All Students,2018-19,20.91,,,No data after 2019-20,1162.0
-discipline,Milwaukee,Meir School,Meir School — All Students,2019-20,11.66,-9.25,-44.23720707795313,No data after 2019-20,1201.0
 discipline,Milwaukee,Metcalfe Elementary,Metcalfe Elementary — All Students,2018-19,55.24,,,,286.0
 discipline,Milwaukee,Metcalfe Elementary,Metcalfe Elementary — All Students,2019-20,45.38,-9.86,-17.849384503982623,,346.0
 discipline,Milwaukee,Metcalfe Elementary,Metcalfe Elementary — All Students,2020-21,0.0,-45.38,-100.0,Zero suspensions/expulsions reported,295.0
@@ -1621,7 +1621,10 @@ discipline,South Milwaukee,Blakewood Elementary,Blakewood Elementary — All Stu
 discipline,South Milwaukee,Blakewood Elementary,Blakewood Elementary — All Students,2022-23,4.02,4.02,,,323.0
 discipline,South Milwaukee,Blakewood Elementary,Blakewood Elementary — All Students,2023-24,0.61,-3.4099999999999997,-84.82587064676616,Small count (<10 removals) — rate imprecise,326.0
 discipline,South Milwaukee,Blakewood Elementary,Blakewood Elementary — All Students,2024-25,9.55,8.940000000000001,1465.5737704918033,,314.0
-discipline,South Milwaukee,E W Luther Elementary,E W Luther Elementary — All Students,2021-22,0.47,,,Small count (<10 removals) — rate imprecise,213.0
+discipline,South Milwaukee,E W Luther Elementary,E W Luther Elementary — All Students,2018-19,0.0,,,Zero suspensions/expulsions reported,211.0
+discipline,South Milwaukee,E W Luther Elementary,E W Luther Elementary — All Students,2019-20,0.0,0.0,,Zero suspensions/expulsions reported,200.0
+discipline,South Milwaukee,E W Luther Elementary,E W Luther Elementary — All Students,2020-21,0.0,0.0,,Zero suspensions/expulsions reported,192.0
+discipline,South Milwaukee,E W Luther Elementary,E W Luther Elementary — All Students,2021-22,0.47,0.47,,Small count (<10 removals) — rate imprecise,213.0
 discipline,South Milwaukee,E W Luther Elementary,E W Luther Elementary — All Students,2022-23,0.0,-0.47,-100.0,Zero suspensions/expulsions reported,205.0
 discipline,South Milwaukee,E W Luther Elementary,E W Luther Elementary — All Students,2023-24,0.48,0.48,,Small count (<10 removals) — rate imprecise,210.0
 discipline,South Milwaukee,E W Luther Elementary,E W Luther Elementary — All Students,2024-25,1.02,0.54,112.5,Small count (<10 removals) — rate imprecise,197.0
@@ -1632,9 +1635,6 @@ discipline,South Milwaukee,Lakeview Elementary,Lakeview Elementary — All Stude
 discipline,South Milwaukee,Lakeview Elementary,Lakeview Elementary — All Students,2022-23,10.34,1.58,18.036529680365287,,290.0
 discipline,South Milwaukee,Lakeview Elementary,Lakeview Elementary — All Students,2023-24,9.86,-0.4800000000000004,-4.642166344294008,,284.0
 discipline,South Milwaukee,Lakeview Elementary,Lakeview Elementary — All Students,2024-25,22.63,12.77,129.5131845841785,,274.0
-discipline,South Milwaukee,Luther Elementary,Luther Elementary — All Students,2018-19,0.0,,,Zero suspensions/expulsions reported; No data after 2020-21,211.0
-discipline,South Milwaukee,Luther Elementary,Luther Elementary — All Students,2019-20,0.0,0.0,,Zero suspensions/expulsions reported; No data after 2020-21,200.0
-discipline,South Milwaukee,Luther Elementary,Luther Elementary — All Students,2020-21,0.0,0.0,,Zero suspensions/expulsions reported; No data after 2020-21,192.0
 discipline,South Milwaukee,Rawson Elementary,Rawson Elementary — All Students,2018-19,11.83,,,,448.0
 discipline,South Milwaukee,Rawson Elementary,Rawson Elementary — All Students,2019-20,5.15,-6.68,-56.46661031276415,,427.0
 discipline,South Milwaukee,Rawson Elementary,Rawson Elementary — All Students,2020-21,0.0,-5.15,-100.0,Zero suspensions/expulsions reported,381.0
@@ -1820,12 +1820,12 @@ discipline,West Allis-West Milwaukee,Irving Elementary,Irving Elementary — All
 discipline,West Allis-West Milwaukee,Irving Elementary,Irving Elementary — All Students,2022-23,3.5,3.2,1066.6666666666667,,371.0
 discipline,West Allis-West Milwaukee,Irving Elementary,Irving Elementary — All Students,2023-24,3.19,-0.31000000000000005,-8.857142857142863,,376.0
 discipline,West Allis-West Milwaukee,Irving Elementary,Irving Elementary — All Students,2024-25,4.0,0.81,25.391849529780576,,375.0
-discipline,West Allis-West Milwaukee,James E Dottke Alternative School,James E Dottke Alternative School — All Students,2018-19,8.28,,,No data after 2022-23,169.0
-discipline,West Allis-West Milwaukee,James E Dottke Alternative School,James E Dottke Alternative School — All Students,2019-20,0.0,-8.28,-100.0,Zero suspensions/expulsions reported; No data after 2022-23,162.0
-discipline,West Allis-West Milwaukee,James E Dottke Alternative School,James E Dottke Alternative School — All Students,2020-21,1.96,1.96,,Small count (<10 removals) — rate imprecise; No data after 2022-23,102.0
-discipline,West Allis-West Milwaukee,James E Dottke Alternative School,James E Dottke Alternative School — All Students,2021-22,14.5,12.54,639.795918367347,No data after 2022-23,131.0
-discipline,West Allis-West Milwaukee,James E Dottke Alternative School,James E Dottke Alternative School — All Students,2022-23,24.53,10.030000000000001,69.17241379310346,No data after 2022-23,159.0
-discipline,West Allis-West Milwaukee,James E Dottke Project-Based Learning High School,James E Dottke Project-Based Learning High School — All Students,2023-24,19.64,,,,168.0
+discipline,West Allis-West Milwaukee,James E Dottke Project-Based Learning High School,James E Dottke Project-Based Learning High School — All Students,2018-19,8.28,,,,169.0
+discipline,West Allis-West Milwaukee,James E Dottke Project-Based Learning High School,James E Dottke Project-Based Learning High School — All Students,2019-20,0.0,-8.28,-100.0,Zero suspensions/expulsions reported,162.0
+discipline,West Allis-West Milwaukee,James E Dottke Project-Based Learning High School,James E Dottke Project-Based Learning High School — All Students,2020-21,1.96,1.96,,Small count (<10 removals) — rate imprecise,102.0
+discipline,West Allis-West Milwaukee,James E Dottke Project-Based Learning High School,James E Dottke Project-Based Learning High School — All Students,2021-22,14.5,12.54,639.795918367347,,131.0
+discipline,West Allis-West Milwaukee,James E Dottke Project-Based Learning High School,James E Dottke Project-Based Learning High School — All Students,2022-23,24.53,10.030000000000001,69.17241379310346,,159.0
+discipline,West Allis-West Milwaukee,James E Dottke Project-Based Learning High School,James E Dottke Project-Based Learning High School — All Students,2023-24,19.64,-4.890000000000001,-19.934773746432942,,168.0
 discipline,West Allis-West Milwaukee,James E Dottke Project-Based Learning High School,James E Dottke Project-Based Learning High School — All Students,2024-25,15.48,-4.16,-21.18126272912424,,168.0
 discipline,West Allis-West Milwaukee,Jefferson Elementary,Jefferson Elementary — All Students,2018-19,7.49,,,,494.0
 discipline,West Allis-West Milwaukee,Jefferson Elementary,Jefferson Elementary — All Students,2019-20,2.28,-5.210000000000001,-69.55941255006675,,482.0
