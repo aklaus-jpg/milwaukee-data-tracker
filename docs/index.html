@@ -969,7 +969,7 @@ function renderSchoolChart(metric, district, school) {
   if (metric === "forward" && series.length) {
     const last = series[series.length - 1];
     if (last.pct_notest != null && !isNaN(last.pct_notest)) {
-      noteList.unshift(`${last.year}: ${Number(last.pct_notest).toFixed(1)}% did not test (counted against proficiency)`);
+      noteList.unshift(`${last.year}: ${fmtPct1(last.pct_notest, metric)}% did not test (counted against proficiency)`);
     }
   }
   if (noteList.length > 0) {
@@ -985,8 +985,19 @@ function renderSchoolChart(metric, district, school) {
   drawSeries(series, metric, opts);
 }
 
+// DPI publishes proficiency truncated to 1 decimal (conservative), not rounded:
+// 18.2518% displays as 18.2, never 18.3. We store full precision and truncate
+// only at display, for the assessment metrics (Forward, ACT). The +1e-9 nudge
+// absorbs float error (18.2*10 = 181.9999…) without ever crossing a real 0.1.
+const TRUNCATE_METRICS = new Set(["forward", "act"]);
+function trunc1(v) { return (Math.floor(Number(v) * 10 + 1e-9) / 10).toFixed(1); }
+function fmtPct1(v, metric) {
+  return TRUNCATE_METRICS.has(metric) ? trunc1(v) : Number(v).toFixed(1);
+}
+
 function formatValue(v, metric, decimals) {
   if (v == null || isNaN(v)) return "—";
+  if (TRUNCATE_METRICS.has(metric)) return trunc1(v);  // display-only truncation
   if (decimals != null) return Number(v).toFixed(decimals);
   if (metric === "chronic_absenteeism") return Number(v).toFixed(1);
   return Math.round(v).toLocaleString();
@@ -1229,8 +1240,8 @@ function renderDisparity(district, school) {
   const trail = unit === "rate" ? " per 100" : "";
   let callout = "";
   if (isRatioUnit && by[focus] != null && by[ref] != null && by[ref] > 0) {
-    callout = `${groupLabel(focus)}: <b>${by[focus].toFixed(1)}${sfx}</b> vs ${groupLabel(ref)}: ` +
-      `<b>${by[ref].toFixed(1)}${sfx}</b>${trail} — <span class="ratio">${(by[focus] / by[ref]).toFixed(1)}× gap</span>.`;
+    callout = `${groupLabel(focus)}: <b>${fmtPct1(by[focus], metric)}${sfx}</b> vs ${groupLabel(ref)}: ` +
+      `<b>${fmtPct1(by[ref], metric)}${sfx}</b>${trail} — <span class="ratio">${(by[focus] / by[ref]).toFixed(1)}× gap</span>.`;
   } else if (rated.length >= 2 && rated[rated.length - 1].value > 0) {
     const hi = rated[0], lo = rated[rated.length - 1];
     callout = `Highest: <b>${escapeHtml(groupLabel(hi.group))}</b> — <span class="ratio">${(hi.value / lo.value).toFixed(1)}× the lowest group</span>.`;
@@ -1368,8 +1379,8 @@ async function renderDispBoard() {
   const nTag = (v) => (v != null && !isNaN(v)) ? ` (n=${Math.round(v)})` : "";
   top.forEach(r => {
     const small = belowRankFloor(r);
-    const detail = `${groupLabel(r.focus_group)} ${Number(r.focus_rate).toFixed(1)}${sfx}${nTag(r.focus_n)} ` +
-      `vs ${groupLabel(r.reference_group)} ${Number(r.reference_rate).toFixed(1)}${sfx}${nTag(r.reference_n)}${trail}` +
+    const detail = `${groupLabel(r.focus_group)} ${fmtPct1(r.focus_rate, metric)}${sfx}${nTag(r.focus_n)} ` +
+      `vs ${groupLabel(r.reference_group)} ${fmtPct1(r.reference_rate, metric)}${sfx}${nTag(r.reference_n)}${trail}` +
       (small ? " · small sample, not ranked" : "");
     const btn = document.createElement("button");
     btn.className = "disp-board-row"; btn.type = "button";
@@ -1489,7 +1500,7 @@ async function renderScatter(metric) {
           const gap = ringShown(p.gap)
             ? `, ${Number(p.gap.ratio).toFixed(1)}× race gap${p.gap.minN != null ? ` (smaller group n=${p.gap.minN})` : ""}` : "";
           const enr = p.enr ? `, ${Math.round(p.enr).toLocaleString()} ${metric === "forward" ? "tested" : "students"}` : "";
-          return `${p.school} (${p.district}): ${p.x}% Black, ${formatValue(p.y, "discipline", yInfo.dec)}${yInfo.suffix}${gap}${enr}`;
+          return `${p.school} (${p.district}): ${p.x}% Black, ${formatValue(p.y, metric, yInfo.dec)}${yInfo.suffix}${gap}${enr}`;
         } } },
       },
       onClick: (e, els) => {

@@ -1,0 +1,502 @@
+metric,subject,dimension,district,school,year,focus_group,focus_rate,reference_group,reference_rate,focus_reference_ratio,focus_n,reference_n,highest_group,highest_rate,lowest_group,lowest_rate,high_low_ratio
+act,ela,Disability Status,West Allis-West Milwaukee,Nathan Hale High,2024-25,SwoD,53.5156,SwD,3.2258,16.59,250.0,25.0,SwoD,53.5156,SwD,3.2258,16.59
+act,ela,Disability Status,Wauwatosa,West High,2024-25,SwoD,55.5066,SwD,6.4516,8.6,223.0,28.0,SwoD,55.5066,SwD,6.4516,8.6
+act,ela,Disability Status,Seeds of Health,Tenor High,2024-25,SwoD,32.1739,SwD,4.5455,7.08,115.0,21.0,SwoD,32.1739,SwD,4.5455,7.08
+act,ela,Disability Status,Oak Creek-Franklin Joint,Oak Creek High,2024-25,SwoD,47.2549,SwD,7.1429,6.62,494.0,37.0,SwoD,47.2549,SwD,7.1429,6.62
+act,ela,Disability Status,Wauwatosa,East High,2024-25,SwoD,70.8155,SwD,11.5385,6.14,226.0,23.0,SwoD,70.8155,SwD,11.5385,6.14
+act,ela,Disability Status,Milwaukee,Reagan College Preparatory High,2024-25,SwoD,75.2508,SwD,13.1579,5.72,296.0,34.0,SwoD,75.2508,SwD,13.1579,5.72
+act,ela,Disability Status,Milwaukee,King International,2024-25,SwoD,39.1459,SwD,7.6923,5.09,252.0,22.0,SwoD,39.1459,SwD,7.6923,5.09
+act,ela,Disability Status,Nicolet Union High School,Nicolet High,2024-25,SwoD,66.6667,SwD,17.8571,3.73,217.0,23.0,SwoD,66.6667,SwD,17.8571,3.73
+act,ela,Disability Status,Milwaukee,Hamilton High,2024-25,SwoD,8.7558,SwD,2.381,3.68,180.0,31.0,SwoD,8.7558,SwD,2.381,3.68
+act,ela,Disability Status,Greendale,Greendale High,2024-25,SwoD,68.5864,SwD,19.2308,3.57,191.0,24.0,SwoD,68.5864,SwD,19.2308,3.57
+act,ela,Disability Status,Milwaukee,Bay View High,2024-25,SwoD,11.1888,SwD,4.878,2.29,137.0,39.0,SwoD,11.1888,SwD,4.878,2.29
+act,ela,Disability Status,Milwaukee,Milwaukee High School of the Arts,2024-25,SwoD,25.4808,SwD,12.5,2.04,202.0,32.0,SwoD,25.4808,SwD,12.5,2.04
+act,ela,Disability Status,Whitefish Bay,Whitefish Bay High,2024-25,SwoD,91.0377,SwD,47.619,1.91,210.0,20.0,SwoD,91.0377,SwD,47.619,1.91
+act,ela,Disability Status,Milwaukee,Audubon Technology and Communication High,2024-25,SwoD,28.0702,SwD,18.1818,1.54,54.0,22.0,SwoD,28.0702,SwD,18.1818,1.54
+act,ela,Disability Status,Milwaukee,Bradley Technology High,2024-25,SwoD,9.1398,SwD,0.0,,174.0,20.0,SwoD,9.1398,SwD,0.0,
+act,ela,Disability Status,Milwaukee,Pulaski High,2024-25,SwoD,8.2759,SwD,0.0,,114.0,23.0,SwoD,8.2759,SwD,0.0,
+act,ela,Disability Status,Milwaukee,Riverside High,2024-25,SwoD,16.1111,SwD,0.0,,155.0,21.0,SwoD,16.1111,SwD,0.0,
+act,ela,Disability Status,South Milwaukee,South Milwaukee High,2024-25,SwoD,22.5,SwD,0.0,,198.0,36.0,SwoD,22.5,SwD,0.0,
+act,ela,Disability Status,West Allis-West Milwaukee,Central High,2024-25,SwoD,31.5,SwD,0.0,,193.0,24.0,SwoD,31.5,SwD,0.0,
+act,ela,EL Status,Oak Creek-Franklin Joint,Oak Creek High,2024-25,Eng Prof,46.6411,EL,3.2258,14.46,502.0,29.0,Eng Prof,46.6411,EL,3.2258,14.46
+act,ela,EL Status,Milwaukee,King International,2024-25,Eng Prof,40.0722,EL,3.3333,12.02,251.0,23.0,Eng Prof,40.0722,EL,3.3333,12.02
+act,ela,EL Status,Milwaukee,Hamilton High,2024-25,Eng Prof,11.1765,EL,1.1236,9.95,135.0,76.0,Eng Prof,11.1765,EL,1.1236,9.95
+act,ela,EL Status,Milwaukee,Riverside High,2024-25,Eng Prof,17.1779,EL,2.3256,7.39,139.0,37.0,Eng Prof,17.1779,EL,2.3256,7.39
+act,ela,EL Status,Milwaukee,Reagan College Preparatory High,2024-25,Eng Prof,75.1678,EL,15.3846,4.89,291.0,39.0,Eng Prof,75.1678,EL,15.3846,4.89
+act,ela,EL Status,Milwaukee,Milwaukee High School of the Arts,2024-25,Eng Prof,27.2727,EL,7.1429,3.82,194.0,40.0,Eng Prof,27.2727,EL,7.1429,3.82
+act,ela,EL Status,Milwaukee,HAPA-Hmong American Peace Academy K3-12,2024-25,Eng Prof,64.9123,EL,25.9259,2.5,114.0,27.0,Eng Prof,64.9123,EL,25.9259,2.5
+act,ela,EL Status,Seeds of Health,Tenor High,2024-25,Eng Prof,31.7757,EL,13.3333,2.38,107.0,29.0,Eng Prof,31.7757,EL,13.3333,2.38
+act,ela,EL Status,Milwaukee,Carmen High School of Science and Technology Southeast Campus,2024-25,Eng Prof,24.6753,EL,12.8205,1.92,75.0,74.0,Eng Prof,24.6753,EL,12.8205,1.92
+act,ela,EL Status,Milwaukee,Carmen High School of Science and Technology South Campus,2024-25,Eng Prof,41.8605,EL,23.5294,1.78,43.0,50.0,Eng Prof,41.8605,EL,23.5294,1.78
+act,ela,EL Status,Milwaukee,Pulaski High,2024-25,Eng Prof,8.2474,EL,4.878,1.69,77.0,60.0,Eng Prof,8.2474,EL,4.878,1.69
+act,ela,EL Status,Milwaukee,Bay View High,2024-25,Eng Prof,12.1622,EL,0.0,,142.0,34.0,Eng Prof,12.1622,EL,0.0,
+act,ela,EL Status,Milwaukee,Bradley Technology High,2024-25,Eng Prof,9.3407,EL,0.0,,167.0,27.0,Eng Prof,9.3407,EL,0.0,
+act,ela,EL Status,Milwaukee,South Division High,2024-25,Eng Prof,14.9254,EL,0.0,,49.0,84.0,Eng Prof,14.9254,EL,0.0,
+act,ela,EL Status,South Milwaukee,South Milwaukee High,2024-25,Eng Prof,20.6422,EL,0.0,,213.0,21.0,Eng Prof,20.6422,EL,0.0,
+act,ela,Economic Status,South Milwaukee,South Milwaukee High,2024-25,Not Econ Disadv,29.0598,Econ Disadv,8.9431,3.25,116.0,118.0,Not Econ Disadv,29.0598,Econ Disadv,8.9431,3.25
+act,ela,Economic Status,Wauwatosa,West High,2024-25,Not Econ Disadv,62.3596,Econ Disadv,21.25,2.93,175.0,76.0,Not Econ Disadv,62.3596,Econ Disadv,21.25,2.93
+act,ela,Economic Status,Whitnall,Whitnall High,2024-25,Not Econ Disadv,70.2128,Econ Disadv,31.3725,2.24,133.0,43.0,Not Econ Disadv,70.2128,Econ Disadv,31.3725,2.24
+act,ela,Economic Status,Milwaukee,Milwaukee High School of the Arts,2024-25,Not Econ Disadv,39.3443,Econ Disadv,18.4358,2.13,58.0,176.0,Not Econ Disadv,39.3443,Econ Disadv,18.4358,2.13
+act,ela,Economic Status,Milwaukee,MacDowell Montessori School K3-12,2024-25,Not Econ Disadv,36.3636,Econ Disadv,18.75,1.94,22.0,31.0,Not Econ Disadv,36.3636,Econ Disadv,18.75,1.94
+act,ela,Economic Status,West Allis-West Milwaukee,Central High,2024-25,Not Econ Disadv,42.3729,Econ Disadv,22.2222,1.91,56.0,161.0,Not Econ Disadv,42.3729,Econ Disadv,22.2222,1.91
+act,ela,Economic Status,Milwaukee,King International,2024-25,Not Econ Disadv,52.2523,Econ Disadv,27.551,1.9,102.0,172.0,Not Econ Disadv,52.2523,Econ Disadv,27.551,1.9
+act,ela,Economic Status,Milwaukee,Riverside High,2024-25,Not Econ Disadv,21.5686,Econ Disadv,11.6129,1.86,47.0,129.0,Not Econ Disadv,21.5686,Econ Disadv,11.6129,1.86
+act,ela,Economic Status,Nicolet Union High School,Nicolet High,2024-25,Not Econ Disadv,67.0,Econ Disadv,38.0,1.76,193.0,47.0,Not Econ Disadv,67.0,Econ Disadv,38.0,1.76
+act,ela,Economic Status,Wauwatosa,East High,2024-25,Not Econ Disadv,70.8738,Econ Disadv,41.5094,1.71,199.0,50.0,Not Econ Disadv,70.8738,Econ Disadv,41.5094,1.71
+act,ela,Economic Status,West Allis-West Milwaukee,Nathan Hale High,2024-25,Not Econ Disadv,63.1148,Econ Disadv,36.9697,1.71,121.0,154.0,Not Econ Disadv,63.1148,Econ Disadv,36.9697,1.71
+act,ela,Economic Status,Saint Francis,Saint Francis High,2024-25,Not Econ Disadv,29.0323,Econ Disadv,17.5439,1.65,61.0,57.0,Not Econ Disadv,29.0323,Econ Disadv,17.5439,1.65
+act,ela,Economic Status,Franklin Public,Franklin High,2024-25,Not Econ Disadv,67.6667,Econ Disadv,41.9753,1.61,297.0,81.0,Not Econ Disadv,67.6667,Econ Disadv,41.9753,1.61
+act,ela,Economic Status,Oak Creek-Franklin Joint,Oak Creek High,2024-25,Not Econ Disadv,49.4949,Econ Disadv,30.7692,1.61,385.0,146.0,Not Econ Disadv,49.4949,Econ Disadv,30.7692,1.61
+act,ela,Economic Status,Greenfield,Greenfield High,2024-25,Not Econ Disadv,47.4453,Econ Disadv,30.0699,1.58,131.0,132.0,Not Econ Disadv,47.4453,Econ Disadv,30.0699,1.58
+act,ela,Economic Status,Milwaukee,Milwaukee School of Languages,2024-25,Not Econ Disadv,48.0769,Econ Disadv,31.3725,1.53,51.0,46.0,Not Econ Disadv,48.0769,Econ Disadv,31.3725,1.53
+act,ela,Economic Status,Greendale,Greendale High,2024-25,Not Econ Disadv,69.7368,Econ Disadv,46.1538,1.51,151.0,64.0,Not Econ Disadv,69.7368,Econ Disadv,46.1538,1.51
+act,ela,Economic Status,Seeds of Health,Tenor High,2024-25,Not Econ Disadv,37.5,Econ Disadv,24.7619,1.51,31.0,105.0,Not Econ Disadv,37.5,Econ Disadv,24.7619,1.51
+act,ela,Economic Status,Brown Deer,Brown Deer Middle/High,2024-25,Not Econ Disadv,42.5926,Econ Disadv,28.5714,1.49,53.0,60.0,Not Econ Disadv,42.5926,Econ Disadv,28.5714,1.49
+act,ela,Economic Status,Milwaukee,Golda Meir School,2024-25,Not Econ Disadv,76.6234,Econ Disadv,51.7241,1.48,75.0,57.0,Not Econ Disadv,76.6234,Econ Disadv,51.7241,1.48
+act,ela,Economic Status,Milwaukee,Bay View High,2024-25,Not Econ Disadv,13.6364,Econ Disadv,9.2593,1.47,21.0,155.0,Not Econ Disadv,13.6364,Econ Disadv,9.2593,1.47
+act,ela,Economic Status,Shorewood,Shorewood High,2024-25,Not Econ Disadv,74.7899,Econ Disadv,52.381,1.43,118.0,20.0,Not Econ Disadv,74.7899,Econ Disadv,52.381,1.43
+act,ela,Economic Status,Seeds of Health,Veritas High,2024-25,Not Econ Disadv,43.4783,Econ Disadv,31.25,1.39,23.0,48.0,Not Econ Disadv,43.4783,Econ Disadv,31.25,1.39
+act,ela,Economic Status,Cudahy,Cudahy High,2024-25,Not Econ Disadv,46.9697,Econ Disadv,34.2342,1.37,63.0,103.0,Not Econ Disadv,46.9697,Econ Disadv,34.2342,1.37
+act,ela,Economic Status,Milwaukee,Reagan College Preparatory High,2024-25,Not Econ Disadv,74.5562,Econ Disadv,61.9048,1.2,166.0,164.0,Not Econ Disadv,74.5562,Econ Disadv,61.9048,1.2
+act,ela,Economic Status,Milwaukee,Hamilton High,2024-25,Econ Disadv,7.8431,Not Econ Disadv,7.2727,1.08,166.0,45.0,Econ Disadv,7.8431,Not Econ Disadv,7.2727,1.08
+act,ela,Economic Status,Milwaukee,HAPA-Hmong American Peace Academy K3-12,2024-25,Econ Disadv,57.5,Not Econ Disadv,57.1429,1.01,120.0,21.0,Econ Disadv,57.5,Not Econ Disadv,57.1429,1.01
+act,ela,Economic Status,Milwaukee,Pulaski High,2024-25,Econ Disadv,8.6957,Not Econ Disadv,0.0,,107.0,30.0,Econ Disadv,8.6957,Not Econ Disadv,0.0,
+act,ela,Gender,Milwaukee,Bradley Technology High,2024-25,Male,12.3894,Female,3.0928,4.01,107.0,87.0,Male,12.3894,Female,3.0928,4.01
+act,ela,Gender,Milwaukee,Pulaski High,2024-25,Female,11.2676,Male,3.7037,3.04,60.0,77.0,Female,11.2676,Male,3.7037,3.04
+act,ela,Gender,Dr. Howard Fuller Collegiate Academy,Dr Howard Fuller Collegiate Academy,2024-25,Male,5.4054,Female,1.9231,2.81,33.0,51.0,Male,5.4054,Female,1.9231,2.81
+act,ela,Gender,Milwaukee,Milwaukee High School of the Arts,2024-25,Female,30.8725,Male,12.0879,2.55,146.0,88.0,Female,30.8725,Male,12.0879,2.55
+act,ela,Gender,Milwaukee Science Education Consortium,Milwaukee Academy of Science,2024-25,Female,25.7143,Male,11.1111,2.31,34.0,41.0,Female,25.7143,Male,11.1111,2.31
+act,ela,Gender,Milwaukee,James Madison Academic Campus,2024-25,Male,5.1282,Female,2.439,2.1,30.0,35.0,Male,5.1282,Female,2.439,2.1
+act,ela,Gender,Milwaukee,South Division High,2024-25,Female,7.2165,Male,3.6585,1.97,73.0,60.0,Female,7.2165,Male,3.6585,1.97
+act,ela,Gender,South Milwaukee,South Milwaukee High,2024-25,Female,24.5763,Male,13.1148,1.87,113.0,121.0,Female,24.5763,Male,13.1148,1.87
+act,ela,Gender,Milwaukee,Riverside High,2024-25,Female,18.2692,Male,9.8039,1.86,91.0,85.0,Female,18.2692,Male,9.8039,1.86
+act,ela,Gender,Milwaukee,Carmen High School of Science and Technology Southeast Campus,2024-25,Female,24.2857,Male,14.1176,1.72,69.0,80.0,Female,24.2857,Male,14.1176,1.72
+act,ela,Gender,Milwaukee,Milwaukee School of Languages,2024-25,Female,48.2759,Male,28.8889,1.67,56.0,41.0,Female,48.2759,Male,28.8889,1.67
+act,ela,Gender,Milwaukee,Hamilton High,2024-25,Male,9.6774,Female,5.9259,1.63,100.0,111.0,Male,9.6774,Female,5.9259,1.63
+act,ela,Gender,Milwaukee,MacDowell Montessori School K3-12,2024-25,Female,32.0,Male,20.6897,1.55,25.0,28.0,Female,32.0,Male,20.6897,1.55
+act,ela,Gender,Milwaukee,Audubon Technology and Communication High,2024-25,Male,29.1667,Female,19.3548,1.51,46.0,30.0,Male,29.1667,Female,19.3548,1.51
+act,ela,Gender,West Allis-West Milwaukee,Central High,2024-25,Female,33.6735,Male,22.7273,1.48,91.0,126.0,Female,33.6735,Male,22.7273,1.48
+act,ela,Gender,Oak Creek-Franklin Joint,Oak Creek High,2024-25,Female,52.988,Male,36.8771,1.44,243.0,288.0,Female,52.988,Male,36.8771,1.44
+act,ela,Gender,Seeds of Health,Tenor High,2024-25,Female,33.3333,Male,23.75,1.4,57.0,79.0,Female,33.3333,Male,23.75,1.4
+act,ela,Gender,West Allis-West Milwaukee,Nathan Hale High,2024-25,Female,54.2254,Male,42.069,1.29,137.0,138.0,Female,54.2254,Male,42.069,1.29
+act,ela,Gender,Greendale,Greendale High,2024-25,Female,71.5789,Male,55.7377,1.28,94.0,121.0,Female,71.5789,Male,55.7377,1.28
+act,ela,Gender,Milwaukee,Harold S Vincent School of Agricultural Science,2024-25,Male,16.6667,Female,13.0435,1.28,30.0,43.0,Male,16.6667,Female,13.0435,1.28
+act,ela,Gender,Greenfield,Greenfield High,2024-25,Female,43.1655,Male,34.0426,1.27,132.0,131.0,Female,43.1655,Male,34.0426,1.27
+act,ela,Gender,Brown Deer,Brown Deer Middle/High,2024-25,Female,39.2857,Male,31.1475,1.26,53.0,60.0,Female,39.2857,Male,31.1475,1.26
+act,ela,Gender,Seeds of Health,Veritas High,2024-25,Female,37.5,Male,30.4348,1.23,48.0,23.0,Female,37.5,Male,30.4348,1.23
+act,ela,Gender,Milwaukee,Reagan College Preparatory High,2024-25,Female,74.2857,Male,61.7284,1.2,172.0,158.0,Female,74.2857,Male,61.7284,1.2
+act,ela,Gender,Franklin Public,Franklin High,2024-25,Female,67.027,Male,57.6531,1.16,183.0,195.0,Female,67.027,Male,57.6531,1.16
+act,ela,Gender,Milwaukee,King International,2024-25,Female,39.0728,Male,33.9744,1.15,133.0,141.0,Female,39.0728,Male,33.9744,1.15
+act,ela,Gender,Milwaukee,Marshall High,2024-25,Female,2.2222,Male,1.9608,1.13,30.0,37.0,Female,2.2222,Male,1.9608,1.13
+act,ela,Gender,Wauwatosa,West High,2024-25,Female,52.9915,Male,46.8085,1.13,114.0,137.0,Female,52.9915,Male,46.8085,1.13
+act,ela,Gender,Whitnall,Whitnall High,2024-25,Female,63.5417,Male,56.25,1.13,86.0,90.0,Female,63.5417,Male,56.25,1.13
+act,ela,Gender,Milwaukee,Carmen High School of Science and Technology South Campus,2024-25,Female,33.3333,Male,30.4348,1.1,48.0,45.0,Female,33.3333,Male,30.4348,1.1
+act,ela,Gender,Milwaukee,Carmen Middle/High School of Science and Technology Northwest Campus,2024-25,Male,7.3171,Female,6.8966,1.06,39.0,27.0,Male,7.3171,Female,6.8966,1.06
+act,ela,Gender,Shorewood,Shorewood High,2024-25,Female,73.4375,Male,69.7368,1.05,63.0,75.0,Female,73.4375,Male,69.7368,1.05
+act,ela,Gender,Milwaukee,Golda Meir School,2024-25,Male,67.2131,Female,64.8649,1.04,60.0,72.0,Male,67.2131,Female,64.8649,1.04
+act,ela,Gender,Whitefish Bay,Whitefish Bay High,2024-25,Female,88.7931,Male,85.4701,1.04,115.0,115.0,Female,88.7931,Male,85.4701,1.04
+act,ela,Gender,Milwaukee,Bay View High,2024-25,Male,9.8901,Female,9.6774,1.02,86.0,90.0,Male,9.8901,Female,9.6774,1.02
+act,ela,Gender,Milwaukee,HAPA-Hmong American Peace Academy K3-12,2024-25,Male,57.971,Female,56.9444,1.02,69.0,72.0,Male,57.971,Female,56.9444,1.02
+act,ela,Gender,Milwaukee,WHS Information Technology,2024-25,Male,3.2258,Female,0.0,,26.0,21.0,Male,3.2258,Female,0.0,
+act,ela,Race/Ethnicity,West Allis-West Milwaukee,Central High,2024-25,White,43.8356,Black,6.25,7.01,69.0,31.0,White,43.8356,Black,6.25,7.01
+act,ela,Race/Ethnicity,Wauwatosa,West High,2024-25,White,72.3077,Black,16.6667,4.34,127.0,63.0,White,72.3077,Black,16.6667,4.34
+act,ela,Race/Ethnicity,Milwaukee,Hamilton High,2024-25,White,10.3448,Black,3.0303,3.41,23.0,56.0,Asian,18.75,Black,3.0303,6.19
+act,ela,Race/Ethnicity,Brown Deer,Brown Deer Middle/High,2024-25,White,59.0909,Black,18.4615,3.2,21.0,62.0,White,59.0909,Black,18.4615,3.2
+act,ela,Race/Ethnicity,West Allis-West Milwaukee,Nathan Hale High,2024-25,White,61.4379,Black,20.6897,2.97,147.0,29.0,White,61.4379,Black,20.6897,2.97
+act,ela,Race/Ethnicity,Milwaukee,King International,2024-25,White,74.2857,Black,25.4237,2.92,33.0,156.0,White,74.2857,Black,25.4237,2.92
+act,ela,Race/Ethnicity,Milwaukee,Milwaukee School of Languages,2024-25,White,60.7143,Black,21.2766,2.85,26.0,45.0,White,60.7143,Black,21.2766,2.85
+act,ela,Race/Ethnicity,Wauwatosa,East High,2024-25,White,78.3626,Black,27.5,2.85,166.0,38.0,White,78.3626,Black,27.5,2.85
+act,ela,Race/Ethnicity,South Milwaukee,South Milwaukee High,2024-25,White,25.0,Black,10.0,2.5,118.0,20.0,White,25.0,Black,10.0,2.5
+act,ela,Race/Ethnicity,Nicolet Union High School,Nicolet High,2024-25,White,74.6269,Black,30.5085,2.45,129.0,55.0,White,74.6269,Black,30.5085,2.45
+act,ela,Race/Ethnicity,Milwaukee,Reagan College Preparatory High,2024-25,White,76.8421,Black,41.9355,1.83,94.0,28.0,White,76.8421,Black,41.9355,1.83
+act,ela,Race/Ethnicity,Oak Creek-Franklin Joint,Oak Creek High,2024-25,White,46.1111,Black,29.0323,1.59,351.0,28.0,Asian,57.5,Black,29.0323,1.98
+act,ela,Race/Ethnicity,Cudahy,Cudahy High,2024-25,Black,,White,45.0,,,92.0,White,45.0,Hispanic,27.451,1.64
+act,ela,Race/Ethnicity,Franklin Public,Franklin High,2024-25,Black,,White,63.1783,,,255.0,Asian,75.6757,Two or More,50.0,1.51
+act,ela,Race/Ethnicity,Greendale,Greendale High,2024-25,Black,,White,67.4242,,,132.0,White,67.4242,Hispanic,48.7179,1.38
+act,ela,Race/Ethnicity,Greenfield,Greenfield High,2024-25,Black,,White,47.9675,,,117.0,Asian,48.2759,Hispanic,28.125,1.72
+act,ela,Race/Ethnicity,Milwaukee,Bay View High,2024-25,Black,5.618,White,,,84.0,,Hispanic,10.0,Black,5.618,1.78
+act,ela,Race/Ethnicity,Milwaukee,Bradley Technology High,2024-25,Black,5.8442,White,,,142.0,,Hispanic,16.129,Black,5.8442,2.76
+act,ela,Race/Ethnicity,Milwaukee,Milwaukee High School of the Arts,2024-25,Black,14.2857,White,,,118.0,,Hispanic,22.4138,Black,14.2857,1.57
+act,ela,Race/Ethnicity,Milwaukee,Pulaski High,2024-25,Black,6.0,White,,,42.0,,Hispanic,6.0606,Black,6.0,1.01
+act,ela,Race/Ethnicity,Milwaukee,Riverside High,2024-25,Black,9.0909,White,,,102.0,,Hispanic,19.6429,Black,9.0909,2.16
+act,ela,Race/Ethnicity,Milwaukee,South Division High,2024-25,Black,7.1429,White,,,30.0,,Black,7.1429,Hispanic,3.3333,2.14
+act,ela,Race/Ethnicity,Saint Francis,Saint Francis High,2024-25,Black,,White,34.6154,,,51.0,White,34.6154,Hispanic,10.4167,3.32
+act,ela,Race/Ethnicity,Seeds of Health,Tenor High,2024-25,Black,19.3548,White,,,31.0,,Hispanic,29.0323,Black,19.3548,1.5
+act,ela,Race/Ethnicity,Whitefish Bay,Whitefish Bay High,2024-25,Black,,White,91.8239,,,158.0,White,91.8239,Hispanic,85.1852,1.08
+act,ela,Race/Ethnicity,Whitnall,Whitnall High,2024-25,Black,,White,65.8915,,,119.0,White,65.8915,Hispanic,46.6667,1.41
+act,math,Disability Status,Milwaukee,Reagan College Preparatory High,2024-25,SwoD,50.5017,SwD,2.6316,19.19,296.0,34.0,SwoD,50.5017,SwD,2.6316,19.19
+act,math,Disability Status,West Allis-West Milwaukee,Nathan Hale High,2024-25,SwoD,38.6719,SwD,3.2258,11.99,251.0,25.0,SwoD,38.6719,SwD,3.2258,11.99
+act,math,Disability Status,South Milwaukee,South Milwaukee High,2024-25,SwoD,24.0,SwD,2.5,9.6,198.0,36.0,SwoD,24.0,SwD,2.5,9.6
+act,math,Disability Status,Milwaukee,King International,2024-25,SwoD,26.6904,SwD,3.8462,6.94,252.0,22.0,SwoD,26.6904,SwD,3.8462,6.94
+act,math,Disability Status,Oak Creek-Franklin Joint,Oak Creek High,2024-25,SwoD,46.2745,SwD,7.1429,6.48,494.0,37.0,SwoD,46.2745,SwD,7.1429,6.48
+act,math,Disability Status,West Allis-West Milwaukee,Central High,2024-25,SwoD,16.5,SwD,3.3333,4.95,193.0,25.0,SwoD,16.5,SwD,3.3333,4.95
+act,math,Disability Status,Wauwatosa,West High,2024-25,SwoD,54.185,SwD,12.9032,4.2,223.0,28.0,SwoD,54.185,SwD,12.9032,4.2
+act,math,Disability Status,Wauwatosa,East High,2024-25,SwoD,63.5193,SwD,19.2308,3.3,226.0,23.0,SwoD,63.5193,SwD,19.2308,3.3
+act,math,Disability Status,Whitefish Bay,Whitefish Bay High,2024-25,SwoD,83.4906,SwD,28.5714,2.92,210.0,20.0,SwoD,83.4906,SwD,28.5714,2.92
+act,math,Disability Status,Nicolet Union High School,Nicolet High,2024-25,SwoD,60.8108,SwD,21.4286,2.84,217.0,23.0,SwoD,60.8108,SwD,21.4286,2.84
+act,math,Disability Status,Greendale,Greendale High,2024-25,SwoD,65.445,SwD,26.9231,2.43,191.0,24.0,SwoD,65.445,SwD,26.9231,2.43
+act,math,Disability Status,Milwaukee,Audubon Technology and Communication High,2024-25,SwoD,5.2632,SwD,4.5455,1.16,54.0,22.0,SwoD,5.2632,SwD,4.5455,1.16
+act,math,Disability Status,Milwaukee,Riverside High,2024-25,SwoD,8.3333,SwD,7.6923,1.08,155.0,21.0,SwoD,8.3333,SwD,7.6923,1.08
+act,math,Disability Status,Milwaukee,Bay View High,2024-25,SwoD,3.4965,SwD,0.0,,138.0,39.0,SwoD,3.4965,SwD,0.0,
+act,math,Disability Status,Milwaukee,Bradley Technology High,2024-25,SwoD,2.6882,SwD,0.0,,174.0,20.0,SwoD,2.6882,SwD,0.0,
+act,math,Disability Status,Milwaukee,Hamilton High,2024-25,SwoD,4.1475,SwD,0.0,,183.0,31.0,SwoD,4.1475,SwD,0.0,
+act,math,Disability Status,Milwaukee,Milwaukee High School of the Arts,2024-25,SwoD,10.0962,SwD,0.0,,202.0,32.0,SwoD,10.0962,SwD,0.0,
+act,math,Disability Status,Milwaukee,Pulaski High,2024-25,SwoD,0.6897,SwD,0.0,,114.0,23.0,SwoD,0.6897,SwD,0.0,
+act,math,Disability Status,Seeds of Health,Tenor High,2024-25,SwoD,13.0435,SwD,0.0,,115.0,21.0,SwoD,13.0435,SwD,0.0,
+act,math,EL Status,Milwaukee,Carmen High School of Science and Technology South Campus,2024-25,Eng Prof,25.5814,EL,1.9608,13.05,43.0,50.0,Eng Prof,25.5814,EL,1.9608,13.05
+act,math,EL Status,Milwaukee,Reagan College Preparatory High,2024-25,Eng Prof,50.3356,EL,5.1282,9.82,291.0,39.0,Eng Prof,50.3356,EL,5.1282,9.82
+act,math,EL Status,Milwaukee,HAPA-Hmong American Peace Academy K3-12,2024-25,Eng Prof,56.1404,EL,7.4074,7.58,114.0,27.0,Eng Prof,56.1404,EL,7.4074,7.58
+act,math,EL Status,Milwaukee,Carmen High School of Science and Technology Southeast Campus,2024-25,Eng Prof,15.5844,EL,2.5641,6.08,75.0,74.0,Eng Prof,15.5844,EL,2.5641,6.08
+act,math,EL Status,Oak Creek-Franklin Joint,Oak Creek High,2024-25,Eng Prof,45.2975,EL,9.6774,4.68,502.0,29.0,Eng Prof,45.2975,EL,9.6774,4.68
+act,math,EL Status,Seeds of Health,Tenor High,2024-25,Eng Prof,13.0841,EL,3.3333,3.93,107.0,29.0,Eng Prof,13.0841,EL,3.3333,3.93
+act,math,EL Status,Milwaukee,King International,2024-25,Eng Prof,26.3538,EL,10.0,2.64,251.0,23.0,Eng Prof,26.3538,EL,10.0,2.64
+act,math,EL Status,Milwaukee,South Division High,2024-25,Eng Prof,4.4776,EL,1.7857,2.51,50.0,85.0,Eng Prof,4.4776,EL,1.7857,2.51
+act,math,EL Status,Milwaukee,Milwaukee High School of the Arts,2024-25,Eng Prof,9.596,EL,4.7619,2.02,194.0,40.0,Eng Prof,9.596,EL,4.7619,2.02
+act,math,EL Status,Milwaukee,Riverside High,2024-25,EL,11.6279,Eng Prof,7.362,1.58,37.0,139.0,EL,11.6279,Eng Prof,7.362,1.58
+act,math,EL Status,Milwaukee,Bay View High,2024-25,Eng Prof,3.3784,EL,0.0,,143.0,34.0,Eng Prof,3.3784,EL,0.0,
+act,math,EL Status,Milwaukee,Bradley Technology High,2024-25,Eng Prof,2.7473,EL,0.0,,167.0,27.0,Eng Prof,2.7473,EL,0.0,
+act,math,EL Status,Milwaukee,Hamilton High,2024-25,Eng Prof,5.2941,EL,0.0,,135.0,79.0,Eng Prof,5.2941,EL,0.0,
+act,math,EL Status,Milwaukee,Pulaski High,2024-25,EL,1.2195,Eng Prof,0.0,,60.0,77.0,EL,1.2195,Eng Prof,0.0,
+act,math,EL Status,South Milwaukee,South Milwaukee High,2024-25,Eng Prof,22.4771,EL,0.0,,213.0,21.0,Eng Prof,22.4771,EL,0.0,
+act,math,Economic Status,Nicolet Union High School,Nicolet High,2024-25,Not Econ Disadv,66.5,Econ Disadv,16.0,4.16,193.0,47.0,Not Econ Disadv,66.5,Econ Disadv,16.0,4.16
+act,math,Economic Status,Wauwatosa,West High,2024-25,Not Econ Disadv,62.3596,Econ Disadv,20.0,3.12,175.0,76.0,Not Econ Disadv,62.3596,Econ Disadv,20.0,3.12
+act,math,Economic Status,Whitnall,Whitnall High,2024-25,Not Econ Disadv,54.6099,Econ Disadv,17.6471,3.09,133.0,43.0,Not Econ Disadv,54.6099,Econ Disadv,17.6471,3.09
+act,math,Economic Status,Milwaukee,Hamilton High,2024-25,Not Econ Disadv,7.2727,Econ Disadv,2.451,2.97,46.0,168.0,Not Econ Disadv,7.2727,Econ Disadv,2.451,2.97
+act,math,Economic Status,Milwaukee,Milwaukee School of Languages,2024-25,Not Econ Disadv,32.6923,Econ Disadv,11.7647,2.78,51.0,46.0,Not Econ Disadv,32.6923,Econ Disadv,11.7647,2.78
+act,math,Economic Status,Milwaukee,Milwaukee High School of the Arts,2024-25,Not Econ Disadv,16.3934,Econ Disadv,6.1453,2.67,58.0,176.0,Not Econ Disadv,16.3934,Econ Disadv,6.1453,2.67
+act,math,Economic Status,South Milwaukee,South Milwaukee High,2024-25,Not Econ Disadv,29.9145,Econ Disadv,11.3821,2.63,116.0,118.0,Not Econ Disadv,29.9145,Econ Disadv,11.3821,2.63
+act,math,Economic Status,West Allis-West Milwaukee,Nathan Hale High,2024-25,Not Econ Disadv,54.0984,Econ Disadv,20.6061,2.63,122.0,154.0,Not Econ Disadv,54.0984,Econ Disadv,20.6061,2.63
+act,math,Economic Status,Greenfield,Greenfield High,2024-25,Not Econ Disadv,35.0365,Econ Disadv,15.3846,2.28,131.0,132.0,Not Econ Disadv,35.0365,Econ Disadv,15.3846,2.28
+act,math,Economic Status,Oak Creek-Franklin Joint,Oak Creek High,2024-25,Not Econ Disadv,51.0101,Econ Disadv,23.7179,2.15,385.0,146.0,Not Econ Disadv,51.0101,Econ Disadv,23.7179,2.15
+act,math,Economic Status,West Allis-West Milwaukee,Central High,2024-25,Not Econ Disadv,23.7288,Econ Disadv,11.6959,2.03,56.0,162.0,Not Econ Disadv,23.7288,Econ Disadv,11.6959,2.03
+act,math,Economic Status,Cudahy,Cudahy High,2024-25,Not Econ Disadv,24.2424,Econ Disadv,12.6126,1.92,64.0,103.0,Not Econ Disadv,24.2424,Econ Disadv,12.6126,1.92
+act,math,Economic Status,Seeds of Health,Veritas High,2024-25,Econ Disadv,25.0,Not Econ Disadv,13.0435,1.92,48.0,23.0,Econ Disadv,25.0,Not Econ Disadv,13.0435,1.92
+act,math,Economic Status,Milwaukee,Bay View High,2024-25,Not Econ Disadv,4.5455,Econ Disadv,2.4691,1.84,21.0,156.0,Not Econ Disadv,4.5455,Econ Disadv,2.4691,1.84
+act,math,Economic Status,Greendale,Greendale High,2024-25,Not Econ Disadv,69.7368,Econ Disadv,40.0,1.74,151.0,64.0,Not Econ Disadv,69.7368,Econ Disadv,40.0,1.74
+act,math,Economic Status,Saint Francis,Saint Francis High,2024-25,Not Econ Disadv,27.4194,Econ Disadv,15.7895,1.74,61.0,57.0,Not Econ Disadv,27.4194,Econ Disadv,15.7895,1.74
+act,math,Economic Status,Wauwatosa,East High,2024-25,Not Econ Disadv,64.5631,Econ Disadv,37.7358,1.71,199.0,50.0,Not Econ Disadv,64.5631,Econ Disadv,37.7358,1.71
+act,math,Economic Status,Milwaukee,King International,2024-25,Not Econ Disadv,33.3333,Econ Disadv,19.898,1.68,102.0,172.0,Not Econ Disadv,33.3333,Econ Disadv,19.898,1.68
+act,math,Economic Status,Seeds of Health,Tenor High,2024-25,Not Econ Disadv,15.625,Econ Disadv,9.5238,1.64,31.0,105.0,Not Econ Disadv,15.625,Econ Disadv,9.5238,1.64
+act,math,Economic Status,Shorewood,Shorewood High,2024-25,Not Econ Disadv,66.3866,Econ Disadv,42.8571,1.55,118.0,20.0,Not Econ Disadv,66.3866,Econ Disadv,42.8571,1.55
+act,math,Economic Status,Milwaukee,Riverside High,2024-25,Econ Disadv,9.0323,Not Econ Disadv,5.8824,1.54,129.0,47.0,Econ Disadv,9.0323,Not Econ Disadv,5.8824,1.54
+act,math,Economic Status,Milwaukee,Golda Meir School,2024-25,Not Econ Disadv,41.5584,Econ Disadv,27.5862,1.51,75.0,57.0,Not Econ Disadv,41.5584,Econ Disadv,27.5862,1.51
+act,math,Economic Status,Franklin Public,Franklin High,2024-25,Not Econ Disadv,61.6667,Econ Disadv,43.2099,1.43,297.0,81.0,Not Econ Disadv,61.6667,Econ Disadv,43.2099,1.43
+act,math,Economic Status,Milwaukee,MacDowell Montessori School K3-12,2024-25,Econ Disadv,6.25,Not Econ Disadv,4.5455,1.37,31.0,22.0,Econ Disadv,6.25,Not Econ Disadv,4.5455,1.37
+act,math,Economic Status,Milwaukee,Reagan College Preparatory High,2024-25,Not Econ Disadv,51.4793,Econ Disadv,38.6905,1.33,166.0,164.0,Not Econ Disadv,51.4793,Econ Disadv,38.6905,1.33
+act,math,Economic Status,Milwaukee,HAPA-Hmong American Peace Academy K3-12,2024-25,Not Econ Disadv,57.1429,Econ Disadv,45.0,1.27,21.0,120.0,Not Econ Disadv,57.1429,Econ Disadv,45.0,1.27
+act,math,Economic Status,Brown Deer,Brown Deer Middle/High,2024-25,Econ Disadv,31.746,Not Econ Disadv,31.4815,1.01,60.0,53.0,Econ Disadv,31.746,Not Econ Disadv,31.4815,1.01
+act,math,Economic Status,Milwaukee,Pulaski High,2024-25,Econ Disadv,0.7246,Not Econ Disadv,0.0,,107.0,30.0,Econ Disadv,0.7246,Not Econ Disadv,0.0,
+act,math,Gender,Milwaukee,South Division High,2024-25,Male,4.878,Female,1.0309,4.73,62.0,73.0,Male,4.878,Female,1.0309,4.73
+act,math,Gender,Milwaukee,Hamilton High,2024-25,Male,4.8387,Female,2.2222,2.18,100.0,114.0,Male,4.8387,Female,2.2222,2.18
+act,math,Gender,Seeds of Health,Tenor High,2024-25,Male,13.75,Female,7.0175,1.96,79.0,57.0,Male,13.75,Female,7.0175,1.96
+act,math,Gender,Milwaukee,Audubon Technology and Communication High,2024-25,Male,6.25,Female,3.2258,1.94,46.0,30.0,Male,6.25,Female,3.2258,1.94
+act,math,Gender,Milwaukee,Milwaukee High School of the Arts,2024-25,Male,12.0879,Female,6.7114,1.8,88.0,146.0,Male,12.0879,Female,6.7114,1.8
+act,math,Gender,Milwaukee,MacDowell Montessori School K3-12,2024-25,Male,6.8966,Female,4.0,1.72,28.0,25.0,Male,6.8966,Female,4.0,1.72
+act,math,Gender,Milwaukee,Golda Meir School,2024-25,Male,45.9016,Female,27.027,1.7,60.0,72.0,Male,45.9016,Female,27.027,1.7
+act,math,Gender,Milwaukee,King International,2024-25,Male,30.7692,Female,18.543,1.66,141.0,133.0,Male,30.7692,Female,18.543,1.66
+act,math,Gender,Milwaukee,Harold S Vincent School of Agricultural Science,2024-25,Female,4.3478,Male,2.7778,1.57,43.0,30.0,Female,4.3478,Male,2.7778,1.57
+act,math,Gender,Milwaukee,Carmen High School of Science and Technology Southeast Campus,2024-25,Male,10.5882,Female,7.1429,1.48,80.0,69.0,Male,10.5882,Female,7.1429,1.48
+act,math,Gender,Milwaukee,Riverside High,2024-25,Male,9.8039,Female,6.7308,1.46,85.0,91.0,Male,9.8039,Female,6.7308,1.46
+act,math,Gender,Dr. Howard Fuller Collegiate Academy,Dr Howard Fuller Collegiate Academy,2024-25,Male,2.7027,Female,1.9231,1.41,33.0,51.0,Male,2.7027,Female,1.9231,1.41
+act,math,Gender,Shorewood,Shorewood High,2024-25,Male,72.3684,Female,51.5625,1.4,75.0,63.0,Male,72.3684,Female,51.5625,1.4
+act,math,Gender,Seeds of Health,Veritas High,2024-25,Male,26.087,Female,18.75,1.39,23.0,48.0,Male,26.087,Female,18.75,1.39
+act,math,Gender,Milwaukee,Reagan College Preparatory High,2024-25,Male,52.4691,Female,38.2857,1.37,158.0,172.0,Male,52.4691,Female,38.2857,1.37
+act,math,Gender,West Allis-West Milwaukee,Nathan Hale High,2024-25,Male,38.6207,Female,30.9859,1.25,138.0,138.0,Male,38.6207,Female,30.9859,1.25
+act,math,Gender,Franklin Public,Franklin High,2024-25,Male,63.2653,Female,51.8919,1.22,195.0,183.0,Male,63.2653,Female,51.8919,1.22
+act,math,Gender,Milwaukee,Obama School of Career and Technical Education,2024-25,Male,1.25,Female,1.0309,1.21,35.0,20.0,Male,1.25,Female,1.0309,1.21
+act,math,Gender,Whitnall,Whitnall High,2024-25,Male,48.9583,Female,40.625,1.21,90.0,86.0,Male,48.9583,Female,40.625,1.21
+act,math,Gender,Brown Deer,Brown Deer Middle/High,2024-25,Male,34.4262,Female,28.5714,1.2,60.0,53.0,Male,34.4262,Female,28.5714,1.2
+act,math,Gender,South Milwaukee,South Milwaukee High,2024-25,Female,22.0339,Male,18.8525,1.17,113.0,121.0,Female,22.0339,Male,18.8525,1.17
+act,math,Gender,Greenfield,Greenfield High,2024-25,Male,26.2411,Female,23.741,1.11,131.0,132.0,Male,26.2411,Female,23.741,1.11
+act,math,Gender,Milwaukee,HAPA-Hmong American Peace Academy K3-12,2024-25,Male,49.2754,Female,44.4444,1.11,69.0,72.0,Male,49.2754,Female,44.4444,1.11
+act,math,Gender,Greendale,Greendale High,2024-25,Female,63.1579,Male,59.0164,1.07,94.0,121.0,Female,63.1579,Male,59.0164,1.07
+act,math,Gender,West Allis-West Milwaukee,Central High,2024-25,Male,15.1515,Female,14.2857,1.06,126.0,92.0,Male,15.1515,Female,14.2857,1.06
+act,math,Gender,Wauwatosa,West High,2024-25,Male,50.3546,Female,47.8632,1.05,137.0,114.0,Male,50.3546,Female,47.8632,1.05
+act,math,Gender,Milwaukee,Carmen High School of Science and Technology South Campus,2024-25,Male,13.0435,Female,12.5,1.04,45.0,48.0,Male,13.0435,Female,12.5,1.04
+act,math,Gender,Oak Creek-Franklin Joint,Oak Creek High,2024-25,Female,44.2231,Male,42.5249,1.04,243.0,288.0,Female,44.2231,Male,42.5249,1.04
+act,math,Gender,Milwaukee,Milwaukee School of Languages,2024-25,Female,22.4138,Male,22.2222,1.01,56.0,41.0,Female,22.4138,Male,22.2222,1.01
+act,math,Gender,Whitefish Bay,Whitefish Bay High,2024-25,Male,78.6325,Female,78.4483,1.0,115.0,115.0,Male,78.6325,Female,78.4483,1.0
+act,math,Gender,Milwaukee,Bay View High,2024-25,Male,5.4945,Female,0.0,,86.0,91.0,Male,5.4945,Female,0.0,
+act,math,Gender,Milwaukee,Bradley Technology High,2024-25,Male,4.4248,Female,0.0,,107.0,87.0,Male,4.4248,Female,0.0,
+act,math,Gender,Milwaukee,Carmen Middle/High School of Science and Technology Northwest Campus,2024-25,Female,3.4483,Male,0.0,,27.0,40.0,Female,3.4483,Male,0.0,
+act,math,Gender,Milwaukee,James Madison Academic Campus,2024-25,Male,0.0,Female,0.0,,30.0,35.0,Male,0.0,Male,0.0,
+act,math,Gender,Milwaukee,Marshall High,2024-25,Male,0.0,Female,0.0,,37.0,30.0,Male,0.0,Male,0.0,
+act,math,Gender,Milwaukee,Pulaski High,2024-25,Female,1.4085,Male,0.0,,60.0,77.0,Female,1.4085,Male,0.0,
+act,math,Gender,Milwaukee,WHS Information Technology,2024-25,Male,0.0,Female,0.0,,28.0,21.0,Male,0.0,Male,0.0,
+act,math,Gender,Milwaukee Science Education Consortium,Milwaukee Academy of Science,2024-25,Male,4.4444,Female,0.0,,41.0,34.0,Male,4.4444,Female,0.0,
+act,math,Race/Ethnicity,Milwaukee,Milwaukee School of Languages,2024-25,White,50.0,Black,8.5106,5.88,26.0,45.0,White,50.0,Black,8.5106,5.88
+act,math,Race/Ethnicity,Wauwatosa,West High,2024-25,White,70.0,Black,12.1212,5.78,127.0,63.0,White,70.0,Black,12.1212,5.78
+act,math,Race/Ethnicity,Wauwatosa,East High,2024-25,White,74.269,Black,15.0,4.95,166.0,38.0,White,74.269,Black,15.0,4.95
+act,math,Race/Ethnicity,Milwaukee,King International,2024-25,White,57.1429,Black,11.8644,4.82,33.0,156.0,White,57.1429,Black,11.8644,4.82
+act,math,Race/Ethnicity,West Allis-West Milwaukee,Nathan Hale High,2024-25,White,50.3268,Black,13.7931,3.65,147.0,29.0,White,50.3268,Black,13.7931,3.65
+act,math,Race/Ethnicity,Milwaukee,Reagan College Preparatory High,2024-25,White,56.8421,Black,16.129,3.52,94.0,28.0,White,56.8421,Black,16.129,3.52
+act,math,Race/Ethnicity,Brown Deer,Brown Deer Middle/High,2024-25,White,63.6364,Black,18.4615,3.45,21.0,62.0,White,63.6364,Black,18.4615,3.45
+act,math,Race/Ethnicity,Nicolet Union High School,Nicolet High,2024-25,White,69.403,Black,30.5085,2.27,129.0,55.0,White,69.403,Black,30.5085,2.27
+act,math,Race/Ethnicity,West Allis-West Milwaukee,Central High,2024-25,White,20.5479,Black,9.375,2.19,69.0,31.0,White,20.5479,Black,9.375,2.19
+act,math,Race/Ethnicity,Oak Creek-Franklin Joint,Oak Creek High,2024-25,White,49.4444,Black,25.8065,1.92,351.0,28.0,White,49.4444,Black,25.8065,1.92
+act,math,Race/Ethnicity,South Milwaukee,South Milwaukee High,2024-25,White,27.5,Black,15.0,1.83,118.0,20.0,White,27.5,Hispanic,12.5,2.2
+act,math,Race/Ethnicity,Cudahy,Cudahy High,2024-25,Black,,White,20.0,,,93.0,White,20.0,Hispanic,7.8431,2.55
+act,math,Race/Ethnicity,Franklin Public,Franklin High,2024-25,Black,,White,61.6279,,,255.0,Asian,70.2703,Hispanic,37.2549,1.89
+act,math,Race/Ethnicity,Greendale,Greendale High,2024-25,Black,,White,70.4545,,,132.0,White,70.4545,Hispanic,35.8974,1.96
+act,math,Race/Ethnicity,Greenfield,Greenfield High,2024-25,Black,,White,32.5203,,,117.0,Asian,44.8276,Hispanic,15.625,2.87
+act,math,Race/Ethnicity,Milwaukee,Bay View High,2024-25,Black,1.1236,White,,,85.0,,Hispanic,2.0,Black,1.1236,1.78
+act,math,Race/Ethnicity,Milwaukee,Bradley Technology High,2024-25,Black,1.9481,White,,,142.0,,Hispanic,3.2258,Black,1.9481,1.66
+act,math,Race/Ethnicity,Milwaukee,Hamilton High,2024-25,Black,1.5152,White,0.0,,56.0,23.0,Asian,12.5,White,0.0,
+act,math,Race/Ethnicity,Milwaukee,Milwaukee High School of the Arts,2024-25,Black,2.521,White,,,118.0,,Asian,10.0,Black,2.521,3.97
+act,math,Race/Ethnicity,Milwaukee,Pulaski High,2024-25,Black,0.0,White,,,42.0,,Hispanic,1.0101,Black,0.0,
+act,math,Race/Ethnicity,Milwaukee,Riverside High,2024-25,Black,4.1322,White,,,102.0,,Hispanic,12.5,Black,4.1322,3.03
+act,math,Race/Ethnicity,Milwaukee,South Division High,2024-25,Black,2.381,White,,,30.0,,Asian,5.2632,Hispanic,2.2222,2.37
+act,math,Race/Ethnicity,Saint Francis,Saint Francis High,2024-25,Black,,White,30.7692,,,51.0,White,30.7692,Hispanic,10.4167,2.95
+act,math,Race/Ethnicity,Seeds of Health,Tenor High,2024-25,Black,3.2258,White,,,31.0,,Hispanic,11.828,Black,3.2258,3.67
+act,math,Race/Ethnicity,Whitefish Bay,Whitefish Bay High,2024-25,Black,,White,84.2767,,,158.0,White,84.2767,Hispanic,70.3704,1.2
+act,math,Race/Ethnicity,Whitnall,Whitnall High,2024-25,Black,,White,52.7132,,,119.0,White,52.7132,Hispanic,36.6667,1.44
+act,reading,Disability Status,Greendale,Greendale High,2024-25,SwD,0.0,SwoD,0.0,,24.0,191.0,SwoD,0.0,SwoD,0.0,
+act,reading,Disability Status,Milwaukee,Audubon Technology and Communication High,2024-25,SwD,0.0,SwoD,0.0,,22.0,54.0,SwD,0.0,SwD,0.0,
+act,reading,Disability Status,Milwaukee,Bay View High,2024-25,SwD,0.0,SwoD,0.0,,39.0,137.0,SwoD,0.0,SwoD,0.0,
+act,reading,Disability Status,Milwaukee,Bradley Technology High,2024-25,SwD,0.0,SwoD,0.0,,20.0,174.0,SwoD,0.0,SwoD,0.0,
+act,reading,Disability Status,Milwaukee,Hamilton High,2024-25,SwD,0.0,SwoD,0.0,,31.0,180.0,SwoD,0.0,SwoD,0.0,
+act,reading,Disability Status,Milwaukee,King International,2024-25,SwD,0.0,SwoD,0.0,,22.0,252.0,SwoD,0.0,SwoD,0.0,
+act,reading,Disability Status,Milwaukee,Milwaukee High School of the Arts,2024-25,SwD,0.0,SwoD,0.0,,32.0,202.0,SwoD,0.0,SwoD,0.0,
+act,reading,Disability Status,Milwaukee,Pulaski High,2024-25,SwD,0.0,SwoD,0.0,,23.0,114.0,SwoD,0.0,SwoD,0.0,
+act,reading,Disability Status,Milwaukee,Reagan College Preparatory High,2024-25,SwD,0.0,SwoD,0.0,,34.0,296.0,SwoD,0.0,SwoD,0.0,
+act,reading,Disability Status,Milwaukee,Riverside High,2024-25,SwD,0.0,SwoD,0.0,,21.0,155.0,SwD,0.0,SwD,0.0,
+act,reading,Disability Status,Nicolet Union High School,Nicolet High,2024-25,SwD,0.0,SwoD,0.0,,23.0,217.0,SwD,0.0,SwD,0.0,
+act,reading,Disability Status,Oak Creek-Franklin Joint,Oak Creek High,2024-25,SwD,0.0,SwoD,0.0,,37.0,494.0,SwoD,0.0,SwoD,0.0,
+act,reading,Disability Status,Seeds of Health,Tenor High,2024-25,SwD,0.0,SwoD,0.0,,21.0,115.0,SwD,0.0,SwD,0.0,
+act,reading,Disability Status,South Milwaukee,South Milwaukee High,2024-25,SwD,0.0,SwoD,0.0,,36.0,198.0,SwoD,0.0,SwoD,0.0,
+act,reading,Disability Status,Wauwatosa,East High,2024-25,SwD,0.0,SwoD,0.0,,23.0,226.0,SwD,0.0,SwD,0.0,
+act,reading,Disability Status,Wauwatosa,West High,2024-25,SwD,0.0,SwoD,0.0,,28.0,223.0,SwoD,0.0,SwoD,0.0,
+act,reading,Disability Status,West Allis-West Milwaukee,Central High,2024-25,SwD,0.0,SwoD,0.0,,24.0,193.0,SwoD,0.0,SwoD,0.0,
+act,reading,Disability Status,West Allis-West Milwaukee,Nathan Hale High,2024-25,SwD,0.0,SwoD,0.0,,25.0,250.0,SwoD,0.0,SwoD,0.0,
+act,reading,Disability Status,Whitefish Bay,Whitefish Bay High,2024-25,SwD,0.0,SwoD,0.0,,20.0,210.0,SwoD,0.0,SwoD,0.0,
+act,reading,EL Status,Milwaukee,Bay View High,2024-25,EL,0.0,Eng Prof,0.0,,34.0,142.0,EL,0.0,EL,0.0,
+act,reading,EL Status,Milwaukee,Bradley Technology High,2024-25,EL,0.0,Eng Prof,0.0,,27.0,167.0,Eng Prof,0.0,Eng Prof,0.0,
+act,reading,EL Status,Milwaukee,Carmen High School of Science and Technology South Campus,2024-25,EL,0.0,Eng Prof,0.0,,50.0,43.0,Eng Prof,0.0,Eng Prof,0.0,
+act,reading,EL Status,Milwaukee,Carmen High School of Science and Technology Southeast Campus,2024-25,EL,0.0,Eng Prof,0.0,,74.0,75.0,Eng Prof,0.0,Eng Prof,0.0,
+act,reading,EL Status,Milwaukee,HAPA-Hmong American Peace Academy K3-12,2024-25,EL,0.0,Eng Prof,0.0,,27.0,114.0,Eng Prof,0.0,Eng Prof,0.0,
+act,reading,EL Status,Milwaukee,Hamilton High,2024-25,EL,0.0,Eng Prof,0.0,,76.0,135.0,Eng Prof,0.0,Eng Prof,0.0,
+act,reading,EL Status,Milwaukee,King International,2024-25,EL,0.0,Eng Prof,0.0,,23.0,251.0,Eng Prof,0.0,Eng Prof,0.0,
+act,reading,EL Status,Milwaukee,Milwaukee High School of the Arts,2024-25,EL,0.0,Eng Prof,0.0,,40.0,194.0,Eng Prof,0.0,Eng Prof,0.0,
+act,reading,EL Status,Milwaukee,Pulaski High,2024-25,EL,0.0,Eng Prof,0.0,,60.0,77.0,EL,0.0,EL,0.0,
+act,reading,EL Status,Milwaukee,Reagan College Preparatory High,2024-25,EL,0.0,Eng Prof,0.0,,39.0,291.0,EL,0.0,EL,0.0,
+act,reading,EL Status,Milwaukee,Riverside High,2024-25,EL,0.0,Eng Prof,0.0,,37.0,139.0,EL,0.0,EL,0.0,
+act,reading,EL Status,Milwaukee,South Division High,2024-25,EL,0.0,Eng Prof,0.0,,85.0,49.0,Eng Prof,0.0,Eng Prof,0.0,
+act,reading,EL Status,Oak Creek-Franklin Joint,Oak Creek High,2024-25,EL,0.0,Eng Prof,0.0,,29.0,502.0,Eng Prof,0.0,Eng Prof,0.0,
+act,reading,EL Status,Seeds of Health,Tenor High,2024-25,EL,0.0,Eng Prof,0.0,,29.0,107.0,Eng Prof,0.0,Eng Prof,0.0,
+act,reading,EL Status,South Milwaukee,South Milwaukee High,2024-25,EL,0.0,Eng Prof,0.0,,21.0,213.0,Eng Prof,0.0,Eng Prof,0.0,
+act,reading,Economic Status,Brown Deer,Brown Deer Middle/High,2024-25,Econ Disadv,0.0,Not Econ Disadv,0.0,,60.0,53.0,Not Econ Disadv,0.0,Not Econ Disadv,0.0,
+act,reading,Economic Status,Cudahy,Cudahy High,2024-25,Econ Disadv,0.0,Not Econ Disadv,0.0,,103.0,63.0,Not Econ Disadv,0.0,Not Econ Disadv,0.0,
+act,reading,Economic Status,Franklin Public,Franklin High,2024-25,Econ Disadv,0.0,Not Econ Disadv,0.0,,81.0,297.0,Not Econ Disadv,0.0,Not Econ Disadv,0.0,
+act,reading,Economic Status,Greendale,Greendale High,2024-25,Econ Disadv,0.0,Not Econ Disadv,0.0,,64.0,151.0,Not Econ Disadv,0.0,Not Econ Disadv,0.0,
+act,reading,Economic Status,Greenfield,Greenfield High,2024-25,Econ Disadv,0.0,Not Econ Disadv,0.0,,132.0,131.0,Not Econ Disadv,0.0,Not Econ Disadv,0.0,
+act,reading,Economic Status,Milwaukee,Bay View High,2024-25,Econ Disadv,0.0,Not Econ Disadv,0.0,,155.0,21.0,Not Econ Disadv,0.0,Not Econ Disadv,0.0,
+act,reading,Economic Status,Milwaukee,Golda Meir School,2024-25,Econ Disadv,0.0,Not Econ Disadv,0.0,,57.0,75.0,Not Econ Disadv,0.0,Not Econ Disadv,0.0,
+act,reading,Economic Status,Milwaukee,HAPA-Hmong American Peace Academy K3-12,2024-25,Econ Disadv,0.0,Not Econ Disadv,0.0,,120.0,21.0,Not Econ Disadv,0.0,Not Econ Disadv,0.0,
+act,reading,Economic Status,Milwaukee,Hamilton High,2024-25,Econ Disadv,0.0,Not Econ Disadv,0.0,,166.0,45.0,Not Econ Disadv,0.0,Not Econ Disadv,0.0,
+act,reading,Economic Status,Milwaukee,King International,2024-25,Econ Disadv,0.0,Not Econ Disadv,0.0,,172.0,102.0,Not Econ Disadv,0.0,Not Econ Disadv,0.0,
+act,reading,Economic Status,Milwaukee,MacDowell Montessori School K3-12,2024-25,Econ Disadv,0.0,Not Econ Disadv,0.0,,31.0,22.0,Not Econ Disadv,0.0,Not Econ Disadv,0.0,
+act,reading,Economic Status,Milwaukee,Milwaukee High School of the Arts,2024-25,Econ Disadv,0.0,Not Econ Disadv,0.0,,176.0,58.0,Econ Disadv,0.0,Econ Disadv,0.0,
+act,reading,Economic Status,Milwaukee,Milwaukee School of Languages,2024-25,Econ Disadv,0.0,Not Econ Disadv,0.0,,46.0,51.0,Econ Disadv,0.0,Econ Disadv,0.0,
+act,reading,Economic Status,Milwaukee,Pulaski High,2024-25,Econ Disadv,0.0,Not Econ Disadv,0.0,,107.0,30.0,Not Econ Disadv,0.0,Not Econ Disadv,0.0,
+act,reading,Economic Status,Milwaukee,Reagan College Preparatory High,2024-25,Econ Disadv,0.0,Not Econ Disadv,0.0,,164.0,166.0,Not Econ Disadv,0.0,Not Econ Disadv,0.0,
+act,reading,Economic Status,Milwaukee,Riverside High,2024-25,Econ Disadv,0.0,Not Econ Disadv,0.0,,129.0,47.0,Not Econ Disadv,0.0,Not Econ Disadv,0.0,
+act,reading,Economic Status,Nicolet Union High School,Nicolet High,2024-25,Econ Disadv,0.0,Not Econ Disadv,0.0,,47.0,193.0,Econ Disadv,0.0,Econ Disadv,0.0,
+act,reading,Economic Status,Oak Creek-Franklin Joint,Oak Creek High,2024-25,Econ Disadv,0.0,Not Econ Disadv,0.0,,146.0,385.0,Econ Disadv,0.0,Econ Disadv,0.0,
+act,reading,Economic Status,Saint Francis,Saint Francis High,2024-25,Econ Disadv,0.0,Not Econ Disadv,0.0,,57.0,61.0,Not Econ Disadv,0.0,Not Econ Disadv,0.0,
+act,reading,Economic Status,Seeds of Health,Tenor High,2024-25,Econ Disadv,0.0,Not Econ Disadv,0.0,,105.0,31.0,Not Econ Disadv,0.0,Not Econ Disadv,0.0,
+act,reading,Economic Status,Seeds of Health,Veritas High,2024-25,Econ Disadv,0.0,Not Econ Disadv,0.0,,48.0,23.0,Not Econ Disadv,0.0,Not Econ Disadv,0.0,
+act,reading,Economic Status,Shorewood,Shorewood High,2024-25,Econ Disadv,0.0,Not Econ Disadv,0.0,,20.0,118.0,Not Econ Disadv,0.0,Not Econ Disadv,0.0,
+act,reading,Economic Status,South Milwaukee,South Milwaukee High,2024-25,Econ Disadv,0.0,Not Econ Disadv,0.0,,118.0,116.0,Not Econ Disadv,0.0,Not Econ Disadv,0.0,
+act,reading,Economic Status,Wauwatosa,East High,2024-25,Econ Disadv,0.0,Not Econ Disadv,0.0,,50.0,199.0,Econ Disadv,0.0,Econ Disadv,0.0,
+act,reading,Economic Status,Wauwatosa,West High,2024-25,Econ Disadv,0.0,Not Econ Disadv,0.0,,76.0,175.0,Not Econ Disadv,0.0,Not Econ Disadv,0.0,
+act,reading,Economic Status,West Allis-West Milwaukee,Central High,2024-25,Econ Disadv,0.0,Not Econ Disadv,0.0,,161.0,56.0,Not Econ Disadv,0.0,Not Econ Disadv,0.0,
+act,reading,Economic Status,West Allis-West Milwaukee,Nathan Hale High,2024-25,Econ Disadv,0.0,Not Econ Disadv,0.0,,154.0,121.0,Not Econ Disadv,0.0,Not Econ Disadv,0.0,
+act,reading,Economic Status,Whitnall,Whitnall High,2024-25,Econ Disadv,0.0,Not Econ Disadv,0.0,,43.0,133.0,Not Econ Disadv,0.0,Not Econ Disadv,0.0,
+act,reading,Gender,Brown Deer,Brown Deer Middle/High,2024-25,Male,0.0,Female,0.0,,60.0,53.0,Male,0.0,Male,0.0,
+act,reading,Gender,Dr. Howard Fuller Collegiate Academy,Dr Howard Fuller Collegiate Academy,2024-25,Male,0.0,Female,0.0,,33.0,51.0,Male,0.0,Male,0.0,
+act,reading,Gender,Franklin Public,Franklin High,2024-25,Male,0.0,Female,0.0,,195.0,183.0,Male,0.0,Male,0.0,
+act,reading,Gender,Greendale,Greendale High,2024-25,Male,0.0,Female,0.0,,121.0,94.0,Male,0.0,Male,0.0,
+act,reading,Gender,Greenfield,Greenfield High,2024-25,Male,0.0,Female,0.0,,131.0,132.0,Male,0.0,Male,0.0,
+act,reading,Gender,Milwaukee,Audubon Technology and Communication High,2024-25,Male,0.0,Female,0.0,,46.0,30.0,Male,0.0,Male,0.0,
+act,reading,Gender,Milwaukee,Bay View High,2024-25,Male,0.0,Female,0.0,,86.0,90.0,Male,0.0,Male,0.0,
+act,reading,Gender,Milwaukee,Bradley Technology High,2024-25,Male,0.0,Female,0.0,,107.0,87.0,Male,0.0,Male,0.0,
+act,reading,Gender,Milwaukee,Carmen High School of Science and Technology South Campus,2024-25,Male,0.0,Female,0.0,,45.0,48.0,Male,0.0,Male,0.0,
+act,reading,Gender,Milwaukee,Carmen High School of Science and Technology Southeast Campus,2024-25,Male,0.0,Female,0.0,,80.0,69.0,Male,0.0,Male,0.0,
+act,reading,Gender,Milwaukee,Carmen Middle/High School of Science and Technology Northwest Campus,2024-25,Male,0.0,Female,0.0,,39.0,27.0,Male,0.0,Male,0.0,
+act,reading,Gender,Milwaukee,Golda Meir School,2024-25,Male,0.0,Female,0.0,,60.0,72.0,Male,0.0,Male,0.0,
+act,reading,Gender,Milwaukee,HAPA-Hmong American Peace Academy K3-12,2024-25,Male,0.0,Female,0.0,,69.0,72.0,Male,0.0,Male,0.0,
+act,reading,Gender,Milwaukee,Hamilton High,2024-25,Male,0.0,Female,0.0,,100.0,111.0,Male,0.0,Male,0.0,
+act,reading,Gender,Milwaukee,Harold S Vincent School of Agricultural Science,2024-25,Male,0.0,Female,0.0,,30.0,43.0,Male,0.0,Male,0.0,
+act,reading,Gender,Milwaukee,James Madison Academic Campus,2024-25,Male,0.0,Female,0.0,,30.0,35.0,Male,0.0,Male,0.0,
+act,reading,Gender,Milwaukee,King International,2024-25,Male,0.0,Female,0.0,,141.0,133.0,Male,0.0,Male,0.0,
+act,reading,Gender,Milwaukee,MacDowell Montessori School K3-12,2024-25,Male,0.0,Female,0.0,,28.0,25.0,Male,0.0,Male,0.0,
+act,reading,Gender,Milwaukee,Marshall High,2024-25,Male,0.0,Female,0.0,,37.0,30.0,Male,0.0,Male,0.0,
+act,reading,Gender,Milwaukee,Milwaukee High School of the Arts,2024-25,Male,0.0,Female,0.0,,88.0,146.0,Male,0.0,Male,0.0,
+act,reading,Gender,Milwaukee,Milwaukee School of Languages,2024-25,Male,0.0,Female,0.0,,41.0,56.0,Female,0.0,Female,0.0,
+act,reading,Gender,Milwaukee,Pulaski High,2024-25,Male,0.0,Female,0.0,,77.0,60.0,Male,0.0,Male,0.0,
+act,reading,Gender,Milwaukee,Reagan College Preparatory High,2024-25,Male,0.0,Female,0.0,,158.0,172.0,Male,0.0,Male,0.0,
+act,reading,Gender,Milwaukee,Riverside High,2024-25,Male,0.0,Female,0.0,,85.0,91.0,Male,0.0,Male,0.0,
+act,reading,Gender,Milwaukee,South Division High,2024-25,Male,0.0,Female,0.0,,61.0,73.0,Male,0.0,Male,0.0,
+act,reading,Gender,Milwaukee,WHS Information Technology,2024-25,Male,0.0,Female,0.0,,26.0,21.0,Male,0.0,Male,0.0,
+act,reading,Gender,Milwaukee Science Education Consortium,Milwaukee Academy of Science,2024-25,Male,0.0,Female,0.0,,41.0,34.0,Male,0.0,Male,0.0,
+act,reading,Gender,Oak Creek-Franklin Joint,Oak Creek High,2024-25,Male,0.0,Female,0.0,,288.0,243.0,Male,0.0,Male,0.0,
+act,reading,Gender,Seeds of Health,Tenor High,2024-25,Male,0.0,Female,0.0,,79.0,57.0,Male,0.0,Male,0.0,
+act,reading,Gender,Seeds of Health,Veritas High,2024-25,Male,0.0,Female,0.0,,23.0,48.0,Male,0.0,Male,0.0,
+act,reading,Gender,Shorewood,Shorewood High,2024-25,Male,0.0,Female,0.0,,75.0,63.0,Female,0.0,Female,0.0,
+act,reading,Gender,South Milwaukee,South Milwaukee High,2024-25,Male,0.0,Female,0.0,,121.0,113.0,Male,0.0,Male,0.0,
+act,reading,Gender,Wauwatosa,West High,2024-25,Male,0.0,Female,0.0,,137.0,114.0,Male,0.0,Male,0.0,
+act,reading,Gender,West Allis-West Milwaukee,Central High,2024-25,Male,0.0,Female,0.0,,126.0,91.0,Male,0.0,Male,0.0,
+act,reading,Gender,West Allis-West Milwaukee,Nathan Hale High,2024-25,Male,0.0,Female,0.0,,138.0,137.0,Female,0.0,Female,0.0,
+act,reading,Gender,Whitefish Bay,Whitefish Bay High,2024-25,Male,0.0,Female,0.0,,115.0,115.0,Female,0.0,Female,0.0,
+act,reading,Gender,Whitnall,Whitnall High,2024-25,Male,0.0,Female,0.0,,90.0,86.0,Male,0.0,Male,0.0,
+act,reading,Race/Ethnicity,Brown Deer,Brown Deer Middle/High,2024-25,Black,0.0,White,0.0,,62.0,21.0,White,0.0,White,0.0,
+act,reading,Race/Ethnicity,Cudahy,Cudahy High,2024-25,Black,,White,0.0,,,92.0,White,0.0,White,0.0,
+act,reading,Race/Ethnicity,Franklin Public,Franklin High,2024-25,Black,,White,0.0,,,255.0,White,0.0,White,0.0,
+act,reading,Race/Ethnicity,Greendale,Greendale High,2024-25,Black,,White,0.0,,,132.0,White,0.0,White,0.0,
+act,reading,Race/Ethnicity,Greenfield,Greenfield High,2024-25,Black,,White,0.0,,,117.0,White,0.0,White,0.0,
+act,reading,Race/Ethnicity,Milwaukee,Bay View High,2024-25,Black,0.0,White,,,84.0,,Hispanic,0.0,Hispanic,0.0,
+act,reading,Race/Ethnicity,Milwaukee,Bradley Technology High,2024-25,Black,0.0,White,,,142.0,,Hispanic,0.0,Hispanic,0.0,
+act,reading,Race/Ethnicity,Milwaukee,Hamilton High,2024-25,Black,0.0,White,0.0,,56.0,23.0,Hispanic,0.0,Hispanic,0.0,
+act,reading,Race/Ethnicity,Milwaukee,King International,2024-25,Black,0.0,White,0.0,,156.0,33.0,Asian,0.0,Asian,0.0,
+act,reading,Race/Ethnicity,Milwaukee,Milwaukee High School of the Arts,2024-25,Black,0.0,White,,,118.0,,Hispanic,0.0,Hispanic,0.0,
+act,reading,Race/Ethnicity,Milwaukee,Milwaukee School of Languages,2024-25,Black,0.0,White,0.0,,45.0,26.0,Black,0.0,Black,0.0,
+act,reading,Race/Ethnicity,Milwaukee,Pulaski High,2024-25,Black,0.0,White,,,42.0,,Black,0.0,Black,0.0,
+act,reading,Race/Ethnicity,Milwaukee,Reagan College Preparatory High,2024-25,Black,0.0,White,0.0,,28.0,94.0,Asian,0.0,Asian,0.0,
+act,reading,Race/Ethnicity,Milwaukee,Riverside High,2024-25,Black,0.0,White,,,102.0,,Black,0.0,Black,0.0,
+act,reading,Race/Ethnicity,Milwaukee,South Division High,2024-25,Black,0.0,White,,,30.0,,Asian,0.0,Asian,0.0,
+act,reading,Race/Ethnicity,Nicolet Union High School,Nicolet High,2024-25,Black,0.0,White,0.0,,55.0,129.0,Black,0.0,Black,0.0,
+act,reading,Race/Ethnicity,Oak Creek-Franklin Joint,Oak Creek High,2024-25,Black,0.0,White,0.0,,28.0,351.0,White,0.0,White,0.0,
+act,reading,Race/Ethnicity,Saint Francis,Saint Francis High,2024-25,Black,,White,0.0,,,51.0,Hispanic,0.0,Hispanic,0.0,
+act,reading,Race/Ethnicity,Seeds of Health,Tenor High,2024-25,Black,0.0,White,,,31.0,,Black,0.0,Black,0.0,
+act,reading,Race/Ethnicity,South Milwaukee,South Milwaukee High,2024-25,Black,0.0,White,0.0,,20.0,118.0,Black,0.0,Black,0.0,
+act,reading,Race/Ethnicity,Wauwatosa,East High,2024-25,Black,0.0,White,0.0,,38.0,166.0,Black,0.0,Black,0.0,
+act,reading,Race/Ethnicity,Wauwatosa,West High,2024-25,Black,0.0,White,0.0,,63.0,127.0,Black,0.0,Black,0.0,
+act,reading,Race/Ethnicity,West Allis-West Milwaukee,Central High,2024-25,Black,0.0,White,0.0,,31.0,69.0,Black,0.0,Black,0.0,
+act,reading,Race/Ethnicity,West Allis-West Milwaukee,Nathan Hale High,2024-25,Black,0.0,White,0.0,,29.0,147.0,Black,0.0,Black,0.0,
+act,reading,Race/Ethnicity,Whitefish Bay,Whitefish Bay High,2024-25,Black,,White,0.0,,,158.0,White,0.0,White,0.0,
+act,reading,Race/Ethnicity,Whitnall,Whitnall High,2024-25,Black,,White,0.0,,,119.0,Hispanic,0.0,Hispanic,0.0,
+act,science,Disability Status,West Allis-West Milwaukee,Nathan Hale High,2024-25,SwoD,41.7969,SwD,3.2258,12.96,249.0,24.0,SwoD,41.7969,SwD,3.2258,12.96
+act,science,Disability Status,South Milwaukee,South Milwaukee High,2024-25,SwoD,31.0,SwD,2.5,12.4,197.0,36.0,SwoD,31.0,SwD,2.5,12.4
+act,science,Disability Status,Oak Creek-Franklin Joint,Oak Creek High,2024-25,SwoD,48.8235,SwD,4.7619,10.25,494.0,37.0,SwoD,48.8235,SwD,4.7619,10.25
+act,science,Disability Status,Milwaukee,Reagan College Preparatory High,2024-25,SwoD,56.5217,SwD,10.5263,5.37,296.0,34.0,SwoD,56.5217,SwD,10.5263,5.37
+act,science,Disability Status,Wauwatosa,West High,2024-25,SwoD,49.3392,SwD,9.6774,5.1,223.0,28.0,SwoD,49.3392,SwD,9.6774,5.1
+act,science,Disability Status,Milwaukee,Bay View High,2024-25,SwoD,7.6923,SwD,2.439,3.15,137.0,39.0,SwoD,7.6923,SwD,2.439,3.15
+act,science,Disability Status,Greendale,Greendale High,2024-25,SwoD,65.445,SwD,23.0769,2.84,191.0,24.0,SwoD,65.445,SwD,23.0769,2.84
+act,science,Disability Status,Nicolet Union High School,Nicolet High,2024-25,SwoD,59.4595,SwD,21.4286,2.77,217.0,22.0,SwoD,59.4595,SwD,21.4286,2.77
+act,science,Disability Status,Seeds of Health,Tenor High,2024-25,SwoD,12.1739,SwD,4.5455,2.68,115.0,21.0,SwoD,12.1739,SwD,4.5455,2.68
+act,science,Disability Status,Milwaukee,King International,2024-25,SwoD,29.1815,SwD,11.5385,2.53,251.0,22.0,SwoD,29.1815,SwD,11.5385,2.53
+act,science,Disability Status,Whitefish Bay,Whitefish Bay High,2024-25,SwoD,84.434,SwD,38.0952,2.22,210.0,20.0,SwoD,84.434,SwD,38.0952,2.22
+act,science,Disability Status,Milwaukee,Pulaski High,2024-25,SwoD,5.5172,SwD,2.9412,1.88,114.0,23.0,SwoD,5.5172,SwD,2.9412,1.88
+act,science,Disability Status,Wauwatosa,East High,2024-25,SwoD,59.6567,SwD,34.6154,1.72,226.0,23.0,SwoD,59.6567,SwD,34.6154,1.72
+act,science,Disability Status,Milwaukee,Audubon Technology and Communication High,2024-25,SwoD,17.5439,SwD,0.0,,54.0,22.0,SwoD,17.5439,SwD,0.0,
+act,science,Disability Status,Milwaukee,Bradley Technology High,2024-25,SwoD,5.914,SwD,0.0,,174.0,20.0,SwoD,5.914,SwD,0.0,
+act,science,Disability Status,Milwaukee,Hamilton High,2024-25,SwoD,5.0691,SwD,0.0,,180.0,31.0,SwoD,5.0691,SwD,0.0,
+act,science,Disability Status,Milwaukee,Milwaukee High School of the Arts,2024-25,SwoD,12.0192,SwD,0.0,,202.0,32.0,SwoD,12.0192,SwD,0.0,
+act,science,Disability Status,Milwaukee,Riverside High,2024-25,SwoD,13.8889,SwD,0.0,,155.0,21.0,SwoD,13.8889,SwD,0.0,
+act,science,Disability Status,West Allis-West Milwaukee,Central High,2024-25,SwoD,17.0,SwD,0.0,,193.0,24.0,SwoD,17.0,SwD,0.0,
+act,science,EL Status,Milwaukee,South Division High,2024-25,Eng Prof,7.4627,EL,0.8929,8.36,49.0,85.0,Eng Prof,7.4627,EL,0.8929,8.36
+act,science,EL Status,Milwaukee,Reagan College Preparatory High,2024-25,Eng Prof,56.7114,EL,10.2564,5.53,291.0,39.0,Eng Prof,56.7114,EL,10.2564,5.53
+act,science,EL Status,Milwaukee,HAPA-Hmong American Peace Academy K3-12,2024-25,Eng Prof,55.2632,EL,11.1111,4.97,114.0,27.0,Eng Prof,55.2632,EL,11.1111,4.97
+act,science,EL Status,Milwaukee,Riverside High,2024-25,Eng Prof,14.1104,EL,4.6512,3.03,139.0,37.0,Eng Prof,14.1104,EL,4.6512,3.03
+act,science,EL Status,Milwaukee,Milwaukee High School of the Arts,2024-25,Eng Prof,11.6162,EL,4.7619,2.44,194.0,40.0,Eng Prof,11.6162,EL,4.7619,2.44
+act,science,EL Status,Oak Creek-Franklin Joint,Oak Creek High,2024-25,Eng Prof,47.025,EL,19.3548,2.43,502.0,29.0,Eng Prof,47.025,EL,19.3548,2.43
+act,science,EL Status,Milwaukee,Carmen High School of Science and Technology South Campus,2024-25,Eng Prof,32.5581,EL,13.7255,2.37,43.0,50.0,Eng Prof,32.5581,EL,13.7255,2.37
+act,science,EL Status,Milwaukee,Hamilton High,2024-25,Eng Prof,5.2941,EL,2.2472,2.36,135.0,76.0,Eng Prof,5.2941,EL,2.2472,2.36
+act,science,EL Status,Milwaukee,Carmen High School of Science and Technology Southeast Campus,2024-25,Eng Prof,20.7792,EL,8.9744,2.32,75.0,74.0,Eng Prof,20.7792,EL,8.9744,2.32
+act,science,EL Status,Milwaukee,King International,2024-25,Eng Prof,29.2419,EL,13.3333,2.19,250.0,23.0,Eng Prof,29.2419,EL,13.3333,2.19
+act,science,EL Status,Milwaukee,Pulaski High,2024-25,Eng Prof,6.1856,EL,3.6585,1.69,77.0,60.0,Eng Prof,6.1856,EL,3.6585,1.69
+act,science,EL Status,Milwaukee,Bay View High,2024-25,Eng Prof,6.7568,EL,5.5556,1.22,142.0,34.0,Eng Prof,6.7568,EL,5.5556,1.22
+act,science,EL Status,Milwaukee,Bradley Technology High,2024-25,Eng Prof,6.044,EL,0.0,,167.0,27.0,Eng Prof,6.044,EL,0.0,
+act,science,EL Status,Seeds of Health,Tenor High,2024-25,Eng Prof,14.0187,EL,0.0,,107.0,29.0,Eng Prof,14.0187,EL,0.0,
+act,science,EL Status,South Milwaukee,South Milwaukee High,2024-25,Eng Prof,28.8991,EL,0.0,,212.0,21.0,Eng Prof,28.8991,EL,0.0,
+act,science,Economic Status,Wauwatosa,West High,2024-25,Not Econ Disadv,57.8652,Econ Disadv,15.0,3.86,175.0,76.0,Not Econ Disadv,57.8652,Econ Disadv,15.0,3.86
+act,science,Economic Status,Nicolet Union High School,Nicolet High,2024-25,Not Econ Disadv,63.5,Econ Disadv,22.0,2.89,193.0,46.0,Not Econ Disadv,63.5,Econ Disadv,22.0,2.89
+act,science,Economic Status,South Milwaukee,South Milwaukee High,2024-25,Not Econ Disadv,37.6068,Econ Disadv,15.4472,2.43,116.0,117.0,Not Econ Disadv,37.6068,Econ Disadv,15.4472,2.43
+act,science,Economic Status,Whitnall,Whitnall High,2024-25,Not Econ Disadv,55.3191,Econ Disadv,23.5294,2.35,133.0,43.0,Not Econ Disadv,55.3191,Econ Disadv,23.5294,2.35
+act,science,Economic Status,Milwaukee,Milwaukee High School of the Arts,2024-25,Not Econ Disadv,18.0328,Econ Disadv,7.8212,2.31,58.0,176.0,Not Econ Disadv,18.0328,Econ Disadv,7.8212,2.31
+act,science,Economic Status,Saint Francis,Saint Francis High,2024-25,Not Econ Disadv,32.2581,Econ Disadv,14.0351,2.3,61.0,57.0,Not Econ Disadv,32.2581,Econ Disadv,14.0351,2.3
+act,science,Economic Status,West Allis-West Milwaukee,Nathan Hale High,2024-25,Not Econ Disadv,54.0984,Econ Disadv,25.4545,2.13,121.0,152.0,Not Econ Disadv,54.0984,Econ Disadv,25.4545,2.13
+act,science,Economic Status,Wauwatosa,East High,2024-25,Not Econ Disadv,64.0777,Econ Disadv,30.1887,2.12,199.0,50.0,Not Econ Disadv,64.0777,Econ Disadv,30.1887,2.12
+act,science,Economic Status,Oak Creek-Franklin Joint,Oak Creek High,2024-25,Not Econ Disadv,53.2828,Econ Disadv,25.641,2.08,385.0,146.0,Not Econ Disadv,53.2828,Econ Disadv,25.641,2.08
+act,science,Economic Status,Milwaukee,Milwaukee School of Languages,2024-25,Not Econ Disadv,34.6154,Econ Disadv,17.6471,1.96,51.0,46.0,Not Econ Disadv,34.6154,Econ Disadv,17.6471,1.96
+act,science,Economic Status,Cudahy,Cudahy High,2024-25,Not Econ Disadv,33.3333,Econ Disadv,17.1171,1.95,63.0,103.0,Not Econ Disadv,33.3333,Econ Disadv,17.1171,1.95
+act,science,Economic Status,Seeds of Health,Veritas High,2024-25,Econ Disadv,16.6667,Not Econ Disadv,8.6957,1.92,48.0,23.0,Econ Disadv,16.6667,Not Econ Disadv,8.6957,1.92
+act,science,Economic Status,West Allis-West Milwaukee,Central High,2024-25,Not Econ Disadv,22.0339,Econ Disadv,12.2807,1.79,56.0,161.0,Not Econ Disadv,22.0339,Econ Disadv,12.2807,1.79
+act,science,Economic Status,Milwaukee,Riverside High,2024-25,Not Econ Disadv,17.6471,Econ Disadv,10.3226,1.71,47.0,129.0,Not Econ Disadv,17.6471,Econ Disadv,10.3226,1.71
+act,science,Economic Status,Milwaukee,Pulaski High,2024-25,Not Econ Disadv,7.3171,Econ Disadv,4.3478,1.68,30.0,107.0,Not Econ Disadv,7.3171,Econ Disadv,4.3478,1.68
+act,science,Economic Status,Greenfield,Greenfield High,2024-25,Not Econ Disadv,42.3358,Econ Disadv,26.5734,1.59,131.0,131.0,Not Econ Disadv,42.3358,Econ Disadv,26.5734,1.59
+act,science,Economic Status,Franklin Public,Franklin High,2024-25,Not Econ Disadv,58.3333,Econ Disadv,38.2716,1.52,297.0,81.0,Not Econ Disadv,58.3333,Econ Disadv,38.2716,1.52
+act,science,Economic Status,Milwaukee,King International,2024-25,Not Econ Disadv,35.1351,Econ Disadv,23.4694,1.5,102.0,171.0,Not Econ Disadv,35.1351,Econ Disadv,23.4694,1.5
+act,science,Economic Status,Milwaukee,Bay View High,2024-25,Not Econ Disadv,9.0909,Econ Disadv,6.1728,1.47,21.0,155.0,Not Econ Disadv,9.0909,Econ Disadv,6.1728,1.47
+act,science,Economic Status,Milwaukee,Reagan College Preparatory High,2024-25,Not Econ Disadv,58.5799,Econ Disadv,44.0476,1.33,166.0,164.0,Not Econ Disadv,58.5799,Econ Disadv,44.0476,1.33
+act,science,Economic Status,Shorewood,Shorewood High,2024-25,Not Econ Disadv,69.7479,Econ Disadv,52.381,1.33,118.0,20.0,Not Econ Disadv,69.7479,Econ Disadv,52.381,1.33
+act,science,Economic Status,Greendale,Greendale High,2024-25,Not Econ Disadv,64.4737,Econ Disadv,50.7692,1.27,151.0,64.0,Not Econ Disadv,64.4737,Econ Disadv,50.7692,1.27
+act,science,Economic Status,Brown Deer,Brown Deer Middle/High,2024-25,Not Econ Disadv,33.3333,Econ Disadv,26.9841,1.24,53.0,60.0,Not Econ Disadv,33.3333,Econ Disadv,26.9841,1.24
+act,science,Economic Status,Milwaukee,Hamilton High,2024-25,Econ Disadv,4.4118,Not Econ Disadv,3.6364,1.21,166.0,45.0,Econ Disadv,4.4118,Not Econ Disadv,3.6364,1.21
+act,science,Economic Status,Milwaukee,Golda Meir School,2024-25,Not Econ Disadv,38.961,Econ Disadv,32.7586,1.19,75.0,57.0,Not Econ Disadv,38.961,Econ Disadv,32.7586,1.19
+act,science,Economic Status,Seeds of Health,Tenor High,2024-25,Not Econ Disadv,12.5,Econ Disadv,10.4762,1.19,31.0,105.0,Not Econ Disadv,12.5,Econ Disadv,10.4762,1.19
+act,science,Economic Status,Milwaukee,HAPA-Hmong American Peace Academy K3-12,2024-25,Not Econ Disadv,52.381,Econ Disadv,45.8333,1.14,21.0,120.0,Not Econ Disadv,52.381,Econ Disadv,45.8333,1.14
+act,science,Economic Status,Milwaukee,MacDowell Montessori School K3-12,2024-25,Econ Disadv,18.75,Not Econ Disadv,18.1818,1.03,31.0,22.0,Econ Disadv,18.75,Not Econ Disadv,18.1818,1.03
+act,science,Gender,Milwaukee,Carmen Middle/High School of Science and Technology Northwest Campus,2024-25,Male,14.6341,Female,3.4483,4.24,38.0,27.0,Male,14.6341,Female,3.4483,4.24
+act,science,Gender,Milwaukee,Bradley Technology High,2024-25,Male,7.9646,Female,2.0619,3.86,107.0,87.0,Male,7.9646,Female,2.0619,3.86
+act,science,Gender,Milwaukee,South Division High,2024-25,Male,4.878,Female,2.0619,2.37,61.0,73.0,Male,4.878,Female,2.0619,2.37
+act,science,Gender,Milwaukee,Bay View High,2024-25,Male,8.7912,Female,4.3011,2.04,86.0,90.0,Male,8.7912,Female,4.3011,2.04
+act,science,Gender,Milwaukee,Carmen High School of Science and Technology Southeast Campus,2024-25,Male,18.8235,Female,10.0,1.88,80.0,69.0,Male,18.8235,Female,10.0,1.88
+act,science,Gender,Seeds of Health,Tenor High,2024-25,Female,14.0351,Male,8.75,1.6,57.0,79.0,Female,14.0351,Male,8.75,1.6
+act,science,Gender,Milwaukee,Milwaukee High School of the Arts,2024-25,Female,12.0805,Male,7.6923,1.57,146.0,88.0,Female,12.0805,Male,7.6923,1.57
+act,science,Gender,Milwaukee Science Education Consortium,Milwaukee Academy of Science,2024-25,Male,13.3333,Female,8.5714,1.56,41.0,34.0,Male,13.3333,Female,8.5714,1.56
+act,science,Gender,Milwaukee,Audubon Technology and Communication High,2024-25,Male,14.5833,Female,9.6774,1.51,46.0,30.0,Male,14.5833,Female,9.6774,1.51
+act,science,Gender,Milwaukee,HAPA-Hmong American Peace Academy K3-12,2024-25,Male,56.5217,Female,37.5,1.51,69.0,72.0,Male,56.5217,Female,37.5,1.51
+act,science,Gender,Milwaukee,Golda Meir School,2024-25,Male,44.2623,Female,29.7297,1.49,60.0,72.0,Male,44.2623,Female,29.7297,1.49
+act,science,Gender,Milwaukee,Riverside High,2024-25,Female,14.4231,Male,9.8039,1.47,91.0,85.0,Female,14.4231,Male,9.8039,1.47
+act,science,Gender,Dr. Howard Fuller Collegiate Academy,Dr Howard Fuller Collegiate Academy,2024-25,Female,3.8462,Male,2.7027,1.42,51.0,33.0,Female,3.8462,Male,2.7027,1.42
+act,science,Gender,Seeds of Health,Veritas High,2024-25,Male,17.3913,Female,12.5,1.39,23.0,48.0,Male,17.3913,Female,12.5,1.39
+act,science,Gender,Shorewood,Shorewood High,2024-25,Male,76.3158,Female,56.25,1.36,75.0,63.0,Male,76.3158,Female,56.25,1.36
+act,science,Gender,Milwaukee,King International,2024-25,Male,31.4103,Female,23.8411,1.32,141.0,132.0,Male,31.4103,Female,23.8411,1.32
+act,science,Gender,Milwaukee,Hamilton High,2024-25,Male,4.8387,Female,3.7037,1.31,100.0,111.0,Male,4.8387,Female,3.7037,1.31
+act,science,Gender,Milwaukee,Reagan College Preparatory High,2024-25,Male,58.0247,Female,45.1429,1.29,158.0,172.0,Male,58.0247,Female,45.1429,1.29
+act,science,Gender,South Milwaukee,South Milwaukee High,2024-25,Female,29.661,Male,22.9508,1.29,113.0,120.0,Female,29.661,Male,22.9508,1.29
+act,science,Gender,Milwaukee,Harold S Vincent School of Agricultural Science,2024-25,Male,5.5556,Female,4.3478,1.28,30.0,43.0,Male,5.5556,Female,4.3478,1.28
+act,science,Gender,Whitnall,Whitnall High,2024-25,Male,52.0833,Female,41.6667,1.25,90.0,86.0,Male,52.0833,Female,41.6667,1.25
+act,science,Gender,Franklin Public,Franklin High,2024-25,Male,59.6939,Female,48.1081,1.24,195.0,183.0,Male,59.6939,Female,48.1081,1.24
+act,science,Gender,Milwaukee,Pulaski High,2024-25,Female,5.6338,Male,4.6296,1.22,60.0,77.0,Female,5.6338,Male,4.6296,1.22
+act,science,Gender,West Allis-West Milwaukee,Central High,2024-25,Female,16.3265,Male,13.6364,1.2,91.0,126.0,Female,16.3265,Male,13.6364,1.2
+act,science,Gender,Milwaukee,MacDowell Montessori School K3-12,2024-25,Female,20.0,Male,17.2414,1.16,25.0,28.0,Female,20.0,Male,17.2414,1.16
+act,science,Gender,Milwaukee,Marshall High,2024-25,Female,2.2222,Male,1.9608,1.13,30.0,37.0,Female,2.2222,Male,1.9608,1.13
+act,science,Gender,Oak Creek-Franklin Joint,Oak Creek High,2024-25,Female,48.2072,Male,43.1894,1.12,243.0,288.0,Female,48.2072,Male,43.1894,1.12
+act,science,Gender,Greenfield,Greenfield High,2024-25,Female,35.9712,Male,32.6241,1.1,132.0,130.0,Female,35.9712,Male,32.6241,1.1
+act,science,Gender,Wauwatosa,West High,2024-25,Female,47.0085,Male,42.5532,1.1,114.0,137.0,Female,47.0085,Male,42.5532,1.1
+act,science,Gender,Greendale,Greendale High,2024-25,Female,63.1579,Male,58.1967,1.09,94.0,121.0,Female,63.1579,Male,58.1967,1.09
+act,science,Gender,Whitefish Bay,Whitefish Bay High,2024-25,Male,83.7607,Female,76.7241,1.09,115.0,115.0,Male,83.7607,Female,76.7241,1.09
+act,science,Gender,Milwaukee,Carmen High School of Science and Technology South Campus,2024-25,Female,22.9167,Male,21.7391,1.05,48.0,45.0,Female,22.9167,Male,21.7391,1.05
+act,science,Gender,Brown Deer,Brown Deer Middle/High,2024-25,Female,30.3571,Male,29.5082,1.03,53.0,60.0,Female,30.3571,Male,29.5082,1.03
+act,science,Gender,Milwaukee,Milwaukee School of Languages,2024-25,Male,26.6667,Female,25.8621,1.03,41.0,56.0,Male,26.6667,Female,25.8621,1.03
+act,science,Gender,West Allis-West Milwaukee,Nathan Hale High,2024-25,Female,38.0282,Male,37.2414,1.02,137.0,136.0,Female,38.0282,Male,37.2414,1.02
+act,science,Gender,Milwaukee,James Madison Academic Campus,2024-25,Male,0.0,Female,0.0,,30.0,35.0,Female,0.0,Female,0.0,
+act,science,Gender,Milwaukee,WHS Information Technology,2024-25,Male,3.2258,Female,0.0,,27.0,21.0,Male,3.2258,Female,0.0,
+act,science,Race/Ethnicity,West Allis-West Milwaukee,Central High,2024-25,White,23.2877,Black,3.125,7.45,69.0,31.0,White,23.2877,Black,3.125,7.45
+act,science,Race/Ethnicity,Wauwatosa,East High,2024-25,White,71.345,Black,10.0,7.13,166.0,38.0,White,71.345,Black,10.0,7.13
+act,science,Race/Ethnicity,Wauwatosa,West High,2024-25,White,66.1538,Black,12.1212,5.46,127.0,63.0,White,66.1538,Black,12.1212,5.46
+act,science,Race/Ethnicity,Brown Deer,Brown Deer Middle/High,2024-25,White,59.0909,Black,16.9231,3.49,21.0,62.0,White,59.0909,Black,16.9231,3.49
+act,science,Race/Ethnicity,Milwaukee,King International,2024-25,White,57.1429,Black,16.9492,3.37,33.0,156.0,White,57.1429,Black,16.9492,3.37
+act,science,Race/Ethnicity,Milwaukee,Milwaukee School of Languages,2024-25,White,42.8571,Black,12.766,3.36,26.0,45.0,White,42.8571,Black,12.766,3.36
+act,science,Race/Ethnicity,West Allis-West Milwaukee,Nathan Hale High,2024-25,White,48.366,Black,17.2414,2.81,146.0,29.0,White,48.366,Black,17.2414,2.81
+act,science,Race/Ethnicity,Nicolet Union High School,Nicolet High,2024-25,White,66.4179,Black,27.1186,2.45,129.0,54.0,White,66.4179,Black,27.1186,2.45
+act,science,Race/Ethnicity,Milwaukee,Hamilton High,2024-25,White,6.8966,Black,3.0303,2.28,23.0,56.0,Asian,12.5,Hispanic,2.4793,5.04
+act,science,Race/Ethnicity,Milwaukee,Reagan College Preparatory High,2024-25,White,63.1579,Black,29.0323,2.18,94.0,28.0,White,63.1579,Black,29.0323,2.18
+act,science,Race/Ethnicity,Oak Creek-Franklin Joint,Oak Creek High,2024-25,White,50.5556,Black,25.8065,1.96,351.0,28.0,White,50.5556,Black,25.8065,1.96
+act,science,Race/Ethnicity,Cudahy,Cudahy High,2024-25,Black,,White,28.0,,,92.0,White,28.0,Hispanic,11.7647,2.38
+act,science,Race/Ethnicity,Franklin Public,Franklin High,2024-25,Black,,White,56.2016,,,255.0,Asian,67.5676,Hispanic,37.2549,1.81
+act,science,Race/Ethnicity,Greendale,Greendale High,2024-25,Black,,White,66.6667,,,132.0,White,66.6667,Hispanic,46.1538,1.44
+act,science,Race/Ethnicity,Greenfield,Greenfield High,2024-25,Black,,White,44.7154,,,117.0,Asian,48.2759,Hispanic,22.9167,2.11
+act,science,Race/Ethnicity,Milwaukee,Bay View High,2024-25,Black,2.2472,White,,,84.0,,Hispanic,10.0,Black,2.2472,4.45
+act,science,Race/Ethnicity,Milwaukee,Bradley Technology High,2024-25,Black,3.2468,White,,,142.0,,Hispanic,9.6774,Black,3.2468,2.98
+act,science,Race/Ethnicity,Milwaukee,Milwaukee High School of the Arts,2024-25,Black,5.8824,White,,,118.0,,Asian,10.0,Black,5.8824,1.7
+act,science,Race/Ethnicity,Milwaukee,Pulaski High,2024-25,Black,4.0,White,,,42.0,,Hispanic,4.0404,Black,4.0,1.01
+act,science,Race/Ethnicity,Milwaukee,Riverside High,2024-25,Black,9.9174,White,,,102.0,,Hispanic,17.8571,Black,9.9174,1.8
+act,science,Race/Ethnicity,Milwaukee,South Division High,2024-25,Black,4.7619,White,,,30.0,,Black,4.7619,Asian,2.6316,1.81
+act,science,Race/Ethnicity,Saint Francis,Saint Francis High,2024-25,Black,,White,36.5385,,,51.0,White,36.5385,Hispanic,10.4167,3.51
+act,science,Race/Ethnicity,Seeds of Health,Tenor High,2024-25,Black,6.4516,White,,,31.0,,Hispanic,9.6774,Black,6.4516,1.5
+act,science,Race/Ethnicity,South Milwaukee,South Milwaukee High,2024-25,Black,,White,35.8333,,,118.0,White,35.8333,Hispanic,15.0,2.39
+act,science,Race/Ethnicity,Whitefish Bay,Whitefish Bay High,2024-25,Black,,White,84.2767,,,158.0,Hispanic,85.1852,White,84.2767,1.01
+act,science,Race/Ethnicity,Whitnall,Whitnall High,2024-25,Black,,White,53.4884,,,119.0,White,53.4884,Hispanic,43.3333,1.23

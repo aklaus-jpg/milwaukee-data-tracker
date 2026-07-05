@@ -179,10 +179,13 @@ def proficiency(g):
 
     prof = count(PROFICIENT)
     notest = count(["No Test"])
+    # Store 4-decimal precision; the dashboard TRUNCATES to 1 dp for display to
+    # match DPI's conservative convention. (Full precision underneath so ratios
+    # and truncation are exact, e.g. 18.2518 -> displays 18.2, not 18.3.)
     return {
-        "value": round(100 * prof / pop, 1),
-        "below": round(100 * count([BELOW_LEVEL]) / pop, 1),
-        "notest": round(100 * notest / pop, 1),
+        "value": round(100 * prof / pop, 4),
+        "below": round(100 * count([BELOW_LEVEL]) / pop, 4),
+        "notest": round(100 * notest / pop, 4),
         "tested": max(0.0, pop - notest),  # test-takers = population − non-testers
         "pop": float(pop),
         "gap_reason": None,
