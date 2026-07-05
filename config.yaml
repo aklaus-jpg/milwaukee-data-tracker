@@ -87,6 +87,24 @@ sources:
     value_col: "REMOVAL_COUNT"
     size_col: "TFS_ENROLLMENT_COUNT"   # removal counts are naturally small even for big groups — use total enrollment (Third Friday in September count) as the real size reference
 
+  # Separate DPI dataset: disciplinary INCIDENTS broken out by BEHAVIOR_TYPE
+  # (Assault / Drugs and Alcohol / Endangering Behavior / Weapon Related /
+  # Other Violation of School Rules) — i.e. the REASON for discipline, distinct
+  # from the removals (suspension/expulsion) file above. School-level, with the
+  # same GROUP_BY student-group dimensions. Fetched here; the real use is the
+  # school behavior breakdown in analyze_school_incidents.py.
+  discipline_incidents:
+    url_prefix: "discipline_incidents_certified"
+    metric_type: "count"
+    year_col: "SCHOOL_YEAR"
+    county_col: "COUNTY"
+    district_col: "DISTRICT_NAME"
+    school_col: "SCHOOL_NAME"
+    group_col: "GROUP_BY"
+    group_value_col: "GROUP_BY_VALUE"
+    value_col: "INCIDENTS_COUNT"
+    size_col: "TFS_ENROLLMENT_COUNT"
+
 # NOTE: DPI's exact column names vary a bit by topic/year. If analyze.py errors
 # out or reports "no rows matched", run:
 #     python inspect_csv.py data/raw/enrollment_raw.csv

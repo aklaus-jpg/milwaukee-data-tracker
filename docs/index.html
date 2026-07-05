@@ -416,6 +416,12 @@
     <p class="disparity-callout" id="disparityCallout"></p>
   </div>
 
+  <div class="movers" id="behaviorPanel" style="display:none;">
+    <h3 id="behaviorTitle">Why students were disciplined</h3>
+    <p class="movers-sub" id="behaviorSub"></p>
+    <div id="behaviorBars"></div>
+  </div>
+
   <div class="movers" id="dispBoardPanel" style="display:none;">
     <h3 id="dispBoardTitle">Biggest racial disparities</h3>
     <p class="movers-sub" id="dispBoardSub"></p>
@@ -473,6 +479,7 @@ const SCHOOL_TREND_FILES = {
 // Phase 2: per-race discipline rates + the school disparity leaderboard.
 const GROUPS_TREND_FILE = `${REPO_RAW_BASE}/data/processed/discipline_school_groups_trend.csv`;
 const RACE_DISPARITY_FILE = `${REPO_RAW_BASE}/data/processed/discipline_race_disparity.csv`;
+const INCIDENTS_FILE = `${REPO_RAW_BASE}/data/processed/discipline_incidents_school.csv`;
 
 const metricSelect = document.getElementById("metric");
 const districtSelect = document.getElementById("district");
@@ -491,6 +498,10 @@ const disparityCallout = document.getElementById("disparityCallout");
 const dispBoardPanel = document.getElementById("dispBoardPanel");
 const dispBoardSub = document.getElementById("dispBoardSub");
 const dispBoardList = document.getElementById("dispBoardList");
+const behaviorPanel = document.getElementById("behaviorPanel");
+const behaviorTitle = document.getElementById("behaviorTitle");
+const behaviorSub = document.getElementById("behaviorSub");
+const behaviorBars = document.getElementById("behaviorBars");
 const schoolSelect = document.getElementById("school");
 const chartTitle = document.getElementById("chartTitle");
 const latestValueEl = document.getElementById("latestValue");
@@ -522,6 +533,11 @@ async function loadGroups() {
 async function loadDisparity() {
   if (disparityCache === null) disparityCache = await loadCsv(RACE_DISPARITY_FILE);
   return disparityCache;
+}
+let incidentsCache = null;
+async function loadIncidents() {
+  if (incidentsCache === null) incidentsCache = await loadCsv(INCIDENTS_FILE);
+  return incidentsCache;
 }
 
 // District-level trend files aren't deduplicated for charter-network naming
@@ -1058,6 +1074,52 @@ function renderDisparity(district, school) {
   disparityPanel.style.display = "block";
 }
 
+// ---- Why students were disciplined: incident breakdown by behavior ----
+const BEHAVIOR_LABELS = { "Other Violation of School Rules": "Other rule violation" };
+function behaviorLabel(b) { return BEHAVIOR_LABELS[b] || b; }
+
+function renderBehavior(district, school) {
+  const normDistrict = normalizeDistrictName(district);
+  const rows = (incidentsCache || []).filter(r => r.district === normDistrict && r.school === school);
+  if (rows.length === 0) { behaviorPanel.style.display = "none"; return; }
+
+  const latestYear = rows.map(r => String(r.year)).sort().slice(-1)[0];
+  const yr = rows.filter(r => String(r.year) === latestYear);
+  const totalRow = yr.find(r => r.behavior === "All incidents");
+  const behaviors = yr.filter(r => r.behavior !== "All incidents");
+  const counted = behaviors.filter(r => r.count != null && !isNaN(r.count)).sort((a, b) => b.count - a.count);
+  const suppressed = behaviors.filter(r => r.count == null || isNaN(r.count));
+  const maxc = counted.length ? Math.max(counted[0].count, 1) : 1;
+
+  behaviorBars.innerHTML = "";
+  counted.forEach(r => {
+    const pct = (r.count / maxc) * 100;
+    const share = r.share != null ? `<span class="base">${(r.share * 100).toFixed(0)}% of incidents</span>` : "";
+    const div = document.createElement("div");
+    div.className = "disp-row";
+    div.innerHTML =
+      `<span class="grp">${escapeHtml(behaviorLabel(r.behavior))}</span>` +
+      `<span class="disp-track"><span class="disp-fill" style="width:${pct.toFixed(1)}%"></span></span>` +
+      `<span class="disp-val">${Math.round(r.count).toLocaleString()}${share}</span>`;
+    behaviorBars.appendChild(div);
+  });
+  suppressed.forEach(r => {
+    const div = document.createElement("div");
+    div.className = "disp-row suppressed";
+    div.innerHTML =
+      `<span class="grp">${escapeHtml(behaviorLabel(r.behavior))}</span>` +
+      `<span class="disp-track"></span><span class="disp-val muted">suppressed</span>`;
+    behaviorBars.appendChild(div);
+  });
+
+  const total = totalRow && totalRow.count != null ? Math.round(totalRow.count).toLocaleString() : "—";
+  behaviorTitle.textContent = `Why students were disciplined — ${school} (${latestYear})`;
+  behaviorSub.textContent =
+    `${total} disciplinary incidents by reported behavior. "Other rule violation" is DPI's catch-all ` +
+    `and usually dominates; Assault / Weapon / Drugs are the specific ones. Counts are incidents, not students.`;
+  behaviorPanel.style.display = "block";
+}
+
 // ---- Biggest disparities across schools (for the selected dimension) ----
 async function renderDispBoard() {
   await loadDisparity();
@@ -1105,8 +1167,10 @@ function renderCurrent() {
   }
   if (metric === "discipline" && school) {
     renderDisparity(district, school);
+    renderBehavior(district, school);
   } else {
     disparityPanel.style.display = "none";
+    behaviorPanel.style.display = "none";
   }
 }
 
@@ -1117,7 +1181,7 @@ async function onMetricChange(keepDistrict) {
   categoryField.style.display = isDisc ? "flex" : "none";
   dimensionField.style.display = isDisc ? "flex" : "none";
   groupField.style.display = isDisc ? "flex" : "none";
-  if (isDisc) { populateGroupOptions(disciplineDimension()); await loadGroups(); }
+  if (isDisc) { populateGroupOptions(disciplineDimension()); await loadGroups(); await loadIncidents(); }
   const rows = await loadMetric(metric);
   const districts = districtsFor(rows);
   populateDistrictOptions(districts, keepDistrict);
@@ -1131,6 +1195,7 @@ async function onMetricChange(keepDistrict) {
     moversPanel.style.display = "none";
     disparityPanel.style.display = "none";
     dispBoardPanel.style.display = "none";
+    behaviorPanel.style.display = "none";
     return;
   }
   await populateSchoolOptions(metric, districtSelect.value);
@@ -1141,6 +1206,7 @@ async function onMetricChange(keepDistrict) {
   } else {
     dispBoardPanel.style.display = "none";
     disparityPanel.style.display = "none";
+    behaviorPanel.style.display = "none";
   }
 }
 
