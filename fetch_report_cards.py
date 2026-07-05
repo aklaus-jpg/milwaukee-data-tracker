@@ -16,6 +16,8 @@ import yaml
 import requests
 import pandas as pd
 
+import archive_raw
+
 RAW_DIR = pathlib.Path("data/raw")
 PROCESSED_DIR = pathlib.Path("data/processed")
 BASE_URL = "https://dpi.wi.gov/sites/default/files/imce/accountability/xls"
@@ -108,6 +110,7 @@ def fetch_level(level):
     out_path = RAW_DIR / f"report_card_{level}_raw.csv"
     combined.to_csv(out_path, index=False)
     print(f"  [saved] {out_path} — {len(combined)} total rows across {len(YEARS)} years")
+    archive_raw.archive_raw(out_path)  # dated, checksummed provenance copy
     return out_path
 
 

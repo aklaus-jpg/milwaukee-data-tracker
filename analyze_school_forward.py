@@ -45,6 +45,7 @@ import zipfile
 import pandas as pd
 import requests
 
+import archive_raw
 from analyze_school_enrollment import (
     COUNTY_FILTER,
     EXCLUDED_SCHOOL_NAMES,
@@ -111,8 +112,10 @@ def fetch():
         print("[error] no Forward years fetched")
         return None
     out = pd.concat(frames, ignore_index=True)
-    out.to_csv(RAW_DIR / "forward_raw.csv", index=False)
+    raw_path = RAW_DIR / "forward_raw.csv"
+    out.to_csv(raw_path, index=False)
     print(f"  [saved] forward_raw.csv — {len(out)} Milwaukee rows")
+    archive_raw.archive_raw(raw_path)  # dated, checksummed provenance copy
     return out
 
 

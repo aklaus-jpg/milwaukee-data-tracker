@@ -15,6 +15,8 @@ import pandas as pd
 import requests
 import yaml
 
+import archive_raw
+
 RAW_DIR = pathlib.Path("data/raw")
 BASE_URL = "https://dpi.wi.gov/sites/default/files/wise/downloads"
 
@@ -106,6 +108,7 @@ def fetch_all(config):
         out_path = RAW_DIR / f"{name}_raw.csv"
         combined.to_csv(out_path, index=False)
         print(f"  [saved] {out_path} — {len(combined)} total rows across {len(years)} years")
+        archive_raw.archive_raw(out_path)  # dated, checksummed provenance copy
 
     print("Done fetching.")
 

@@ -4,3 +4,6 @@ __pycache__/
 
 # DPI raw fetch files — large and re-fetchable from source (see fetch_dpi.py, analyze_school_forward.py, fetch_report_cards.py)
 data/raw/*_raw.csv
+
+# Provenance archive of fetched raws — dated + checksummed, outside git
+data/archive/
