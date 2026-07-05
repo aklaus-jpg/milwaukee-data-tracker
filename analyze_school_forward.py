@@ -152,9 +152,19 @@ def proficiency(g):
     # STUDENT_COUNT="*") — it does NOT tell you which level was masked. So if this
     # group has ANY "*" row we can't know how many were proficient: GAP it, never
     # infer 0. (A genuinely-zero level is just an absent row, not a "*" row.)
-    if (g["TEST_RESULT"] == "*").any() or g["cnt_raw"].isin(SUPPRESSION_MARKERS).any():
+    #
+    # gap_reason distinguishes the two suppression shapes so partial cases stay
+    # queryable — a school with a small suppressed subgroup is its own equity lead:
+    #   fully_suppressed    = every cell masked ("*"), no visible performance data
+    #   partial_suppression = some grades visible, ≥1 grade masked (we could see
+    #                         most of it but can't reconstruct the whole group,
+    #                         and this download has no all-grades roll-up row)
+    has_star = bool((g["TEST_RESULT"] == "*").any() or g["cnt_raw"].isin(SUPPRESSION_MARKERS).any())
+    if has_star:
+        has_real_perf = bool(g["TEST_RESULT"].isin(LEVELS).any())
+        reason = "partial_suppression" if has_real_perf else "fully_suppressed"
         return {"value": None, "below": None, "notest": None, "tested": None,
-                "pop": None, "suppressed": True, "any_rows": True}
+                "pop": None, "gap_reason": reason, "suppressed": True, "any_rows": True}
 
     # Clean group: GROUP_COUNT is the per-grade total (constant across a grade's
     # level rows), and it IS DPI's denominator — the full expected population,
@@ -162,7 +172,7 @@ def proficiency(g):
     pop = g.groupby("GRADE_LEVEL")["gc"].first().sum(min_count=1)
     if pd.isna(pop) or pop <= 0:
         return {"value": None, "below": None, "notest": None, "tested": None,
-                "pop": None, "suppressed": True, "any_rows": True}
+                "pop": None, "gap_reason": "no_population", "suppressed": True, "any_rows": True}
 
     def count(levels):
         return float(g[g["TEST_RESULT"].isin(levels)]["cnt"].sum())
@@ -175,6 +185,7 @@ def proficiency(g):
         "notest": round(100 * notest / pop, 1),
         "tested": max(0.0, pop - notest),  # test-takers = population − non-testers
         "pop": float(pop),
+        "gap_reason": None,
         "suppressed": False,
         "any_rows": True,
     }
@@ -189,16 +200,22 @@ def build_trend(df):
         p = proficiency(g)
         if not p["any_rows"]:
             continue
+        reason = p.get("gap_reason")
         notes = []
-        if p["value"] is None:
-            notes.append("Suppressed (DPI privacy) — not zero")
+        if reason == "fully_suppressed":
+            notes.append("Suppressed by DPI (whole group redacted) — not zero")
+        elif reason == "partial_suppression":
+            notes.append("Gapped: a grade was suppressed, can't reconstruct the group")
+        elif reason == "no_population":
+            notes.append("No population count — not computable")
         elif p["suppressed"]:
-            notes.append("Some cells suppressed — computed from visible students")
+            notes.append("Some cells suppressed")
         rows.append({
             "metric": "forward", "dimension": dimension, "group": group,
             "subject": subject, "unit": "pct", "district": district, "school": school,
             "year": year, "value": p["value"], "pct_below": p["below"],
             "pct_notest": p["notest"],  # participation is its own story — kept visible
+            "gap_reason": reason or "",  # fully_suppressed | partial_suppression | ""
             "tested": None if not p["tested"] else int(p["tested"]),
             "population": None if p["pop"] is None else int(p["pop"]),
             "status_flag": "; ".join(notes),
@@ -286,10 +303,10 @@ def run(do_fetch=True):
 
     schema = ["metric", "subject", "unit", "district", "school", "group", "year",
               "value", "pct_below", "pct_notest", "yoy_change", "pct_change",
-              "status_flag", "tested", "population"]
+              "status_flag", "gap_reason", "tested", "population"]
     grp_schema = ["metric", "dimension", "group", "subject", "unit", "district",
-                  "school", "year", "value", "pct_below", "pct_notest", "tested",
-                  "population", "status_flag"]
+                  "school", "year", "value", "pct_below", "pct_notest", "gap_reason",
+                  "tested", "population", "status_flag"]
 
     PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
     all_students[schema].to_csv(PROCESSED_DIR / "forward_school_trend.csv", index=False)
