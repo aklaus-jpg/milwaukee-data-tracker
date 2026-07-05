@@ -359,6 +359,13 @@
 <main>
   <div class="controls">
     <div class="field">
+      <label for="area">Area</label>
+      <select id="area">
+        <option value="city">City of Milwaukee</option>
+        <option value="county">Milwaukee County (all)</option>
+      </select>
+    </div>
+    <div class="field">
       <label for="metric">Metric</label>
       <select id="metric">
         <option value="enrollment">Enrollment</option>
@@ -504,7 +511,31 @@ const GROUP_METRICS = {
 };
 function isGroupMetric(m) { return m in GROUP_METRICS; }
 const INCIDENTS_FILE = `${REPO_RAW_BASE}/data/processed/discipline_incidents_school.csv`;
+const CITY_FILE = `${REPO_RAW_BASE}/data/processed/school_city.csv`;
 
+// Physical city of Milwaukee vs the whole county (which includes Wauwatosa,
+// West Allis, Shorewood, ...). Tagged from DPI's GIS school-location layer.
+let citySchoolKeys = new Set();   // "district||school" for city-of-Milwaukee schools
+let cityDistricts = new Set();    // normalized districts with >=1 city school
+async function loadCity() {
+  const rows = await loadCsv(CITY_FILE);
+  rows.forEach(r => {
+    if (r.is_city === true || String(r.is_city).toLowerCase() === "true") {
+      citySchoolKeys.add(`${r.district}||${r.school}`);
+      cityDistricts.add(r.district);
+    }
+  });
+}
+// Fail open: if the city tagging didn't load, don't filter anything out.
+function cityScope() { return areaSelect.value !== "county" && citySchoolKeys.size > 0; }
+function schoolInScope(normDistrict, school) {
+  return !cityScope() || citySchoolKeys.has(`${normDistrict}||${school}`);
+}
+function districtInScope(rawDistrictName) {
+  return !cityScope() || cityDistricts.has(normalizeDistrictName(rawDistrictName));
+}
+
+const areaSelect = document.getElementById("area");
 const metricSelect = document.getElementById("metric");
 const districtSelect = document.getElementById("district");
 const schoolField = document.getElementById("schoolField");
@@ -608,7 +639,7 @@ function districtsFor(rows) {
   rows.forEach(r => {
     if (!r.group) return;
     const name = r.group.replace(/\s*—\s*All Students\s*$/, "").trim();
-    if (name) names.add(name);
+    if (name && districtInScope(name)) names.add(name);
   });
   const list = Array.from(names);
   list.sort((a, b) => {
@@ -650,7 +681,7 @@ async function loadSchoolMetric(metric) {
 function schoolsForDistrict(rows, normDistrict) {
   const names = new Set();
   rows.forEach(r => {
-    if (r.district === normDistrict && r.school) names.add(r.school);
+    if (r.district === normDistrict && r.school && schoolInScope(normDistrict, r.school)) names.add(r.school);
   });
   return Array.from(names).sort((a, b) => a.localeCompare(b));
 }
@@ -951,6 +982,7 @@ function computeMovers(metric) {
 
   const groups = new Map();
   rows.forEach((r) => {
+    if (!schoolInScope(r.district, r.school)) return;
     const k = `${r.district}||${r.school}`;
     if (!groups.has(k)) groups.set(k, []);
     groups.get(k).push(r);
@@ -1221,7 +1253,8 @@ async function renderDispBoard() {
   // Rank by the focus-vs-reference ratio (Black/White, SwD/SwoD, ...) — a
   // cleaner headline than highest/lowest, which can hinge on a tiny group.
   const rows = (disparityCacheByMetric[metric] || []).filter(r =>
-    r.dimension === dim && r.focus_reference_ratio != null && !isNaN(r.focus_reference_ratio));
+    r.dimension === dim && r.focus_reference_ratio != null && !isNaN(r.focus_reference_ratio)
+    && schoolInScope(r.district, r.school));
   if (rows.length === 0) { dispBoardPanel.style.display = "none"; return; }
   const top = rows.slice().sort((a, b) => b.focus_reference_ratio - a.focus_reference_ratio).slice(0, 12);
   dispBoardList.innerHTML = "";
@@ -1341,8 +1374,13 @@ schoolSelect.addEventListener("change", renderCurrent);
 categorySelect.addEventListener("change", onCategoryChange);
 dimensionSelect.addEventListener("change", onDimensionChange);
 groupSelect.addEventListener("change", onGroupChange);
+// Switching City ⟷ County re-filters the district list, school lists, movers,
+// and disparity leaderboards.
+areaSelect.addEventListener("change", () => onMetricChange(false));
 
-onMetricChange(false);
+// Load the city/county tagging before the first render so the default (city)
+// applies from the start.
+loadCity().then(() => onMetricChange(false));
 </script>
 
 </body>

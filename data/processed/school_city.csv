@@ -1,0 +1,305 @@
+district,school,city,is_city
+Brown Deer,Brown Deer Elementary,Brown Deer,False
+Brown Deer,Brown Deer Middle/High,Brown Deer,False
+Bruce Guadalupe,Bruce Guadalupe,Milwaukee,True
+Capitol West Academy,Capitol West Academy,Milwaukee (inferred),True
+Carmen High School of Science and Technology,Carmen Middle School South,Milwaukee (inferred),True
+Carmen High School of Science and Technology,Stellar Collegiate Charter School,Milwaukee (inferred),True
+Carmen Middle School South,Carmen Middle School South,Milwaukee,True
+Central City Cyberschool of Milwaukee,Central City Cyberschool,Milwaukee,True
+Cudahy,Cudahy High,Cudahy,False
+Cudahy,Cudahy Middle,Cudahy,False
+Cudahy,Jones Elementary,Cudahy,False
+Cudahy,Kosciuszko Elementary,Cudahy,False
+Cudahy,Lincoln Elementary,Cudahy,False
+Cudahy,Mitchell Elementary,Cudahy,False
+Cudahy,Park View Elementary,Cudahy,False
+Darrell L. Hines Academy,Darrell Lynn Hines Academy,Milwaukee,True
+Downtown Montessori Academy,Downtown Montessori,Milwaukee,True
+Dr. Howard Fuller Collegiate Academy,Dr Howard Fuller Collegiate Academy,Milwaukee,True
+Escuela Verde,Escuela Verde,Milwaukee,True
+Fox Point J2,Bayside Middle,Milwaukee,True
+Fox Point J2,Stormonth Elementary,Milwaukee,True
+Franklin Public,Ben Franklin Elementary,Franklin,False
+Franklin Public,Country Dale Elementary,Franklin,False
+Franklin Public,Forest Park Middle,Franklin,False
+Franklin Public,Franklin High,Franklin,False
+Franklin Public,Milwaukee County Community Reintegration Center,Franklin,False
+Franklin Public,Milwaukee County Correctional Facility South,Franklin,False
+Franklin Public,Pleasant View Elementary,Franklin,False
+Franklin Public,Robinwood Elementary,Franklin,False
+Franklin Public,Southwood Glen Elementary,Franklin,False
+Glendale-River Hills,Glen Hills Middle,Glendale,False
+Glendale-River Hills,Parkway Elementary,Glendale,False
+Greendale,Canterbury Elementary,Greendale,False
+Greendale,College Park Elementary,Greendale,False
+Greendale,Greendale High,Greendale,False
+Greendale,Greendale Middle,Greendale,False
+Greendale,Highland View Elementary,Greendale,False
+Greendale,Time 4 Learning Charter School,Greendale,False
+Greenfield,Edgewood Elementary,Greenfield,False
+Greenfield,Elm Dale Elementary,Greenfield,False
+Greenfield,Glenwood Elementary,Greenfield,False
+Greenfield,Greenfield High,Greenfield,False
+Greenfield,Greenfield Middle,Greenfield,False
+Greenfield,Maple Grove Elementary,Greenfield,False
+Maple Dale-Indian Hill,Indian Hill School,River Hills,False
+Maple Dale-Indian Hill,Maple Dale School,Fox Point,False
+Milwaukee,ALBA - Academia de Lenguaje y Bellas Artes,Milwaukee,True
+Milwaukee,ASSATA High,Milwaukee,True
+Milwaukee,Academy of Accelerated Learning,Milwaukee,True
+Milwaukee,Alcott Elementary,Milwaukee,True
+Milwaukee,Allen-Field Elementary,Milwaukee,True
+Milwaukee,Alliance School of Milwaukee,Milwaukee,True
+Milwaukee,Andrew Douglas School,Milwaukee (inferred),True
+Milwaukee,Andrew S Douglas Middle,Milwaukee,True
+Milwaukee,Audubon Technology and Communication High,Milwaukee,True
+Milwaukee,Audubon Technology and Communication Middle,Milwaukee,True
+Milwaukee,Auer Avenue Elementary,Milwaukee,True
+Milwaukee,Banner Preparatory School of Milwaukee,Milwaukee,True
+Milwaukee,Barbee Elementary,Milwaukee,True
+Milwaukee,Barton Elementary,Milwaukee,True
+Milwaukee,Bay View High,Milwaukee,True
+Milwaukee,Bay View Montessori School,Milwaukee,True
+Milwaukee,Bethune Academy,Milwaukee,True
+Milwaukee,Bradley Technology High,Milwaukee,True
+Milwaukee,Brown Street Academy,Milwaukee,True
+Milwaukee,Browning Elementary,Milwaukee,True
+Milwaukee,Bruce Elementary,Milwaukee,True
+Milwaukee,Bryant Elementary,Milwaukee,True
+Milwaukee,Burbank Elementary,Milwaukee,True
+Milwaukee,Burdick Elementary,Milwaukee,True
+Milwaukee,Carmen High School of Science and Technology South Campus,Milwaukee,True
+Milwaukee,Carmen High School of Science and Technology Southeast Campus,Milwaukee,True
+Milwaukee,Carmen Middle School South,Milwaukee (inferred),True
+Milwaukee,Carmen Middle/High School of Science and Technology Northwest Campus,Milwaukee,True
+Milwaukee,Carson Academy,Milwaukee,True
+Milwaukee,Carver Academy,Milwaukee,True
+Milwaukee,Cass Street Elementary,Milwaukee,True
+Milwaukee,Clarke Street Elementary,Milwaukee,True
+Milwaukee,Clemens Elementary,Milwaukee,True
+Milwaukee,Clement Avenue Elementary,Milwaukee,True
+Milwaukee,Congress Elementary,Milwaukee,True
+Milwaukee,Cooper Elementary,Milwaukee,True
+Milwaukee,Craig Montessori School,Milwaukee,True
+Milwaukee,Curtin Elementary,Milwaukee,True
+Milwaukee,Daniel Webster Secondary School,Milwaukee (inferred),True
+Milwaukee,Daniels University Preparatory Academy,Milwaukee (inferred),True
+Milwaukee,Doerfler Elementary,Milwaukee,True
+Milwaukee,Eighty-First Street Elementary,Milwaukee,True
+Milwaukee,Elm Creative Arts Elementary,Milwaukee,True
+Milwaukee,Emerson Elementary,Milwaukee,True
+Milwaukee,Engleburg Elementary,Milwaukee,True
+Milwaukee,Fairview Elementary,Milwaukee,True
+Milwaukee,Fernwood Montessori,Milwaukee,True
+Milwaukee,Fifty-Third Street Elementary,Milwaukee,True
+Milwaukee,Forest Home Elementary,Milwaukee,True
+Milwaukee,Franklin Elementary,Milwaukee,True
+Milwaukee,Fratney Elementary,Milwaukee,True
+Milwaukee,Gaenslen Elementary,Milwaukee,True
+Milwaukee,Garland Elementary,Milwaukee,True
+Milwaukee,Golda Meir School,Milwaukee,True
+Milwaukee,Goodrich Elementary,Milwaukee,True
+Milwaukee,Grandview High,Milwaukee,True
+Milwaukee,Grant Elementary,Milwaukee,True
+Milwaukee,Grant Gordon Learning Center,Milwaukee,True
+Milwaukee,Grantosa Drive Elementary,Milwaukee,True
+Milwaukee,Green Bay Avenue School,Milwaukee (inferred),True
+Milwaukee,Green Tree Preparatory Academy,Milwaukee,True
+Milwaukee,Greenfield Bilingual,Milwaukee,True
+Milwaukee,Groppi High,Milwaukee,True
+Milwaukee,HAPA-Hmong American Peace Academy K3-12,Milwaukee,True
+Milwaukee,Hamilton High,Milwaukee,True
+Milwaukee,Hampton Elementary,Milwaukee,True
+Milwaukee,Harold S Vincent School of Agricultural Science,Milwaukee,True
+Milwaukee,Hartford Avenue Elementary,Milwaukee,True
+Milwaukee,Hawley Environmental School,Milwaukee,True
+Milwaukee,Hawthorne Elementary,Milwaukee,True
+Milwaukee,Hayes Bilingual School,Milwaukee,True
+Milwaukee,Hi-Mount Elementary,Milwaukee,True
+Milwaukee,Highland Community School,Milwaukee,True
+Milwaukee,Holmes Elementary,Milwaukee,True
+Milwaukee,Honey Creek Elementary,Milwaukee,True
+Milwaukee,Hopkins Lloyd Community School,Milwaukee,True
+Milwaukee,Humboldt Park Elementary,Milwaukee,True
+Milwaukee,IDEAL Individualized Developmental Educational Approaches to Learning,Milwaukee,True
+Milwaukee,Jackson Elementary,Milwaukee,True
+Milwaukee,James Madison Academic Campus,Milwaukee,True
+Milwaukee,Kagel Elementary,Milwaukee,True
+Milwaukee,Keefe Avenue Elementary,Milwaukee,True
+Milwaukee,Kilbourn Elementary,Milwaukee,True
+Milwaukee,King International,Milwaukee,True
+Milwaukee,King International Baccalaureate Middle,Milwaukee,True
+Milwaukee,King Jr Elementary,Milwaukee,True
+Milwaukee,Kluge Elementary,Milwaukee,True
+Milwaukee,La Causa Charter School,Milwaukee,True
+Milwaukee,LaFollette Elementary,Milwaukee,True
+Milwaukee,Lad Lake Synergy School,Milwaukee,True
+Milwaukee,Lancaster Elementary,Milwaukee,True
+Milwaukee,Lee Learning Center,Milwaukee,True
+Milwaukee,Lincoln Avenue Elementary,Milwaukee,True
+Milwaukee,Lincoln Middle,Milwaukee,True
+Milwaukee,Longfellow Elementary,Milwaukee,True
+Milwaukee,Lowell International Elementary,Milwaukee,True
+Milwaukee,MacDowell Montessori School K3-12,Milwaukee,True
+Milwaukee,Manitoba Elementary,Milwaukee,True
+Milwaukee,Maple Tree Elementary,Milwaukee,True
+Milwaukee,Marshall High,Milwaukee,True
+Milwaukee,Maryland Montessori,Milwaukee,True
+Milwaukee,Metcalfe Elementary,Milwaukee,True
+Milwaukee,Milwaukee Academy of Chinese Language,Milwaukee,True
+Milwaukee,Milwaukee College Preparatory School -- 36th Street Campus,Milwaukee,True
+Milwaukee,Milwaukee College Preparatory School -- 38th Street,Milwaukee,True
+Milwaukee,Milwaukee College Preparatory School -- Lloyd Street,Milwaukee,True
+Milwaukee,Milwaukee College Preparatory School: Lola Rowe North Campus,Milwaukee,True
+Milwaukee,Milwaukee Community Cyber High,Milwaukee (inferred),True
+Milwaukee,Milwaukee County Youth Education Center,Milwaukee,True
+Milwaukee,Milwaukee Environmental Science Academy,Milwaukee,True
+Milwaukee,Milwaukee Excellence Charter School,Milwaukee,True
+Milwaukee,Milwaukee French Immersion,Milwaukee,True
+Milwaukee,Milwaukee German Immersion,Milwaukee,True
+Milwaukee,Milwaukee High School of the Arts,Milwaukee,True
+Milwaukee,Milwaukee Parkside School,Milwaukee,True
+Milwaukee,Milwaukee School of Languages,Milwaukee,True
+Milwaukee,Milwaukee Sign Language Elementary,Milwaukee,True
+Milwaukee,Milwaukee Spanish Immersion,Milwaukee,True
+Milwaukee,Mitchell Elementary,Milwaukee,True
+Milwaukee,Morgandale Elementary,Milwaukee,True
+Milwaukee,Morse Mid,Milwaukee,True
+Milwaukee,NOVA Tech-Northwest Opportunities Vocational Academy Technical High,Milwaukee (inferred),True
+Milwaukee,NOVA-Northwest Opportunities Vocational Academy,Milwaukee,True
+Milwaukee,Neeskara Elementary,Milwaukee,True
+Milwaukee,Next Door Charter,Milwaukee,True
+Milwaukee,Ninety-Fifth Street Elementary,Milwaukee,True
+Milwaukee,North Division High,Milwaukee,True
+Milwaukee,Obama School of Career and Technical Education,Milwaukee,True
+Milwaukee,Parkview Elementary,Milwaukee,True
+Milwaukee,Pratt Elementary,Milwaukee,True
+Milwaukee,Project STAY-Supporting Teachers and Youth,Milwaukee,True
+Milwaukee,Pulaski High,Milwaukee,True
+Milwaukee,Reagan College Preparatory High,Milwaukee,True
+Milwaukee,Riley Dual Language Montessori School,Milwaukee,True
+Milwaukee,River Trail School of Agricultural Science,Milwaukee,True
+Milwaukee,Riverside High,Milwaukee,True
+Milwaukee,Riverwest Elementary,Milwaukee,True
+Milwaukee,Rogers Street Academy,Milwaukee,True
+Milwaukee,Roosevelt Middle,Milwaukee,True
+Milwaukee,Shalom High,Milwaukee,True
+Milwaukee,Sherman Elementary,Milwaukee,True
+Milwaukee,Siefert Elementary,Milwaukee,True
+Milwaukee,South Accelerated Academy,Milwaukee,True
+Milwaukee,South Division High,Milwaukee,True
+Milwaukee,Southeastern,Milwaukee,True
+Milwaukee,Starms Discovery,Milwaukee,True
+Milwaukee,Starms Early Childhood,Milwaukee,True
+Milwaukee,Story Elementary,Milwaukee,True
+Milwaukee,Stuart Elementary,Milwaukee,True
+Milwaukee,Thoreau Elementary,Milwaukee,True
+Milwaukee,Thurston Woods Elementary,Milwaukee,True
+Milwaukee,Townsend Street Elementary,Milwaukee,True
+Milwaukee,Transition High,Milwaukee,True
+Milwaukee,Trowbridge Street School of Great Lakes Studies,Milwaukee,True
+Milwaukee,U S Grant School,Milwaukee,True
+Milwaukee,Victory Elementary,Milwaukee,True
+Milwaukee,Vieau Elementary,Milwaukee,True
+Milwaukee,Vincent Accelerated Academy,Milwaukee,True
+Milwaukee,WHS Information Technology,Milwaukee,True
+Milwaukee,Wedgewood Park School,Milwaukee,True
+Milwaukee,Westside Academy,Milwaukee,True
+Milwaukee,Whitman Elementary,Milwaukee,True
+Milwaukee,Whittier Elementary,Milwaukee,True
+Milwaukee,Wisconsin Conservatory of Lifelong Learning,Milwaukee,True
+Milwaukee,Zablocki Elementary,Milwaukee,True
+Milwaukee Academy of Science,Milwaukee Academy of Science,Milwaukee,True
+Milwaukee Collegiate Academy,Milwaukee Collegiate Academy,Milwaukee,True
+Milwaukee Math and Science Academy,Milwaukee Math and Science Academy,Milwaukee,True
+Milwaukee Scholars Charter School,Milwaukee Scholars Charter School,Milwaukee,True
+Milwaukee Science Education Consortium,Milwaukee Academy of Science,Milwaukee (inferred),True
+Nicolet Union High School,Nicolet High,Glendale,False
+Oak Creek-Franklin Joint,Carollton Elementary,Oak Creek,False
+Oak Creek-Franklin Joint,Cedar Hills Elementary,Oak Creek,False
+Oak Creek-Franklin Joint,Deerfield Elementary,Oak Creek,False
+Oak Creek-Franklin Joint,Early Learning Academy,Oak Creek,False
+Oak Creek-Franklin Joint,Edgewood Elementary,Oak Creek,False
+Oak Creek-Franklin Joint,Forest Ridge Elementary,Oak Creek,False
+Oak Creek-Franklin Joint,Meadowview Elementary,Oak Creek,False
+Oak Creek-Franklin Joint,Oak Creek East Middle,Oak Creek,False
+Oak Creek-Franklin Joint,Oak Creek High,Oak Creek,False
+Oak Creek-Franklin Joint,Oak Creek West Middle,Oak Creek,False
+Oak Creek-Franklin Joint,Shepard Hills Elementary,Oak Creek,False
+Pathways High,Pathways High,Milwaukee,True
+Penfield Montessori Academy,Penfield Montessori Academy,Milwaukee,True
+Rocketship Education Wisconsin,Rocketship Southside Community Prep,Milwaukee,True
+Rocketship Education Wisconsin,Rocketship Transformation Prep,Milwaukee,True
+Saint Francis,Deer Creek Intermediate,Saint Francis,False
+Saint Francis,Elkhorn Options Virtual School,suburban (inferred),False
+Saint Francis,Saint Francis High,Saint Francis,False
+Saint Francis,Willow Glen Primary School,Saint Francis,False
+School for Early Development and Achievement (SEDA),School for Early Development and Achievement (SEDA),Milwaukee (inferred),True
+Seeds of Health,Seeds of Health Elementary Program,Milwaukee,True
+Seeds of Health,Tenor High,Milwaukee,True
+Seeds of Health,Veritas High,Milwaukee,True
+Shorewood,Atwater Elementary,Shorewood,False
+Shorewood,Lake Bluff Elementary,Shorewood,False
+Shorewood,New Horizons for Learning,Shorewood,False
+Shorewood,Shorewood High,Shorewood,False
+Shorewood,Shorewood Intermediate,Shorewood,False
+South Milwaukee,Blakewood Elementary,South Milwaukee,False
+South Milwaukee,E W Luther Elementary,South Milwaukee,False
+South Milwaukee,Lakeview Elementary,South Milwaukee,False
+South Milwaukee,Rawson Elementary,South Milwaukee,False
+South Milwaukee,South Milwaukee High,South Milwaukee,False
+South Milwaukee,South Milwaukee Middle,South Milwaukee,False
+Stellar Collegiate Charter School,Stellar Collegiate Charter School,Milwaukee,True
+Trans Center for Youth,Escuela Verde,Milwaukee (inferred),True
+United Community Center,Bruce Guadalupe,Milwaukee (inferred),True
+United Community Center,United Community Center Acosta Middle School,Milwaukee (inferred),True
+United Community Center Acosta Middle,United Community Center Acosta Middle School,Milwaukee,True
+Wauwatosa,East High,Wauwatosa,False
+Wauwatosa,Eisenhower Elementary,Wauwatosa,False
+Wauwatosa,Jefferson Elementary,Wauwatosa,False
+Wauwatosa,Lincoln Elementary,Wauwatosa,False
+Wauwatosa,Longfellow Middle,Wauwatosa,False
+Wauwatosa,Madison Elementary,Wauwatosa,False
+Wauwatosa,McKinley Elementary,Wauwatosa,False
+Wauwatosa,Roosevelt Elementary,Wauwatosa,False
+Wauwatosa,Underwood Elementary,Wauwatosa,False
+Wauwatosa,Vel R Phillips School,Wauwatosa,False
+Wauwatosa,Washington Elementary,Wauwatosa,False
+Wauwatosa,Wauwatosa Montessori School,Wauwatosa,False
+Wauwatosa,Wauwatosa STEM,Wauwatosa,False
+Wauwatosa,Wauwatosa Virtual Academy,Wauwatosa,False
+Wauwatosa,West High,Wauwatosa,False
+Wauwatosa,Whitman Middle,Wauwatosa,False
+Wauwatosa,Wilson Elementary,Wauwatosa,False
+West Allis-West Milwaukee,Central High,West Allis,False
+West Allis-West Milwaukee,Deeper Learning Virtual Academy,West Allis,False
+West Allis-West Milwaukee,Frank Lloyd Wright Intermediate,West Allis,False
+West Allis-West Milwaukee,Franklin Elementary,West Allis,False
+West Allis-West Milwaukee,Hoover Elementary,suburban (inferred),False
+West Allis-West Milwaukee,Horace Mann Elementary,West Allis,False
+West Allis-West Milwaukee,Irving Elementary,West Allis,False
+West Allis-West Milwaukee,James E Dottke Project-Based Learning High School,West Allis,False
+West Allis-West Milwaukee,Jefferson Elementary,West Allis,False
+West Allis-West Milwaukee,Lane Intermediate,West Allis,False
+West Allis-West Milwaukee,Longfellow Elementary,West Allis,False
+West Allis-West Milwaukee,Madison Elementary,West Allis,False
+West Allis-West Milwaukee,Mitchell Elementary,West Allis,False
+West Allis-West Milwaukee,Nathan Hale High,West Allis,False
+West Allis-West Milwaukee,Pershing Elementary,West Milwaukee,False
+West Allis-West Milwaukee,Shared Journeys,West Allis,False
+West Allis-West Milwaukee,Walker Elementary,West Allis,False
+West Allis-West Milwaukee,West Milwaukee Intermediate,West Milwaukee,False
+West Allis-West Milwaukee,Wilson Elementary,West Allis,False
+Whitefish Bay,Cumberland Elementary,Whitefish Bay,False
+Whitefish Bay,Richards Elementary,Whitefish Bay,False
+Whitefish Bay,Whitefish Bay High,Whitefish Bay,False
+Whitefish Bay,Whitefish Bay Middle,Whitefish Bay,False
+Whitnall,CORE4 Collaborating on Readiness Education for Four-Year-Olds,Greenfield,False
+Whitnall,Edgerton Elementary,Hales Corners,False
+Whitnall,Hales Corners Elementary,Hales Corners,False
+Whitnall,Whitnall High,Greenfield,False
+Whitnall,Whitnall Middle,Greenfield,False
+Woodlands School,Woodlands School,Milwaukee,True
+Woodlands School,Woodlands School - State Street Campus,Milwaukee (inferred),True
+Woodlands School - State Street Campus,Woodlands School - State Street Campus,Milwaukee,True

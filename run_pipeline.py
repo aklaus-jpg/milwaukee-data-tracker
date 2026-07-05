@@ -13,6 +13,7 @@ import analyze_school_discipline_groups
 import analyze_school_incidents
 import analyze_school_absenteeism_groups
 import analyze_school_movers
+import analyze_school_city
 import fetch_report_cards
 import analyze_report_cards
 import make_charts
@@ -29,6 +30,13 @@ def main():
     analyze_school_incidents.run()
     analyze_school_absenteeism_groups.run()
     analyze_school_movers.run()
+
+    # City tagging hits DPI's GIS portal (separate from WISEdash). If it's down,
+    # keep the last school_city.csv rather than failing the whole weekly run.
+    try:
+        analyze_school_city.run()
+    except Exception as e:
+        print(f"[warn] school_city update skipped ({e}); keeping existing file")
 
     fetch_report_cards.run_all()
     analyze_report_cards.run()
