@@ -1,0 +1,998 @@
+dimension,district,school,year,focus_group,focus_rate,reference_group,reference_rate,focus_reference_ratio,highest_group,highest_rate,lowest_group,lowest_rate,high_low_ratio
+Disability Status,Whitefish Bay,Cumberland Elementary,2024-25,SwD,9.6,SwoD,0.4,24.0,SwD,9.6,SwoD,0.4,24.0
+Disability Status,Franklin Public,Ben Franklin Elementary,2024-25,SwD,21.9,SwoD,3.7,5.92,SwD,21.9,SwoD,3.7,5.92
+Disability Status,Oak Creek-Franklin Joint,Edgewood Elementary,2024-25,SwD,21.2,SwoD,3.9,5.44,SwD,21.2,SwoD,3.9,5.44
+Disability Status,Whitefish Bay,Whitefish Bay High,2024-25,SwD,11.2,SwoD,2.3,4.87,SwD,11.2,SwoD,2.3,4.87
+Disability Status,Whitefish Bay,Whitefish Bay Middle,2024-25,SwD,10.4,SwoD,2.2,4.73,SwD,10.4,SwoD,2.2,4.73
+Disability Status,Oak Creek-Franklin Joint,Meadowview Elementary,2024-25,SwD,25.6,SwoD,5.9,4.34,SwD,25.6,SwoD,5.9,4.34
+Disability Status,Wauwatosa,McKinley Elementary,2024-25,SwD,14.7,SwoD,3.4,4.32,SwD,14.7,SwoD,3.4,4.32
+Disability Status,Franklin Public,Robinwood Elementary,2024-25,SwD,21.6,SwoD,5.1,4.24,SwD,21.6,SwoD,5.1,4.24
+Disability Status,Maple Dale-Indian Hill,Maple Dale School,2024-25,SwD,15.2,SwoD,3.7,4.11,SwD,15.2,SwoD,3.7,4.11
+Disability Status,Wauwatosa,Lincoln Elementary,2024-25,SwD,8.2,SwoD,2.0,4.1,SwD,8.2,SwoD,2.0,4.1
+Disability Status,Fox Point J2,Bayside Middle,2024-25,SwD,13.6,SwoD,3.4,4.0,SwD,13.6,SwoD,3.4,4.0
+Disability Status,Oak Creek-Franklin Joint,Deerfield Elementary,2024-25,SwD,15.7,SwoD,4.2,3.74,SwD,15.7,SwoD,4.2,3.74
+Disability Status,Franklin Public,Southwood Glen Elementary,2024-25,SwD,16.0,SwoD,4.4,3.64,SwD,16.0,SwoD,4.4,3.64
+Disability Status,Franklin Public,Forest Park Middle,2024-25,SwD,25.6,SwoD,7.3,3.51,SwD,25.6,SwoD,7.3,3.51
+Disability Status,Greendale,College Park Elementary,2024-25,SwD,6.1,SwoD,1.8,3.39,SwD,6.1,SwoD,1.8,3.39
+Disability Status,Shorewood,Shorewood Intermediate,2024-25,SwD,14.3,SwoD,4.3,3.33,SwD,14.3,SwoD,4.3,3.33
+Disability Status,Milwaukee,Fernwood Montessori,2024-25,SwD,21.6,SwoD,6.7,3.22,SwD,21.6,SwoD,6.7,3.22
+Disability Status,Wauwatosa,Wilson Elementary,2024-25,SwD,16.3,SwoD,5.1,3.2,SwD,16.3,SwoD,5.1,3.2
+Disability Status,Downtown Montessori Academy,Downtown Montessori,2024-25,SwD,18.5,SwoD,6.4,2.89,SwD,18.5,SwoD,6.4,2.89
+Disability Status,Oak Creek-Franklin Joint,Oak Creek East Middle,2024-25,SwD,27.7,SwoD,9.6,2.89,SwD,27.7,SwoD,9.6,2.89
+Disability Status,Milwaukee,Bay View Montessori School,2024-25,SwD,7.0,SwoD,2.5,2.8,SwD,7.0,SwoD,2.5,2.8
+Disability Status,Cudahy,Jones Elementary,2024-25,SwD,29.0,SwoD,10.5,2.76,SwD,29.0,SwoD,10.5,2.76
+Disability Status,Shorewood,Lake Bluff Elementary,2024-25,SwD,10.9,SwoD,4.0,2.73,SwD,10.9,SwoD,4.0,2.73
+Disability Status,Saint Francis,Willow Glen Primary School,2024-25,SwD,40.5,SwoD,15.0,2.7,SwD,40.5,SwoD,15.0,2.7
+Disability Status,Wauwatosa,Roosevelt Elementary,2024-25,SwD,21.9,SwoD,8.3,2.64,SwD,21.9,SwoD,8.3,2.64
+Disability Status,Milwaukee,Highland Community School,2024-25,SwD,28.4,SwoD,10.8,2.63,SwD,28.4,SwoD,10.8,2.63
+Disability Status,Franklin Public,Pleasant View Elementary,2024-25,SwD,20.9,SwoD,8.0,2.61,SwD,20.9,SwoD,8.0,2.61
+Disability Status,Milwaukee,Whittier Elementary,2024-25,SwD,18.5,SwoD,7.2,2.57,SwD,18.5,SwoD,7.2,2.57
+Disability Status,Wauwatosa,Eisenhower Elementary,2024-25,SwD,29.5,SwoD,11.9,2.48,SwD,29.5,SwoD,11.9,2.48
+Disability Status,West Allis-West Milwaukee,Franklin Elementary,2024-25,SwD,17.8,SwoD,7.6,2.34,SwD,17.8,SwoD,7.6,2.34
+Disability Status,Wauwatosa,East High,2024-25,SwD,36.7,SwoD,15.9,2.31,SwD,36.7,SwoD,15.9,2.31
+Disability Status,Wauwatosa,Whitman Middle,2024-25,SwD,27.8,SwoD,12.1,2.3,SwD,27.8,SwoD,12.1,2.3
+Disability Status,Whitnall,Edgerton Elementary,2024-25,SwD,5.9,SwoD,2.6,2.27,SwD,5.9,SwoD,2.6,2.27
+Disability Status,Oak Creek-Franklin Joint,Cedar Hills Elementary,2024-25,SwD,14.3,SwoD,6.4,2.23,SwD,14.3,SwoD,6.4,2.23
+Disability Status,Whitnall,Whitnall High,2024-25,SwD,24.8,SwoD,11.3,2.19,SwD,24.8,SwoD,11.3,2.19
+Disability Status,Franklin Public,Franklin High,2024-25,SwD,13.9,SwoD,6.4,2.17,SwD,13.9,SwoD,6.4,2.17
+Disability Status,Glendale-River Hills,Parkway Elementary,2024-25,SwD,13.2,SwoD,6.2,2.13,SwD,13.2,SwoD,6.2,2.13
+Disability Status,Oak Creek-Franklin Joint,Forest Ridge Elementary,2024-25,SwD,31.6,SwoD,15.2,2.08,SwD,31.6,SwoD,15.2,2.08
+Disability Status,Whitnall,Whitnall Middle,2024-25,SwD,16.4,SwoD,7.9,2.08,SwD,16.4,SwoD,7.9,2.08
+Disability Status,Milwaukee,Reagan College Preparatory High,2024-25,SwD,35.1,SwoD,17.4,2.02,SwD,35.1,SwoD,17.4,2.02
+Disability Status,Milwaukee,Maryland Montessori,2024-25,SwD,8.6,SwoD,4.3,2.0,SwD,8.6,SwoD,4.3,2.0
+Disability Status,Milwaukee,Fairview Elementary,2024-25,SwD,37.3,SwoD,18.7,1.99,SwD,37.3,SwoD,18.7,1.99
+Disability Status,Wauwatosa,Longfellow Middle,2024-25,SwD,15.0,SwoD,7.7,1.95,SwD,15.0,SwoD,7.7,1.95
+Disability Status,Oak Creek-Franklin Joint,Oak Creek High,2024-25,SwD,37.0,SwoD,19.1,1.94,SwD,37.0,SwoD,19.1,1.94
+Disability Status,Milwaukee,Milwaukee French Immersion,2024-25,SwD,30.2,SwoD,16.0,1.89,SwD,30.2,SwoD,16.0,1.89
+Disability Status,Milwaukee,ALBA - Academia de Lenguaje y Bellas Artes,2024-25,SwD,8.1,SwoD,4.3,1.88,SwD,8.1,SwoD,4.3,1.88
+Disability Status,Greenfield,Elm Dale Elementary,2024-25,SwD,13.0,SwoD,7.0,1.86,SwD,13.0,SwoD,7.0,1.86
+Disability Status,Milwaukee,Trowbridge Street School of Great Lakes Studies,2024-25,SwD,53.8,SwoD,29.3,1.84,SwD,53.8,SwoD,29.3,1.84
+Disability Status,Nicolet Union High School,Nicolet High,2024-25,SwD,4.7,SwoD,2.6,1.81,SwD,4.7,SwoD,2.6,1.81
+Disability Status,Greendale,Greendale Middle,2024-25,SwD,7.2,SwoD,4.0,1.8,SwD,7.2,SwoD,4.0,1.8
+Disability Status,Greenfield,Glenwood Elementary,2024-25,SwD,12.5,SwoD,7.0,1.79,SwD,12.5,SwoD,7.0,1.79
+Disability Status,Milwaukee,Gaenslen Elementary,2024-25,SwD,44.3,SwoD,24.7,1.79,SwD,44.3,SwoD,24.7,1.79
+Disability Status,Milwaukee,Academy of Accelerated Learning,2024-25,SwD,22.9,SwoD,12.9,1.78,SwD,22.9,SwoD,12.9,1.78
+Disability Status,Milwaukee,Golda Meir School,2024-25,SwD,25.4,SwoD,14.3,1.78,SwD,25.4,SwoD,14.3,1.78
+Disability Status,United Community Center,Bruce Guadalupe,2024-25,SwD,26.3,SwoD,14.8,1.78,SwD,26.3,SwoD,14.8,1.78
+Disability Status,Wauwatosa,West High,2024-25,SwD,36.2,SwoD,20.4,1.77,SwD,36.2,SwoD,20.4,1.77
+Disability Status,Greenfield,Maple Grove Elementary,2024-25,SwD,10.4,SwoD,5.9,1.76,SwD,10.4,SwoD,5.9,1.76
+Disability Status,Greenfield,Greenfield Middle,2024-25,SwD,19.6,SwoD,11.2,1.75,SwD,19.6,SwoD,11.2,1.75
+Disability Status,Darrell L. Hines Academy,Darrell Lynn Hines Academy,2024-25,SwD,56.0,SwoD,32.1,1.74,SwD,56.0,SwoD,32.1,1.74
+Disability Status,Milwaukee,Milwaukee Spanish Immersion,2024-25,SwD,31.5,SwoD,18.3,1.72,SwD,31.5,SwoD,18.3,1.72
+Disability Status,Milwaukee,Vieau Elementary,2024-25,SwD,46.9,SwoD,27.5,1.71,SwD,46.9,SwoD,27.5,1.71
+Disability Status,Wauwatosa,Underwood Elementary,2024-25,SwD,21.1,SwoD,12.5,1.69,SwD,21.1,SwoD,12.5,1.69
+Disability Status,Cudahy,Mitchell Elementary,2024-25,SwD,32.0,SwoD,19.0,1.68,SwD,32.0,SwoD,19.0,1.68
+Disability Status,Fox Point J2,Stormonth Elementary,2024-25,SwD,7.0,SwoD,4.2,1.67,SwD,7.0,SwoD,4.2,1.67
+Disability Status,Milwaukee,Kagel Elementary,2024-25,SwD,51.0,SwoD,30.6,1.67,SwD,51.0,SwoD,30.6,1.67
+Disability Status,Shorewood,Atwater Elementary,2024-25,SwD,5.6,SwoD,3.4,1.65,SwD,5.6,SwoD,3.4,1.65
+Disability Status,Greendale,Greendale High,2024-25,SwD,20.2,SwoD,12.4,1.63,SwD,20.2,SwoD,12.4,1.63
+Disability Status,South Milwaukee,Rawson Elementary,2024-25,SwD,40.4,SwoD,24.8,1.63,SwD,40.4,SwoD,24.8,1.63
+Disability Status,Milwaukee,Burdick Elementary,2024-25,SwD,33.0,SwoD,20.7,1.59,SwD,33.0,SwoD,20.7,1.59
+Disability Status,Oak Creek-Franklin Joint,Carollton Elementary,2024-25,SwD,10.0,SwoD,6.3,1.59,SwD,10.0,SwoD,6.3,1.59
+Disability Status,Milwaukee,Craig Montessori School,2024-25,SwD,19.2,SwoD,12.3,1.56,SwD,19.2,SwoD,12.3,1.56
+Disability Status,Milwaukee,U S Grant School,2024-25,SwD,50.0,SwoD,32.3,1.55,SwD,50.0,SwoD,32.3,1.55
+Disability Status,Milwaukee,Goodrich Elementary,2024-25,SwD,29.2,SwoD,19.0,1.54,SwD,29.2,SwoD,19.0,1.54
+Disability Status,South Milwaukee,Lakeview Elementary,2024-25,SwD,21.7,SwoD,14.1,1.54,SwD,21.7,SwoD,14.1,1.54
+Disability Status,West Allis-West Milwaukee,Walker Elementary,2024-25,SwD,18.3,SwoD,12.2,1.5,SwD,18.3,SwoD,12.2,1.5
+Disability Status,Central City Cyberschool of Milwaukee,Central City Cyberschool,2024-25,SwD,47.4,SwoD,31.8,1.49,SwD,47.4,SwoD,31.8,1.49
+Disability Status,Milwaukee,Carmen High School of Science and Technology South Campus,2024-25,SwD,36.1,SwoD,24.3,1.49,SwD,36.1,SwoD,24.3,1.49
+Disability Status,Milwaukee,Milwaukee College Preparatory School -- 38th Street,2024-25,SwD,36.1,SwoD,24.2,1.49,SwD,36.1,SwoD,24.2,1.49
+Disability Status,Milwaukee,Story Elementary,2024-25,SwD,60.0,SwoD,40.3,1.49,SwD,60.0,SwoD,40.3,1.49
+Disability Status,West Allis-West Milwaukee,Frank Lloyd Wright Intermediate,2024-25,SwD,20.6,SwoD,13.8,1.49,SwD,20.6,SwoD,13.8,1.49
+Disability Status,Greendale,Highland View Elementary,2024-25,SwD,9.3,SwoD,6.3,1.48,SwD,9.3,SwoD,6.3,1.48
+Disability Status,Milwaukee,Milwaukee School of Languages,2024-25,SwD,51.2,SwoD,34.7,1.48,SwD,51.2,SwoD,34.7,1.48
+Disability Status,Milwaukee,Milwaukee College Preparatory School -- 36th Street Campus,2024-25,SwD,30.4,SwoD,20.7,1.47,SwD,30.4,SwoD,20.7,1.47
+Disability Status,South Milwaukee,South Milwaukee Middle,2024-25,SwD,33.3,SwoD,22.7,1.47,SwD,33.3,SwoD,22.7,1.47
+Disability Status,Whitnall,Hales Corners Elementary,2024-25,SwD,2.8,SwoD,1.9,1.47,SwD,2.8,SwoD,1.9,1.47
+Disability Status,Milwaukee,Forest Home Elementary,2024-25,SwD,39.8,SwoD,27.7,1.44,SwD,39.8,SwoD,27.7,1.44
+Disability Status,Milwaukee,Milwaukee German Immersion,2024-25,SwD,10.4,SwoD,7.2,1.44,SwD,10.4,SwoD,7.2,1.44
+Disability Status,Milwaukee,Riley Dual Language Montessori School,2024-25,SwD,22.5,SwoD,15.6,1.44,SwD,22.5,SwoD,15.6,1.44
+Disability Status,Rocketship Education Wisconsin,Rocketship Transformation Prep,2024-25,SwD,54.2,SwoD,38.2,1.42,SwD,54.2,SwoD,38.2,1.42
+Disability Status,Saint Francis,Saint Francis High,2024-25,SwD,30.8,SwoD,21.7,1.42,SwD,30.8,SwoD,21.7,1.42
+Disability Status,Milwaukee,Humboldt Park Elementary,2024-25,SwD,42.5,SwoD,30.1,1.41,SwD,42.5,SwoD,30.1,1.41
+Disability Status,Milwaukee,River Trail School of Agricultural Science,2024-25,SwD,36.8,SwoD,26.1,1.41,SwD,36.8,SwoD,26.1,1.41
+Disability Status,Milwaukee,Wedgewood Park School,2024-25,SwD,65.4,SwoD,46.5,1.41,SwD,65.4,SwoD,46.5,1.41
+Disability Status,Milwaukee Scholars Charter School,Milwaukee Scholars Charter School,2024-25,SwD,50.4,SwoD,35.8,1.41,SwD,50.4,SwoD,35.8,1.41
+Disability Status,Milwaukee,Hampton Elementary,2024-25,SwD,73.6,SwoD,52.7,1.4,SwD,73.6,SwoD,52.7,1.4
+Disability Status,Milwaukee,Manitoba Elementary,2024-25,SwD,54.0,SwoD,38.7,1.4,SwD,54.0,SwoD,38.7,1.4
+Disability Status,Milwaukee,Whitman Elementary,2024-25,SwD,46.6,SwoD,33.2,1.4,SwD,46.6,SwoD,33.2,1.4
+Disability Status,Milwaukee,Fifty-Third Street Elementary,2024-25,SwD,73.1,SwoD,52.7,1.39,SwD,73.1,SwoD,52.7,1.39
+Disability Status,Milwaukee,Honey Creek Elementary,2024-25,SwD,28.4,SwoD,20.5,1.39,SwD,28.4,SwoD,20.5,1.39
+Disability Status,Milwaukee,Milwaukee College Preparatory School -- Lloyd Street,2024-25,SwD,33.3,SwoD,24.0,1.39,SwD,33.3,SwoD,24.0,1.39
+Disability Status,Milwaukee,Morgandale Elementary,2024-25,SwD,45.6,SwoD,33.0,1.38,SwD,45.6,SwoD,33.0,1.38
+Disability Status,Brown Deer,Brown Deer Elementary,2024-25,SwD,29.0,SwoD,21.1,1.37,SwD,29.0,SwoD,21.1,1.37
+Disability Status,Milwaukee Math and Science Academy,Milwaukee Math and Science Academy,2024-25,SwD,65.8,SwoD,48.0,1.37,SwD,65.8,SwoD,48.0,1.37
+Disability Status,South Milwaukee,South Milwaukee High,2024-25,SwD,51.2,SwoD,37.4,1.37,SwD,51.2,SwoD,37.4,1.37
+Disability Status,Wauwatosa,Jefferson Elementary,2024-25,SwD,7.4,SwoD,5.4,1.37,SwD,7.4,SwoD,5.4,1.37
+Disability Status,Milwaukee,Lowell International Elementary,2024-25,SwD,35.0,SwoD,25.7,1.36,SwD,35.0,SwoD,25.7,1.36
+Disability Status,Milwaukee,Parkview Elementary,2024-25,SwD,47.4,SwoD,34.9,1.36,SwD,47.4,SwoD,34.9,1.36
+Disability Status,Milwaukee,Rogers Street Academy,2024-25,SwD,48.3,SwoD,35.7,1.35,SwD,48.3,SwoD,35.7,1.35
+Disability Status,Milwaukee Science Education Consortium,Milwaukee Academy of Science,2024-25,SwD,59.9,SwoD,44.4,1.35,SwD,59.9,SwoD,44.4,1.35
+Disability Status,Rocketship Education Wisconsin,Rocketship Southside Community Prep,2024-25,SwD,37.0,SwoD,27.7,1.34,SwD,37.0,SwoD,27.7,1.34
+Disability Status,West Allis-West Milwaukee,Nathan Hale High,2024-25,SwD,24.1,SwoD,18.0,1.34,SwD,24.1,SwoD,18.0,1.34
+Disability Status,Greenfield,Greenfield High,2024-25,SwD,26.0,SwoD,19.6,1.33,SwD,26.0,SwoD,19.6,1.33
+Disability Status,Milwaukee,Keefe Avenue Elementary,2024-25,SwD,66.7,SwoD,50.0,1.33,SwD,66.7,SwoD,50.0,1.33
+Disability Status,Greendale,Canterbury Elementary,2024-25,SwD,2.9,SwoD,2.2,1.32,SwD,2.9,SwoD,2.2,1.32
+Disability Status,Milwaukee,Emerson Elementary,2024-25,SwD,67.7,SwoD,51.3,1.32,SwD,67.7,SwoD,51.3,1.32
+Disability Status,Milwaukee,Hayes Bilingual School,2024-25,SwD,41.5,SwoD,31.5,1.32,SwD,41.5,SwoD,31.5,1.32
+Disability Status,Milwaukee,IDEAL Individualized Developmental Educational Approaches to Learning,2024-25,SwD,32.0,SwoD,24.5,1.31,SwD,32.0,SwoD,24.5,1.31
+Disability Status,Cudahy,Cudahy High,2024-25,SwD,41.2,SwoD,31.6,1.3,SwD,41.2,SwoD,31.6,1.3
+Disability Status,Milwaukee,Fratney Elementary,2024-25,SwD,49.0,SwoD,37.8,1.3,SwD,49.0,SwoD,37.8,1.3
+Disability Status,Milwaukee,MacDowell Montessori School K3-12,2024-25,SwD,30.1,SwoD,23.1,1.3,SwD,30.1,SwoD,23.1,1.3
+Disability Status,Milwaukee,Milwaukee Parkside School,2024-25,SwD,29.1,SwoD,22.3,1.3,SwD,29.1,SwoD,22.3,1.3
+Disability Status,Milwaukee,Barton Elementary,2024-25,SwD,66.2,SwoD,51.5,1.29,SwD,66.2,SwoD,51.5,1.29
+Disability Status,Milwaukee,King International,2024-25,SwD,47.5,SwoD,36.7,1.29,SwD,47.5,SwoD,36.7,1.29
+Disability Status,Cudahy,Kosciuszko Elementary,2024-25,SwD,41.2,SwoD,32.3,1.28,SwD,41.2,SwoD,32.3,1.28
+Disability Status,Carmen High School of Science and Technology,Carmen Middle School South,2024-25,SwD,48.8,SwoD,38.4,1.27,SwD,48.8,SwoD,38.4,1.27
+Disability Status,Oak Creek-Franklin Joint,Oak Creek West Middle,2024-25,SwD,17.7,SwoD,13.9,1.27,SwD,17.7,SwoD,13.9,1.27
+Disability Status,Wauwatosa,Washington Elementary,2024-25,SwD,7.1,SwoD,5.6,1.27,SwD,7.1,SwoD,5.6,1.27
+Disability Status,Milwaukee,Garland Elementary,2024-25,SwD,27.8,SwoD,22.1,1.26,SwD,27.8,SwoD,22.1,1.26
+Disability Status,Milwaukee,Milwaukee College Preparatory School: Lola Rowe North Campus,2024-25,SwD,21.4,SwoD,17.1,1.25,SwD,21.4,SwoD,17.1,1.25
+Disability Status,Milwaukee,Greenfield Bilingual,2024-25,SwD,34.3,SwoD,27.6,1.24,SwD,34.3,SwoD,27.6,1.24
+Disability Status,Brown Deer,Brown Deer Middle/High,2024-25,SwD,43.7,SwoD,35.5,1.23,SwD,43.7,SwoD,35.5,1.23
+Disability Status,Greenfield,Edgewood Elementary,2024-25,SwD,8.7,SwoD,7.1,1.23,SwD,8.7,SwoD,7.1,1.23
+Disability Status,Milwaukee,Townsend Street Elementary,2024-25,SwD,85.5,SwoD,69.3,1.23,SwD,85.5,SwoD,69.3,1.23
+Disability Status,South Milwaukee,Blakewood Elementary,2024-25,SwD,22.2,SwoD,18.0,1.23,SwD,22.2,SwoD,18.0,1.23
+Disability Status,Milwaukee,Barbee Elementary,2024-25,SwD,37.9,SwoD,31.4,1.21,SwD,37.9,SwoD,31.4,1.21
+Disability Status,Milwaukee,Bryant Elementary,2024-25,SwD,62.7,SwoD,51.9,1.21,SwD,62.7,SwoD,51.9,1.21
+Disability Status,Milwaukee,Thurston Woods Elementary,2024-25,SwD,72.5,SwoD,60.0,1.21,SwD,72.5,SwoD,60.0,1.21
+Disability Status,Milwaukee,Kluge Elementary,2024-25,SwD,55.7,SwoD,46.4,1.2,SwD,55.7,SwoD,46.4,1.2
+Disability Status,Milwaukee,Milwaukee Sign Language Elementary,2024-25,SwD,78.0,SwoD,65.2,1.2,SwD,78.0,SwoD,65.2,1.2
+Disability Status,Milwaukee,Morse Mid,2024-25,SwD,63.6,SwoD,52.8,1.2,SwD,63.6,SwoD,52.8,1.2
+Disability Status,Whitefish Bay,Richards Elementary,2024-25,SwD,4.2,SwoD,3.5,1.2,SwD,4.2,SwoD,3.5,1.2
+Disability Status,Milwaukee,Bethune Academy,2024-25,SwD,43.2,SwoD,36.3,1.19,SwD,43.2,SwoD,36.3,1.19
+Disability Status,Milwaukee,LaFollette Elementary,2024-25,SwD,69.6,SwoD,58.6,1.19,SwD,69.6,SwoD,58.6,1.19
+Disability Status,Milwaukee,Ninety-Fifth Street Elementary,2024-25,SwD,39.4,SwoD,33.2,1.19,SwD,39.4,SwoD,33.2,1.19
+Disability Status,Milwaukee,Zablocki Elementary,2024-25,SwD,52.7,SwoD,44.2,1.19,SwD,52.7,SwoD,44.2,1.19
+Disability Status,Milwaukee,Browning Elementary,2024-25,SwD,58.5,SwoD,49.4,1.18,SwD,58.5,SwoD,49.4,1.18
+Disability Status,Milwaukee,Milwaukee Academy of Chinese Language,2024-25,SwD,49.2,SwoD,41.6,1.18,SwD,49.2,SwoD,41.6,1.18
+Disability Status,Milwaukee,Carson Academy,2024-25,SwD,75.4,SwoD,64.4,1.17,SwD,75.4,SwoD,64.4,1.17
+Disability Status,Milwaukee,Mitchell Elementary,2024-25,SwD,61.4,SwoD,52.5,1.17,SwD,61.4,SwoD,52.5,1.17
+Disability Status,Glendale-River Hills,Glen Hills Middle,2024-25,SwD,11.4,SwoD,9.9,1.15,SwD,11.4,SwoD,9.9,1.15
+Disability Status,Milwaukee,Carmen Middle/High School of Science and Technology Northwest Campus,2024-25,SwD,62.9,SwoD,55.1,1.14,SwD,62.9,SwoD,55.1,1.14
+Disability Status,Milwaukee,Grantosa Drive Elementary,2024-25,SwD,68.1,SwoD,59.5,1.14,SwD,68.1,SwoD,59.5,1.14
+Disability Status,Milwaukee,Lancaster Elementary,2024-25,SwD,86.0,SwoD,76.1,1.13,SwD,86.0,SwoD,76.1,1.13
+Disability Status,Milwaukee,Milwaukee High School of the Arts,2024-25,SwD,59.6,SwoD,52.9,1.13,SwD,59.6,SwoD,52.9,1.13
+Disability Status,Milwaukee,Allen-Field Elementary,2024-25,SwD,43.0,SwoD,38.3,1.12,SwD,43.0,SwoD,38.3,1.12
+Disability Status,Cudahy,Cudahy Middle,2024-25,SwD,40.4,SwoD,36.5,1.11,SwD,40.4,SwoD,36.5,1.11
+Disability Status,Milwaukee,South Division High,2024-25,SwD,67.4,SwoD,60.9,1.11,SwD,67.4,SwoD,60.9,1.11
+Disability Status,Milwaukee,Roosevelt Middle,2024-25,SwD,68.1,SwoD,62.0,1.1,SwD,68.1,SwoD,62.0,1.1
+Disability Status,West Allis-West Milwaukee,Wilson Elementary,2024-25,SwD,14.8,SwoD,13.5,1.1,SwD,14.8,SwoD,13.5,1.1
+Disability Status,Milwaukee,Holmes Elementary,2024-25,SwD,59.7,SwoD,54.8,1.09,SwD,59.7,SwoD,54.8,1.09
+Disability Status,Milwaukee,Pulaski High,2024-25,SwD,83.3,SwoD,76.3,1.09,SwD,83.3,SwoD,76.3,1.09
+Disability Status,Milwaukee,Starms Early Childhood,2024-25,SwD,45.2,SwoD,41.7,1.08,SwD,45.2,SwoD,41.7,1.08
+Disability Status,Seeds of Health,Seeds of Health Elementary Program,2024-25,SwD,39.3,SwoD,36.4,1.08,SwD,39.3,SwoD,36.4,1.08
+Disability Status,Milwaukee,Alcott Elementary,2024-25,SwD,41.7,SwoD,38.8,1.07,SwD,41.7,SwoD,38.8,1.07
+Disability Status,Milwaukee,Carmen High School of Science and Technology Southeast Campus,2024-25,SwD,54.4,SwoD,50.7,1.07,SwD,54.4,SwoD,50.7,1.07
+Disability Status,Seeds of Health,Tenor High,2024-25,SwD,34.1,SwoD,32.0,1.07,SwD,34.1,SwoD,32.0,1.07
+Disability Status,Shorewood,Shorewood High,2024-25,SwD,19.4,SwoD,18.2,1.07,SwD,19.4,SwoD,18.2,1.07
+Disability Status,Cudahy,Lincoln Elementary,2024-25,SwD,37.3,SwoD,35.1,1.06,SwD,37.3,SwoD,35.1,1.06
+Disability Status,Milwaukee,Andrew S Douglas Middle,2024-25,SwD,88.9,SwoD,84.1,1.06,SwD,88.9,SwoD,84.1,1.06
+Disability Status,Milwaukee,Audubon Technology and Communication Middle,2024-25,SwD,59.2,SwoD,55.8,1.06,SwD,59.2,SwoD,55.8,1.06
+Disability Status,Milwaukee,King Jr Elementary,2024-25,SwD,71.7,SwoD,67.5,1.06,SwD,71.7,SwoD,67.5,1.06
+Disability Status,West Allis-West Milwaukee,Irving Elementary,2024-25,SwD,12.3,SwoD,11.6,1.06,SwD,12.3,SwoD,11.6,1.06
+Disability Status,Milwaukee,Burbank Elementary,2024-25,SwD,41.0,SwoD,39.2,1.05,SwD,41.0,SwoD,39.2,1.05
+Disability Status,Milwaukee,Eighty-First Street Elementary,2024-25,SwD,48.1,SwoD,45.9,1.05,SwD,48.1,SwoD,45.9,1.05
+Disability Status,Milwaukee,Hawthorne Elementary,2024-25,SwD,44.2,SwoD,42.0,1.05,SwD,44.2,SwoD,42.0,1.05
+Disability Status,Milwaukee,Kilbourn Elementary,2024-25,SwD,65.3,SwoD,62.0,1.05,SwD,65.3,SwoD,62.0,1.05
+Disability Status,Milwaukee,Doerfler Elementary,2024-25,SwD,50.8,SwoD,48.9,1.04,SwD,50.8,SwoD,48.9,1.04
+Disability Status,Milwaukee,Victory Elementary,2024-25,SwD,25.0,SwoD,24.0,1.04,SwD,25.0,SwoD,24.0,1.04
+Disability Status,Milwaukee,Longfellow Elementary,2024-25,SwD,44.0,SwoD,42.7,1.03,SwD,44.0,SwoD,42.7,1.03
+Disability Status,United Community Center,United Community Center Acosta Middle School,2024-25,SwD,20.0,SwoD,19.4,1.03,SwD,20.0,SwoD,19.4,1.03
+Disability Status,Milwaukee,Bradley Technology High,2024-25,SwD,77.6,SwoD,75.8,1.02,SwD,77.6,SwoD,75.8,1.02
+Disability Status,Milwaukee,Cass Street Elementary,2024-25,SwD,53.6,SwoD,52.7,1.02,SwD,53.6,SwoD,52.7,1.02
+Disability Status,Milwaukee,Hartford Avenue Elementary,2024-25,SwD,61.8,SwoD,60.7,1.02,SwD,61.8,SwoD,60.7,1.02
+Disability Status,Milwaukee,Westside Academy,2024-25,SwD,61.3,SwoD,60.2,1.02,SwD,61.3,SwoD,60.2,1.02
+Disability Status,Milwaukee,Clement Avenue Elementary,2024-25,SwD,22.2,SwoD,22.0,1.01,SwD,22.2,SwoD,22.0,1.01
+Disability Status,West Allis-West Milwaukee,West Milwaukee Intermediate,2024-25,SwD,21.2,SwoD,20.9,1.01,SwD,21.2,SwoD,20.9,1.01
+Disability Status,Franklin Public,Country Dale Elementary,2024-25,SwD,7.0,SwoD,7.0,1.0,SwD,7.0,SwD,7.0,1.0
+Disability Status,Milwaukee,Obama School of Career and Technical Education,2024-25,SwD,77.8,SwoD,78.1,1.0,SwoD,78.1,SwD,77.8,1.0
+Disability Status,Milwaukee,Auer Avenue Elementary,2024-25,SwD,62.5,SwoD,63.1,0.99,SwoD,63.1,SwD,62.5,1.01
+Disability Status,Milwaukee,Brown Street Academy,2024-25,SwD,55.0,SwoD,55.4,0.99,SwoD,55.4,SwD,55.0,1.01
+Disability Status,Milwaukee,Stuart Elementary,2024-25,SwD,33.3,SwoD,33.6,0.99,SwoD,33.6,SwD,33.3,1.01
+Disability Status,Milwaukee,Wisconsin Conservatory of Lifelong Learning,2024-25,SwD,87.5,SwoD,88.0,0.99,SwoD,88.0,SwD,87.5,1.01
+Disability Status,Milwaukee,Grandview High,2024-25,SwD,84.6,SwoD,86.0,0.98,SwoD,86.0,SwD,84.6,1.02
+Disability Status,Milwaukee,Groppi High,2024-25,SwD,96.8,SwoD,99.1,0.98,SwoD,99.1,SwD,96.8,1.02
+Disability Status,Milwaukee,Jackson Elementary,2024-25,SwD,62.7,SwoD,64.0,0.98,SwoD,64.0,SwD,62.7,1.02
+Disability Status,Dr. Howard Fuller Collegiate Academy,Dr Howard Fuller Collegiate Academy,2024-25,SwD,52.1,SwoD,53.8,0.97,SwoD,53.8,SwD,52.1,1.03
+Disability Status,Milwaukee,King International Baccalaureate Middle,2024-25,SwD,68.8,SwoD,70.9,0.97,SwoD,70.9,SwD,68.8,1.03
+Disability Status,Milwaukee,Bruce Elementary,2024-25,SwD,32.7,SwoD,34.0,0.96,SwoD,34.0,SwD,32.7,1.04
+Disability Status,Milwaukee,Hamilton High,2024-25,SwD,71.3,SwoD,74.2,0.96,SwoD,74.2,SwD,71.3,1.04
+Disability Status,Milwaukee,North Division High,2024-25,SwD,85.4,SwoD,89.3,0.96,SwoD,89.3,SwD,85.4,1.05
+Disability Status,Milwaukee,Riverside High,2024-25,SwD,63.1,SwoD,65.4,0.96,SwoD,65.4,SwD,63.1,1.04
+Disability Status,Milwaukee,Starms Discovery,2024-25,SwD,44.2,SwoD,46.1,0.96,SwoD,46.1,SwD,44.2,1.04
+Disability Status,Milwaukee,Transition High,2024-25,SwD,96.0,SwoD,100.0,0.96,SwoD,100.0,SwD,96.0,1.04
+Disability Status,Milwaukee,Clemens Elementary,2024-25,SwD,53.3,SwoD,56.4,0.95,SwoD,56.4,SwD,53.3,1.06
+Disability Status,Milwaukee,Harold S Vincent School of Agricultural Science,2024-25,SwD,78.6,SwoD,82.6,0.95,SwoD,82.6,SwD,78.6,1.05
+Disability Status,Milwaukee,NOVA-Northwest Opportunities Vocational Academy,2024-25,SwD,95.2,SwoD,100.0,0.95,SwoD,100.0,SwD,95.2,1.05
+Disability Status,Milwaukee,Project STAY-Supporting Teachers and Youth,2024-25,SwD,87.5,SwoD,92.2,0.95,SwoD,92.2,SwD,87.5,1.05
+Disability Status,West Allis-West Milwaukee,Horace Mann Elementary,2024-25,SwD,21.3,SwoD,22.4,0.95,SwoD,22.4,SwD,21.3,1.05
+Disability Status,Milwaukee,Bay View High,2024-25,SwD,70.4,SwoD,74.8,0.94,SwoD,74.8,SwD,70.4,1.06
+Disability Status,Milwaukee,Metcalfe Elementary,2024-25,SwD,65.0,SwoD,69.3,0.94,SwoD,69.3,SwD,65.0,1.07
+Disability Status,Milwaukee,Clarke Street Elementary,2024-25,SwD,64.5,SwoD,69.0,0.93,SwoD,69.0,SwD,64.5,1.07
+Disability Status,Milwaukee,Congress Elementary,2024-25,SwD,56.1,SwoD,60.3,0.93,SwoD,60.3,SwD,56.1,1.07
+Disability Status,Milwaukee,Hopkins Lloyd Community School,2024-25,SwD,63.9,SwoD,69.0,0.93,SwoD,69.0,SwD,63.9,1.08
+Disability Status,Milwaukee,Curtin Elementary,2024-25,SwD,33.9,SwoD,36.9,0.92,SwoD,36.9,SwD,33.9,1.09
+Disability Status,Milwaukee,Lincoln Avenue Elementary,2024-25,SwD,20.8,SwoD,22.5,0.92,SwoD,22.5,SwD,20.8,1.08
+Disability Status,Milwaukee,Milwaukee Environmental Science Academy,2024-25,SwD,53.8,SwoD,58.7,0.92,SwoD,58.7,SwD,53.8,1.09
+Disability Status,Milwaukee,Siefert Elementary,2024-25,SwD,59.1,SwoD,64.4,0.92,SwoD,64.4,SwD,59.1,1.09
+Disability Status,Milwaukee,WHS Information Technology,2024-25,SwD,79.4,SwoD,85.9,0.92,SwoD,85.9,SwD,79.4,1.08
+Disability Status,West Allis-West Milwaukee,Central High,2024-25,SwD,38.5,SwoD,41.9,0.92,SwoD,41.9,SwD,38.5,1.09
+Disability Status,Milwaukee,James Madison Academic Campus,2024-25,SwD,81.3,SwoD,90.2,0.9,SwoD,90.2,SwD,81.3,1.11
+Disability Status,Milwaukee,Alliance School of Milwaukee,2024-25,SwD,85.5,SwoD,95.9,0.89,SwoD,95.9,SwD,85.5,1.12
+Disability Status,Milwaukee,Elm Creative Arts Elementary,2024-25,SwD,55.8,SwoD,62.5,0.89,SwoD,62.5,SwD,55.8,1.12
+Disability Status,Milwaukee,Pratt Elementary,2024-25,SwD,41.7,SwoD,46.8,0.89,SwoD,46.8,SwD,41.7,1.12
+Disability Status,Milwaukee,Thoreau Elementary,2024-25,SwD,54.7,SwoD,61.5,0.89,SwoD,61.5,SwD,54.7,1.12
+Disability Status,Milwaukee,Engleburg Elementary,2024-25,SwD,53.8,SwoD,61.1,0.88,SwoD,61.1,SwD,53.8,1.14
+Disability Status,Milwaukee,Green Tree Preparatory Academy,2024-25,SwD,72.6,SwoD,82.7,0.88,SwoD,82.7,SwD,72.6,1.14
+Disability Status,Milwaukee,Neeskara Elementary,2024-25,SwD,46.9,SwoD,53.5,0.88,SwoD,53.5,SwD,46.9,1.14
+Disability Status,West Allis-West Milwaukee,James E Dottke Project-Based Learning High School,2024-25,SwD,21.9,SwoD,25.0,0.88,SwoD,25.0,SwD,21.9,1.14
+Disability Status,Milwaukee,Sherman Elementary,2024-25,SwD,60.5,SwoD,69.8,0.87,SwoD,69.8,SwD,60.5,1.15
+Disability Status,Wauwatosa,Madison Elementary,2024-25,SwD,9.3,SwoD,10.8,0.86,SwoD,10.8,SwD,9.3,1.16
+Disability Status,West Allis-West Milwaukee,Jefferson Elementary,2024-25,SwD,14.5,SwoD,16.9,0.86,SwoD,16.9,SwD,14.5,1.17
+Disability Status,Carmen High School of Science and Technology,Stellar Collegiate Charter School,2024-25,SwD,32.6,SwoD,38.3,0.85,SwoD,38.3,SwD,32.6,1.17
+Disability Status,Milwaukee,Franklin Elementary,2024-25,SwD,60.0,SwoD,71.1,0.84,SwoD,71.1,SwD,60.0,1.18
+Disability Status,Milwaukee,Hi-Mount Elementary,2024-25,SwD,58.3,SwoD,69.6,0.84,SwoD,69.6,SwD,58.3,1.19
+Disability Status,Trans Center for Youth,Escuela Verde,2024-25,SwD,61.3,SwoD,74.1,0.83,SwoD,74.1,SwD,61.3,1.21
+Disability Status,Milwaukee,Lincoln Middle,2024-25,SwD,54.2,SwoD,67.1,0.81,SwoD,67.1,SwD,54.2,1.24
+Disability Status,Milwaukee,Maple Tree Elementary,2024-25,SwD,43.6,SwoD,53.7,0.81,SwoD,53.7,SwD,43.6,1.23
+Disability Status,Milwaukee,Marshall High,2024-25,SwD,73.0,SwoD,90.0,0.81,SwoD,90.0,SwD,73.0,1.23
+Disability Status,Milwaukee,Carver Academy,2024-25,SwD,44.6,SwoD,55.7,0.8,SwoD,55.7,SwD,44.6,1.25
+Disability Status,Milwaukee,HAPA-Hmong American Peace Academy K3-12,2024-25,SwD,8.4,SwoD,10.5,0.8,SwoD,10.5,SwD,8.4,1.25
+Disability Status,Milwaukee,Audubon Technology and Communication High,2024-25,SwD,36.3,SwoD,45.7,0.79,SwoD,45.7,SwD,36.3,1.26
+Disability Status,Milwaukee,Hawley Environmental School,2024-25,SwD,28.3,SwoD,38.8,0.73,SwoD,38.8,SwD,28.3,1.37
+Disability Status,Milwaukee,La Causa Charter School,2024-25,SwD,25.8,SwoD,36.0,0.72,SwoD,36.0,SwD,25.8,1.4
+Disability Status,Wauwatosa,Wauwatosa Montessori School,2024-25,SwD,3.4,SwoD,4.7,0.72,SwoD,4.7,SwD,3.4,1.38
+Disability Status,Milwaukee,Riverwest Elementary,2024-25,SwD,47.6,SwoD,67.1,0.71,SwoD,67.1,SwD,47.6,1.41
+Disability Status,Milwaukee,Cooper Elementary,2024-25,SwD,7.1,SwoD,10.1,0.7,SwoD,10.1,SwD,7.1,1.42
+Disability Status,Pathways High,Pathways High,2024-25,SwD,34.4,SwoD,51.0,0.67,SwoD,51.0,SwD,34.4,1.48
+Disability Status,South Milwaukee,E W Luther Elementary,2024-25,SwD,9.1,SwoD,15.2,0.6,SwoD,15.2,SwD,9.1,1.67
+Disability Status,West Allis-West Milwaukee,Mitchell Elementary,2024-25,SwD,2.5,SwoD,4.3,0.58,SwoD,4.3,SwD,2.5,1.72
+Disability Status,West Allis-West Milwaukee,Pershing Elementary,2024-25,SwD,7.1,SwoD,13.1,0.54,SwoD,13.1,SwD,7.1,1.85
+Disability Status,Oak Creek-Franklin Joint,Shepard Hills Elementary,2024-25,SwD,4.3,SwoD,10.2,0.42,SwoD,10.2,SwD,4.3,2.37
+Disability Status,Maple Dale-Indian Hill,Indian Hill School,2024-25,SwD,0.0,SwoD,2.7,0.0,SwoD,2.7,SwD,0.0,
+Disability Status,Saint Francis,Deer Creek Intermediate,2024-25,SwD,0.0,SwoD,20.1,0.0,SwoD,20.1,SwD,0.0,
+Disability Status,Wauwatosa,Vel R Phillips School,2024-25,SwD,0.0,SwoD,0.0,,SwD,0.0,SwD,0.0,
+EL Status,Oak Creek-Franklin Joint,Carollton Elementary,2024-25,EL,22.7,Eng Prof,5.8,3.91,EL,22.7,Eng Prof,5.8,3.91
+EL Status,Greenfield,Glenwood Elementary,2024-25,EL,20.0,Eng Prof,6.4,3.12,EL,20.0,Eng Prof,6.4,3.12
+EL Status,Franklin Public,Southwood Glen Elementary,2024-25,EL,14.3,Eng Prof,4.7,3.04,EL,14.3,Eng Prof,4.7,3.04
+EL Status,Franklin Public,Franklin High,2024-25,EL,19.3,Eng Prof,6.5,2.97,EL,19.3,Eng Prof,6.5,2.97
+EL Status,Oak Creek-Franklin Joint,Shepard Hills Elementary,2024-25,EL,22.0,Eng Prof,7.5,2.93,EL,22.0,Eng Prof,7.5,2.93
+EL Status,Whitefish Bay,Cumberland Elementary,2024-25,EL,4.0,Eng Prof,1.8,2.22,EL,4.0,Eng Prof,1.8,2.22
+EL Status,Oak Creek-Franklin Joint,Oak Creek East Middle,2024-25,EL,23.5,Eng Prof,10.7,2.2,EL,23.5,Eng Prof,10.7,2.2
+EL Status,Franklin Public,Pleasant View Elementary,2024-25,EL,17.0,Eng Prof,8.4,2.02,EL,17.0,Eng Prof,8.4,2.02
+EL Status,Oak Creek-Franklin Joint,Forest Ridge Elementary,2024-25,EL,30.8,Eng Prof,16.0,1.93,EL,30.8,Eng Prof,16.0,1.93
+EL Status,Greenfield,Maple Grove Elementary,2024-25,EL,10.9,Eng Prof,6.1,1.79,EL,10.9,Eng Prof,6.1,1.79
+EL Status,Greenfield,Greenfield Middle,2024-25,EL,20.4,Eng Prof,11.7,1.74,EL,20.4,Eng Prof,11.7,1.74
+EL Status,Greendale,Greendale High,2024-25,EL,22.0,Eng Prof,12.8,1.72,EL,22.0,Eng Prof,12.8,1.72
+EL Status,Oak Creek-Franklin Joint,Oak Creek High,2024-25,EL,33.6,Eng Prof,20.0,1.68,EL,33.6,Eng Prof,20.0,1.68
+EL Status,Franklin Public,Robinwood Elementary,2024-25,EL,11.1,Eng Prof,6.8,1.63,EL,11.1,Eng Prof,6.8,1.63
+EL Status,Franklin Public,Forest Park Middle,2024-25,EL,13.9,Eng Prof,8.6,1.62,EL,13.9,Eng Prof,8.6,1.62
+EL Status,Milwaukee,Reagan College Preparatory High,2024-25,EL,29.6,Eng Prof,18.4,1.61,EL,29.6,Eng Prof,18.4,1.61
+EL Status,Milwaukee,ALBA - Academia de Lenguaje y Bellas Artes,2024-25,EL,5.2,Eng Prof,3.3,1.58,EL,5.2,Eng Prof,3.3,1.58
+EL Status,Milwaukee,Burdick Elementary,2024-25,EL,36.0,Eng Prof,22.8,1.58,EL,36.0,Eng Prof,22.8,1.58
+EL Status,Greendale,Greendale Middle,2024-25,EL,6.7,Eng Prof,4.3,1.56,EL,6.7,Eng Prof,4.3,1.56
+EL Status,Cudahy,Mitchell Elementary,2024-25,EL,30.9,Eng Prof,20.2,1.53,EL,30.9,Eng Prof,20.2,1.53
+EL Status,Cudahy,Cudahy Middle,2024-25,EL,53.8,Eng Prof,35.3,1.52,EL,53.8,Eng Prof,35.3,1.52
+EL Status,Milwaukee,Fratney Elementary,2024-25,EL,47.3,Eng Prof,31.3,1.51,EL,47.3,Eng Prof,31.3,1.51
+EL Status,Greendale,Highland View Elementary,2024-25,EL,9.7,Eng Prof,6.5,1.49,EL,9.7,Eng Prof,6.5,1.49
+EL Status,Milwaukee,Riley Dual Language Montessori School,2024-25,EL,20.4,Eng Prof,13.8,1.48,EL,20.4,Eng Prof,13.8,1.48
+EL Status,Greenfield,Elm Dale Elementary,2024-25,EL,10.5,Eng Prof,7.4,1.42,EL,10.5,Eng Prof,7.4,1.42
+EL Status,Greenfield,Greenfield High,2024-25,EL,27.6,Eng Prof,19.6,1.41,EL,27.6,Eng Prof,19.6,1.41
+EL Status,Oak Creek-Franklin Joint,Edgewood Elementary,2024-25,EL,8.3,Eng Prof,6.0,1.38,EL,8.3,Eng Prof,6.0,1.38
+EL Status,West Allis-West Milwaukee,Jefferson Elementary,2024-25,EL,21.6,Eng Prof,15.7,1.38,EL,21.6,Eng Prof,15.7,1.38
+EL Status,United Community Center,United Community Center Acosta Middle School,2024-25,EL,23.7,Eng Prof,17.4,1.36,EL,23.7,Eng Prof,17.4,1.36
+EL Status,West Allis-West Milwaukee,Nathan Hale High,2024-25,EL,25.0,Eng Prof,18.5,1.35,EL,25.0,Eng Prof,18.5,1.35
+EL Status,Saint Francis,Deer Creek Intermediate,2024-25,EL,21.7,Eng Prof,16.2,1.34,EL,21.7,Eng Prof,16.2,1.34
+EL Status,United Community Center,Bruce Guadalupe,2024-25,EL,19.7,Eng Prof,14.7,1.34,EL,19.7,Eng Prof,14.7,1.34
+EL Status,Milwaukee,La Causa Charter School,2024-25,EL,37.9,Eng Prof,29.0,1.31,EL,37.9,Eng Prof,29.0,1.31
+EL Status,Cudahy,Cudahy High,2024-25,EL,41.3,Eng Prof,32.2,1.28,EL,41.3,Eng Prof,32.2,1.28
+EL Status,West Allis-West Milwaukee,Central High,2024-25,EL,51.3,Eng Prof,40.4,1.27,EL,51.3,Eng Prof,40.4,1.27
+EL Status,Milwaukee,Curtin Elementary,2024-25,EL,41.1,Eng Prof,32.9,1.25,EL,41.1,Eng Prof,32.9,1.25
+EL Status,South Milwaukee,South Milwaukee High,2024-25,EL,48.1,Eng Prof,38.8,1.24,EL,48.1,Eng Prof,38.8,1.24
+EL Status,Milwaukee,HAPA-Hmong American Peace Academy K3-12,2024-25,EL,12.1,Eng Prof,9.9,1.22,EL,12.1,Eng Prof,9.9,1.22
+EL Status,Milwaukee,King International,2024-25,EL,45.5,Eng Prof,37.5,1.21,EL,45.5,Eng Prof,37.5,1.21
+EL Status,Milwaukee,Milwaukee School of Languages,2024-25,EL,43.4,Eng Prof,36.8,1.18,EL,43.4,Eng Prof,36.8,1.18
+EL Status,Greenfield,Edgewood Elementary,2024-25,EL,8.3,Eng Prof,7.1,1.17,EL,8.3,Eng Prof,7.1,1.17
+EL Status,South Milwaukee,South Milwaukee Middle,2024-25,EL,27.3,Eng Prof,23.8,1.15,EL,27.3,Eng Prof,23.8,1.15
+EL Status,Cudahy,Lincoln Elementary,2024-25,EL,40.0,Eng Prof,35.0,1.14,EL,40.0,Eng Prof,35.0,1.14
+EL Status,Milwaukee,IDEAL Individualized Developmental Educational Approaches to Learning,2024-25,EL,28.9,Eng Prof,25.8,1.12,EL,28.9,Eng Prof,25.8,1.12
+EL Status,Milwaukee,Fairview Elementary,2024-25,EL,26.7,Eng Prof,24.4,1.09,EL,26.7,Eng Prof,24.4,1.09
+EL Status,Shorewood,Shorewood High,2024-25,EL,20.0,Eng Prof,18.3,1.09,EL,20.0,Eng Prof,18.3,1.09
+EL Status,Franklin Public,Country Dale Elementary,2024-25,EL,7.4,Eng Prof,6.9,1.07,EL,7.4,Eng Prof,6.9,1.07
+EL Status,Trans Center for Youth,Escuela Verde,2024-25,EL,72.7,Eng Prof,69.4,1.05,EL,72.7,Eng Prof,69.4,1.05
+EL Status,Milwaukee,Obama School of Career and Technical Education,2024-25,EL,80.8,Eng Prof,78.0,1.04,EL,80.8,Eng Prof,78.0,1.04
+EL Status,Milwaukee,Audubon Technology and Communication High,2024-25,EL,43.4,Eng Prof,42.1,1.03,EL,43.4,Eng Prof,42.1,1.03
+EL Status,Milwaukee,Hayes Bilingual School,2024-25,EL,34.0,Eng Prof,32.9,1.03,EL,34.0,Eng Prof,32.9,1.03
+EL Status,South Milwaukee,Rawson Elementary,2024-25,EL,27.6,Eng Prof,27.2,1.01,EL,27.6,Eng Prof,27.2,1.01
+EL Status,Milwaukee,Garland Elementary,2024-25,EL,22.8,Eng Prof,23.1,0.99,Eng Prof,23.1,EL,22.8,1.01
+EL Status,Saint Francis,Saint Francis High,2024-25,EL,22.4,Eng Prof,22.6,0.99,Eng Prof,22.6,EL,22.4,1.01
+EL Status,Milwaukee,Carmen High School of Science and Technology Southeast Campus,2024-25,EL,50.6,Eng Prof,51.7,0.98,Eng Prof,51.7,EL,50.6,1.02
+EL Status,West Allis-West Milwaukee,Horace Mann Elementary,2024-25,EL,21.6,Eng Prof,22.1,0.98,Eng Prof,22.1,EL,21.6,1.02
+EL Status,Carmen High School of Science and Technology,Carmen Middle School South,2024-25,EL,39.8,Eng Prof,41.3,0.96,Eng Prof,41.3,EL,39.8,1.04
+EL Status,Milwaukee,Grandview High,2024-25,EL,83.6,Eng Prof,86.9,0.96,Eng Prof,86.9,EL,83.6,1.04
+EL Status,West Allis-West Milwaukee,Walker Elementary,2024-25,EL,13.0,Eng Prof,13.5,0.96,Eng Prof,13.5,EL,13.0,1.04
+EL Status,Seeds of Health,Tenor High,2024-25,EL,31.1,Eng Prof,32.7,0.95,Eng Prof,32.7,EL,31.1,1.05
+EL Status,Milwaukee,Hamilton High,2024-25,EL,70.1,Eng Prof,75.4,0.93,Eng Prof,75.4,EL,70.1,1.08
+EL Status,Carmen High School of Science and Technology,Stellar Collegiate Charter School,2024-25,EL,34.7,Eng Prof,38.2,0.91,Eng Prof,38.2,EL,34.7,1.1
+EL Status,Milwaukee,Pulaski High,2024-25,EL,72.7,Eng Prof,81.2,0.9,Eng Prof,81.2,EL,72.7,1.12
+EL Status,Milwaukee,Carmen High School of Science and Technology South Campus,2024-25,EL,24.1,Eng Prof,27.2,0.89,Eng Prof,27.2,EL,24.1,1.13
+EL Status,Milwaukee,Milwaukee Parkside School,2024-25,EL,21.8,Eng Prof,24.6,0.89,Eng Prof,24.6,EL,21.8,1.13
+EL Status,Milwaukee,Milwaukee High School of the Arts,2024-25,EL,48.0,Eng Prof,55.5,0.86,Eng Prof,55.5,EL,48.0,1.16
+EL Status,Seeds of Health,Veritas High,2024-25,EL,18.4,Eng Prof,21.4,0.86,Eng Prof,21.4,EL,18.4,1.16
+EL Status,Milwaukee,Wedgewood Park School,2024-25,EL,44.1,Eng Prof,52.0,0.85,Eng Prof,52.0,EL,44.1,1.18
+EL Status,Milwaukee,Lincoln Middle,2024-25,EL,54.9,Eng Prof,66.5,0.83,Eng Prof,66.5,EL,54.9,1.21
+EL Status,West Allis-West Milwaukee,Frank Lloyd Wright Intermediate,2024-25,EL,12.5,Eng Prof,15.1,0.83,Eng Prof,15.1,EL,12.5,1.21
+EL Status,Milwaukee,Harold S Vincent School of Agricultural Science,2024-25,EL,68.0,Eng Prof,82.5,0.82,Eng Prof,82.5,EL,68.0,1.21
+EL Status,Wauwatosa,Whitman Middle,2024-25,EL,12.0,Eng Prof,14.7,0.82,Eng Prof,14.7,EL,12.0,1.22
+EL Status,Milwaukee,Bay View High,2024-25,EL,61.4,Eng Prof,76.0,0.81,Eng Prof,76.0,EL,61.4,1.24
+EL Status,Milwaukee,Whitman Elementary,2024-25,EL,30.8,Eng Prof,38.1,0.81,Eng Prof,38.1,EL,30.8,1.24
+EL Status,Rocketship Education Wisconsin,Rocketship Southside Community Prep,2024-25,EL,27.8,Eng Prof,34.3,0.81,Eng Prof,34.3,EL,27.8,1.23
+EL Status,Milwaukee,Riverside High,2024-25,EL,53.4,Eng Prof,67.6,0.79,Eng Prof,67.6,EL,53.4,1.27
+EL Status,West Allis-West Milwaukee,West Milwaukee Intermediate,2024-25,EL,17.0,Eng Prof,21.4,0.79,Eng Prof,21.4,EL,17.0,1.26
+EL Status,Shorewood,Atwater Elementary,2024-25,EL,2.9,Eng Prof,3.7,0.78,Eng Prof,3.7,EL,2.9,1.28
+EL Status,Milwaukee,Audubon Technology and Communication Middle,2024-25,EL,46.7,Eng Prof,61.8,0.76,Eng Prof,61.8,EL,46.7,1.32
+EL Status,Milwaukee,Kagel Elementary,2024-25,EL,33.0,Eng Prof,44.4,0.74,Eng Prof,44.4,EL,33.0,1.35
+EL Status,Milwaukee,South Division High,2024-25,EL,54.4,Eng Prof,74.0,0.74,Eng Prof,74.0,EL,54.4,1.36
+EL Status,Shorewood,Lake Bluff Elementary,2024-25,EL,3.6,Eng Prof,4.9,0.73,Eng Prof,4.9,EL,3.6,1.36
+EL Status,Milwaukee,Allen-Field Elementary,2024-25,EL,33.2,Eng Prof,48.5,0.68,Eng Prof,48.5,EL,33.2,1.46
+EL Status,Milwaukee,Forest Home Elementary,2024-25,EL,27.6,Eng Prof,40.5,0.68,Eng Prof,40.5,EL,27.6,1.47
+EL Status,Milwaukee,Manitoba Elementary,2024-25,EL,31.5,Eng Prof,46.2,0.68,Eng Prof,46.2,EL,31.5,1.47
+EL Status,Milwaukee,Vieau Elementary,2024-25,EL,27.5,Eng Prof,40.3,0.68,Eng Prof,40.3,EL,27.5,1.47
+EL Status,Milwaukee,Zablocki Elementary,2024-25,EL,36.0,Eng Prof,52.9,0.68,Eng Prof,52.9,EL,36.0,1.47
+EL Status,Milwaukee,Bradley Technology High,2024-25,EL,52.6,Eng Prof,78.8,0.67,Eng Prof,78.8,EL,52.6,1.5
+EL Status,Milwaukee,Mitchell Elementary,2024-25,EL,45.4,Eng Prof,67.9,0.67,Eng Prof,67.9,EL,45.4,1.5
+EL Status,Milwaukee,Humboldt Park Elementary,2024-25,EL,25.8,Eng Prof,38.9,0.66,Eng Prof,38.9,EL,25.8,1.51
+EL Status,Milwaukee,Parkview Elementary,2024-25,EL,27.5,Eng Prof,41.9,0.66,Eng Prof,41.9,EL,27.5,1.52
+EL Status,Milwaukee,Lincoln Avenue Elementary,2024-25,EL,18.8,Eng Prof,29.2,0.64,Eng Prof,29.2,EL,18.8,1.55
+EL Status,Brown Deer,Brown Deer Middle/High,2024-25,EL,22.6,Eng Prof,37.3,0.61,Eng Prof,37.3,EL,22.6,1.65
+EL Status,Milwaukee,Doerfler Elementary,2024-25,EL,39.4,Eng Prof,64.1,0.61,Eng Prof,64.1,EL,39.4,1.63
+EL Status,Milwaukee,Victory Elementary,2024-25,EL,18.9,Eng Prof,30.8,0.61,Eng Prof,30.8,EL,18.9,1.63
+EL Status,Milwaukee,Cooper Elementary,2024-25,EL,5.9,Eng Prof,9.8,0.6,Eng Prof,9.8,EL,5.9,1.66
+EL Status,Milwaukee,Academy of Accelerated Learning,2024-25,EL,9.8,Eng Prof,16.6,0.59,Eng Prof,16.6,EL,9.8,1.69
+EL Status,Milwaukee,Greenfield Bilingual,2024-25,EL,21.9,Eng Prof,37.8,0.58,Eng Prof,37.8,EL,21.9,1.73
+EL Status,Milwaukee,Morgandale Elementary,2024-25,EL,25.3,Eng Prof,44.3,0.57,Eng Prof,44.3,EL,25.3,1.75
+EL Status,Brown Deer,Brown Deer Elementary,2024-25,EL,13.0,Eng Prof,23.1,0.56,Eng Prof,23.1,EL,13.0,1.78
+EL Status,West Allis-West Milwaukee,Irving Elementary,2024-25,EL,6.7,Eng Prof,12.5,0.54,Eng Prof,12.5,EL,6.7,1.87
+EL Status,Milwaukee,Rogers Street Academy,2024-25,EL,26.6,Eng Prof,50.6,0.53,Eng Prof,50.6,EL,26.6,1.9
+EL Status,Milwaukee Math and Science Academy,Milwaukee Math and Science Academy,2024-25,EL,28.6,Eng Prof,53.7,0.53,Eng Prof,53.7,EL,28.6,1.88
+EL Status,Seeds of Health,Seeds of Health Elementary Program,2024-25,EL,20.2,Eng Prof,42.9,0.47,Eng Prof,42.9,EL,20.2,2.12
+EL Status,Milwaukee,Longfellow Elementary,2024-25,EL,27.6,Eng Prof,60.5,0.46,Eng Prof,60.5,EL,27.6,2.19
+EL Status,Milwaukee,U S Grant School,2024-25,EL,22.9,Eng Prof,51.3,0.45,Eng Prof,51.3,EL,22.9,2.24
+EL Status,Milwaukee,Milwaukee Academy of Chinese Language,2024-25,EL,25.3,Eng Prof,57.0,0.44,Eng Prof,57.0,EL,25.3,2.25
+EL Status,Oak Creek-Franklin Joint,Oak Creek West Middle,2024-25,EL,6.7,Eng Prof,15.3,0.44,Eng Prof,15.3,EL,6.7,2.28
+EL Status,Milwaukee,Lowell International Elementary,2024-25,EL,14.0,Eng Prof,32.8,0.43,Eng Prof,32.8,EL,14.0,2.34
+EL Status,Milwaukee,Burbank Elementary,2024-25,EL,16.3,Eng Prof,45.5,0.36,Eng Prof,45.5,EL,16.3,2.79
+EL Status,Milwaukee,Bethune Academy,2024-25,EL,17.9,Eng Prof,52.0,0.34,Eng Prof,52.0,EL,17.9,2.91
+EL Status,Milwaukee,Morse Mid,2024-25,EL,15.4,Eng Prof,57.8,0.27,Eng Prof,57.8,EL,15.4,3.75
+EL Status,Oak Creek-Franklin Joint,Cedar Hills Elementary,2024-25,EL,2.5,Eng Prof,9.5,0.26,Eng Prof,9.5,EL,2.5,3.8
+EL Status,Milwaukee,Story Elementary,2024-25,EL,9.9,Eng Prof,57.4,0.17,Eng Prof,57.4,EL,9.9,5.8
+EL Status,Greendale,College Park Elementary,2024-25,EL,0.0,Eng Prof,2.8,0.0,Eng Prof,2.8,EL,0.0,
+EL Status,Nicolet Union High School,Nicolet High,2024-25,EL,0.0,Eng Prof,2.9,0.0,Eng Prof,2.9,EL,0.0,
+Economic Status,Greendale,Canterbury Elementary,2024-25,Econ Disadv,8.9,Not Econ Disadv,0.4,22.25,Econ Disadv,8.9,Not Econ Disadv,0.4,22.25
+Economic Status,Maple Dale-Indian Hill,Indian Hill School,2024-25,Econ Disadv,13.0,Not Econ Disadv,0.6,21.67,Econ Disadv,13.0,Not Econ Disadv,0.6,21.67
+Economic Status,Wauwatosa,Jefferson Elementary,2024-25,Econ Disadv,16.1,Not Econ Disadv,0.8,20.12,Econ Disadv,16.1,Not Econ Disadv,0.8,20.12
+Economic Status,Wauwatosa,McKinley Elementary,2024-25,Econ Disadv,19.6,Not Econ Disadv,1.4,14.0,Econ Disadv,19.6,Not Econ Disadv,1.4,14.0
+Economic Status,Fox Point J2,Stormonth Elementary,2024-25,Econ Disadv,31.3,Not Econ Disadv,2.3,13.61,Econ Disadv,31.3,Not Econ Disadv,2.3,13.61
+Economic Status,Milwaukee,Craig Montessori School,2024-25,Econ Disadv,19.0,Not Econ Disadv,1.6,11.88,Econ Disadv,19.0,Not Econ Disadv,1.6,11.88
+Economic Status,Milwaukee,Milwaukee German Immersion,2024-25,Econ Disadv,23.5,Not Econ Disadv,2.0,11.75,Econ Disadv,23.5,Not Econ Disadv,2.0,11.75
+Economic Status,Wauwatosa,Roosevelt Elementary,2024-25,Econ Disadv,31.6,Not Econ Disadv,3.1,10.19,Econ Disadv,31.6,Not Econ Disadv,3.1,10.19
+Economic Status,Wauwatosa,Lincoln Elementary,2024-25,Econ Disadv,15.2,Not Econ Disadv,1.5,10.13,Econ Disadv,15.2,Not Econ Disadv,1.5,10.13
+Economic Status,Wauwatosa,Madison Elementary,2024-25,Econ Disadv,24.1,Not Econ Disadv,2.6,9.27,Econ Disadv,24.1,Not Econ Disadv,2.6,9.27
+Economic Status,Milwaukee,Academy of Accelerated Learning,2024-25,Econ Disadv,19.0,Not Econ Disadv,2.1,9.05,Econ Disadv,19.0,Not Econ Disadv,2.1,9.05
+Economic Status,West Allis-West Milwaukee,Mitchell Elementary,2024-25,Econ Disadv,7.1,Not Econ Disadv,0.9,7.89,Econ Disadv,7.1,Not Econ Disadv,0.9,7.89
+Economic Status,Wauwatosa,Eisenhower Elementary,2024-25,Econ Disadv,31.7,Not Econ Disadv,4.2,7.55,Econ Disadv,31.7,Not Econ Disadv,4.2,7.55
+Economic Status,Glendale-River Hills,Parkway Elementary,2024-25,Econ Disadv,14.0,Not Econ Disadv,1.9,7.37,Econ Disadv,14.0,Not Econ Disadv,1.9,7.37
+Economic Status,Milwaukee,Milwaukee French Immersion,2024-25,Econ Disadv,24.8,Not Econ Disadv,3.4,7.29,Econ Disadv,24.8,Not Econ Disadv,3.4,7.29
+Economic Status,West Allis-West Milwaukee,Jefferson Elementary,2024-25,Econ Disadv,21.6,Not Econ Disadv,3.1,6.97,Econ Disadv,21.6,Not Econ Disadv,3.1,6.97
+Economic Status,Greendale,Highland View Elementary,2024-25,Econ Disadv,18.0,Not Econ Disadv,2.6,6.92,Econ Disadv,18.0,Not Econ Disadv,2.6,6.92
+Economic Status,Wauwatosa,Longfellow Middle,2024-25,Econ Disadv,26.8,Not Econ Disadv,4.3,6.23,Econ Disadv,26.8,Not Econ Disadv,4.3,6.23
+Economic Status,Nicolet Union High School,Nicolet High,2024-25,Econ Disadv,8.3,Not Econ Disadv,1.4,5.93,Econ Disadv,8.3,Not Econ Disadv,1.4,5.93
+Economic Status,West Allis-West Milwaukee,Pershing Elementary,2024-25,Econ Disadv,14.2,Not Econ Disadv,2.4,5.92,Econ Disadv,14.2,Not Econ Disadv,2.4,5.92
+Economic Status,Whitnall,Edgerton Elementary,2024-25,Econ Disadv,7.9,Not Econ Disadv,1.4,5.64,Econ Disadv,7.9,Not Econ Disadv,1.4,5.64
+Economic Status,Milwaukee,Fernwood Montessori,2024-25,Econ Disadv,24.3,Not Econ Disadv,4.5,5.4,Econ Disadv,24.3,Not Econ Disadv,4.5,5.4
+Economic Status,Milwaukee,Bay View Montessori School,2024-25,Econ Disadv,6.3,Not Econ Disadv,1.2,5.25,Econ Disadv,6.3,Not Econ Disadv,1.2,5.25
+Economic Status,Wauwatosa,Underwood Elementary,2024-25,Econ Disadv,24.3,Not Econ Disadv,4.8,5.06,Econ Disadv,24.3,Not Econ Disadv,4.8,5.06
+Economic Status,Milwaukee,Milwaukee College Preparatory School: Lola Rowe North Campus,2024-25,Econ Disadv,20.4,Not Econ Disadv,4.2,4.86,Econ Disadv,20.4,Not Econ Disadv,4.2,4.86
+Economic Status,Maple Dale-Indian Hill,Maple Dale School,2024-25,Econ Disadv,17.2,Not Econ Disadv,3.6,4.78,Econ Disadv,17.2,Not Econ Disadv,3.6,4.78
+Economic Status,Whitnall,Hales Corners Elementary,2024-25,Econ Disadv,4.3,Not Econ Disadv,0.9,4.78,Econ Disadv,4.3,Not Econ Disadv,0.9,4.78
+Economic Status,Greenfield,Edgewood Elementary,2024-25,Econ Disadv,9.9,Not Econ Disadv,2.1,4.71,Econ Disadv,9.9,Not Econ Disadv,2.1,4.71
+Economic Status,Milwaukee,Cooper Elementary,2024-25,Econ Disadv,13.1,Not Econ Disadv,2.8,4.68,Econ Disadv,13.1,Not Econ Disadv,2.8,4.68
+Economic Status,Oak Creek-Franklin Joint,Meadowview Elementary,2024-25,Econ Disadv,20.5,Not Econ Disadv,4.4,4.66,Econ Disadv,20.5,Not Econ Disadv,4.4,4.66
+Economic Status,Shorewood,Shorewood Intermediate,2024-25,Econ Disadv,13.3,Not Econ Disadv,2.9,4.59,Econ Disadv,13.3,Not Econ Disadv,2.9,4.59
+Economic Status,Greenfield,Maple Grove Elementary,2024-25,Econ Disadv,10.1,Not Econ Disadv,2.4,4.21,Econ Disadv,10.1,Not Econ Disadv,2.4,4.21
+Economic Status,Milwaukee,Whitman Elementary,2024-25,Econ Disadv,46.4,Not Econ Disadv,11.1,4.18,Econ Disadv,46.4,Not Econ Disadv,11.1,4.18
+Economic Status,West Allis-West Milwaukee,Wilson Elementary,2024-25,Econ Disadv,17.6,Not Econ Disadv,4.3,4.09,Econ Disadv,17.6,Not Econ Disadv,4.3,4.09
+Economic Status,Wauwatosa,Whitman Middle,2024-25,Econ Disadv,29.0,Not Econ Disadv,7.1,4.08,Econ Disadv,29.0,Not Econ Disadv,7.1,4.08
+Economic Status,West Allis-West Milwaukee,Nathan Hale High,2024-25,Econ Disadv,27.1,Not Econ Disadv,6.9,3.93,Econ Disadv,27.1,Not Econ Disadv,6.9,3.93
+Economic Status,Greenfield,Elm Dale Elementary,2024-25,Econ Disadv,12.8,Not Econ Disadv,3.3,3.88,Econ Disadv,12.8,Not Econ Disadv,3.3,3.88
+Economic Status,Milwaukee,Whittier Elementary,2024-25,Econ Disadv,14.3,Not Econ Disadv,3.7,3.86,Econ Disadv,14.3,Not Econ Disadv,3.7,3.86
+Economic Status,Greenfield,Glenwood Elementary,2024-25,Econ Disadv,9.9,Not Econ Disadv,2.6,3.81,Econ Disadv,9.9,Not Econ Disadv,2.6,3.81
+Economic Status,Oak Creek-Franklin Joint,Cedar Hills Elementary,2024-25,Econ Disadv,13.2,Not Econ Disadv,3.5,3.77,Econ Disadv,13.2,Not Econ Disadv,3.5,3.77
+Economic Status,Wauwatosa,Washington Elementary,2024-25,Econ Disadv,14.3,Not Econ Disadv,3.8,3.76,Econ Disadv,14.3,Not Econ Disadv,3.8,3.76
+Economic Status,West Allis-West Milwaukee,Walker Elementary,2024-25,Econ Disadv,19.0,Not Econ Disadv,5.1,3.73,Econ Disadv,19.0,Not Econ Disadv,5.1,3.73
+Economic Status,Milwaukee,Burdick Elementary,2024-25,Econ Disadv,33.5,Not Econ Disadv,9.0,3.72,Econ Disadv,33.5,Not Econ Disadv,9.0,3.72
+Economic Status,South Milwaukee,Blakewood Elementary,2024-25,Econ Disadv,30.1,Not Econ Disadv,8.1,3.72,Econ Disadv,30.1,Not Econ Disadv,8.1,3.72
+Economic Status,Shorewood,Atwater Elementary,2024-25,Econ Disadv,7.8,Not Econ Disadv,2.1,3.71,Econ Disadv,7.8,Not Econ Disadv,2.1,3.71
+Economic Status,Whitnall,Whitnall Middle,2024-25,Econ Disadv,18.5,Not Econ Disadv,5.0,3.7,Econ Disadv,18.5,Not Econ Disadv,5.0,3.7
+Economic Status,Oak Creek-Franklin Joint,Edgewood Elementary,2024-25,Econ Disadv,10.3,Not Econ Disadv,2.8,3.68,Econ Disadv,10.3,Not Econ Disadv,2.8,3.68
+Economic Status,South Milwaukee,E W Luther Elementary,2024-25,Econ Disadv,23.2,Not Econ Disadv,6.3,3.68,Econ Disadv,23.2,Not Econ Disadv,6.3,3.68
+Economic Status,West Allis-West Milwaukee,Franklin Elementary,2024-25,Econ Disadv,12.1,Not Econ Disadv,3.3,3.67,Econ Disadv,12.1,Not Econ Disadv,3.3,3.67
+Economic Status,Greendale,Greendale Middle,2024-25,Econ Disadv,9.1,Not Econ Disadv,2.5,3.64,Econ Disadv,9.1,Not Econ Disadv,2.5,3.64
+Economic Status,Milwaukee,Maryland Montessori,2024-25,Econ Disadv,10.8,Not Econ Disadv,3.0,3.6,Econ Disadv,10.8,Not Econ Disadv,3.0,3.6
+Economic Status,Oak Creek-Franklin Joint,Carollton Elementary,2024-25,Econ Disadv,12.9,Not Econ Disadv,3.7,3.49,Econ Disadv,12.9,Not Econ Disadv,3.7,3.49
+Economic Status,Wauwatosa,Wilson Elementary,2024-25,Econ Disadv,17.4,Not Econ Disadv,5.0,3.48,Econ Disadv,17.4,Not Econ Disadv,5.0,3.48
+Economic Status,Milwaukee,Milwaukee Spanish Immersion,2024-25,Econ Disadv,23.1,Not Econ Disadv,6.8,3.4,Econ Disadv,23.1,Not Econ Disadv,6.8,3.4
+Economic Status,Glendale-River Hills,Glen Hills Middle,2024-25,Econ Disadv,17.4,Not Econ Disadv,5.2,3.35,Econ Disadv,17.4,Not Econ Disadv,5.2,3.35
+Economic Status,Milwaukee,Garland Elementary,2024-25,Econ Disadv,24.8,Not Econ Disadv,7.4,3.35,Econ Disadv,24.8,Not Econ Disadv,7.4,3.35
+Economic Status,Wauwatosa,East High,2024-25,Econ Disadv,40.3,Not Econ Disadv,12.2,3.3,Econ Disadv,40.3,Not Econ Disadv,12.2,3.3
+Economic Status,Saint Francis,Deer Creek Intermediate,2024-25,Econ Disadv,25.9,Not Econ Disadv,7.9,3.28,Econ Disadv,25.9,Not Econ Disadv,7.9,3.28
+Economic Status,Greendale,Greendale High,2024-25,Econ Disadv,25.6,Not Econ Disadv,8.1,3.16,Econ Disadv,25.6,Not Econ Disadv,8.1,3.16
+Economic Status,Oak Creek-Franklin Joint,Deerfield Elementary,2024-25,Econ Disadv,11.7,Not Econ Disadv,3.7,3.16,Econ Disadv,11.7,Not Econ Disadv,3.7,3.16
+Economic Status,Milwaukee,Milwaukee College Preparatory School -- 36th Street Campus,2024-25,Econ Disadv,25.7,Not Econ Disadv,8.2,3.13,Econ Disadv,25.7,Not Econ Disadv,8.2,3.13
+Economic Status,Greenfield,Greenfield Middle,2024-25,Econ Disadv,17.5,Not Econ Disadv,5.6,3.12,Econ Disadv,17.5,Not Econ Disadv,5.6,3.12
+Economic Status,Franklin Public,Franklin High,2024-25,Econ Disadv,14.6,Not Econ Disadv,4.7,3.11,Econ Disadv,14.6,Not Econ Disadv,4.7,3.11
+Economic Status,Fox Point J2,Bayside Middle,2024-25,Econ Disadv,12.1,Not Econ Disadv,3.9,3.1,Econ Disadv,12.1,Not Econ Disadv,3.9,3.1
+Economic Status,West Allis-West Milwaukee,Irving Elementary,2024-25,Econ Disadv,15.4,Not Econ Disadv,5.0,3.08,Econ Disadv,15.4,Not Econ Disadv,5.0,3.08
+Economic Status,Oak Creek-Franklin Joint,Shepard Hills Elementary,2024-25,Econ Disadv,15.9,Not Econ Disadv,5.2,3.06,Econ Disadv,15.9,Not Econ Disadv,5.2,3.06
+Economic Status,West Allis-West Milwaukee,Frank Lloyd Wright Intermediate,2024-25,Econ Disadv,19.5,Not Econ Disadv,6.4,3.05,Econ Disadv,19.5,Not Econ Disadv,6.4,3.05
+Economic Status,Franklin Public,Robinwood Elementary,2024-25,Econ Disadv,14.9,Not Econ Disadv,4.9,3.04,Econ Disadv,14.9,Not Econ Disadv,4.9,3.04
+Economic Status,Wauwatosa,West High,2024-25,Econ Disadv,42.4,Not Econ Disadv,14.0,3.03,Econ Disadv,42.4,Not Econ Disadv,14.0,3.03
+Economic Status,Milwaukee,IDEAL Individualized Developmental Educational Approaches to Learning,2024-25,Econ Disadv,28.4,Not Econ Disadv,9.5,2.99,Econ Disadv,28.4,Not Econ Disadv,9.5,2.99
+Economic Status,Milwaukee,Honey Creek Elementary,2024-25,Econ Disadv,27.2,Not Econ Disadv,9.2,2.96,Econ Disadv,27.2,Not Econ Disadv,9.2,2.96
+Economic Status,Milwaukee,Milwaukee Parkside School,2024-25,Econ Disadv,28.7,Not Econ Disadv,9.7,2.96,Econ Disadv,28.7,Not Econ Disadv,9.7,2.96
+Economic Status,West Allis-West Milwaukee,James E Dottke Project-Based Learning High School,2024-25,Econ Disadv,31.7,Not Econ Disadv,10.9,2.91,Econ Disadv,31.7,Not Econ Disadv,10.9,2.91
+Economic Status,Milwaukee,Humboldt Park Elementary,2024-25,Econ Disadv,36.2,Not Econ Disadv,12.9,2.81,Econ Disadv,36.2,Not Econ Disadv,12.9,2.81
+Economic Status,Milwaukee,Parkview Elementary,2024-25,Econ Disadv,41.0,Not Econ Disadv,15.2,2.7,Econ Disadv,41.0,Not Econ Disadv,15.2,2.7
+Economic Status,Saint Francis,Willow Glen Primary School,2024-25,Econ Disadv,28.4,Not Econ Disadv,10.5,2.7,Econ Disadv,28.4,Not Econ Disadv,10.5,2.7
+Economic Status,Franklin Public,Southwood Glen Elementary,2024-25,Econ Disadv,10.9,Not Econ Disadv,4.2,2.6,Econ Disadv,10.9,Not Econ Disadv,4.2,2.6
+Economic Status,Oak Creek-Franklin Joint,Oak Creek East Middle,2024-25,Econ Disadv,20.2,Not Econ Disadv,7.8,2.59,Econ Disadv,20.2,Not Econ Disadv,7.8,2.59
+Economic Status,West Allis-West Milwaukee,West Milwaukee Intermediate,2024-25,Econ Disadv,23.8,Not Econ Disadv,9.2,2.59,Econ Disadv,23.8,Not Econ Disadv,9.2,2.59
+Economic Status,Whitnall,Whitnall High,2024-25,Econ Disadv,23.5,Not Econ Disadv,9.1,2.58,Econ Disadv,23.5,Not Econ Disadv,9.1,2.58
+Economic Status,Milwaukee,Lowell International Elementary,2024-25,Econ Disadv,31.1,Not Econ Disadv,12.1,2.57,Econ Disadv,31.1,Not Econ Disadv,12.1,2.57
+Economic Status,Greendale,College Park Elementary,2024-25,Econ Disadv,4.3,Not Econ Disadv,1.7,2.53,Econ Disadv,4.3,Not Econ Disadv,1.7,2.53
+Economic Status,Milwaukee,Doerfler Elementary,2024-25,Econ Disadv,50.5,Not Econ Disadv,20.0,2.52,Econ Disadv,50.5,Not Econ Disadv,20.0,2.52
+Economic Status,Milwaukee,Golda Meir School,2024-25,Econ Disadv,22.2,Not Econ Disadv,8.8,2.52,Econ Disadv,22.2,Not Econ Disadv,8.8,2.52
+Economic Status,Milwaukee,Curtin Elementary,2024-25,Econ Disadv,38.5,Not Econ Disadv,15.4,2.5,Econ Disadv,38.5,Not Econ Disadv,15.4,2.5
+Economic Status,Milwaukee,Fairview Elementary,2024-25,Econ Disadv,28.7,Not Econ Disadv,11.8,2.43,Econ Disadv,28.7,Not Econ Disadv,11.8,2.43
+Economic Status,South Milwaukee,Lakeview Elementary,2024-25,Econ Disadv,21.1,Not Econ Disadv,8.7,2.43,Econ Disadv,21.1,Not Econ Disadv,8.7,2.43
+Economic Status,Franklin Public,Forest Park Middle,2024-25,Econ Disadv,16.0,Not Econ Disadv,6.6,2.42,Econ Disadv,16.0,Not Econ Disadv,6.6,2.42
+Economic Status,Milwaukee,Highland Community School,2024-25,Econ Disadv,22.7,Not Econ Disadv,9.5,2.39,Econ Disadv,22.7,Not Econ Disadv,9.5,2.39
+Economic Status,Milwaukee,Wedgewood Park School,2024-25,Econ Disadv,57.2,Not Econ Disadv,24.1,2.37,Econ Disadv,57.2,Not Econ Disadv,24.1,2.37
+Economic Status,Oak Creek-Franklin Joint,Oak Creek High,2024-25,Econ Disadv,33.8,Not Econ Disadv,14.6,2.32,Econ Disadv,33.8,Not Econ Disadv,14.6,2.32
+Economic Status,Milwaukee,Ninety-Fifth Street Elementary,2024-25,Econ Disadv,39.1,Not Econ Disadv,16.9,2.31,Econ Disadv,39.1,Not Econ Disadv,16.9,2.31
+Economic Status,Milwaukee,Stuart Elementary,2024-25,Econ Disadv,37.5,Not Econ Disadv,16.4,2.29,Econ Disadv,37.5,Not Econ Disadv,16.4,2.29
+Economic Status,South Milwaukee,Rawson Elementary,2024-25,Econ Disadv,33.8,Not Econ Disadv,14.8,2.28,Econ Disadv,33.8,Not Econ Disadv,14.8,2.28
+Economic Status,West Allis-West Milwaukee,Horace Mann Elementary,2024-25,Econ Disadv,24.4,Not Econ Disadv,10.7,2.28,Econ Disadv,24.4,Not Econ Disadv,10.7,2.28
+Economic Status,Greenfield,Greenfield High,2024-25,Econ Disadv,27.9,Not Econ Disadv,12.4,2.25,Econ Disadv,27.9,Not Econ Disadv,12.4,2.25
+Economic Status,Milwaukee,Eighty-First Street Elementary,2024-25,Econ Disadv,51.4,Not Econ Disadv,23.1,2.23,Econ Disadv,51.4,Not Econ Disadv,23.1,2.23
+Economic Status,Oak Creek-Franklin Joint,Forest Ridge Elementary,2024-25,Econ Disadv,24.7,Not Econ Disadv,11.1,2.23,Econ Disadv,24.7,Not Econ Disadv,11.1,2.23
+Economic Status,Woodlands School,Woodlands School,2024-25,Econ Disadv,17.2,Not Econ Disadv,7.7,2.23,Econ Disadv,17.2,Not Econ Disadv,7.7,2.23
+Economic Status,South Milwaukee,South Milwaukee Middle,2024-25,Econ Disadv,32.2,Not Econ Disadv,14.6,2.21,Econ Disadv,32.2,Not Econ Disadv,14.6,2.21
+Economic Status,Milwaukee,Manitoba Elementary,2024-25,Econ Disadv,45.6,Not Econ Disadv,20.8,2.19,Econ Disadv,45.6,Not Econ Disadv,20.8,2.19
+Economic Status,Oak Creek-Franklin Joint,Oak Creek West Middle,2024-25,Econ Disadv,19.8,Not Econ Disadv,9.2,2.15,Econ Disadv,19.8,Not Econ Disadv,9.2,2.15
+Economic Status,Milwaukee,Engleburg Elementary,2024-25,Econ Disadv,60.7,Not Econ Disadv,28.6,2.12,Econ Disadv,60.7,Not Econ Disadv,28.6,2.12
+Economic Status,Brown Deer,Brown Deer Elementary,2024-25,Econ Disadv,27.0,Not Econ Disadv,12.8,2.11,Econ Disadv,27.0,Not Econ Disadv,12.8,2.11
+Economic Status,Milwaukee,Trowbridge Street School of Great Lakes Studies,2024-25,Econ Disadv,37.8,Not Econ Disadv,17.9,2.11,Econ Disadv,37.8,Not Econ Disadv,17.9,2.11
+Economic Status,Milwaukee,Burbank Elementary,2024-25,Econ Disadv,42.7,Not Econ Disadv,20.3,2.1,Econ Disadv,42.7,Not Econ Disadv,20.3,2.1
+Economic Status,Shorewood,Lake Bluff Elementary,2024-25,Econ Disadv,8.2,Not Econ Disadv,3.9,2.1,Econ Disadv,8.2,Not Econ Disadv,3.9,2.1
+Economic Status,Milwaukee,Vieau Elementary,2024-25,Econ Disadv,32.9,Not Econ Disadv,15.9,2.07,Econ Disadv,32.9,Not Econ Disadv,15.9,2.07
+Economic Status,West Allis-West Milwaukee,Central High,2024-25,Econ Disadv,47.1,Not Econ Disadv,23.0,2.05,Econ Disadv,47.1,Not Econ Disadv,23.0,2.05
+Economic Status,United Community Center,Bruce Guadalupe,2024-25,Econ Disadv,18.6,Not Econ Disadv,9.1,2.04,Econ Disadv,18.6,Not Econ Disadv,9.1,2.04
+Economic Status,Milwaukee,Kagel Elementary,2024-25,Econ Disadv,37.0,Not Econ Disadv,18.2,2.03,Econ Disadv,37.0,Not Econ Disadv,18.2,2.03
+Economic Status,Cudahy,Mitchell Elementary,2024-25,Econ Disadv,34.9,Not Econ Disadv,17.5,1.99,Econ Disadv,34.9,Not Econ Disadv,17.5,1.99
+Economic Status,Milwaukee,MacDowell Montessori School K3-12,2024-25,Econ Disadv,30.8,Not Econ Disadv,15.6,1.97,Econ Disadv,30.8,Not Econ Disadv,15.6,1.97
+Economic Status,Franklin Public,Country Dale Elementary,2024-25,Econ Disadv,11.2,Not Econ Disadv,5.7,1.96,Econ Disadv,11.2,Not Econ Disadv,5.7,1.96
+Economic Status,Milwaukee,Milwaukee School of Languages,2024-25,Econ Disadv,48.3,Not Econ Disadv,24.6,1.96,Econ Disadv,48.3,Not Econ Disadv,24.6,1.96
+Economic Status,Milwaukee,Morse Mid,2024-25,Econ Disadv,60.1,Not Econ Disadv,30.9,1.94,Econ Disadv,60.1,Not Econ Disadv,30.9,1.94
+Economic Status,Shorewood,Shorewood High,2024-25,Econ Disadv,30.2,Not Econ Disadv,15.6,1.94,Econ Disadv,30.2,Not Econ Disadv,15.6,1.94
+Economic Status,Milwaukee,Greenfield Bilingual,2024-25,Econ Disadv,30.7,Not Econ Disadv,16.1,1.91,Econ Disadv,30.7,Not Econ Disadv,16.1,1.91
+Economic Status,Milwaukee,Milwaukee College Preparatory School -- Lloyd Street,2024-25,Econ Disadv,27.0,Not Econ Disadv,14.3,1.89,Econ Disadv,27.0,Not Econ Disadv,14.3,1.89
+Economic Status,Saint Francis,Saint Francis High,2024-25,Econ Disadv,28.9,Not Econ Disadv,15.5,1.86,Econ Disadv,28.9,Not Econ Disadv,15.5,1.86
+Economic Status,Milwaukee,Riley Dual Language Montessori School,2024-25,Econ Disadv,20.7,Not Econ Disadv,11.3,1.83,Econ Disadv,20.7,Not Econ Disadv,11.3,1.83
+Economic Status,Cudahy,Cudahy High,2024-25,Econ Disadv,39.8,Not Econ Disadv,22.1,1.8,Econ Disadv,39.8,Not Econ Disadv,22.1,1.8
+Economic Status,Milwaukee,Neeskara Elementary,2024-25,Econ Disadv,53.5,Not Econ Disadv,31.0,1.73,Econ Disadv,53.5,Not Econ Disadv,31.0,1.73
+Economic Status,Cudahy,Kosciuszko Elementary,2024-25,Econ Disadv,48.3,Not Econ Disadv,28.2,1.71,Econ Disadv,48.3,Not Econ Disadv,28.2,1.71
+Economic Status,Milwaukee,Allen-Field Elementary,2024-25,Econ Disadv,41.2,Not Econ Disadv,24.3,1.7,Econ Disadv,41.2,Not Econ Disadv,24.3,1.7
+Economic Status,Milwaukee,La Causa Charter School,2024-25,Econ Disadv,36.1,Not Econ Disadv,21.3,1.69,Econ Disadv,36.1,Not Econ Disadv,21.3,1.69
+Economic Status,Milwaukee Scholars Charter School,Milwaukee Scholars Charter School,2024-25,Econ Disadv,41.4,Not Econ Disadv,24.8,1.67,Econ Disadv,41.4,Not Econ Disadv,24.8,1.67
+Economic Status,Milwaukee,Reagan College Preparatory High,2024-25,Econ Disadv,24.3,Not Econ Disadv,14.6,1.66,Econ Disadv,24.3,Not Econ Disadv,14.6,1.66
+Economic Status,Milwaukee,King International,2024-25,Econ Disadv,43.6,Not Econ Disadv,26.4,1.65,Econ Disadv,43.6,Not Econ Disadv,26.4,1.65
+Economic Status,Franklin Public,Pleasant View Elementary,2024-25,Econ Disadv,13.1,Not Econ Disadv,8.0,1.64,Econ Disadv,13.1,Not Econ Disadv,8.0,1.64
+Economic Status,Milwaukee,Morgandale Elementary,2024-25,Econ Disadv,37.5,Not Econ Disadv,23.0,1.63,Econ Disadv,37.5,Not Econ Disadv,23.0,1.63
+Economic Status,Milwaukee,Grantosa Drive Elementary,2024-25,Econ Disadv,63.2,Not Econ Disadv,39.3,1.61,Econ Disadv,63.2,Not Econ Disadv,39.3,1.61
+Economic Status,Seeds of Health,Veritas High,2024-25,Econ Disadv,22.1,Not Econ Disadv,13.8,1.6,Econ Disadv,22.1,Not Econ Disadv,13.8,1.6
+Economic Status,Milwaukee,Milwaukee Academy of Chinese Language,2024-25,Econ Disadv,43.8,Not Econ Disadv,27.5,1.59,Econ Disadv,43.8,Not Econ Disadv,27.5,1.59
+Economic Status,South Milwaukee,South Milwaukee High,2024-25,Econ Disadv,48.9,Not Econ Disadv,30.7,1.59,Econ Disadv,48.9,Not Econ Disadv,30.7,1.59
+Economic Status,Woodlands School,Woodlands School - State Street Campus,2024-25,Econ Disadv,40.9,Not Econ Disadv,25.9,1.58,Econ Disadv,40.9,Not Econ Disadv,25.9,1.58
+Economic Status,Milwaukee,Audubon Technology and Communication High,2024-25,Econ Disadv,44.9,Not Econ Disadv,28.8,1.56,Econ Disadv,44.9,Not Econ Disadv,28.8,1.56
+Economic Status,Milwaukee,Milwaukee Sign Language Elementary,2024-25,Econ Disadv,70.0,Not Econ Disadv,44.8,1.56,Econ Disadv,70.0,Not Econ Disadv,44.8,1.56
+Economic Status,Brown Deer,Brown Deer Middle/High,2024-25,Econ Disadv,42.6,Not Econ Disadv,27.4,1.55,Econ Disadv,42.6,Not Econ Disadv,27.4,1.55
+Economic Status,Milwaukee,HAPA-Hmong American Peace Academy K3-12,2024-25,Econ Disadv,10.8,Not Econ Disadv,7.0,1.54,Econ Disadv,10.8,Not Econ Disadv,7.0,1.54
+Economic Status,Milwaukee,Alcott Elementary,2024-25,Econ Disadv,42.7,Not Econ Disadv,28.0,1.53,Econ Disadv,42.7,Not Econ Disadv,28.0,1.53
+Economic Status,Milwaukee,Emerson Elementary,2024-25,Econ Disadv,59.7,Not Econ Disadv,39.1,1.53,Econ Disadv,59.7,Not Econ Disadv,39.1,1.53
+Economic Status,Franklin Public,Ben Franklin Elementary,2024-25,Econ Disadv,7.7,Not Econ Disadv,5.1,1.51,Econ Disadv,7.7,Not Econ Disadv,5.1,1.51
+Economic Status,Milwaukee,Milwaukee College Preparatory School -- 38th Street,2024-25,Econ Disadv,27.5,Not Econ Disadv,18.2,1.51,Econ Disadv,27.5,Not Econ Disadv,18.2,1.51
+Economic Status,Milwaukee,Green Tree Preparatory Academy,2024-25,Econ Disadv,84.2,Not Econ Disadv,56.3,1.5,Econ Disadv,84.2,Not Econ Disadv,56.3,1.5
+Economic Status,Milwaukee,Clement Avenue Elementary,2024-25,Econ Disadv,23.6,Not Econ Disadv,15.9,1.48,Econ Disadv,23.6,Not Econ Disadv,15.9,1.48
+Economic Status,Milwaukee,Fratney Elementary,2024-25,Econ Disadv,43.7,Not Econ Disadv,30.2,1.45,Econ Disadv,43.7,Not Econ Disadv,30.2,1.45
+Economic Status,Cudahy,Cudahy Middle,2024-25,Econ Disadv,46.8,Not Econ Disadv,32.9,1.42,Econ Disadv,46.8,Not Econ Disadv,32.9,1.42
+Economic Status,Seeds of Health,Tenor High,2024-25,Econ Disadv,34.8,Not Econ Disadv,24.5,1.42,Econ Disadv,34.8,Not Econ Disadv,24.5,1.42
+Economic Status,Cudahy,Lincoln Elementary,2024-25,Econ Disadv,44.0,Not Econ Disadv,31.3,1.41,Econ Disadv,44.0,Not Econ Disadv,31.3,1.41
+Economic Status,Milwaukee,Lincoln Avenue Elementary,2024-25,Econ Disadv,23.4,Not Econ Disadv,17.1,1.37,Econ Disadv,23.4,Not Econ Disadv,17.1,1.37
+Economic Status,Milwaukee,Lancaster Elementary,2024-25,Econ Disadv,79.1,Not Econ Disadv,58.3,1.36,Econ Disadv,79.1,Not Econ Disadv,58.3,1.36
+Economic Status,Milwaukee,Bay View High,2024-25,Econ Disadv,76.6,Not Econ Disadv,57.3,1.34,Econ Disadv,76.6,Not Econ Disadv,57.3,1.34
+Economic Status,Pathways High,Pathways High,2024-25,Econ Disadv,53.8,Not Econ Disadv,40.3,1.33,Econ Disadv,53.8,Not Econ Disadv,40.3,1.33
+Economic Status,Rocketship Education Wisconsin,Rocketship Southside Community Prep,2024-25,Econ Disadv,31.9,Not Econ Disadv,24.1,1.32,Econ Disadv,31.9,Not Econ Disadv,24.1,1.32
+Economic Status,Milwaukee Math and Science Academy,Milwaukee Math and Science Academy,2024-25,Econ Disadv,52.4,Not Econ Disadv,40.9,1.28,Econ Disadv,52.4,Not Econ Disadv,40.9,1.28
+Economic Status,Cudahy,Jones Elementary,2024-25,Econ Disadv,17.1,Not Econ Disadv,13.6,1.26,Econ Disadv,17.1,Not Econ Disadv,13.6,1.26
+Economic Status,Milwaukee,Congress Elementary,2024-25,Econ Disadv,60.3,Not Econ Disadv,47.8,1.26,Econ Disadv,60.3,Not Econ Disadv,47.8,1.26
+Economic Status,Milwaukee,WHS Information Technology,2024-25,Econ Disadv,86.4,Not Econ Disadv,68.8,1.26,Econ Disadv,86.4,Not Econ Disadv,68.8,1.26
+Economic Status,Milwaukee,Forest Home Elementary,2024-25,Econ Disadv,33.3,Not Econ Disadv,27.3,1.22,Econ Disadv,33.3,Not Econ Disadv,27.3,1.22
+Economic Status,Milwaukee,Milwaukee High School of the Arts,2024-25,Econ Disadv,56.4,Not Econ Disadv,46.4,1.22,Econ Disadv,56.4,Not Econ Disadv,46.4,1.22
+Economic Status,Milwaukee,Riverside High,2024-25,Econ Disadv,67.2,Not Econ Disadv,56.1,1.2,Econ Disadv,67.2,Not Econ Disadv,56.1,1.2
+Economic Status,Milwaukee,Rogers Street Academy,2024-25,Econ Disadv,38.1,Not Econ Disadv,32.0,1.19,Econ Disadv,38.1,Not Econ Disadv,32.0,1.19
+Economic Status,Milwaukee,Pulaski High,2024-25,Econ Disadv,80.2,Not Econ Disadv,67.8,1.18,Econ Disadv,80.2,Not Econ Disadv,67.8,1.18
+Economic Status,Milwaukee,Hamilton High,2024-25,Econ Disadv,75.9,Not Econ Disadv,64.7,1.17,Econ Disadv,75.9,Not Econ Disadv,64.7,1.17
+Economic Status,Milwaukee,Marshall High,2024-25,Econ Disadv,86.7,Not Econ Disadv,74.7,1.16,Econ Disadv,86.7,Not Econ Disadv,74.7,1.16
+Economic Status,Milwaukee,Obama School of Career and Technical Education,2024-25,Econ Disadv,79.4,Not Econ Disadv,68.5,1.16,Econ Disadv,79.4,Not Econ Disadv,68.5,1.16
+Economic Status,Trans Center for Youth,Escuela Verde,2024-25,Econ Disadv,72.8,Not Econ Disadv,62.5,1.16,Econ Disadv,72.8,Not Econ Disadv,62.5,1.16
+Economic Status,Milwaukee,Lincoln Middle,2024-25,Econ Disadv,65.2,Not Econ Disadv,57.7,1.13,Econ Disadv,65.2,Not Econ Disadv,57.7,1.13
+Economic Status,Milwaukee,Grandview High,2024-25,Econ Disadv,86.9,Not Econ Disadv,79.3,1.1,Econ Disadv,86.9,Not Econ Disadv,79.3,1.1
+Economic Status,Milwaukee,Harold S Vincent School of Agricultural Science,2024-25,Econ Disadv,82.5,Not Econ Disadv,75.5,1.09,Econ Disadv,82.5,Not Econ Disadv,75.5,1.09
+Economic Status,Milwaukee,River Trail School of Agricultural Science,2024-25,Econ Disadv,28.9,Not Econ Disadv,26.4,1.09,Econ Disadv,28.9,Not Econ Disadv,26.4,1.09
+Economic Status,Milwaukee,Bradley Technology High,2024-25,Econ Disadv,76.6,Not Econ Disadv,70.7,1.08,Econ Disadv,76.6,Not Econ Disadv,70.7,1.08
+Economic Status,Milwaukee Science Education Consortium,Milwaukee Academy of Science,2024-25,Econ Disadv,46.4,Not Econ Disadv,42.9,1.08,Econ Disadv,46.4,Not Econ Disadv,42.9,1.08
+Economic Status,United Community Center,United Community Center Acosta Middle School,2024-25,Econ Disadv,19.7,Not Econ Disadv,18.2,1.08,Econ Disadv,19.7,Not Econ Disadv,18.2,1.08
+Economic Status,Milwaukee,Barbee Elementary,2024-25,Econ Disadv,33.3,Not Econ Disadv,31.3,1.06,Econ Disadv,33.3,Not Econ Disadv,31.3,1.06
+Economic Status,Milwaukee,Hayes Bilingual School,2024-25,Econ Disadv,34.1,Not Econ Disadv,32.1,1.06,Econ Disadv,34.1,Not Econ Disadv,32.1,1.06
+Economic Status,Milwaukee,James Madison Academic Campus,2024-25,Econ Disadv,88.6,Not Econ Disadv,83.3,1.06,Econ Disadv,88.6,Not Econ Disadv,83.3,1.06
+Economic Status,Milwaukee,North Division High,2024-25,Econ Disadv,88.7,Not Econ Disadv,85.2,1.04,Econ Disadv,88.7,Not Econ Disadv,85.2,1.04
+Economic Status,Dr. Howard Fuller Collegiate Academy,Dr Howard Fuller Collegiate Academy,2024-25,Econ Disadv,53.7,Not Econ Disadv,53.1,1.01,Econ Disadv,53.7,Not Econ Disadv,53.1,1.01
+Economic Status,Milwaukee,ALBA - Academia de Lenguaje y Bellas Artes,2024-25,Econ Disadv,4.9,Not Econ Disadv,4.9,1.0,Econ Disadv,4.9,Econ Disadv,4.9,1.0
+Economic Status,Milwaukee,Gaenslen Elementary,2024-25,Econ Disadv,34.6,Not Econ Disadv,35.4,0.98,Not Econ Disadv,35.4,Econ Disadv,34.6,1.02
+Economic Status,Milwaukee,Mitchell Elementary,2024-25,Econ Disadv,54.2,Not Econ Disadv,55.2,0.98,Not Econ Disadv,55.2,Econ Disadv,54.2,1.02
+Economic Status,Seeds of Health,Seeds of Health Elementary Program,2024-25,Econ Disadv,36.8,Not Econ Disadv,37.9,0.97,Not Econ Disadv,37.9,Econ Disadv,36.8,1.03
+Economic Status,Milwaukee,Longfellow Elementary,2024-25,Econ Disadv,42.9,Not Econ Disadv,45.0,0.95,Not Econ Disadv,45.0,Econ Disadv,42.9,1.05
+Economic Status,Milwaukee,South Division High,2024-25,Econ Disadv,61.7,Not Econ Disadv,65.9,0.94,Not Econ Disadv,65.9,Econ Disadv,61.7,1.07
+Economic Status,Downtown Montessori Academy,Downtown Montessori,2024-25,Econ Disadv,6.5,Not Econ Disadv,8.5,0.76,Not Econ Disadv,8.5,Econ Disadv,6.5,1.31
+Economic Status,Wauwatosa,Wauwatosa Virtual Academy,2024-25,Econ Disadv,0.0,Not Econ Disadv,0.0,,Econ Disadv,0.0,Econ Disadv,0.0,
+Economic Status,West Allis-West Milwaukee,Deeper Learning Virtual Academy,2024-25,Econ Disadv,0.0,Not Econ Disadv,0.0,,Econ Disadv,0.0,Econ Disadv,0.0,
+Gender,Milwaukee,Whittier Elementary,2024-25,Male,16.4,Female,1.8,9.11,Male,16.4,Female,1.8,9.11
+Gender,Wauwatosa,Wilson Elementary,2024-25,Male,12.1,Female,3.4,3.56,Male,12.1,Female,3.4,3.56
+Gender,Whitefish Bay,Whitefish Bay Middle,2024-25,Male,4.9,Female,1.4,3.5,Male,4.9,Female,1.4,3.5
+Gender,Wauwatosa,Wauwatosa STEM,2024-25,Male,5.6,Female,1.7,3.29,Male,5.6,Female,1.7,3.29
+Gender,West Allis-West Milwaukee,Franklin Elementary,2024-25,Male,14.3,Female,5.4,2.65,Male,14.3,Female,5.4,2.65
+Gender,Milwaukee,Craig Montessori School,2024-25,Male,18.0,Female,8.0,2.25,Male,18.0,Female,8.0,2.25
+Gender,Milwaukee,Bay View Montessori School,2024-25,Male,4.2,Female,2.1,2.0,Male,4.2,Female,2.1,2.0
+Gender,Wauwatosa,Madison Elementary,2024-25,Male,13.3,Female,7.3,1.82,Male,13.3,Female,7.3,1.82
+Gender,Cudahy,Jones Elementary,2024-25,Male,18.6,Female,10.7,1.74,Male,18.6,Female,10.7,1.74
+Gender,Milwaukee,Academy of Accelerated Learning,2024-25,Male,18.4,Female,10.8,1.7,Male,18.4,Female,10.8,1.7
+Gender,Franklin Public,Southwood Glen Elementary,2024-25,Male,6.6,Female,4.0,1.65,Male,6.6,Female,4.0,1.65
+Gender,Wauwatosa,Lincoln Elementary,2024-25,Male,3.6,Female,2.2,1.64,Male,3.6,Female,2.2,1.64
+Gender,Milwaukee,Fernwood Montessori,2024-25,Male,11.1,Female,6.9,1.61,Male,11.1,Female,6.9,1.61
+Gender,Oak Creek-Franklin Joint,Cedar Hills Elementary,2024-25,Male,9.4,Female,6.0,1.57,Male,9.4,Female,6.0,1.57
+Gender,West Allis-West Milwaukee,Frank Lloyd Wright Intermediate,2024-25,Male,18.0,Female,11.6,1.55,Male,18.0,Female,11.6,1.55
+Gender,Brown Deer,Brown Deer Elementary,2024-25,Male,26.3,Female,17.3,1.52,Male,26.3,Female,17.3,1.52
+Gender,Cudahy,Mitchell Elementary,2024-25,Male,26.3,Female,17.3,1.52,Male,26.3,Female,17.3,1.52
+Gender,South Milwaukee,Blakewood Elementary,2024-25,Male,23.0,Female,15.3,1.5,Male,23.0,Female,15.3,1.5
+Gender,Cudahy,Kosciuszko Elementary,2024-25,Male,40.0,Female,27.0,1.48,Male,40.0,Female,27.0,1.48
+Gender,Milwaukee,Milwaukee College Preparatory School -- 38th Street,2024-25,Male,31.7,Female,21.8,1.45,Male,31.7,Female,21.8,1.45
+Gender,Franklin Public,Robinwood Elementary,2024-25,Male,8.4,Female,5.9,1.42,Male,8.4,Female,5.9,1.42
+Gender,Fox Point J2,Stormonth Elementary,2024-25,Male,5.2,Female,3.7,1.41,Male,5.2,Female,3.7,1.41
+Gender,Milwaukee,Barton Elementary,2024-25,Male,63.1,Female,46.5,1.36,Male,63.1,Female,46.5,1.36
+Gender,Oak Creek-Franklin Joint,Meadowview Elementary,2024-25,Male,10.0,Female,7.4,1.35,Male,10.0,Female,7.4,1.35
+Gender,Saint Francis,Willow Glen Primary School,2024-25,Male,22.7,Female,17.0,1.34,Male,22.7,Female,17.0,1.34
+Gender,Milwaukee,Riley Dual Language Montessori School,2024-25,Male,19.4,Female,14.6,1.33,Male,19.4,Female,14.6,1.33
+Gender,South Milwaukee,Rawson Elementary,2024-25,Male,31.0,Female,23.3,1.33,Male,31.0,Female,23.3,1.33
+Gender,Franklin Public,Country Dale Elementary,2024-25,Male,7.8,Female,5.9,1.32,Male,7.8,Female,5.9,1.32
+Gender,Greenfield,Greenfield Middle,2024-25,Male,13.9,Female,10.5,1.32,Male,13.9,Female,10.5,1.32
+Gender,Rocketship Education Wisconsin,Rocketship Transformation Prep,2024-25,Male,46.9,Female,35.5,1.32,Male,46.9,Female,35.5,1.32
+Gender,Milwaukee,Forest Home Elementary,2024-25,Male,36.5,Female,28.1,1.3,Male,36.5,Female,28.1,1.3
+Gender,Oak Creek-Franklin Joint,Forest Ridge Elementary,2024-25,Male,20.5,Female,15.8,1.3,Male,20.5,Female,15.8,1.3
+Gender,Milwaukee,Fairview Elementary,2024-25,Male,27.5,Female,21.3,1.29,Male,27.5,Female,21.3,1.29
+Gender,Cudahy,Lincoln Elementary,2024-25,Male,39.6,Female,31.3,1.27,Male,39.6,Female,31.3,1.27
+Gender,Franklin Public,Forest Park Middle,2024-25,Male,9.8,Female,7.8,1.26,Male,9.8,Female,7.8,1.26
+Gender,Milwaukee,River Trail School of Agricultural Science,2024-25,Male,31.3,Female,24.8,1.26,Male,31.3,Female,24.8,1.26
+Gender,Milwaukee,Story Elementary,2024-25,Male,47.4,Female,37.6,1.26,Male,47.4,Female,37.6,1.26
+Gender,Darrell L. Hines Academy,Darrell Lynn Hines Academy,2024-25,Male,39.5,Female,31.5,1.25,Male,39.5,Female,31.5,1.25
+Gender,Milwaukee,Roosevelt Middle,2024-25,Male,70.1,Female,55.9,1.25,Male,70.1,Female,55.9,1.25
+Gender,Milwaukee,Rogers Street Academy,2024-25,Male,41.8,Female,33.6,1.24,Male,41.8,Female,33.6,1.24
+Gender,West Allis-West Milwaukee,Wilson Elementary,2024-25,Male,15.2,Female,12.3,1.24,Male,15.2,Female,12.3,1.24
+Gender,Milwaukee,Elm Creative Arts Elementary,2024-25,Male,67.9,Female,55.0,1.23,Male,67.9,Female,55.0,1.23
+Gender,Milwaukee,King Jr Elementary,2024-25,Male,74.8,Female,61.0,1.23,Male,74.8,Female,61.0,1.23
+Gender,Milwaukee,U S Grant School,2024-25,Male,37.9,Female,30.9,1.23,Male,37.9,Female,30.9,1.23
+Gender,Greendale,College Park Elementary,2024-25,Male,2.8,Female,2.3,1.22,Male,2.8,Female,2.3,1.22
+Gender,Milwaukee,Curtin Elementary,2024-25,Male,40.0,Female,32.9,1.22,Male,40.0,Female,32.9,1.22
+Gender,Milwaukee,Starms Discovery,2024-25,Male,49.3,Female,40.5,1.22,Male,49.3,Female,40.5,1.22
+Gender,Oak Creek-Franklin Joint,Deerfield Elementary,2024-25,Male,6.4,Female,5.3,1.21,Male,6.4,Female,5.3,1.21
+Gender,Milwaukee,Browning Elementary,2024-25,Male,55.8,Female,46.6,1.2,Male,55.8,Female,46.6,1.2
+Gender,Milwaukee,Thurston Woods Elementary,2024-25,Male,67.2,Female,56.0,1.2,Male,67.2,Female,56.0,1.2
+Gender,Milwaukee,Hampton Elementary,2024-25,Male,63.8,Female,53.6,1.19,Male,63.8,Female,53.6,1.19
+Gender,Milwaukee,Milwaukee College Preparatory School -- 36th Street Campus,2024-25,Male,24.1,Female,20.2,1.19,Male,24.1,Female,20.2,1.19
+Gender,Milwaukee,Fratney Elementary,2024-25,Male,42.4,Female,36.0,1.18,Male,42.4,Female,36.0,1.18
+Gender,Milwaukee,Kilbourn Elementary,2024-25,Male,67.3,Female,57.1,1.18,Male,67.3,Female,57.1,1.18
+Gender,Milwaukee,Metcalfe Elementary,2024-25,Male,73.7,Female,62.3,1.18,Male,73.7,Female,62.3,1.18
+Gender,United Community Center,United Community Center Acosta Middle School,2024-25,Male,21.2,Female,17.9,1.18,Male,21.2,Female,17.9,1.18
+Gender,Milwaukee,Cass Street Elementary,2024-25,Male,56.9,Female,48.5,1.17,Male,56.9,Female,48.5,1.17
+Gender,Milwaukee,Holmes Elementary,2024-25,Male,60.5,Female,51.8,1.17,Male,60.5,Female,51.8,1.17
+Gender,West Allis-West Milwaukee,Mitchell Elementary,2024-25,Male,4.2,Female,3.6,1.17,Male,4.2,Female,3.6,1.17
+Gender,West Allis-West Milwaukee,Walker Elementary,2024-25,Male,14.4,Female,12.3,1.17,Male,14.4,Female,12.3,1.17
+Gender,Milwaukee,Carson Academy,2024-25,Male,70.8,Female,61.2,1.16,Male,70.8,Female,61.2,1.16
+Gender,Milwaukee,Greenfield Bilingual,2024-25,Male,31.0,Female,27.0,1.15,Male,31.0,Female,27.0,1.15
+Gender,Milwaukee,Milwaukee Sign Language Elementary,2024-25,Male,72.5,Female,63.1,1.15,Male,72.5,Female,63.1,1.15
+Gender,Milwaukee Math and Science Academy,Milwaukee Math and Science Academy,2024-25,Male,54.5,Female,47.5,1.15,Male,54.5,Female,47.5,1.15
+Gender,Seeds of Health,Veritas High,2024-25,Male,21.9,Female,19.1,1.15,Male,21.9,Female,19.1,1.15
+Gender,Milwaukee,LaFollette Elementary,2024-25,Male,65.4,Female,57.6,1.14,Male,65.4,Female,57.6,1.14
+Gender,Milwaukee,Morgandale Elementary,2024-25,Male,37.8,Female,33.1,1.14,Male,37.8,Female,33.1,1.14
+Gender,Milwaukee,Parkview Elementary,2024-25,Male,39.6,Female,34.6,1.14,Male,39.6,Female,34.6,1.14
+Gender,West Allis-West Milwaukee,James E Dottke Project-Based Learning High School,2024-25,Male,26.0,Female,22.9,1.14,Male,26.0,Female,22.9,1.14
+Gender,Milwaukee,ALBA - Academia de Lenguaje y Bellas Artes,2024-25,Male,5.2,Female,4.6,1.13,Male,5.2,Female,4.6,1.13
+Gender,Milwaukee,Carver Academy,2024-25,Male,56.4,Female,50.4,1.12,Male,56.4,Female,50.4,1.12
+Gender,Milwaukee,Pratt Elementary,2024-25,Male,48.7,Female,43.4,1.12,Male,48.7,Female,43.4,1.12
+Gender,Nicolet Union High School,Nicolet High,2024-25,Male,2.9,Female,2.6,1.12,Male,2.9,Female,2.6,1.12
+Gender,Central City Cyberschool of Milwaukee,Central City Cyberschool,2024-25,Male,35.5,Female,32.0,1.11,Male,35.5,Female,32.0,1.11
+Gender,Milwaukee,Lancaster Elementary,2024-25,Male,81.3,Female,73.1,1.11,Male,81.3,Female,73.1,1.11
+Gender,Whitnall,Hales Corners Elementary,2024-25,Male,2.1,Female,1.9,1.11,Male,2.1,Female,1.9,1.11
+Gender,Maple Dale-Indian Hill,Maple Dale School,2024-25,Male,5.6,Female,5.1,1.1,Male,5.6,Female,5.1,1.1
+Gender,Milwaukee,Auer Avenue Elementary,2024-25,Male,65.8,Female,59.7,1.1,Male,65.8,Female,59.7,1.1
+Gender,Milwaukee,Hartford Avenue Elementary,2024-25,Male,64.2,Female,58.1,1.1,Male,64.2,Female,58.1,1.1
+Gender,Milwaukee,Riverwest Elementary,2024-25,Male,64.5,Female,58.6,1.1,Male,64.5,Female,58.6,1.1
+Gender,Greendale,Canterbury Elementary,2024-25,Male,2.4,Female,2.2,1.09,Male,2.4,Female,2.2,1.09
+Gender,Milwaukee,Barbee Elementary,2024-25,Male,34.8,Female,31.9,1.09,Male,34.8,Female,31.9,1.09
+Gender,Milwaukee,Brown Street Academy,2024-25,Male,57.3,Female,52.7,1.09,Male,57.3,Female,52.7,1.09
+Gender,Milwaukee,Hawley Environmental School,2024-25,Male,37.7,Female,34.7,1.09,Male,37.7,Female,34.7,1.09
+Gender,Greenfield,Elm Dale Elementary,2024-25,Male,8.0,Female,7.4,1.08,Male,8.0,Female,7.4,1.08
+Gender,Milwaukee,Fifty-Third Street Elementary,2024-25,Male,60.3,Female,55.8,1.08,Male,60.3,Female,55.8,1.08
+Gender,Milwaukee,Keefe Avenue Elementary,2024-25,Male,55.7,Female,51.8,1.08,Male,55.7,Female,51.8,1.08
+Gender,Shorewood,Shorewood Intermediate,2024-25,Male,5.2,Female,4.8,1.08,Male,5.2,Female,4.8,1.08
+Gender,Greendale,Greendale Middle,2024-25,Male,4.5,Female,4.2,1.07,Male,4.5,Female,4.2,1.07
+Gender,Milwaukee,Bryant Elementary,2024-25,Male,56.8,Female,52.9,1.07,Male,56.8,Female,52.9,1.07
+Gender,Milwaukee,Burbank Elementary,2024-25,Male,40.9,Female,38.2,1.07,Male,40.9,Female,38.2,1.07
+Gender,Milwaukee,Eighty-First Street Elementary,2024-25,Male,48.0,Female,44.8,1.07,Male,48.0,Female,44.8,1.07
+Gender,Milwaukee,Longfellow Elementary,2024-25,Male,44.4,Female,41.6,1.07,Male,44.4,Female,41.6,1.07
+Gender,Milwaukee,Morse Mid,2024-25,Male,56.6,Female,53.0,1.07,Male,56.6,Female,53.0,1.07
+Gender,West Allis-West Milwaukee,Nathan Hale High,2024-25,Male,19.4,Female,18.1,1.07,Male,19.4,Female,18.1,1.07
+Gender,Carmen High School of Science and Technology,Carmen Middle School South,2024-25,Male,41.7,Female,39.3,1.06,Male,41.7,Female,39.3,1.06
+Gender,Milwaukee,Andrew S Douglas Middle,2024-25,Male,87.7,Female,82.8,1.06,Male,87.7,Female,82.8,1.06
+Gender,Milwaukee,Mitchell Elementary,2024-25,Male,55.6,Female,52.7,1.06,Male,55.6,Female,52.7,1.06
+Gender,Milwaukee,Shalom High,2024-25,Male,89.6,Female,84.9,1.06,Male,89.6,Female,84.9,1.06
+Gender,Milwaukee,Thoreau Elementary,2024-25,Male,61.8,Female,58.5,1.06,Male,61.8,Female,58.5,1.06
+Gender,Milwaukee,Whitman Elementary,2024-25,Male,38.5,Female,36.3,1.06,Male,38.5,Female,36.3,1.06
+Gender,Milwaukee Scholars Charter School,Milwaukee Scholars Charter School,2024-25,Male,39.5,Female,37.4,1.06,Male,39.5,Female,37.4,1.06
+Gender,West Allis-West Milwaukee,West Milwaukee Intermediate,2024-25,Male,21.5,Female,20.2,1.06,Male,21.5,Female,20.2,1.06
+Gender,Milwaukee,Hawthorne Elementary,2024-25,Male,43.3,Female,41.4,1.05,Male,43.3,Female,41.4,1.05
+Gender,Milwaukee,Zablocki Elementary,2024-25,Male,47.4,Female,45.0,1.05,Male,47.4,Female,45.0,1.05
+Gender,Milwaukee Science Education Consortium,Milwaukee Academy of Science,2024-25,Male,47.3,Female,45.1,1.05,Male,47.3,Female,45.1,1.05
+Gender,Milwaukee,Clarke Street Elementary,2024-25,Male,69.6,Female,66.7,1.04,Male,69.6,Female,66.7,1.04
+Gender,Milwaukee,Hayes Bilingual School,2024-25,Male,34.4,Female,33.2,1.04,Male,34.4,Female,33.2,1.04
+Gender,Milwaukee,Hopkins Lloyd Community School,2024-25,Male,69.0,Female,66.2,1.04,Male,69.0,Female,66.2,1.04
+Gender,Milwaukee,Siefert Elementary,2024-25,Male,64.7,Female,62.5,1.04,Male,64.7,Female,62.5,1.04
+Gender,Milwaukee,Townsend Street Elementary,2024-25,Male,74.4,Female,71.2,1.04,Male,74.4,Female,71.2,1.04
+Gender,Milwaukee,Vieau Elementary,2024-25,Male,32.4,Female,31.1,1.04,Male,32.4,Female,31.1,1.04
+Gender,Milwaukee,Goodrich Elementary,2024-25,Male,22.6,Female,22.0,1.03,Male,22.6,Female,22.0,1.03
+Gender,Milwaukee,Lowell International Elementary,2024-25,Male,28.1,Female,27.3,1.03,Male,28.1,Female,27.3,1.03
+Gender,West Allis-West Milwaukee,Central High,2024-25,Male,42.0,Female,40.6,1.03,Male,42.0,Female,40.6,1.03
+Gender,Milwaukee,Bethune Academy,2024-25,Male,38.3,Female,37.7,1.02,Male,38.3,Female,37.7,1.02
+Gender,Milwaukee,Obama School of Career and Technical Education,2024-25,Male,78.7,Female,77.4,1.02,Male,78.7,Female,77.4,1.02
+Gender,Milwaukee,WHS Information Technology,2024-25,Male,84.8,Female,83.4,1.02,Male,84.8,Female,83.4,1.02
+Gender,Milwaukee,Grantosa Drive Elementary,2024-25,Male,61.9,Female,61.5,1.01,Male,61.9,Female,61.5,1.01
+Gender,Milwaukee,Groppi High,2024-25,Male,98.8,Female,98.2,1.01,Male,98.8,Female,98.2,1.01
+Gender,Milwaukee,Hi-Mount Elementary,2024-25,Male,67.1,Female,66.7,1.01,Male,67.1,Female,66.7,1.01
+Gender,Milwaukee,Jackson Elementary,2024-25,Male,64.0,Female,63.3,1.01,Male,64.0,Female,63.3,1.01
+Gender,Milwaukee,Manitoba Elementary,2024-25,Male,42.9,Female,42.4,1.01,Male,42.9,Female,42.4,1.01
+Gender,Milwaukee,Marshall High,2024-25,Male,85.3,Female,84.7,1.01,Male,85.3,Female,84.7,1.01
+Gender,Milwaukee,Milwaukee Environmental Science Academy,2024-25,Male,58.5,Female,57.7,1.01,Male,58.5,Female,57.7,1.01
+Gender,Milwaukee,Milwaukee Spanish Immersion,2024-25,Male,20.8,Female,20.5,1.01,Male,20.8,Female,20.5,1.01
+Gender,Seeds of Health,Seeds of Health Elementary Program,2024-25,Male,37.1,Female,36.8,1.01,Male,37.1,Female,36.8,1.01
+Gender,Glendale-River Hills,Parkway Elementary,2024-25,Male,7.4,Female,7.4,1.0,Female,7.4,Female,7.4,1.0
+Gender,Milwaukee,Audubon Technology and Communication Middle,2024-25,Male,56.5,Female,56.5,1.0,Female,56.5,Female,56.5,1.0
+Gender,Milwaukee,Bruce Elementary,2024-25,Male,33.6,Female,33.7,1.0,Female,33.7,Male,33.6,1.0
+Gender,Milwaukee,Grandview High,2024-25,Male,85.7,Female,85.8,1.0,Female,85.8,Male,85.7,1.0
+Gender,Milwaukee,Pulaski High,2024-25,Male,77.6,Female,77.9,1.0,Female,77.9,Male,77.6,1.0
+Gender,Milwaukee,South Accelerated Academy,2024-25,Male,100.0,Female,100.0,1.0,Female,100.0,Female,100.0,1.0
+Gender,South Milwaukee,South Milwaukee High,2024-25,Male,39.3,Female,39.4,1.0,Female,39.4,Male,39.3,1.0
+Gender,Wauwatosa,Washington Elementary,2024-25,Male,5.8,Female,5.8,1.0,Female,5.8,Female,5.8,1.0
+Gender,Milwaukee,Clemens Elementary,2024-25,Male,55.6,Female,56.2,0.99,Female,56.2,Male,55.6,1.01
+Gender,Milwaukee,Engleburg Elementary,2024-25,Male,57.9,Female,58.3,0.99,Female,58.3,Male,57.9,1.01
+Gender,Milwaukee,Harold S Vincent School of Agricultural Science,2024-25,Male,81.4,Female,82.4,0.99,Female,82.4,Male,81.4,1.01
+Gender,Milwaukee,Milwaukee School of Languages,2024-25,Male,37.4,Female,37.8,0.99,Female,37.8,Male,37.4,1.01
+Gender,Oak Creek-Franklin Joint,Oak Creek East Middle,2024-25,Male,11.2,Female,11.3,0.99,Female,11.3,Male,11.2,1.01
+Gender,United Community Center,Bruce Guadalupe,2024-25,Male,15.9,Female,16.0,0.99,Female,16.0,Male,15.9,1.01
+Gender,Milwaukee,Lincoln Middle,2024-25,Male,63.8,Female,65.1,0.98,Female,65.1,Male,63.8,1.02
+Gender,Milwaukee,Maryland Montessori,2024-25,Male,4.9,Female,5.0,0.98,Female,5.0,Male,4.9,1.02
+Gender,Milwaukee,NOVA-Northwest Opportunities Vocational Academy,2024-25,Male,97.8,Female,100.0,0.98,Female,100.0,Male,97.8,1.02
+Gender,Milwaukee,Transition High,2024-25,Male,97.6,Female,100.0,0.98,Female,100.0,Male,97.6,1.02
+Gender,Milwaukee,Congress Elementary,2024-25,Male,58.3,Female,60.2,0.97,Female,60.2,Male,58.3,1.03
+Gender,Milwaukee,Doerfler Elementary,2024-25,Male,48.7,Female,50.0,0.97,Female,50.0,Male,48.7,1.03
+Gender,Milwaukee,Franklin Elementary,2024-25,Male,66.7,Female,68.5,0.97,Female,68.5,Male,66.7,1.03
+Gender,Milwaukee,Kluge Elementary,2024-25,Male,48.9,Female,50.4,0.97,Female,50.4,Male,48.9,1.03
+Gender,Milwaukee,Alliance School of Milwaukee,2024-25,Male,89.1,Female,93.2,0.96,Female,93.2,Male,89.1,1.05
+Gender,Milwaukee,Bay View High,2024-25,Male,72.4,Female,75.3,0.96,Female,75.3,Male,72.4,1.04
+Gender,Milwaukee,Gaenslen Elementary,2024-25,Male,34.0,Female,35.6,0.96,Female,35.6,Male,34.0,1.05
+Gender,Milwaukee,King International Baccalaureate Middle,2024-25,Male,69.1,Female,72.1,0.96,Female,72.1,Male,69.1,1.04
+Gender,Milwaukee,MacDowell Montessori School K3-12,2024-25,Male,24.0,Female,24.9,0.96,Female,24.9,Male,24.0,1.04
+Gender,Milwaukee,Milwaukee Parkside School,2024-25,Male,23.6,Female,24.7,0.96,Female,24.7,Male,23.6,1.05
+Gender,Milwaukee,Neeskara Elementary,2024-25,Male,50.3,Female,52.6,0.96,Female,52.6,Male,50.3,1.05
+Gender,Milwaukee,South Division High,2024-25,Male,61.2,Female,63.5,0.96,Female,63.5,Male,61.2,1.04
+Gender,Franklin Public,Ben Franklin Elementary,2024-25,Male,5.7,Female,6.0,0.95,Female,6.0,Male,5.7,1.05
+Gender,Milwaukee,Garland Elementary,2024-25,Male,22.5,Female,23.6,0.95,Female,23.6,Male,22.5,1.05
+Gender,Milwaukee,Maple Tree Elementary,2024-25,Male,50.0,Female,52.9,0.95,Female,52.9,Male,50.0,1.06
+Gender,Milwaukee,Milwaukee College Preparatory School -- Lloyd Street,2024-25,Male,24.9,Female,26.2,0.95,Female,26.2,Male,24.9,1.05
+Gender,Milwaukee,Milwaukee German Immersion,2024-25,Male,7.4,Female,7.8,0.95,Female,7.8,Male,7.4,1.05
+Gender,Milwaukee,North Division High,2024-25,Male,86.2,Female,91.1,0.95,Female,91.1,Male,86.2,1.06
+Gender,Milwaukee,Wedgewood Park School,2024-25,Male,49.1,Female,51.6,0.95,Female,51.6,Male,49.1,1.05
+Gender,Rocketship Education Wisconsin,Rocketship Southside Community Prep,2024-25,Male,29.5,Female,31.1,0.95,Female,31.1,Male,29.5,1.05
+Gender,Carmen High School of Science and Technology,Stellar Collegiate Charter School,2024-25,Male,35.8,Female,38.0,0.94,Female,38.0,Male,35.8,1.06
+Gender,Greenfield,Maple Grove Elementary,2024-25,Male,6.5,Female,6.9,0.94,Female,6.9,Male,6.5,1.06
+Gender,Milwaukee,Hamilton High,2024-25,Male,71.6,Female,75.9,0.94,Female,75.9,Male,71.6,1.06
+Gender,Milwaukee,Victory Elementary,2024-25,Male,23.4,Female,25.0,0.94,Female,25.0,Male,23.4,1.07
+Gender,Oak Creek-Franklin Joint,Oak Creek West Middle,2024-25,Male,13.8,Female,14.7,0.94,Female,14.7,Male,13.8,1.07
+Gender,Milwaukee,Audubon Technology and Communication High,2024-25,Male,41.3,Female,44.4,0.93,Female,44.4,Male,41.3,1.08
+Gender,Milwaukee,Lincoln Avenue Elementary,2024-25,Male,21.4,Female,23.0,0.93,Female,23.0,Male,21.4,1.07
+Gender,Milwaukee,Project STAY-Supporting Teachers and Youth,2024-25,Male,87.5,Female,94.4,0.93,Female,94.4,Male,87.5,1.08
+Gender,Milwaukee,Riverside High,2024-25,Male,62.7,Female,67.1,0.93,Female,67.1,Male,62.7,1.07
+Gender,Milwaukee,Wisconsin Conservatory of Lifelong Learning,2024-25,Male,85.0,Female,91.2,0.93,Female,91.2,Male,85.0,1.07
+Gender,Milwaukee,Kagel Elementary,2024-25,Male,33.3,Female,36.0,0.92,Female,36.0,Male,33.3,1.08
+Gender,Milwaukee,Milwaukee French Immersion,2024-25,Male,16.9,Female,18.3,0.92,Female,18.3,Male,16.9,1.08
+Gender,Oak Creek-Franklin Joint,Edgewood Elementary,2024-25,Male,6.0,Female,6.5,0.92,Female,6.5,Male,6.0,1.08
+Gender,Milwaukee,Humboldt Park Elementary,2024-25,Male,31.2,Female,34.1,0.91,Female,34.1,Male,31.2,1.09
+Gender,Milwaukee,Starms Early Childhood,2024-25,Male,41.4,Female,45.5,0.91,Female,45.5,Male,41.4,1.1
+Gender,West Allis-West Milwaukee,Jefferson Elementary,2024-25,Male,15.7,Female,17.2,0.91,Female,17.2,Male,15.7,1.1
+Gender,Greendale,Highland View Elementary,2024-25,Male,6.4,Female,7.1,0.9,Female,7.1,Male,6.4,1.11
+Gender,Milwaukee,Ninety-Fifth Street Elementary,2024-25,Male,33.2,Female,36.7,0.9,Female,36.7,Male,33.2,1.11
+Gender,Milwaukee,Sherman Elementary,2024-25,Male,64.4,Female,71.4,0.9,Female,71.4,Male,64.4,1.11
+Gender,Milwaukee,Trowbridge Street School of Great Lakes Studies,2024-25,Male,33.3,Female,37.0,0.9,Female,37.0,Male,33.3,1.11
+Gender,Oak Creek-Franklin Joint,Oak Creek High,2024-25,Male,19.9,Female,22.0,0.9,Female,22.0,Male,19.9,1.11
+Gender,Milwaukee,Banner Preparatory School of Milwaukee,2024-25,Male,85.2,Female,95.5,0.89,Female,95.5,Male,85.2,1.12
+Gender,Milwaukee,James Madison Academic Campus,2024-25,Male,82.7,Female,92.5,0.89,Female,92.5,Male,82.7,1.12
+Gender,Milwaukee,Milwaukee College Preparatory School: Lola Rowe North Campus,2024-25,Male,16.7,Female,18.7,0.89,Female,18.7,Male,16.7,1.12
+Gender,Milwaukee,Westside Academy,2024-25,Male,56.9,Female,64.1,0.89,Female,64.1,Male,56.9,1.13
+Gender,Oak Creek-Franklin Joint,Shepard Hills Elementary,2024-25,Male,9.0,Female,10.1,0.89,Female,10.1,Male,9.0,1.12
+Gender,Woodlands School,Woodlands School,2024-25,Male,11.0,Female,12.4,0.89,Female,12.4,Male,11.0,1.13
+Gender,Milwaukee,Alcott Elementary,2024-25,Male,37.2,Female,42.1,0.88,Female,42.1,Male,37.2,1.13
+Gender,Milwaukee,King International,2024-25,Male,35.7,Female,40.5,0.88,Female,40.5,Male,35.7,1.13
+Gender,Milwaukee,La Causa Charter School,2024-25,Male,32.6,Female,37.0,0.88,Female,37.0,Male,32.6,1.13
+Gender,Milwaukee,Milwaukee Academy of Chinese Language,2024-25,Male,40.1,Female,45.4,0.88,Female,45.4,Male,40.1,1.13
+Gender,Wauwatosa,Jefferson Elementary,2024-25,Male,5.3,Female,6.0,0.88,Female,6.0,Male,5.3,1.13
+Gender,Wauwatosa,Whitman Middle,2024-25,Male,13.6,Female,15.5,0.88,Female,15.5,Male,13.6,1.14
+Gender,Milwaukee,HAPA-Hmong American Peace Academy K3-12,2024-25,Male,9.7,Female,11.1,0.87,Female,11.1,Male,9.7,1.14
+Gender,Milwaukee,Milwaukee High School of the Arts,2024-25,Male,49.5,Female,57.0,0.87,Female,57.0,Male,49.5,1.15
+Gender,Milwaukee,Emerson Elementary,2024-25,Male,53.7,Female,62.2,0.86,Female,62.2,Male,53.7,1.16
+Gender,Milwaukee,Green Tree Preparatory Academy,2024-25,Male,75.0,Female,87.6,0.86,Female,87.6,Male,75.0,1.17
+Gender,Milwaukee,Golda Meir School,2024-25,Male,14.1,Female,16.6,0.85,Female,16.6,Male,14.1,1.18
+Gender,Milwaukee,Highland Community School,2024-25,Male,13.8,Female,16.2,0.85,Female,16.2,Male,13.8,1.17
+Gender,Milwaukee,Stuart Elementary,2024-25,Male,30.9,Female,36.4,0.85,Female,36.4,Male,30.9,1.18
+Gender,Whitefish Bay,Cumberland Elementary,2024-25,Male,1.7,Female,2.0,0.85,Female,2.0,Male,1.7,1.18
+Gender,Whitefish Bay,Richards Elementary,2024-25,Male,3.3,Female,3.9,0.85,Female,3.9,Male,3.3,1.18
+Gender,Milwaukee,ASSATA High,2024-25,Male,67.4,Female,80.0,0.84,Female,80.0,Male,67.4,1.19
+Gender,Milwaukee,Honey Creek Elementary,2024-25,Male,20.9,Female,25.3,0.83,Female,25.3,Male,20.9,1.21
+Gender,Milwaukee,Bradley Technology High,2024-25,Male,69.7,Female,84.8,0.82,Female,84.8,Male,69.7,1.22
+Gender,South Milwaukee,South Milwaukee Middle,2024-25,Male,21.6,Female,26.4,0.82,Female,26.4,Male,21.6,1.22
+Gender,Trans Center for Youth,Escuela Verde,2024-25,Male,64.6,Female,78.4,0.82,Female,78.4,Male,64.6,1.21
+Gender,Wauwatosa,Roosevelt Elementary,2024-25,Male,9.6,Female,11.7,0.82,Female,11.7,Male,9.6,1.22
+Gender,Woodlands School,Woodlands School - State Street Campus,2024-25,Male,32.6,Female,39.7,0.82,Female,39.7,Male,32.6,1.22
+Gender,Milwaukee,Cooper Elementary,2024-25,Male,8.5,Female,10.5,0.81,Female,10.5,Male,8.5,1.24
+Gender,Milwaukee,Reagan College Preparatory High,2024-25,Male,17.6,Female,21.8,0.81,Female,21.8,Male,17.6,1.24
+Gender,Brown Deer,Brown Deer Middle/High,2024-25,Male,32.5,Female,40.6,0.8,Female,40.6,Male,32.5,1.25
+Gender,Greendale,Greendale High,2024-25,Male,11.9,Female,14.9,0.8,Female,14.9,Male,11.9,1.25
+Gender,South Milwaukee,Lakeview Elementary,2024-25,Male,14.2,Female,17.7,0.8,Female,17.7,Male,14.2,1.25
+Gender,West Allis-West Milwaukee,Horace Mann Elementary,2024-25,Male,19.9,Female,24.8,0.8,Female,24.8,Male,19.9,1.25
+Gender,Milwaukee,Burdick Elementary,2024-25,Male,20.7,Female,26.3,0.79,Female,26.3,Male,20.7,1.27
+Gender,Cudahy,Cudahy Middle,2024-25,Male,32.8,Female,41.8,0.78,Female,41.8,Male,32.8,1.27
+Gender,Saint Francis,Deer Creek Intermediate,2024-25,Male,14.7,Female,18.8,0.78,Female,18.8,Male,14.7,1.28
+Gender,South Milwaukee,E W Luther Elementary,2024-25,Male,12.2,Female,15.6,0.78,Female,15.6,Male,12.2,1.28
+Gender,Wauwatosa,McKinley Elementary,2024-25,Male,4.0,Female,5.1,0.78,Female,5.1,Male,4.0,1.27
+Gender,Milwaukee,IDEAL Individualized Developmental Educational Approaches to Learning,2024-25,Male,23.1,Female,30.3,0.76,Female,30.3,Male,23.1,1.31
+Gender,West Allis-West Milwaukee,Pershing Elementary,2024-25,Male,10.5,Female,13.9,0.76,Female,13.9,Male,10.5,1.32
+Gender,Glendale-River Hills,Glen Hills Middle,2024-25,Male,8.8,Female,11.7,0.75,Female,11.7,Male,8.8,1.33
+Gender,Milwaukee,Allen-Field Elementary,2024-25,Male,34.4,Female,46.1,0.75,Female,46.1,Male,34.4,1.34
+Gender,Greenfield,Glenwood Elementary,2024-25,Male,6.6,Female,8.9,0.74,Female,8.9,Male,6.6,1.35
+Gender,Oak Creek-Franklin Joint,Carollton Elementary,2024-25,Male,5.8,Female,8.0,0.72,Female,8.0,Male,5.8,1.38
+Gender,Wauwatosa,Eisenhower Elementary,2024-25,Male,11.9,Female,16.8,0.71,Female,16.8,Male,11.9,1.41
+Gender,Franklin Public,Franklin High,2024-25,Male,5.7,Female,8.4,0.68,Female,8.4,Male,5.7,1.47
+Gender,Wauwatosa,Wauwatosa Montessori School,2024-25,Male,3.5,Female,5.5,0.64,Female,5.5,Male,3.5,1.57
+Gender,Whitnall,Whitnall High,2024-25,Male,10.6,Female,16.5,0.64,Female,16.5,Male,10.6,1.56
+Gender,Wauwatosa,Underwood Elementary,2024-25,Male,10.5,Female,16.6,0.63,Female,16.6,Male,10.5,1.58
+Gender,Pathways High,Pathways High,2024-25,Male,34.8,Female,59.1,0.59,Female,59.1,Male,34.8,1.7
+Gender,Shorewood,Shorewood High,2024-25,Male,13.7,Female,23.4,0.59,Female,23.4,Male,13.7,1.71
+Gender,Shorewood,Lake Bluff Elementary,2024-25,Male,3.5,Female,6.0,0.58,Female,6.0,Male,3.5,1.71
+Gender,Franklin Public,Pleasant View Elementary,2024-25,Male,7.0,Female,12.2,0.57,Female,12.2,Male,7.0,1.74
+Gender,Greenfield,Edgewood Elementary,2024-25,Male,5.2,Female,9.8,0.53,Female,9.8,Male,5.2,1.88
+Gender,West Allis-West Milwaukee,Irving Elementary,2024-25,Male,8.3,Female,15.9,0.52,Female,15.9,Male,8.3,1.92
+Gender,Whitnall,Edgerton Elementary,2024-25,Male,2.3,Female,4.4,0.52,Female,4.4,Male,2.3,1.91
+Gender,Whitnall,Whitnall Middle,2024-25,Male,6.2,Female,11.9,0.52,Female,11.9,Male,6.2,1.92
+Gender,Maple Dale-Indian Hill,Indian Hill School,2024-25,Male,1.2,Female,3.1,0.39,Female,3.1,Male,1.2,2.58
+Gender,Wauwatosa,Wauwatosa Virtual Academy,2024-25,Male,0.0,Female,0.0,,Female,0.0,Female,0.0,
+Gender,West Allis-West Milwaukee,Deeper Learning Virtual Academy,2024-25,Male,0.0,Female,0.0,,Female,0.0,Female,0.0,
+Race/Ethnicity,Milwaukee,Clement Avenue Elementary,2024-25,Black,41.4,White,1.7,24.35,Black,41.4,White,1.7,24.35
+Race/Ethnicity,Glendale-River Hills,Parkway Elementary,2024-25,Black,13.8,White,0.6,23.0,Black,13.8,White,0.6,23.0
+Race/Ethnicity,Wauwatosa,McKinley Elementary,2024-25,Black,31.3,White,1.6,19.56,Black,31.3,Two or More,0.0,
+Race/Ethnicity,Milwaukee,Milwaukee French Immersion,2024-25,Black,24.3,White,1.5,16.2,Black,24.3,White,1.5,16.2
+Race/Ethnicity,Milwaukee,Milwaukee German Immersion,2024-25,Black,24.5,White,1.6,15.31,Black,24.5,White,1.6,15.31
+Race/Ethnicity,Wauwatosa,Lincoln Elementary,2024-25,Black,9.5,White,0.9,10.56,Black,9.5,White,0.9,10.56
+Race/Ethnicity,Wauwatosa,Eisenhower Elementary,2024-25,Black,30.1,White,3.5,8.6,Black,30.1,White,3.5,8.6
+Race/Ethnicity,Milwaukee,Academy of Accelerated Learning,2024-25,Black,32.8,White,4.3,7.63,Black,32.8,White,4.3,7.63
+Race/Ethnicity,Wauwatosa,Longfellow Middle,2024-25,Black,28.7,White,4.0,7.17,Black,28.7,White,4.0,7.17
+Race/Ethnicity,Wauwatosa,Roosevelt Elementary,2024-25,Black,32.7,White,5.9,5.54,Black,32.7,White,5.9,5.54
+Race/Ethnicity,Wauwatosa,Madison Elementary,2024-25,Black,19.5,White,3.6,5.42,Black,19.5,Hispanic,0.0,
+Race/Ethnicity,Greenfield,Greenfield Middle,2024-25,Black,24.2,White,4.6,5.26,Black,24.2,White,4.6,5.26
+Race/Ethnicity,West Allis-West Milwaukee,Walker Elementary,2024-25,Black,50.0,White,9.6,5.21,Black,50.0,White,9.6,5.21
+Race/Ethnicity,Milwaukee,Milwaukee Spanish Immersion,2024-25,Black,28.1,White,5.4,5.2,Black,28.1,White,5.4,5.2
+Race/Ethnicity,Wauwatosa,Underwood Elementary,2024-25,Black,27.6,White,5.5,5.02,Black,27.6,White,5.5,5.02
+Race/Ethnicity,Whitnall,Hales Corners Elementary,2024-25,Black,7.1,White,1.5,4.73,Black,7.1,Two or More,0.0,
+Race/Ethnicity,Nicolet Union High School,Nicolet High,2024-25,Black,6.9,White,1.5,4.6,Black,6.9,Hispanic,1.1,6.27
+Race/Ethnicity,Whitefish Bay,Whitefish Bay Middle,2024-25,Black,10.3,White,2.4,4.29,Hispanic,11.8,Asian,0.0,
+Race/Ethnicity,Wauwatosa,Whitman Middle,2024-25,Black,27.8,White,6.6,4.21,Black,27.8,White,6.6,4.21
+Race/Ethnicity,Milwaukee,Fernwood Montessori,2024-25,Black,21.9,White,5.6,3.91,Black,21.9,White,5.6,3.91
+Race/Ethnicity,Wauwatosa,East High,2024-25,Black,43.1,White,11.4,3.78,Black,43.1,White,11.4,3.78
+Race/Ethnicity,Whitefish Bay,Whitefish Bay High,2024-25,Black,6.3,White,1.8,3.5,Hispanic,8.8,White,1.8,4.89
+Race/Ethnicity,Milwaukee,Burdick Elementary,2024-25,Black,41.3,White,12.5,3.3,Black,41.3,White,12.5,3.3
+Race/Ethnicity,Wauwatosa,West High,2024-25,Black,38.8,White,12.5,3.1,Black,38.8,White,12.5,3.1
+Race/Ethnicity,Whitnall,Whitnall Middle,2024-25,Black,17.2,White,6.0,2.87,Black,17.2,White,6.0,2.87
+Race/Ethnicity,Milwaukee,Milwaukee Parkside School,2024-25,Black,25.7,White,9.0,2.86,Asian,32.2,White,9.0,3.58
+Race/Ethnicity,Shorewood,Lake Bluff Elementary,2024-25,Black,10.0,White,3.5,2.86,Asian,22.7,Hispanic,2.0,11.35
+Race/Ethnicity,Milwaukee,MacDowell Montessori School K3-12,2024-25,Black,30.8,White,10.9,2.83,Black,30.8,White,10.9,2.83
+Race/Ethnicity,Glendale-River Hills,Glen Hills Middle,2024-25,Black,15.3,White,5.5,2.78,Hispanic,15.9,White,5.5,2.89
+Race/Ethnicity,Wauwatosa,Washington Elementary,2024-25,Black,8.7,White,3.2,2.72,Hispanic,13.3,White,3.2,4.16
+Race/Ethnicity,Milwaukee,Barbee Elementary,2024-25,Black,36.5,White,13.6,2.68,Black,36.5,White,13.6,2.68
+Race/Ethnicity,Milwaukee,Whitman Elementary,2024-25,Black,56.2,White,21.1,2.66,Black,56.2,White,21.1,2.66
+Race/Ethnicity,West Allis-West Milwaukee,Nathan Hale High,2024-25,Black,29.4,White,11.1,2.65,Black,29.4,White,11.1,2.65
+Race/Ethnicity,Oak Creek-Franklin Joint,Forest Ridge Elementary,2024-25,Black,22.2,White,8.7,2.55,Asian,31.9,White,8.7,3.67
+Race/Ethnicity,West Allis-West Milwaukee,Jefferson Elementary,2024-25,Black,28.9,White,11.7,2.47,Black,28.9,White,11.7,2.47
+Race/Ethnicity,West Allis-West Milwaukee,Pershing Elementary,2024-25,Black,15.0,White,6.1,2.46,Black,15.0,White,6.1,2.46
+Race/Ethnicity,West Allis-West Milwaukee,Wilson Elementary,2024-25,Black,28.2,White,11.5,2.45,Black,28.2,Hispanic,9.7,2.91
+Race/Ethnicity,Greenfield,Greenfield High,2024-25,Black,33.3,White,13.9,2.4,Black,33.3,White,13.9,2.4
+Race/Ethnicity,Cudahy,Cudahy High,2024-25,Black,62.5,White,26.4,2.37,Black,62.5,White,26.4,2.37
+Race/Ethnicity,Milwaukee,Highland Community School,2024-25,Black,24.2,White,10.5,2.3,Black,24.2,Hispanic,9.3,2.6
+Race/Ethnicity,Milwaukee,Fairview Elementary,2024-25,Black,35.3,White,16.1,2.19,Black,35.3,White,16.1,2.19
+Race/Ethnicity,Milwaukee,Cooper Elementary,2024-25,Black,10.8,White,5.2,2.08,Hispanic,12.5,White,5.2,2.4
+Race/Ethnicity,Greenfield,Maple Grove Elementary,2024-25,Black,8.7,White,4.2,2.07,Hispanic,9.4,White,4.2,2.24
+Race/Ethnicity,Milwaukee,Trowbridge Street School of Great Lakes Studies,2024-25,Black,44.3,White,21.6,2.05,Black,44.3,White,21.6,2.05
+Race/Ethnicity,Saint Francis,Deer Creek Intermediate,2024-25,Black,27.3,White,13.8,1.98,Black,27.3,Two or More,4.8,5.69
+Race/Ethnicity,Milwaukee,Fratney Elementary,2024-25,Black,30.8,White,15.6,1.97,Hispanic,43.8,White,15.6,2.81
+Race/Ethnicity,Milwaukee,Milwaukee School of Languages,2024-25,Black,43.0,White,21.9,1.96,Black,43.0,White,21.9,1.96
+Race/Ethnicity,Brown Deer,Brown Deer Elementary,2024-25,Black,24.6,White,12.7,1.94,Black,24.6,White,12.7,1.94
+Race/Ethnicity,Shorewood,Shorewood High,2024-25,Black,27.6,White,14.3,1.93,Hispanic,30.8,White,14.3,2.15
+Race/Ethnicity,Milwaukee,Maryland Montessori,2024-25,Black,6.9,White,3.6,1.92,Two or More,13.0,Hispanic,2.4,5.42
+Race/Ethnicity,Milwaukee,Golda Meir School,2024-25,Black,18.2,White,9.6,1.9,Black,18.2,White,9.6,1.9
+Race/Ethnicity,Milwaukee,King International,2024-25,Black,40.7,White,21.7,1.88,Hispanic,49.5,White,21.7,2.28
+Race/Ethnicity,Milwaukee,Reagan College Preparatory High,2024-25,Black,28.6,White,15.3,1.87,Black,28.6,Asian,11.5,2.49
+Race/Ethnicity,Franklin Public,Forest Park Middle,2024-25,Black,12.5,White,7.0,1.79,Hispanic,16.5,White,7.0,2.36
+Race/Ethnicity,Milwaukee,Whittier Elementary,2024-25,Black,13.8,White,7.7,1.79,Hispanic,14.3,White,7.7,1.86
+Race/Ethnicity,Cudahy,Mitchell Elementary,2024-25,Black,31.3,White,17.6,1.78,Black,31.3,White,17.6,1.78
+Race/Ethnicity,Saint Francis,Saint Francis High,2024-25,Black,30.5,White,17.7,1.72,Black,30.5,White,17.7,1.72
+Race/Ethnicity,West Allis-West Milwaukee,Frank Lloyd Wright Intermediate,2024-25,Black,18.7,White,10.9,1.72,Hispanic,21.2,White,10.9,1.94
+Race/Ethnicity,Milwaukee,Bay View High,2024-25,Black,80.5,White,47.2,1.71,Black,80.5,White,47.2,1.71
+Race/Ethnicity,Milwaukee,Obama School of Career and Technical Education,2024-25,Black,80.4,White,47.7,1.69,Black,80.4,White,47.7,1.69
+Race/Ethnicity,Whitnall,Whitnall High,2024-25,Black,19.5,White,11.7,1.67,Black,19.5,Two or More,11.1,1.76
+Race/Ethnicity,Milwaukee,Riverside High,2024-25,Black,68.3,White,41.9,1.63,Two or More,75.0,White,41.9,1.79
+Race/Ethnicity,Milwaukee,Ninety-Fifth Street Elementary,2024-25,Black,35.3,White,21.9,1.61,Two or More,61.1,Asian,14.8,4.13
+Race/Ethnicity,West Allis-West Milwaukee,Horace Mann Elementary,2024-25,Black,30.0,White,19.0,1.58,Black,30.0,White,19.0,1.58
+Race/Ethnicity,Seeds of Health,Tenor High,2024-25,Black,31.5,White,20.0,1.57,Hispanic,34.4,White,20.0,1.72
+Race/Ethnicity,West Allis-West Milwaukee,Central High,2024-25,Black,45.4,White,29.5,1.54,Hispanic,49.5,Asian,4.8,10.31
+Race/Ethnicity,Milwaukee,Alcott Elementary,2024-25,Black,46.3,White,30.5,1.52,Hispanic,48.4,Two or More,21.6,2.24
+Race/Ethnicity,Milwaukee,Honey Creek Elementary,2024-25,Black,25.0,White,16.7,1.5,Hispanic,26.8,White,16.7,1.6
+Race/Ethnicity,Milwaukee,Wedgewood Park School,2024-25,Black,57.8,White,38.9,1.49,Black,57.8,Asian,17.2,3.36
+Race/Ethnicity,South Milwaukee,Rawson Elementary,2024-25,Black,25.9,White,18.1,1.43,Hispanic,43.6,White,18.1,2.41
+Race/Ethnicity,Oak Creek-Franklin Joint,Oak Creek High,2024-25,Black,25.2,White,18.0,1.4,Hispanic,29.0,White,18.0,1.61
+Race/Ethnicity,West Allis-West Milwaukee,West Milwaukee Intermediate,2024-25,Black,25.9,White,19.1,1.36,Black,25.9,Hispanic,19.1,1.36
+Race/Ethnicity,Milwaukee,Victory Elementary,2024-25,Black,28.6,White,21.2,1.35,Hispanic,36.1,Asian,18.1,1.99
+Race/Ethnicity,Milwaukee,Pulaski High,2024-25,Black,84.2,White,63.4,1.33,Two or More,85.2,White,63.4,1.34
+Race/Ethnicity,Milwaukee,U S Grant School,2024-25,Black,51.0,White,38.5,1.32,Black,51.0,Asian,19.5,2.62
+Race/Ethnicity,Milwaukee,Milwaukee High School of the Arts,2024-25,Black,56.8,White,43.7,1.3,Black,56.8,White,43.7,1.3
+Race/Ethnicity,West Allis-West Milwaukee,Irving Elementary,2024-25,Black,13.3,White,10.3,1.29,Hispanic,16.9,Two or More,2.8,6.04
+Race/Ethnicity,Brown Deer,Brown Deer Middle/High,2024-25,Black,41.5,White,33.0,1.26,Black,41.5,Asian,19.3,2.15
+Race/Ethnicity,Oak Creek-Franklin Joint,Edgewood Elementary,2024-25,Black,7.7,White,6.1,1.26,Hispanic,10.3,Two or More,0.0,
+Race/Ethnicity,South Milwaukee,South Milwaukee High,2024-25,Black,42.5,White,34.0,1.25,Hispanic,49.2,White,34.0,1.45
+Race/Ethnicity,Milwaukee,Garland Elementary,2024-25,Black,21.7,White,17.8,1.22,Hispanic,30.1,White,17.8,1.69
+Race/Ethnicity,South Milwaukee,South Milwaukee Middle,2024-25,Black,22.9,White,18.7,1.22,Two or More,35.3,White,18.7,1.89
+Race/Ethnicity,Milwaukee,Humboldt Park Elementary,2024-25,Black,38.2,White,31.6,1.21,Hispanic,44.0,Asian,24.3,1.81
+Race/Ethnicity,Shorewood,Atwater Elementary,2024-25,Black,3.0,White,2.5,1.2,Hispanic,8.3,White,2.5,3.32
+Race/Ethnicity,Milwaukee,Hamilton High,2024-25,Black,81.5,White,69.4,1.17,Black,81.5,Asian,62.8,1.3
+Race/Ethnicity,Milwaukee,Audubon Technology and Communication High,2024-25,Black,43.9,White,39.3,1.12,Hispanic,45.1,Asian,30.4,1.48
+Race/Ethnicity,Shorewood,Shorewood Intermediate,2024-25,Black,3.7,White,3.5,1.06,Two or More,13.6,White,3.5,3.89
+Race/Ethnicity,Greendale,Greendale High,2024-25,Black,10.0,White,9.9,1.01,Hispanic,24.6,White,9.9,2.48
+Race/Ethnicity,Milwaukee,Burbank Elementary,2024-25,Black,49.8,White,50.0,1.0,White,50.0,Asian,12.2,4.1
+Race/Ethnicity,Milwaukee,Bradley Technology High,2024-25,Black,77.8,White,79.2,0.98,White,79.2,Hispanic,69.1,1.15
+Race/Ethnicity,Cudahy,Lincoln Elementary,2024-25,Black,24.1,White,25.0,0.96,Two or More,48.7,Black,24.1,2.02
+Race/Ethnicity,Milwaukee,South Division High,2024-25,Black,66.2,White,69.6,0.95,White,69.6,Asian,41.1,1.69
+Race/Ethnicity,Milwaukee,Morgandale Elementary,2024-25,Black,39.7,White,48.0,0.83,White,48.0,Asian,24.2,1.98
+Race/Ethnicity,Pathways High,Pathways High,2024-25,Black,41.0,White,52.9,0.78,White,52.9,Black,41.0,1.29
+Race/Ethnicity,Milwaukee,IDEAL Individualized Developmental Educational Approaches to Learning,2024-25,Black,21.4,White,28.0,0.76,Hispanic,29.5,Black,21.4,1.38
+Race/Ethnicity,Woodlands School,Woodlands School,2024-25,Black,9.6,White,15.6,0.62,White,15.6,Black,9.6,1.62
+Race/Ethnicity,Milwaukee,Curtin Elementary,2024-25,Black,26.3,White,42.9,0.61,Asian,51.4,Black,26.3,1.95
+Race/Ethnicity,Franklin Public,Franklin High,2024-25,Black,2.6,White,5.8,0.45,Hispanic,15.8,Black,2.6,6.08
+Race/Ethnicity,Carmen High School of Science and Technology,Carmen Middle School South,2024-25,Black,40.0,White,,,Hispanic,41.1,Black,40.0,1.03
+Race/Ethnicity,Carmen High School of Science and Technology,Stellar Collegiate Charter School,2024-25,Black,45.5,White,,,Black,45.5,Hispanic,36.4,1.25
+Race/Ethnicity,Cudahy,Cudahy Middle,2024-25,Black,,White,35.6,,Hispanic,39.1,White,35.6,1.1
+Race/Ethnicity,Cudahy,Jones Elementary,2024-25,Black,,White,11.9,,Hispanic,23.6,White,11.9,1.98
+Race/Ethnicity,Cudahy,Kosciuszko Elementary,2024-25,Black,,White,29.3,,Hispanic,42.6,White,29.3,1.45
+Race/Ethnicity,Downtown Montessori Academy,Downtown Montessori,2024-25,Black,,White,7.0,,Hispanic,7.5,White,7.0,1.07
+Race/Ethnicity,Fox Point J2,Bayside Middle,2024-25,Black,,White,4.8,,White,4.8,Two or More,0.0,
+Race/Ethnicity,Fox Point J2,Stormonth Elementary,2024-25,Black,,White,2.7,,Hispanic,15.4,White,2.7,5.7
+Race/Ethnicity,Franklin Public,Ben Franklin Elementary,2024-25,Black,,White,4.1,,Hispanic,8.5,White,4.1,2.07
+Race/Ethnicity,Franklin Public,Country Dale Elementary,2024-25,Black,,White,2.4,,Asian,25.9,White,2.4,10.79
+Race/Ethnicity,Franklin Public,Pleasant View Elementary,2024-25,Black,,White,5.7,,Asian,18.6,White,5.7,3.26
+Race/Ethnicity,Franklin Public,Robinwood Elementary,2024-25,Black,,White,5.3,,Hispanic,13.5,White,5.3,2.55
+Race/Ethnicity,Franklin Public,Southwood Glen Elementary,2024-25,Black,,White,2.4,,Hispanic,18.2,White,2.4,7.58
+Race/Ethnicity,Greendale,Canterbury Elementary,2024-25,Black,,White,0.8,,Two or More,4.2,White,0.8,5.25
+Race/Ethnicity,Greendale,College Park Elementary,2024-25,Black,,White,1.1,,Hispanic,8.9,White,1.1,8.09
+Race/Ethnicity,Greendale,Greendale Middle,2024-25,Black,,White,3.9,,Asian,10.0,White,3.9,2.56
+Race/Ethnicity,Greendale,Highland View Elementary,2024-25,Black,,White,3.7,,Hispanic,15.2,White,3.7,4.11
+Race/Ethnicity,Greenfield,Edgewood Elementary,2024-25,Black,,White,4.8,,Hispanic,12.8,Asian,0.0,
+Race/Ethnicity,Greenfield,Elm Dale Elementary,2024-25,Black,,White,3.0,,Two or More,14.8,White,3.0,4.93
+Race/Ethnicity,Greenfield,Glenwood Elementary,2024-25,Black,,White,3.8,,Asian,17.4,White,3.8,4.58
+Race/Ethnicity,Maple Dale-Indian Hill,Maple Dale School,2024-25,Black,,White,3.9,,Hispanic,8.7,White,3.9,2.23
+Race/Ethnicity,Milwaukee,Allen-Field Elementary,2024-25,Black,50.0,White,,,Black,50.0,Hispanic,37.3,1.34
+Race/Ethnicity,Milwaukee,Audubon Technology and Communication Middle,2024-25,Black,70.3,White,,,Black,70.3,Hispanic,50.5,1.39
+Race/Ethnicity,Milwaukee,Bay View Montessori School,2024-25,Black,,White,2.2,,Hispanic,5.4,Two or More,0.0,
+Race/Ethnicity,Milwaukee,Bethune Academy,2024-25,Black,49.4,White,,,Black,49.4,Asian,13.3,3.71
+Race/Ethnicity,Milwaukee,Carmen High School of Science and Technology Southeast Campus,2024-25,Black,50.0,White,,,Hispanic,50.7,Black,50.0,1.01
+Race/Ethnicity,Milwaukee,Carmen Middle/High School of Science and Technology Northwest Campus,2024-25,Black,59.1,White,,,Black,59.1,Hispanic,50.0,1.18
+Race/Ethnicity,Milwaukee,Clemens Elementary,2024-25,Black,57.0,White,,,Hispanic,57.1,Black,57.0,1.0
+Race/Ethnicity,Milwaukee,Congress Elementary,2024-25,Black,59.5,White,,,Black,59.5,Hispanic,48.1,1.24
+Race/Ethnicity,Milwaukee,Doerfler Elementary,2024-25,Black,60.4,White,,,Black,60.4,Hispanic,48.5,1.25
+Race/Ethnicity,Milwaukee,Eighty-First Street Elementary,2024-25,Black,49.2,White,,,Black,49.2,Two or More,45.5,1.08
+Race/Ethnicity,Milwaukee,Engleburg Elementary,2024-25,Black,61.3,White,,,Black,61.3,Asian,35.0,1.75
+Race/Ethnicity,Milwaukee,Fifty-Third Street Elementary,2024-25,Black,60.3,White,,,Black,60.3,Hispanic,45.8,1.32
+Race/Ethnicity,Milwaukee,Forest Home Elementary,2024-25,Black,41.1,White,,,Black,41.1,Hispanic,31.2,1.32
+Race/Ethnicity,Milwaukee,Gaenslen Elementary,2024-25,Black,34.1,White,,,Two or More,36.4,Black,34.1,1.07
+Race/Ethnicity,Milwaukee,Goodrich Elementary,2024-25,Black,22.2,White,,,Two or More,22.7,Asian,0.0,
+Race/Ethnicity,Milwaukee,Grantosa Drive Elementary,2024-25,Black,63.9,White,,,Black,63.9,Two or More,50.0,1.28
+Race/Ethnicity,Milwaukee,Greenfield Bilingual,2024-25,Black,65.4,White,,,Black,65.4,Hispanic,26.5,2.47
+Race/Ethnicity,Milwaukee,HAPA-Hmong American Peace Academy K3-12,2024-25,Black,,White,,,Asian,10.2,Hispanic,5.3,1.92
+Race/Ethnicity,Milwaukee,Harold S Vincent School of Agricultural Science,2024-25,Black,85.1,White,,,Black,85.1,Asian,60.0,1.42
+Race/Ethnicity,Milwaukee,Hartford Avenue Elementary,2024-25,Black,61.3,White,,,Two or More,66.7,Black,61.3,1.09
+Race/Ethnicity,Milwaukee,Hawley Environmental School,2024-25,Black,39.6,White,,,Black,39.6,Hispanic,23.1,1.71
+Race/Ethnicity,Milwaukee,James Madison Academic Campus,2024-25,Black,90.4,White,,,Black,90.4,Asian,47.6,1.9
+Race/Ethnicity,Milwaukee,King Jr Elementary,2024-25,Black,68.6,White,,,Black,68.6,Hispanic,63.6,1.08
+Race/Ethnicity,Milwaukee,Kluge Elementary,2024-25,Black,52.9,White,,,Black,52.9,Asian,25.0,2.12
+Race/Ethnicity,Milwaukee,Lincoln Avenue Elementary,2024-25,Black,30.3,White,,,Black,30.3,Hispanic,20.1,1.51
+Race/Ethnicity,Milwaukee,Lincoln Middle,2024-25,Black,67.0,White,,,Black,67.0,Hispanic,61.1,1.1
+Race/Ethnicity,Milwaukee,Longfellow Elementary,2024-25,Black,65.8,White,,,Black,65.8,Hispanic,37.1,1.77
+Race/Ethnicity,Milwaukee,Lowell International Elementary,2024-25,Black,26.3,White,,,Hispanic,33.3,Black,26.3,1.27
+Race/Ethnicity,Milwaukee,Manitoba Elementary,2024-25,Black,49.5,White,,,Black,49.5,Two or More,32.1,1.54
+Race/Ethnicity,Milwaukee,Marshall High,2024-25,Black,86.2,White,,,Black,86.2,Hispanic,78.3,1.1
+Race/Ethnicity,Milwaukee,Milwaukee Academy of Chinese Language,2024-25,Black,42.3,White,,,Hispanic,71.1,Asian,30.8,2.31
+Race/Ethnicity,Milwaukee,Milwaukee College Preparatory School -- 36th Street Campus,2024-25,Black,23.1,White,,,Black,23.1,Two or More,13.0,1.78
+Race/Ethnicity,Milwaukee,Milwaukee College Preparatory School -- 38th Street,2024-25,Black,26.5,White,,,Black,26.5,Hispanic,19.0,1.39
+Race/Ethnicity,Milwaukee,Milwaukee Sign Language Elementary,2024-25,Black,72.7,White,,,Black,72.7,Asian,40.9,1.78
+Race/Ethnicity,Milwaukee,Mitchell Elementary,2024-25,Black,63.6,White,,,Black,63.6,Hispanic,52.3,1.22
+Race/Ethnicity,Milwaukee,Morse Mid,2024-25,Black,57.5,White,,,Hispanic,70.8,Asian,21.7,3.26
+Race/Ethnicity,Milwaukee,Neeskara Elementary,2024-25,Black,50.7,White,,,Hispanic,68.6,Black,50.7,1.35
+Race/Ethnicity,Milwaukee,Parkview Elementary,2024-25,Black,47.2,White,,,Black,47.2,Asian,20.2,2.34
+Race/Ethnicity,Milwaukee,River Trail School of Agricultural Science,2024-25,Black,30.0,White,,,Hispanic,34.6,Asian,11.5,3.01
+Race/Ethnicity,Milwaukee,Riverwest Elementary,2024-25,Black,63.3,White,,,Hispanic,66.7,Black,63.3,1.05
+Race/Ethnicity,Milwaukee,Rogers Street Academy,2024-25,Black,58.6,White,,,Black,58.6,Hispanic,35.8,1.64
+Race/Ethnicity,Milwaukee,Story Elementary,2024-25,Black,43.8,White,,,Hispanic,81.0,Asian,11.6,6.98
+Race/Ethnicity,Milwaukee,Stuart Elementary,2024-25,Black,41.4,White,,,Black,41.4,Asian,16.1,2.57
+Race/Ethnicity,Milwaukee,Vieau Elementary,2024-25,Black,44.7,White,,,Black,44.7,Hispanic,30.9,1.45
+Race/Ethnicity,Milwaukee,Zablocki Elementary,2024-25,Black,66.7,White,,,Black,66.7,Asian,34.5,1.93
+Race/Ethnicity,Milwaukee Scholars Charter School,Milwaukee Scholars Charter School,2024-25,Black,37.3,White,,,Two or More,43.2,Black,37.3,1.16
+Race/Ethnicity,Milwaukee Science Education Consortium,Milwaukee Academy of Science,2024-25,Black,47.2,White,,,Black,47.2,Two or More,32.0,1.48
+Race/Ethnicity,Oak Creek-Franklin Joint,Carollton Elementary,2024-25,Black,,White,5.6,,Hispanic,14.8,White,5.6,2.64
+Race/Ethnicity,Oak Creek-Franklin Joint,Cedar Hills Elementary,2024-25,Black,,White,6.3,,Hispanic,18.6,Asian,1.5,12.4
+Race/Ethnicity,Oak Creek-Franklin Joint,Deerfield Elementary,2024-25,Black,,White,5.3,,Hispanic,11.1,White,5.3,2.09
+Race/Ethnicity,Oak Creek-Franklin Joint,Meadowview Elementary,2024-25,Black,,White,5.6,,Hispanic,18.0,White,5.6,3.21
+Race/Ethnicity,Oak Creek-Franklin Joint,Oak Creek East Middle,2024-25,Black,,White,8.7,,Two or More,17.5,White,8.7,2.01
+Race/Ethnicity,Oak Creek-Franklin Joint,Oak Creek West Middle,2024-25,Black,,White,12.0,,Hispanic,17.9,White,12.0,1.49
+Race/Ethnicity,Oak Creek-Franklin Joint,Shepard Hills Elementary,2024-25,Black,,White,9.1,,Asian,14.6,Two or More,5.4,2.7
+Race/Ethnicity,Rocketship Education Wisconsin,Rocketship Southside Community Prep,2024-25,Black,34.6,White,,,Black,34.6,Hispanic,30.3,1.14
+Race/Ethnicity,Rocketship Education Wisconsin,Rocketship Transformation Prep,2024-25,Black,42.5,White,,,Black,42.5,Hispanic,31.8,1.34
+Race/Ethnicity,Saint Francis,Willow Glen Primary School,2024-25,Black,,White,11.0,,Hispanic,24.2,White,11.0,2.2
+Race/Ethnicity,Seeds of Health,Seeds of Health Elementary Program,2024-25,Black,35.4,White,,,Hispanic,36.3,Black,35.4,1.03
+Race/Ethnicity,South Milwaukee,Blakewood Elementary,2024-25,Black,,White,12.6,,Hispanic,27.0,White,12.6,2.14
+Race/Ethnicity,South Milwaukee,E W Luther Elementary,2024-25,Black,,White,8.3,,Hispanic,25.6,White,8.3,3.08
+Race/Ethnicity,South Milwaukee,Lakeview Elementary,2024-25,Black,,White,9.7,,Two or More,30.0,White,9.7,3.09
+Race/Ethnicity,Wauwatosa,Jefferson Elementary,2024-25,Black,14.0,White,0.0,,Hispanic,15.0,White,0.0,
+Race/Ethnicity,Wauwatosa,Wauwatosa Montessori School,2024-25,Black,,White,4.7,,White,4.7,Two or More,4.2,1.12
+Race/Ethnicity,Wauwatosa,Wauwatosa Virtual Academy,2024-25,Black,0.0,White,0.0,,Black,0.0,Black,0.0,
+Race/Ethnicity,West Allis-West Milwaukee,Deeper Learning Virtual Academy,2024-25,Black,,White,0.0,,Hispanic,0.0,Hispanic,0.0,
+Race/Ethnicity,West Allis-West Milwaukee,Franklin Elementary,2024-25,Black,,White,7.5,,Two or More,13.3,White,7.5,1.77
+Race/Ethnicity,West Allis-West Milwaukee,James E Dottke Project-Based Learning High School,2024-25,Black,,White,25.0,,Hispanic,26.7,Two or More,25.0,1.07
+Race/Ethnicity,West Allis-West Milwaukee,Mitchell Elementary,2024-25,Black,,White,2.9,,Hispanic,3.6,White,2.9,1.24
+Race/Ethnicity,Whitefish Bay,Cumberland Elementary,2024-25,Black,,White,0.0,,Two or More,10.5,Hispanic,0.0,
+Race/Ethnicity,Whitefish Bay,Richards Elementary,2024-25,Black,,White,3.9,,White,3.9,Two or More,0.0,
+Race/Ethnicity,Whitnall,Edgerton Elementary,2024-25,Black,,White,1.6,,Hispanic,8.6,Asian,0.0,
+Race/Ethnicity,Woodlands School,Woodlands School - State Street Campus,2024-25,Black,29.2,White,,,Two or More,47.6,Black,29.2,1.63
