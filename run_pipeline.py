@@ -16,6 +16,7 @@ import analyze_school_movers
 import analyze_school_act
 import analyze_school_city
 import analyze_school_forward
+import analyze_school_hs_completion
 import fetch_report_cards
 import analyze_report_cards
 import make_charts
@@ -51,6 +52,12 @@ def main():
         analyze_school_act.run()
     except Exception as e:
         print(f"[warn] act update skipped ({e}); keeping existing files")
+
+    # HS completion (grad rate) fetches its own zips; keep last data on outage.
+    try:
+        analyze_school_hs_completion.run()
+    except Exception as e:
+        print(f"[warn] hs_completion update skipped ({e}); keeping existing files")
 
     fetch_report_cards.run_all()
     analyze_report_cards.run()
