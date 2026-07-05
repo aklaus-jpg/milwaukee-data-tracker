@@ -255,6 +255,7 @@ const METRIC_LABELS = {
 // entries here later. Metrics without an entry simply hide the School field.
 const SCHOOL_TREND_FILES = {
   enrollment: `${REPO_RAW_BASE}/data/processed/enrollment_school_trend.csv`,
+  discipline: `${REPO_RAW_BASE}/data/processed/discipline_school_trend.csv`,
 };
 
 const metricSelect = document.getElementById("metric");
@@ -380,7 +381,8 @@ async function populateSchoolOptions(metric, district) {
   schoolField.style.display = schools.length > 0 ? "flex" : "none";
 }
 
-function drawSeries(series, metric) {
+function drawSeries(series, metric, opts) {
+  opts = opts || {};
   if (series.length === 0) {
     if (currentChart) { currentChart.destroy(); currentChart = null; }
     canvas.style.display = "none";
@@ -391,13 +393,20 @@ function drawSeries(series, metric) {
   canvas.style.display = "block";
   emptyMsg.style.display = "none";
 
-  const labelInfo = METRIC_LABELS[metric];
+  // School-level discipline is a RATE (removals per 100 students), not the raw
+  // count the district-total view shows — relabel the axis and keep a decimal
+  // so it reads honestly. Everything else uses its standard label.
+  const isSchoolRate = opts.school && metric === "discipline";
+  const labelInfo = isSchoolRate
+    ? { unit: "Removals per 100 students", suffix: "" }
+    : METRIC_LABELS[metric];
+  const decimals = isSchoolRate ? 1 : (metric === "chronic_absenteeism" ? 1 : null);
   const latest = series[series.length - 1];
   const deltaClass = latest.pct_change > 0 ? "up" : latest.pct_change < 0 ? "down" : "";
   const deltaSign = latest.pct_change > 0 ? "+" : "";
   latestValueEl.innerHTML = `
     <span class="yr">${latest.year}</span>
-    <span class="num">${formatValue(latest.value, metric)}${labelInfo.suffix}</span>
+    <span class="num">${formatValue(latest.value, metric, decimals)}${labelInfo.suffix}</span>
     ${latest.pct_change != null && !isNaN(latest.pct_change)
       ? `<span class="delta ${deltaClass}">${deltaSign}${Number(latest.pct_change).toFixed(1)}% vs prior year</span>`
       : ""}
@@ -433,7 +442,7 @@ function drawSeries(series, metric) {
           titleFont: { family: "-apple-system, Helvetica Neue, Arial, sans-serif" },
           bodyFont: { family: "-apple-system, Helvetica Neue, Arial, sans-serif" },
           callbacks: {
-            label: (ctx) => `${formatValue(ctx.raw, metric)}${labelInfo.suffix}`,
+            label: (ctx) => `${formatValue(ctx.raw, metric, decimals)}${labelInfo.suffix}`,
           },
         },
       },
@@ -491,11 +500,12 @@ function renderSchoolChart(metric, district, school) {
     schoolNote.style.display = "none";
   }
 
-  drawSeries(series, metric);
+  drawSeries(series, metric, { school: true });
 }
 
-function formatValue(v, metric) {
+function formatValue(v, metric, decimals) {
   if (v == null || isNaN(v)) return "—";
+  if (decimals != null) return Number(v).toFixed(decimals);
   if (metric === "chronic_absenteeism") return Number(v).toFixed(1);
   return Math.round(v).toLocaleString();
 }

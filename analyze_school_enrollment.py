@@ -34,6 +34,11 @@ EXCLUDED_SCHOOL_NAMES = {"Between the Lakes Virtual Academy", "Kiel eSchool"}
 # reviewing its continuous enrollment numbers across the rename.
 SCHOOL_NAME_ALIASES = {
     "Carmen Middle School of Science and Technology South Campus": "Carmen Middle School South",
+    # DPI labeled North Division with a trailing school-code ("0419") only in
+    # 2018-19, then reverted to the plain name from 2019-20 on. Same MPS school —
+    # without this alias the code suffix fragments the trend into a phantom
+    # closure (0419) plus a school that looks like it opened in 2019-20.
+    "North Division High 0419": "North Division High",
 }
 
 # Exact-match overrides applied after generic ", Inc."/"Inc."/"Inc" stripping.

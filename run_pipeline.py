@@ -7,6 +7,7 @@ Run directly:  python run_pipeline.py
 import fetch_dpi
 import analyze
 import analyze_school_enrollment
+import analyze_school_discipline
 import fetch_report_cards
 import analyze_report_cards
 import make_charts
@@ -17,6 +18,7 @@ def main():
     fetch_dpi.fetch_all(cfg)
     analyze.run_all()
     analyze_school_enrollment.run()
+    analyze_school_discipline.run()
 
     fetch_report_cards.run_all()
     analyze_report_cards.run()
