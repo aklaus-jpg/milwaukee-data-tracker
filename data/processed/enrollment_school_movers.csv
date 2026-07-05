@@ -1,0 +1,31 @@
+metric,direction,district,school,prior_year,latest_year,prior_value,latest_value,change,pct_change
+enrollment,increase,Dr. Howard Fuller Collegiate Academy,Dr Howard Fuller Collegiate Academy,2023-24,2024-25,312,608,296,94.9
+enrollment,increase,Milwaukee,Project STAY-Supporting Teachers and Youth,2023-24,2024-25,78,114,36,46.2
+enrollment,increase,Rocketship Education Wisconsin,Rocketship Transformation Prep,2023-24,2024-25,231,313,82,35.5
+enrollment,increase,Milwaukee,Hampton Elementary,2023-24,2024-25,150,194,44,29.3
+enrollment,increase,Milwaukee Science Education Consortium,Milwaukee Academy of Science,2023-24,2024-25,1404,1711,307,21.9
+enrollment,increase,Milwaukee,Brown Street Academy,2023-24,2024-25,204,245,41,20.1
+enrollment,increase,Milwaukee,Roosevelt Middle,2023-24,2024-25,225,270,45,20.0
+enrollment,increase,Milwaukee,South Accelerated Academy,2023-24,2024-25,48,57,9,18.8
+enrollment,increase,Wauwatosa,Vel R Phillips School,2023-24,2024-25,119,139,20,16.8
+enrollment,increase,Milwaukee,Starms Discovery,2023-24,2024-25,230,268,38,16.5
+enrollment,increase,Milwaukee,Hi-Mount Elementary,2023-24,2024-25,143,166,23,16.1
+enrollment,increase,Milwaukee,Next Door Charter,2023-24,2024-25,107,120,13,12.1
+enrollment,increase,Milwaukee,Hopkins Lloyd Community School,2023-24,2024-25,128,143,15,11.7
+enrollment,increase,Milwaukee,Cass Street Elementary,2023-24,2024-25,281,312,31,11.0
+enrollment,increase,Milwaukee,Honey Creek Elementary,2023-24,2024-25,354,393,39,11.0
+enrollment,decrease,Milwaukee,Sherman Elementary,2023-24,2024-25,242,147,-95,-39.3
+enrollment,decrease,West Allis-West Milwaukee,Deeper Learning Virtual Academy,2023-24,2024-25,134,88,-46,-34.3
+enrollment,decrease,Milwaukee,Wisconsin Conservatory of Lifelong Learning,2023-24,2024-25,431,286,-145,-33.6
+enrollment,decrease,Milwaukee,ASSATA High,2023-24,2024-25,116,78,-38,-32.8
+enrollment,decrease,Milwaukee,Hartford Avenue Elementary,2023-24,2024-25,380,256,-124,-32.6
+enrollment,decrease,Milwaukee,Clarke Street Elementary,2023-24,2024-25,223,167,-56,-25.1
+enrollment,decrease,Milwaukee,King International Baccalaureate Middle,2023-24,2024-25,210,159,-51,-24.3
+enrollment,decrease,Milwaukee,Starms Early Childhood,2023-24,2024-25,269,205,-64,-23.8
+enrollment,decrease,Milwaukee,James Madison Academic Campus,2023-24,2024-25,595,468,-127,-21.3
+enrollment,decrease,Wauwatosa,Wauwatosa Virtual Academy,2023-24,2024-25,115,91,-24,-20.9
+enrollment,decrease,Milwaukee,Siefert Elementary,2023-24,2024-25,216,174,-42,-19.4
+enrollment,decrease,Milwaukee,Auer Avenue Elementary,2023-24,2024-25,187,151,-36,-19.3
+enrollment,decrease,Whitnall,CORE4 Collaborating on Readiness Education for Four-Year-Olds,2023-24,2024-25,106,87,-19,-17.9
+enrollment,decrease,Milwaukee,Kilbourn Elementary,2023-24,2024-25,258,218,-40,-15.5
+enrollment,decrease,Woodlands School,Woodlands School,2023-24,2024-25,370,313,-57,-15.4

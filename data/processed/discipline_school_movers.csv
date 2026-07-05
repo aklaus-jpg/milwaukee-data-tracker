@@ -1,0 +1,31 @@
+metric,direction,district,school,prior_year,latest_year,prior_value,latest_value,change,pct_change
+discipline,increase,Milwaukee,Wisconsin Conservatory of Lifelong Learning,2023-24,2024-25,167.98,349.65,181.67,108.1
+discipline,increase,Milwaukee Scholars Charter School,Milwaukee Scholars Charter School,2023-24,2024-25,89.6,160.34,70.74,79.0
+discipline,increase,Milwaukee,Alliance School of Milwaukee,2023-24,2024-25,47.74,102.84,55.1,115.4
+discipline,increase,Milwaukee,River Trail School of Agricultural Science,2023-24,2024-25,30.27,79.06,48.79,161.2
+discipline,increase,Milwaukee,Lad Lake Synergy School,2023-24,2024-25,57.14,100.0,42.86,75.0
+discipline,increase,Milwaukee,Carmen Middle/High School of Science and Technology Northwest Campus,2023-24,2024-25,3.41,46.01,42.6,1249.3
+discipline,increase,Milwaukee,Wedgewood Park School,2023-24,2024-25,67.21,109.43,42.22,62.8
+discipline,increase,Milwaukee,Starms Discovery,2023-24,2024-25,26.52,60.07,33.55,126.5
+discipline,increase,Milwaukee,Banner Preparatory School of Milwaukee,2023-24,2024-25,134.09,165.31,31.22,23.3
+discipline,increase,Milwaukee,ASSATA High,2023-24,2024-25,20.69,48.72,28.03,135.5
+discipline,increase,Milwaukee,Harold S Vincent School of Agricultural Science,2023-24,2024-25,181.5,208.67,27.17,15.0
+discipline,increase,Milwaukee,Carson Academy,2023-24,2024-25,40.06,67.18,27.12,67.7
+discipline,increase,Wauwatosa,Vel R Phillips School,2023-24,2024-25,23.53,50.36,26.83,114.0
+discipline,increase,Milwaukee,King Jr Elementary,2023-24,2024-25,62.75,88.45,25.7,41.0
+discipline,increase,Milwaukee,Franklin Elementary,2023-24,2024-25,56.4,81.03,24.63,43.7
+discipline,decrease,Milwaukee,Morse Mid,2023-24,2024-25,159.62,64.75,-94.87,-59.4
+discipline,decrease,Milwaukee,King International Baccalaureate Middle,2023-24,2024-25,223.33,130.19,-93.14,-41.7
+discipline,decrease,Milwaukee,Clarke Street Elementary,2023-24,2024-25,139.46,56.89,-82.57,-59.2
+discipline,decrease,Dr. Howard Fuller Collegiate Academy,Dr Howard Fuller Collegiate Academy,2023-24,2024-25,126.6,63.49,-63.11,-49.8
+discipline,decrease,Milwaukee,Milwaukee Sign Language Elementary,2023-24,2024-25,144.69,85.68,-59.01,-40.8
+discipline,decrease,Milwaukee,Vincent Accelerated Academy,2023-24,2024-25,83.67,47.17,-36.5,-43.6
+discipline,decrease,Milwaukee,Curtin Elementary,2023-24,2024-25,48.06,13.29,-34.77,-72.3
+discipline,decrease,Milwaukee,Andrew S Douglas Middle,2023-24,2024-25,217.92,183.96,-33.96,-15.6
+discipline,decrease,Milwaukee,Riverwest Elementary,2023-24,2024-25,45.09,13.52,-31.57,-70.0
+discipline,decrease,Milwaukee,Audubon Technology and Communication Middle,2023-24,2024-25,169.02,138.84,-30.18,-17.9
+discipline,decrease,Milwaukee,South Division High,2023-24,2024-25,120.78,90.9,-29.88,-24.7
+discipline,decrease,Milwaukee,Hopkins Lloyd Community School,2023-24,2024-25,34.38,9.09,-25.29,-73.6
+discipline,decrease,Rocketship Education Wisconsin,Rocketship Transformation Prep,2023-24,2024-25,36.36,11.5,-24.86,-68.4
+discipline,decrease,Milwaukee,Hartford Avenue Elementary,2023-24,2024-25,86.58,61.72,-24.86,-28.7
+discipline,decrease,Milwaukee,Story Elementary,2023-24,2024-25,73.77,52.05,-21.72,-29.4

@@ -8,6 +8,7 @@ import fetch_dpi
 import analyze
 import analyze_school_enrollment
 import analyze_school_discipline
+import analyze_school_movers
 import fetch_report_cards
 import analyze_report_cards
 import make_charts
@@ -19,6 +20,7 @@ def main():
     analyze.run_all()
     analyze_school_enrollment.run()
     analyze_school_discipline.run()
+    analyze_school_movers.run()
 
     fetch_report_cards.run_all()
     analyze_report_cards.run()

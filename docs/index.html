@@ -174,6 +174,94 @@
     margin-bottom: 1rem;
   }
 
+  .movers {
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    padding: 1.5rem 1.75rem;
+    margin-top: 1.5rem;
+  }
+
+  .movers h3 {
+    margin: 0 0 0.2rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  .movers-sub {
+    font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+    margin: 0 0 1.15rem;
+  }
+
+  .movers-cols {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.75rem;
+  }
+
+  .movers-col {
+    flex: 1 1 320px;
+    min-width: 0;
+  }
+
+  .movers-col h4 {
+    font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.72rem;
+    color: var(--ink-soft);
+    margin: 0 0 0.4rem;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.4rem;
+  }
+
+  .mover-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.75rem;
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: 0;
+    border-bottom: 1px solid var(--rule);
+    padding: 0.5rem 0.25rem;
+    cursor: pointer;
+    font-family: inherit;
+    color: inherit;
+  }
+
+  .mover-row:last-child { border-bottom: 0; }
+  .mover-row:hover { background: rgba(184, 135, 59, 0.08); }
+  .mover-row:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; }
+
+  .mover-name { font-size: 0.95rem; }
+
+  .mover-name .dist {
+    display: block;
+    font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.72rem;
+    color: var(--ink-soft);
+  }
+
+  .mover-change {
+    font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    white-space: nowrap;
+  }
+
+  .mover-change.up { color: var(--down); }
+  .mover-change.down { color: var(--up); }
+
+  .movers-empty {
+    font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+    color: var(--ink-soft);
+    font-size: 0.85rem;
+    margin: 0.4rem 0;
+  }
+
   footer {
     font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
     max-width: 1100px;
@@ -224,6 +312,21 @@
     <canvas id="trendChart"></canvas>
     <p class="empty" id="emptyMsg" style="display:none;">No data found for this selection yet.</p>
   </div>
+
+  <div class="movers" id="moversPanel" style="display:none;">
+    <h3 id="moversTitle">Biggest movers</h3>
+    <p class="movers-sub" id="moversSub"></p>
+    <div class="movers-cols">
+      <div class="movers-col">
+        <h4>Largest increases</h4>
+        <div id="moversUp"></div>
+      </div>
+      <div class="movers-col">
+        <h4>Largest decreases</h4>
+        <div id="moversDown"></div>
+      </div>
+    </div>
+  </div>
 </main>
 
 <footer>
@@ -267,6 +370,11 @@ const latestValueEl = document.getElementById("latestValue");
 const emptyMsg = document.getElementById("emptyMsg");
 const schoolNote = document.getElementById("schoolNote");
 const canvas = document.getElementById("trendChart");
+const moversPanel = document.getElementById("moversPanel");
+const moversTitle = document.getElementById("moversTitle");
+const moversSub = document.getElementById("moversSub");
+const moversUp = document.getElementById("moversUp");
+const moversDown = document.getElementById("moversDown");
 
 let currentChart = null;
 let cache = {}; // metric -> parsed district-level rows
@@ -510,6 +618,136 @@ function formatValue(v, metric, decimals) {
   return Math.round(v).toLocaleString();
 }
 
+// ---- Biggest movers (school-level, latest-year vs prior) ----
+// Per-metric rules. Ranking key differs by metric on purpose: discipline is
+// already a rate, so the honest "biggest change" is the absolute rate-point
+// swing; enrollment is a headcount, so percent change compares a small and a
+// large school fairly. Reliability gates mirror the concerns baked into the
+// processing scripts — never rank on a suppressed/small-count discipline year,
+// and drop tiny enrollments whose percentages whipsaw on a few students.
+const MOVERS_CONFIG = {
+  discipline: {
+    rankBy: "delta",
+    minLatest: null,
+    reliable: (latest, prior) => {
+      const bad = /Small count|Suppressed/;
+      return !bad.test(latest.status_flag || "") && !bad.test(prior.status_flag || "");
+    },
+    fmtChange: (delta) => `${delta >= 0 ? "+" : "−"}${Math.abs(delta).toFixed(1)} per 100`,
+    note: "removals per 100 students; small-count and suppressed years excluded",
+  },
+  enrollment: {
+    rankBy: "pct",
+    minLatest: 50,
+    reliable: () => true,
+    fmtChange: (delta, pct) => `${pct >= 0 ? "+" : "−"}${Math.abs(pct).toFixed(1)}%`,
+    note: "by percent change; schools under 50 students excluded",
+  },
+};
+
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, (c) =>
+    ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+
+function computeMovers(metric) {
+  const cfg = MOVERS_CONFIG[metric];
+  const rows = schoolCache[metric] || [];
+  if (!cfg || rows.length === 0) return null;
+
+  const years = [...new Set(rows.map((r) => String(r.year)))].sort();
+  const latestYear = years[years.length - 1];
+  const priorYear = years.length >= 2 ? years[years.length - 2] : null;
+
+  const groups = new Map();
+  rows.forEach((r) => {
+    const k = `${r.district}||${r.school}`;
+    if (!groups.has(k)) groups.set(k, []);
+    groups.get(k).push(r);
+  });
+
+  const movers = [];
+  groups.forEach((list) => {
+    list.sort((a, b) => String(a.year).localeCompare(String(b.year)));
+    const latest = list[list.length - 1];
+    if (String(latest.year) !== latestYear) return; // not reporting in latest year
+    const prior = list[list.length - 2];
+    if (!prior) return;
+    const lv = latest.value, pv = prior.value;
+    if (lv == null || isNaN(lv) || pv == null || isNaN(pv)) return;
+    if (cfg.minLatest != null && lv < cfg.minLatest) return;
+    if (!cfg.reliable(latest, prior)) return;
+    const delta = lv - pv;
+    const pct = pv !== 0 ? (delta / pv) * 100 : null;
+    const rank = cfg.rankBy === "pct" ? pct : delta;
+    if (rank == null || isNaN(rank)) return;
+    movers.push({
+      district: latest.district, school: latest.school, delta, pct, rank,
+      changeStr: cfg.fmtChange(delta, pct),
+    });
+  });
+
+  return { latestYear, priorYear, movers };
+}
+
+function moverRow(m, dir) {
+  const btn = document.createElement("button");
+  btn.className = "mover-row";
+  btn.type = "button";
+  btn.innerHTML =
+    `<span class="mover-name">${escapeHtml(m.school)}` +
+    `<span class="dist">${escapeHtml(m.district)}</span></span>` +
+    `<span class="mover-change ${dir}">${m.changeStr}</span>`;
+  btn.addEventListener("click", () => selectMoverSchool(m.district, m.school));
+  return btn;
+}
+
+function renderMoversList(el, list, dir) {
+  el.innerHTML = "";
+  if (list.length === 0) {
+    el.innerHTML = '<p class="movers-empty">None this year.</p>';
+    return;
+  }
+  list.forEach((m) => el.appendChild(moverRow(m, dir)));
+}
+
+async function renderMovers(metric) {
+  await loadSchoolMetric(metric);
+  const result = computeMovers(metric);
+  if (!result || result.movers.length === 0) {
+    moversPanel.style.display = "none";
+    return;
+  }
+  const { latestYear, priorYear, movers } = result;
+  const sorted = movers.slice().sort((a, b) => b.rank - a.rank);
+  const N = 8;
+  const ups = sorted.filter((m) => m.rank > 0).slice(0, N);
+  const downs = sorted.filter((m) => m.rank < 0).slice(-N).reverse();
+
+  const label = metricSelect.options[metricSelect.selectedIndex].text;
+  moversTitle.textContent = `Biggest movers — ${label}`;
+  moversSub.textContent =
+    `Change from ${priorYear} to ${latestYear}, ${MOVERS_CONFIG[metric].note}. ` +
+    `A spike is a reporting lead, not a fact — verify before publishing.`;
+  renderMoversList(moversUp, ups, "up");
+  renderMoversList(moversDown, downs, "down");
+  moversPanel.style.display = "block";
+}
+
+async function selectMoverSchool(normDistrict, school) {
+  // District dropdown holds raw DPI names; match by normalized form.
+  let matched = null;
+  Array.from(districtSelect.options).forEach((opt) => {
+    if (normalizeDistrictName(opt.value) === normDistrict) matched = opt.value;
+  });
+  if (matched == null) return;
+  districtSelect.value = matched;
+  await populateSchoolOptions(metricSelect.value, matched);
+  schoolSelect.value = school;
+  renderCurrent();
+  document.querySelector(".chart-wrap").scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
 function renderCurrent() {
   const metric = metricSelect.value;
   const district = districtSelect.value;
@@ -533,10 +771,12 @@ async function onMetricChange(keepDistrict) {
     latestValueEl.innerHTML = "";
     schoolField.style.display = "none";
     schoolNote.style.display = "none";
+    moversPanel.style.display = "none";
     return;
   }
   await populateSchoolOptions(metric, districtSelect.value);
   renderCurrent();
+  renderMovers(metric);
 }
 
 async function onDistrictChange() {
