@@ -372,6 +372,7 @@
         <option value="enrollment">Enrollment</option>
         <option value="chronic_absenteeism">Chronic Absenteeism</option>
         <option value="discipline">Discipline (Suspensions/Expulsions)</option>
+        <option value="forward">State Test (Forward Exam)</option>
         <option value="report_card">Report Card Score</option>
       </select>
     </div>
@@ -389,6 +390,13 @@
         <option value="all">Suspensions &amp; expulsions</option>
         <option value="suspension">Out-of-school suspensions</option>
         <option value="expulsion">Expulsions</option>
+      </select>
+    </div>
+    <div class="field" id="subjectField" style="display:none;">
+      <label for="subject">Subject</label>
+      <select id="subject">
+        <option value="ela">ELA (reading/writing)</option>
+        <option value="math">Math</option>
       </select>
     </div>
     <div class="field" id="dimensionField" style="display:none;">
@@ -481,7 +489,15 @@ const METRIC_LABELS = {
   chronic_absenteeism: { unit: "% Chronically Absent", suffix: "%" },
   discipline: { unit: "Disciplinary Removals", suffix: "" },
   report_card: { unit: "Accountability Score", suffix: "" },
+  forward: { unit: "% Proficient or Advanced", suffix: "%" },
 };
+
+// Forward Exam subjects exposed in the UI (Science/Social Studies are ingested
+// but parked). value column is % proficient; the y-axis reads "higher = better".
+const FORWARD_SUBJECTS = { ela: "ELA", math: "Math" };
+function forwardSubject() {
+  return (metricSelect.value === "forward" && subjectSelect.value) || "ela";
+}
 
 // Only enrollment has school-level data so far — other metrics will get
 // entries here later. Metrics without an entry simply hide the School field.
@@ -489,6 +505,7 @@ const SCHOOL_TREND_FILES = {
   enrollment: `${REPO_RAW_BASE}/data/processed/enrollment_school_trend.csv`,
   discipline: `${REPO_RAW_BASE}/data/processed/discipline_school_trend.csv`,
   chronic_absenteeism: `${REPO_RAW_BASE}/data/processed/chronic_absenteeism_school_trend.csv`,
+  forward: `${REPO_RAW_BASE}/data/processed/forward_school_trend.csv`,
 };
 
 // Metrics with a student-group breakdown + disparity view. hasCategory =
@@ -506,6 +523,13 @@ const GROUP_METRICS = {
     groups: `${REPO_RAW_BASE}/data/processed/absenteeism_school_groups_trend.csv`,
     disparity: `${REPO_RAW_BASE}/data/processed/absenteeism_disparity.csv`,
     hasCategory: false, disparityUnit: "pct", ratioNoun: "chronic absenteeism rate",
+  },
+  forward: {
+    mode: "disparity",
+    groups: `${REPO_RAW_BASE}/data/processed/forward_school_groups.csv`,
+    disparity: `${REPO_RAW_BASE}/data/processed/forward_disparity.csv`,
+    hasCategory: false, hasSubject: true, disparityUnit: "pct",
+    ratioNoun: "Forward proficiency", higherIsBetter: true,
   },
   // Enrollment by group is demographic COMPOSITION (share of school), not a rate
   // disparity — so no leaderboard, just a composition breakdown + a selectable
@@ -548,6 +572,8 @@ const districtSelect = document.getElementById("district");
 const schoolField = document.getElementById("schoolField");
 const categoryField = document.getElementById("categoryField");
 const categorySelect = document.getElementById("category");
+const subjectField = document.getElementById("subjectField");
+const subjectSelect = document.getElementById("subject");
 const dimensionField = document.getElementById("dimensionField");
 const dimensionSelect = document.getElementById("dimension");
 const groupField = document.getElementById("groupField");
@@ -801,6 +827,18 @@ function renderChart(metric, district) {
   schoolNote.style.display = "none";
   const metricLabel = metricSelect.options[metricSelect.selectedIndex].text;
 
+  // Forward is reported per school (no district roll-up in this tracker) — prompt
+  // for a school rather than showing an empty district-total chart.
+  if (!METRIC_FILES[metric]) {
+    chartTitle.textContent = `${district} — ${metricLabel}`;
+    if (currentChart) { currentChart.destroy(); currentChart = null; }
+    canvas.style.display = "none";
+    latestValueEl.innerHTML = "";
+    emptyMsg.textContent = "Choose a school above — Forward Exam results are reported per school.";
+    emptyMsg.style.display = "block";
+    return;
+  }
+
   // District totals aren't split by removal type (that only exists school-level).
   // Rather than show the combined number under a "Expulsions" label — which would
   // be misleading — prompt the user to pick a school.
@@ -879,23 +917,38 @@ function populateGroupOptions(dimension) {
 function renderSchoolChart(metric, district, school) {
   const normDistrict = normalizeDistrictName(district);
   const cat = metric === "discipline" ? disciplineCategory() : null;
+  const subj = metric === "forward" ? forwardSubject() : null;
   const grp = isGroupMetric(metric) ? disciplineGroup() : "";
   const dim = isGroupMetric(metric) ? disciplineDimension() : null;
 
-  // A specific student group pulls from that metric's per-group file; "All
-  // students" uses the standard school trend. (Only discipline has a category.)
+  // Category (discipline) and subject (Forward) both narrow the long-format
+  // rows; a specific student group pulls from that metric's per-group file.
+  const matchCatSubj = (r) => (cat === null || r.category === cat) && (subj === null || r.subject === subj);
   const source = grp
-    ? (groupsCacheByMetric[metric] || []).filter(r =>
-        r.dimension === dim && r.group === grp && (cat === null || r.category === cat))
-    : (schoolCache[metric] || []).filter(r => cat === null || r.category === cat);
+    ? (groupsCacheByMetric[metric] || []).filter(r => r.dimension === dim && r.group === grp && matchCatSubj(r))
+    : (schoolCache[metric] || []).filter(matchCatSubj);
   const series = source
     .filter(r => r.district === normDistrict && r.school === school)
     .sort((a, b) => String(a.year).localeCompare(String(b.year)));
 
   const catInfo = cat ? DISCIPLINE_CATEGORIES[cat] : null;
   const catSuffix = catInfo && cat !== "all" ? ` · ${catInfo.label}` : "";
+  const subjSuffix = subj ? ` · ${FORWARD_SUBJECTS[subj]}` : "";
   const grpSuffix = grp ? ` · ${groupLabel(grp)}` : "";
-  chartTitle.textContent = `${school}, ${normDistrict} — ${metricSelect.options[metricSelect.selectedIndex].text}${catSuffix}${grpSuffix}`;
+  chartTitle.textContent = `${school}, ${normDistrict} — ${metricSelect.options[metricSelect.selectedIndex].text}${catSuffix}${subjSuffix}${grpSuffix}`;
+
+  // Distinct empty state: a school with no grade 3–8 rows never took Forward —
+  // that's different from a suppressed gap (which stays in the series) or a real
+  // 0% (a plotted point).
+  if (metric === "forward" && series.length === 0) {
+    if (currentChart) { currentChart.destroy(); currentChart = null; }
+    canvas.style.display = "none";
+    latestValueEl.innerHTML = "";
+    schoolNote.style.display = "none";
+    emptyMsg.textContent = "No Forward-tested grades here — the exam covers grades 3–8 only.";
+    emptyMsg.style.display = "block";
+    return;
+  }
 
   // "No data after [year]" is identical on every row of a closed-out series —
   // show it once. Other flags (authorizer changes, small-count privacy notes)
@@ -918,6 +971,7 @@ function renderSchoolChart(metric, district, school) {
 
   const opts = { school: true };
   if (catInfo) { opts.unitLabel = catInfo.axis; opts.decimals = catInfo.decimals; }
+  if (metric === "forward") { opts.unitLabel = `% proficient — ${FORWARD_SUBJECTS[subj]}`; opts.decimals = 1; }
   drawSeries(series, metric, opts);
 }
 
@@ -953,6 +1007,16 @@ function moversConfig(metric, category) {
       note: "change in percentage points; schools under 100 students excluded",
     };
   }
+  if (metric === "forward") {
+    // % proficient in percentage points. Higher is better, so an increase is
+    // good — the mover colors flip (goodWhenUp).
+    return {
+      rankBy: "delta", minLatest: null, minEnroll: 100, showBase: true, goodWhenUp: true,
+      reliable: (l, p) => !/Suppressed/.test(l.status_flag || "") && !/Suppressed/.test(p.status_flag || ""),
+      fmtChange: (delta) => `${delta >= 0 ? "+" : "−"}${Math.abs(delta).toFixed(1)} pts`,
+      note: "change in % proficient (percentage points); schools with under 100 tested excluded",
+    };
+  }
   if (metric === "discipline") {
     if (category === "expulsion") {
       // Expulsions are a raw count — small numbers are meaningful, so only
@@ -983,10 +1047,12 @@ function escapeHtml(s) {
 
 function computeMovers(metric) {
   const category = metric === "discipline" ? disciplineCategory() : null;
+  const subject = metric === "forward" ? forwardSubject() : null;
   const cfg = moversConfig(metric, category);
   let rows = schoolCache[metric] || [];
   if (!cfg || rows.length === 0) return null;
   if (category !== null) rows = rows.filter((r) => r.category === category);
+  if (subject !== null) rows = rows.filter((r) => r.subject === subject);
 
   const years = [...new Set(rows.map((r) => String(r.year)))].sort();
   const latestYear = years[years.length - 1];
@@ -1010,9 +1076,10 @@ function computeMovers(metric) {
     const lv = latest.value, pv = prior.value;
     if (lv == null || isNaN(lv) || pv == null || isNaN(pv)) return;
     if (cfg.minLatest != null && lv < cfg.minLatest) return;
-    // base size (enrollment). discipline carries an enrollment column;
-    // enrollment's own value IS the headcount.
-    const base = latest.enrollment != null ? latest.enrollment : lv;
+    // base size: discipline/absenteeism carry an enrollment column; Forward
+    // carries "tested"; enrollment's own value IS the headcount.
+    const base = latest.enrollment != null ? latest.enrollment
+      : (latest.tested != null ? latest.tested : lv);
     if (cfg.minEnroll != null && (base == null || isNaN(base) || base < cfg.minEnroll)) return;
     if (!cfg.reliable(latest, prior)) return;
     const delta = lv - pv;
@@ -1067,13 +1134,18 @@ async function renderMovers(metric) {
 
   const label = metricSelect.options[metricSelect.selectedIndex].text;
   const catSuffix = category && category !== "all"
-    ? ` · ${DISCIPLINE_CATEGORIES[category].label}` : "";
+    ? ` · ${DISCIPLINE_CATEGORIES[category].label}`
+    : (metric === "forward" ? ` · ${FORWARD_SUBJECTS[forwardSubject()]}` : "");
   moversTitle.textContent = `Biggest movers — ${label}${catSuffix}`;
   moversSub.textContent =
     `Change from ${priorYear} to ${latestYear}, ${cfg.note}. ` +
     `A spike is a reporting lead, not a fact — verify before publishing.`;
-  renderMoversList(moversUp, ups, "up", cfg.showBase);
-  renderMoversList(moversDown, downs, "down", cfg.showBase);
+  // Colors track good/bad: for most metrics an increase is bad (red); for
+  // Forward proficiency an increase is good, so flip.
+  const upClass = cfg.goodWhenUp ? "down" : "up";
+  const downClass = cfg.goodWhenUp ? "up" : "down";
+  renderMoversList(moversUp, ups, upClass, cfg.showBase);
+  renderMoversList(moversDown, downs, downClass, cfg.showBase);
   moversPanel.style.display = "block";
 }
 
@@ -1098,10 +1170,11 @@ function renderDisparity(district, school) {
   const dim = disciplineDimension();
   const dimInfo = DISCIPLINE_DIMENSIONS[dim];
   const cat = metric === "discipline" ? disciplineCategory() : null;
+  const subj = metric === "forward" ? forwardSubject() : null;
   const catInfo = cat ? DISCIPLINE_CATEGORIES[cat] : null;
   const rows = (groupsCacheByMetric[metric] || []).filter(r =>
     r.dimension === dim && r.district === normDistrict && r.school === school
-    && (cat === null || r.category === cat));
+    && (cat === null || r.category === cat) && (subj === null || r.subject === subj));
   if (rows.length === 0) { disparityPanel.style.display = "none"; return; }
 
   const latestYear = rows.map(r => String(r.year)).sort().slice(-1)[0];
@@ -1264,9 +1337,10 @@ async function renderDispBoard() {
   const trail = gm.disparityUnit === "rate" ? " per 100" : "";
   // Rank by the focus-vs-reference ratio (Black/White, SwD/SwoD, ...) — a
   // cleaner headline than highest/lowest, which can hinge on a tiny group.
+  const subj = metric === "forward" ? forwardSubject() : null;
   const rows = (disparityCacheByMetric[metric] || []).filter(r =>
     r.dimension === dim && r.focus_reference_ratio != null && !isNaN(r.focus_reference_ratio)
-    && schoolInScope(r.district, r.school));
+    && (subj === null || r.subject === subj) && schoolInScope(r.district, r.school));
   if (rows.length === 0) { dispBoardPanel.style.display = "none"; return; }
   const top = rows.slice().sort((a, b) => b.focus_reference_ratio - a.focus_reference_ratio).slice(0, 12);
   dispBoardList.innerHTML = "";
@@ -1281,15 +1355,18 @@ async function renderDispBoard() {
     btn.addEventListener("click", () => selectDisparitySchool(r.district, r.school));
     dispBoardList.appendChild(btn);
   });
-  dispBoardTitle.textContent = `Biggest ${dimInfo.label} disparities`;
+  dispBoardTitle.textContent = `Biggest ${dimInfo.label} ${metric === "forward" ? "achievement gaps" : "disparities"}`;
+  // Direction is data-driven (Forward's higher group is White, discipline's is
+  // Black) — read it off the top row so the label matches the numbers.
+  const noun = metric === "forward" ? `Forward ${FORWARD_SUBJECTS[subj]} proficiency` : gm.ratioNoun;
   dispBoardSub.textContent =
-    `${gm.ratioNoun[0].toUpperCase() + gm.ratioNoun.slice(1)}, ${groupLabel(dimInfo.focus)} vs ${groupLabel(dimInfo.reference)}, ${top[0].year}. ` +
+    `${noun[0].toUpperCase() + noun.slice(1)}, ${groupLabel(top[0].focus_group)} vs ${groupLabel(top[0].reference_group)}, ${top[0].year}. ` +
     `Click a school for its breakdown. A gap is a lead, not a finding — verify before publishing.`;
   dispBoardPanel.style.display = "block";
 }
 
 // ---- Cross-school scatter: student body (% Black) vs the selected outcome ----
-const SCATTER_METRICS = new Set(["discipline", "chronic_absenteeism"]);
+const SCATTER_METRICS = new Set(["discipline", "chronic_absenteeism", "forward"]);
 
 function bubbleRadius(enr) {
   if (enr == null || isNaN(enr)) return 5;
@@ -1298,6 +1375,7 @@ function bubbleRadius(enr) {
 
 function scatterYInfo(metric) {
   if (metric === "chronic_absenteeism") return { label: "% chronically absent", suffix: "%", dec: 1 };
+  if (metric === "forward") return { label: `% proficient — ${FORWARD_SUBJECTS[forwardSubject()]}`, suffix: "%", dec: 1 };
   const ci = DISCIPLINE_CATEGORIES[disciplineCategory()];
   if (ci.unit === "count") return { label: "expulsions (count)", suffix: "", dec: 0 };
   return { label: ci.axis.replace(" students", ""), suffix: " /100", dec: 1 };
@@ -1306,9 +1384,10 @@ function scatterYInfo(metric) {
 async function renderScatter(metric) {
   if (!SCATTER_METRICS.has(metric)) { scatterPanel.style.display = "none"; return; }
   await loadGroups("enrollment");   // % Black on the x-axis
-  await loadDisparity(metric);      // Black/white gap for the ring
+  await loadDisparity(metric);      // race gap for the ring
 
   const cat = metric === "discipline" ? disciplineCategory() : null;
+  const subj = metric === "forward" ? forwardSubject() : null;
   const yInfo = scatterYInfo(metric);
 
   const eg = groupsCacheByMetric["enrollment"] || [];
@@ -1321,12 +1400,14 @@ async function renderScatter(metric) {
 
   const gapBy = {};
   (disparityCacheByMetric[metric] || []).forEach(r => {
-    if (r.dimension === "Race/Ethnicity" && r.focus_reference_ratio != null && !isNaN(r.focus_reference_ratio))
+    if (r.dimension === "Race/Ethnicity" && (subj === null || r.subject === subj)
+        && r.focus_reference_ratio != null && !isNaN(r.focus_reference_ratio))
       gapBy[`${r.district}||${r.school}`] = r.focus_reference_ratio;
   });
 
   let rows = schoolCache[metric] || [];
   if (cat !== null) rows = rows.filter(r => r.category === cat);
+  if (subj !== null) rows = rows.filter(r => r.subject === subj);
   const yYear = rows.reduce((m, r) => (String(r.year) > m ? String(r.year) : m), "");
 
   const bubbles = [];
@@ -1336,8 +1417,9 @@ async function renderScatter(metric) {
     const key = `${r.district}||${r.school}`;
     const x = pctBlack[key], y = r.value;
     if (x == null || isNaN(x) || y == null || isNaN(y)) return;
-    bubbles.push({ x: +Number(x).toFixed(1), y, r: bubbleRadius(r.enrollment),
-      gap: gapBy[key] || null, school: r.school, district: r.district, enr: r.enrollment });
+    const size = r.enrollment != null ? r.enrollment : r.tested; // Forward has tested, not enrollment
+    bubbles.push({ x: +Number(x).toFixed(1), y, r: bubbleRadius(size),
+      gap: gapBy[key] || null, school: r.school, district: r.district, enr: size });
   });
   if (bubbles.length < 3) { scatterPanel.style.display = "none"; return; }
 
@@ -1431,6 +1513,7 @@ async function onMetricChange(keepDistrict) {
   const isDisc = metric === "discipline";
   const isGrp = isGroupMetric(metric);
   categoryField.style.display = (isGrp && GROUP_METRICS[metric].hasCategory) ? "flex" : "none";
+  subjectField.style.display = (isGrp && GROUP_METRICS[metric].hasSubject) ? "flex" : "none";
   dimensionField.style.display = isGrp ? "flex" : "none";
   groupField.style.display = isGrp ? "flex" : "none";
   if (isGrp) {
@@ -1439,8 +1522,17 @@ async function onMetricChange(keepDistrict) {
     if (GROUP_METRICS[metric].mode === "disparity") await loadDisparity(metric);
   }
   if (isDisc) await loadIncidents();
-  const rows = await loadMetric(metric);
-  const districts = districtsFor(rows);
+  // Most metrics have a district-level file; Forward is school-only, so derive
+  // its district list from the school file instead.
+  let districts;
+  if (METRIC_FILES[metric]) {
+    districts = districtsFor(await loadMetric(metric));
+  } else {
+    const srows = await loadSchoolMetric(metric);
+    const names = new Set();
+    srows.forEach(r => { if (r.district && districtInScope(r.district)) names.add(r.district); });
+    districts = Array.from(names).sort((a, b) => a === "Milwaukee" ? -1 : b === "Milwaukee" ? 1 : a.localeCompare(b));
+  }
   populateDistrictOptions(districts, keepDistrict);
   if (districts.length === 0) {
     chartTitle.textContent = "No data available";
@@ -1475,6 +1567,13 @@ function onCategoryChange() {
   renderScatter(metricSelect.value);
 }
 
+function onSubjectChange() {
+  renderCurrent();
+  renderMovers(metricSelect.value);
+  renderScatter(metricSelect.value);
+  renderDispBoard();
+}
+
 function onGroupChange() {
   renderCurrent();
 }
@@ -1495,6 +1594,7 @@ metricSelect.addEventListener("change", () => onMetricChange(false));
 districtSelect.addEventListener("change", onDistrictChange);
 schoolSelect.addEventListener("change", renderCurrent);
 categorySelect.addEventListener("change", onCategoryChange);
+subjectSelect.addEventListener("change", onSubjectChange);
 dimensionSelect.addEventListener("change", onDimensionChange);
 groupSelect.addEventListener("change", onGroupChange);
 // Switching City ⟷ County re-filters the district list, school lists, movers,
