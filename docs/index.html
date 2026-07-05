@@ -482,14 +482,24 @@ const SCHOOL_TREND_FILES = {
 // (per-100 rate vs a straight percent).
 const GROUP_METRICS = {
   discipline: {
+    mode: "disparity",
     groups: `${REPO_RAW_BASE}/data/processed/discipline_school_groups_trend.csv`,
     disparity: `${REPO_RAW_BASE}/data/processed/discipline_race_disparity.csv`,
     hasCategory: true, disparityUnit: "rate", ratioNoun: "out-of-school suspension rate",
   },
   chronic_absenteeism: {
+    mode: "disparity",
     groups: `${REPO_RAW_BASE}/data/processed/absenteeism_school_groups_trend.csv`,
     disparity: `${REPO_RAW_BASE}/data/processed/absenteeism_disparity.csv`,
     hasCategory: false, disparityUnit: "pct", ratioNoun: "chronic absenteeism rate",
+  },
+  // Enrollment by group is demographic COMPOSITION (share of school), not a rate
+  // disparity — so no leaderboard, just a composition breakdown + a selectable
+  // group-headcount trend.
+  enrollment: {
+    mode: "composition",
+    groups: `${REPO_RAW_BASE}/data/processed/enrollment_school_groups_trend.csv`,
+    hasCategory: false,
   },
 };
 function isGroupMetric(m) { return m in GROUP_METRICS; }
@@ -1099,6 +1109,51 @@ function renderDisparity(district, school) {
   disparityPanel.style.display = "block";
 }
 
+// ---- Enrollment composition: one school's group shares ----
+function renderComposition(district, school) {
+  const metric = metricSelect.value;
+  const normDistrict = normalizeDistrictName(district);
+  const dim = disciplineDimension();
+  const dimInfo = DISCIPLINE_DIMENSIONS[dim];
+  const rows = (groupsCacheByMetric[metric] || []).filter(r =>
+    r.dimension === dim && r.district === normDistrict && r.school === school);
+  if (rows.length === 0) { disparityPanel.style.display = "none"; return; }
+
+  const latestYear = rows.map(r => String(r.year)).sort().slice(-1)[0];
+  const yr = rows.filter(r => String(r.year) === latestYear);
+  const rated = yr.filter(r => r.value != null && !isNaN(r.value)).sort((a, b) => b.value - a.value);
+  const unrated = yr.filter(r => r.value == null || isNaN(r.value));
+
+  disparityBars.innerHTML = "";
+  rated.forEach(r => {
+    const pct = r.share != null ? r.share * 100 : 0;
+    const shareStr = r.share != null ? `${(r.share * 100).toFixed(0)}%` : "";
+    const div = document.createElement("div");
+    div.className = "disp-row";
+    div.innerHTML =
+      `<span class="grp">${escapeHtml(groupLabel(r.group))}</span>` +
+      `<span class="disp-track"><span class="disp-fill" style="width:${pct.toFixed(1)}%"></span></span>` +
+      `<span class="disp-val">${shareStr}<span class="base">${Math.round(r.value).toLocaleString()} students</span></span>`;
+    disparityBars.appendChild(div);
+  });
+  unrated.forEach(r => {
+    const div = document.createElement("div");
+    div.className = "disp-row suppressed";
+    div.innerHTML =
+      `<span class="grp">${escapeHtml(groupLabel(r.group))}</span>` +
+      `<span class="disp-track"></span><span class="disp-val muted">suppressed</span>`;
+    disparityBars.appendChild(div);
+  });
+
+  const top = rated[0];
+  disparityCallout.innerHTML = top && top.share != null
+    ? `Largest group: <b>${escapeHtml(groupLabel(top.group))}</b> at ${(top.share * 100).toFixed(0)}% of enrollment.` : "";
+  disparityTitle.textContent = `Enrollment by ${dimInfo.label} — ${school} (${latestYear})`;
+  disparitySub.textContent =
+    `Share of students by ${dimInfo.label} group, ${latestYear}. DPI-suppressed groups are omitted.`;
+  disparityPanel.style.display = "block";
+}
+
 // ---- Why students were disciplined: incident breakdown by behavior ----
 const BEHAVIOR_LABELS = { "Other Violation of School Rules": "Other rule violation" };
 function behaviorLabel(b) { return BEHAVIOR_LABELS[b] || b; }
@@ -1195,7 +1250,8 @@ function renderCurrent() {
     renderChart(metric, district);
   }
   if (isGroupMetric(metric) && school) {
-    renderDisparity(district, school);
+    if (GROUP_METRICS[metric].mode === "composition") renderComposition(district, school);
+    else renderDisparity(district, school);
   } else {
     disparityPanel.style.display = "none";
   }
@@ -1215,7 +1271,11 @@ async function onMetricChange(keepDistrict) {
   categoryField.style.display = (isGrp && GROUP_METRICS[metric].hasCategory) ? "flex" : "none";
   dimensionField.style.display = isGrp ? "flex" : "none";
   groupField.style.display = isGrp ? "flex" : "none";
-  if (isGrp) { populateGroupOptions(disciplineDimension()); await loadGroups(metric); await loadDisparity(metric); }
+  if (isGrp) {
+    populateGroupOptions(disciplineDimension());
+    await loadGroups(metric);
+    if (GROUP_METRICS[metric].mode === "disparity") await loadDisparity(metric);
+  }
   if (isDisc) await loadIncidents();
   const rows = await loadMetric(metric);
   const districts = districtsFor(rows);
@@ -1236,12 +1296,12 @@ async function onMetricChange(keepDistrict) {
   await populateSchoolOptions(metric, districtSelect.value);
   renderCurrent();
   renderMovers(metric);
-  if (isGrp) {
+  if (isGrp && GROUP_METRICS[metric].mode === "disparity") {
     renderDispBoard();
   } else {
     dispBoardPanel.style.display = "none";
-    disparityPanel.style.display = "none";
   }
+  if (!isGrp) disparityPanel.style.display = "none";
   if (!isDisc) behaviorPanel.style.display = "none";
 }
 

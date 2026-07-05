@@ -7,6 +7,7 @@ Run directly:  python run_pipeline.py
 import fetch_dpi
 import analyze
 import analyze_school_enrollment
+import analyze_school_enrollment_groups
 import analyze_school_discipline
 import analyze_school_discipline_groups
 import analyze_school_incidents
@@ -22,6 +23,7 @@ def main():
     fetch_dpi.fetch_all(cfg)
     analyze.run_all()
     analyze_school_enrollment.run()
+    analyze_school_enrollment_groups.run()
     analyze_school_discipline.run()
     analyze_school_discipline_groups.run()
     analyze_school_incidents.run()
