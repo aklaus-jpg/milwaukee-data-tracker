@@ -42,49 +42,56 @@ CONFIG = {
 }
 
 
-def movers_for(metric, cfg):
-    path = PROCESSED_DIR / f"{metric}_school_trend.csv"
-    if not path.exists():
-        return None
-
-    df = pd.read_csv(path)
-    years = sorted(df["year"].dropna().unique())
+def _movers_from_frame(sub, metric, category, cfg):
+    """Build the increase/decrease lists from one already-filtered frame
+    (a single metric, and for discipline a single category)."""
+    years = sorted(sub["year"].dropna().unique())
     if len(years) < 2:
         return pd.DataFrame()
-    latest_year, prior_year = years[-1], years[-2]
+    latest_year = years[-1]
+    has_enroll_col = "enrollment" in sub.columns
 
-    # discipline carries a real enrollment column; enrollment's own value IS the
-    # headcount, so fall back to that as the base size.
-    has_enroll_col = "enrollment" in df.columns
+    # Unit drives reliability + ranking. A rate needs both endpoints clean and
+    # excludes small-count years; a raw count tolerates small numbers (that's
+    # the point of showing expulsions as a count).
+    unit = sub["unit"].iloc[0] if "unit" in sub.columns else None
+    if unit == "count":
+        exclude_flags, rank_mode = ("Suppressed",), "delta"
+    elif unit == "rate":
+        exclude_flags, rank_mode = ("Small count", "Suppressed"), "delta"
+    else:
+        exclude_flags, rank_mode = cfg["exclude_flags"], cfg["rank"]
 
     rows = []
-    for (district, school), g in df.groupby(["district", "school"]):
+    for (district, school), g in sub.groupby(["district", "school"]):
         if len(g) < 2:
-            continue  # need a prior year to compute a change
+            continue
         g = g.sort_values("year")
         last, prev = g.iloc[-1], g.iloc[-2]
         if last["year"] != latest_year:
-            continue  # school stopped reporting before the latest year
+            continue  # stopped reporting before the latest year
         lv, pv = last["value"], prev["value"]
         if pd.isna(lv) or pd.isna(pv):
-            continue  # a gap (suppressed / missing) — no honest change to rank
-        if cfg["min_latest"] is not None and lv < cfg["min_latest"]:
-            continue
+            continue  # a gap — no honest change to rank
 
         base = last["enrollment"] if has_enroll_col else lv
         if cfg["min_enroll"] is not None and (pd.isna(base) or base < cfg["min_enroll"]):
             continue  # too few students for a per-100 rate to be stable
+        if cfg["min_latest"] is not None and lv < cfg["min_latest"]:
+            continue
 
         flags = f"{last.get('status_flag', '')} {prev.get('status_flag', '')}"
-        if any(f in str(flags) for f in cfg["exclude_flags"]):
+        if any(f in str(flags) for f in exclude_flags):
             continue
         delta = lv - pv
         pct = (delta / pv * 100) if pv != 0 else None
-        rank = pct if cfg["rank"] == "pct" else delta
+        rank = pct if rank_mode == "pct" else delta
         if rank is None or pd.isna(rank):
             continue
         rows.append({
             "metric": metric,
+            "category": category,
+            "unit": unit or "",
             "district": district,
             "school": school,
             "enrollment": None if pd.isna(base) else int(round(base)),
@@ -99,15 +106,36 @@ def movers_for(metric, cfg):
 
     if not rows:
         return pd.DataFrame()
-
     mv = pd.DataFrame(rows).sort_values("_rank", ascending=False)
     ups = mv[mv["_rank"] > 0].head(TOP_N).assign(direction="increase")
     downs = mv[mv["_rank"] < 0].tail(TOP_N).sort_values("_rank").assign(direction="decrease")
-    out = pd.concat([ups, downs]).drop(columns=["_rank"])
-    cols = ["metric", "direction", "district", "school", "enrollment",
-            "prior_year", "latest_year", "prior_value", "latest_value",
-            "change", "pct_change"]
-    return out[cols]
+    return pd.concat([ups, downs]).drop(columns=["_rank"])
+
+
+def movers_for(metric, cfg):
+    path = PROCESSED_DIR / f"{metric}_school_trend.csv"
+    if not path.exists():
+        return None
+
+    df = pd.read_csv(path)
+    # discipline is long-format with a category column (all/suspension/
+    # expulsion); everything else is single-series.
+    categories = sorted(df["category"].unique()) if "category" in df.columns else [None]
+
+    frames = []
+    for cat in categories:
+        sub = df[df["category"] == cat] if cat is not None else df
+        frame = _movers_from_frame(sub, metric, cat, cfg)
+        if frame is not None and not frame.empty:
+            frames.append(frame)
+    if not frames:
+        return pd.DataFrame()
+
+    out = pd.concat(frames, ignore_index=True)
+    cols = ["metric", "category", "unit", "direction", "district", "school",
+            "enrollment", "prior_year", "latest_year", "prior_value",
+            "latest_value", "change", "pct_change"]
+    return out[[c for c in cols if c in out.columns]]
 
 
 def run():
@@ -119,9 +147,15 @@ def run():
             continue
         path = PROCESSED_DIR / f"{metric}_school_movers.csv"
         out.to_csv(path, index=False)
-        n_up = int((out["direction"] == "increase").sum())
-        n_down = int((out["direction"] == "decrease").sum())
-        print(f"[ok] {metric}_school_movers: {n_up} increases, {n_down} decreases -> {path}")
+        if "category" in out.columns and out["category"].notna().any():
+            by_cat = out.groupby("category")["direction"].value_counts().unstack(fill_value=0)
+            summary = "; ".join(f"{c}: +{r.get('increase', 0)}/-{r.get('decrease', 0)}"
+                                for c, r in by_cat.iterrows())
+            print(f"[ok] {metric}_school_movers ({summary}) -> {path}")
+        else:
+            n_up = int((out["direction"] == "increase").sum())
+            n_down = int((out["direction"] == "decrease").sum())
+            print(f"[ok] {metric}_school_movers: {n_up} increases, {n_down} decreases -> {path}")
 
 
 if __name__ == "__main__":

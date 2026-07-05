@@ -301,6 +301,14 @@
       <label for="school">School</label>
       <select id="school"></select>
     </div>
+    <div class="field" id="categoryField" style="display:none;">
+      <label for="category">Removal type</label>
+      <select id="category">
+        <option value="all">Suspensions &amp; expulsions</option>
+        <option value="suspension">Out-of-school suspensions</option>
+        <option value="expulsion">Expulsions</option>
+      </select>
+    </div>
   </div>
 
   <div class="chart-wrap">
@@ -364,6 +372,8 @@ const SCHOOL_TREND_FILES = {
 const metricSelect = document.getElementById("metric");
 const districtSelect = document.getElementById("district");
 const schoolField = document.getElementById("schoolField");
+const categoryField = document.getElementById("categoryField");
+const categorySelect = document.getElementById("category");
 const schoolSelect = document.getElementById("school");
 const chartTitle = document.getElementById("chartTitle");
 const latestValueEl = document.getElementById("latestValue");
@@ -494,6 +504,7 @@ function drawSeries(series, metric, opts) {
   if (series.length === 0) {
     if (currentChart) { currentChart.destroy(); currentChart = null; }
     canvas.style.display = "none";
+    emptyMsg.textContent = "No data found for this selection yet.";
     emptyMsg.style.display = "block";
     latestValueEl.innerHTML = "";
     return;
@@ -501,14 +512,15 @@ function drawSeries(series, metric, opts) {
   canvas.style.display = "block";
   emptyMsg.style.display = "none";
 
-  // School-level discipline is a RATE (removals per 100 students), not the raw
-  // count the district-total view shows — relabel the axis and keep a decimal
-  // so it reads honestly. Everything else uses its standard label.
-  const isSchoolRate = opts.school && metric === "discipline";
-  const labelInfo = isSchoolRate
-    ? { unit: "Removals per 100 students", suffix: "" }
+  // Axis label + decimals can be overridden by the caller (school-level
+  // discipline is a per-100 rate, or a raw expulsion count) — otherwise fall
+  // back to the metric's standard label.
+  const labelInfo = opts.unitLabel
+    ? { unit: opts.unitLabel, suffix: "" }
     : METRIC_LABELS[metric];
-  const decimals = isSchoolRate ? 1 : (metric === "chronic_absenteeism" ? 1 : null);
+  const decimals = opts.decimals != null
+    ? opts.decimals
+    : (metric === "chronic_absenteeism" ? 1 : null);
   const latest = series[series.length - 1];
   const deltaClass = latest.pct_change > 0 ? "up" : latest.pct_change < 0 ? "down" : "";
   const deltaSign = latest.pct_change > 0 ? "+" : "";
@@ -570,24 +582,58 @@ function drawSeries(series, metric, opts) {
 
 function renderChart(metric, district) {
   schoolNote.style.display = "none";
-  const rows = cache[metric] || [];
+  const metricLabel = metricSelect.options[metricSelect.selectedIndex].text;
+
+  // District totals aren't split by removal type (that only exists school-level).
+  // Rather than show the combined number under a "Expulsions" label — which would
+  // be misleading — prompt the user to pick a school.
+  if (metric === "discipline" && disciplineCategory() !== "all") {
+    const cat = DISCIPLINE_CATEGORIES[disciplineCategory()].label.toLowerCase();
+    chartTitle.textContent = `${district} — ${metricLabel}`;
+    if (currentChart) { currentChart.destroy(); currentChart = null; }
+    canvas.style.display = "none";
+    latestValueEl.innerHTML = "";
+    emptyMsg.textContent = `District totals combine all removal types. Choose a school above to see ${cat} on their own.`;
+    emptyMsg.style.display = "block";
+    return;
+  }
+
   const groupLabel = `${district} — All Students`;
-  const series = rows
+  const series = rows_filtered(metric, groupLabel);
+  chartTitle.textContent = `${district} — ${metricLabel}`;
+  drawSeries(series, metric);
+}
+
+function rows_filtered(metric, groupLabel) {
+  return (cache[metric] || [])
     .filter(r => r.group === groupLabel)
     .sort((a, b) => String(a.year).localeCompare(String(b.year)));
+}
 
-  chartTitle.textContent = `${district} — ${metricSelect.options[metricSelect.selectedIndex].text}`;
-  drawSeries(series, metric);
+// Discipline school-level data is long-format: three removal-type categories,
+// each with its own unit (per-100 rate vs raw expulsion count) and axis label.
+const DISCIPLINE_CATEGORIES = {
+  all:        { label: "Suspensions & expulsions", unit: "rate",  axis: "Removals per 100 students",   decimals: 1 },
+  suspension: { label: "Out-of-school suspensions", unit: "rate",  axis: "Suspensions per 100 students", decimals: 1 },
+  expulsion:  { label: "Expulsions",                unit: "count", axis: "Expulsions (count)",           decimals: 0 },
+};
+
+function disciplineCategory() {
+  return (metricSelect.value === "discipline" && categorySelect.value) || "all";
 }
 
 function renderSchoolChart(metric, district, school) {
   const rows = schoolCache[metric] || [];
   const normDistrict = normalizeDistrictName(district);
+  const cat = metric === "discipline" ? disciplineCategory() : null;
   const series = rows
-    .filter(r => r.district === normDistrict && r.school === school)
+    .filter(r => r.district === normDistrict && r.school === school
+                 && (cat === null || r.category === cat))
     .sort((a, b) => String(a.year).localeCompare(String(b.year)));
 
-  chartTitle.textContent = `${school}, ${normDistrict} — ${metricSelect.options[metricSelect.selectedIndex].text}`;
+  const catInfo = cat ? DISCIPLINE_CATEGORIES[cat] : null;
+  const suffix = catInfo && cat !== "all" ? ` · ${catInfo.label}` : "";
+  chartTitle.textContent = `${school}, ${normDistrict} — ${metricSelect.options[metricSelect.selectedIndex].text}${suffix}`;
 
   // "No data after [year]" is identical on every row of a closed-out series —
   // show it once. Other flags (authorizer changes, small-count privacy notes)
@@ -608,7 +654,9 @@ function renderSchoolChart(metric, district, school) {
     schoolNote.style.display = "none";
   }
 
-  drawSeries(series, metric, { school: true });
+  const opts = { school: true };
+  if (catInfo) { opts.unitLabel = catInfo.axis; opts.decimals = catInfo.decimals; }
+  drawSeries(series, metric, opts);
 }
 
 function formatValue(v, metric, decimals) {
@@ -625,29 +673,37 @@ function formatValue(v, metric, decimals) {
 // large school fairly. Reliability gates mirror the concerns baked into the
 // processing scripts — never rank on a suppressed/small-count discipline year,
 // and drop tiny enrollments whose percentages whipsaw on a few students.
-const MOVERS_CONFIG = {
-  discipline: {
-    rankBy: "delta",
-    minLatest: null,
-    minEnroll: 100, // a per-100 rate needs a real base to be stable
-    showBase: true,
-    reliable: (latest, prior) => {
-      const bad = /Small count|Suppressed/;
-      return !bad.test(latest.status_flag || "") && !bad.test(prior.status_flag || "");
-    },
-    fmtChange: (delta) => `${delta >= 0 ? "+" : "−"}${Math.abs(delta).toFixed(1)} per 100`,
-    note: "removals per 100 students; small-count, suppressed, and under-100-enrollment schools excluded",
-  },
-  enrollment: {
-    rankBy: "pct",
-    minLatest: 50,
-    minEnroll: null,
-    showBase: false,
-    reliable: () => true,
-    fmtChange: (delta, pct) => `${pct >= 0 ? "+" : "−"}${Math.abs(pct).toFixed(1)}%`,
-    note: "by percent change; schools under 50 students excluded",
-  },
-};
+function moversConfig(metric, category) {
+  if (metric === "enrollment") {
+    return {
+      rankBy: "pct", minLatest: 50, minEnroll: null, showBase: false,
+      reliable: () => true,
+      fmtChange: (delta, pct) => `${pct >= 0 ? "+" : "−"}${Math.abs(pct).toFixed(1)}%`,
+      note: "by percent change; schools under 50 students excluded",
+    };
+  }
+  if (metric === "discipline") {
+    if (category === "expulsion") {
+      // Expulsions are a raw count — small numbers are meaningful, so only
+      // suppressed years are excluded (not small-count).
+      return {
+        rankBy: "delta", minLatest: null, minEnroll: 100, showBase: true,
+        reliable: (l, p) => !/Suppressed/.test(l.status_flag || "") && !/Suppressed/.test(p.status_flag || ""),
+        fmtChange: (delta) => `${delta >= 0 ? "+" : "−"}${Math.abs(Math.round(delta))} expulsions`,
+        note: "change in expulsion count; under-100-enrollment schools excluded",
+      };
+    }
+    const bad = /Small count|Suppressed/;
+    return {
+      rankBy: "delta", minLatest: null, minEnroll: 100, showBase: true,
+      reliable: (l, p) => !bad.test(l.status_flag || "") && !bad.test(p.status_flag || ""),
+      fmtChange: (delta) => `${delta >= 0 ? "+" : "−"}${Math.abs(delta).toFixed(1)} per 100`,
+      note: (category === "suspension" ? "suspensions" : "removals") +
+        " per 100 students; small-count, suppressed, and under-100-enrollment schools excluded",
+    };
+  }
+  return null;
+}
 
 function escapeHtml(s) {
   return String(s).replace(/[&<>"']/g, (c) =>
@@ -655,9 +711,11 @@ function escapeHtml(s) {
 }
 
 function computeMovers(metric) {
-  const cfg = MOVERS_CONFIG[metric];
-  const rows = schoolCache[metric] || [];
+  const category = metric === "discipline" ? disciplineCategory() : null;
+  const cfg = moversConfig(metric, category);
+  let rows = schoolCache[metric] || [];
   if (!cfg || rows.length === 0) return null;
+  if (category !== null) rows = rows.filter((r) => r.category === category);
 
   const years = [...new Set(rows.map((r) => String(r.year)))].sort();
   const latestYear = years[years.length - 1];
@@ -695,7 +753,7 @@ function computeMovers(metric) {
     });
   });
 
-  return { latestYear, priorYear, movers };
+  return { latestYear, priorYear, movers, cfg, category };
 }
 
 function moverRow(m, dir, showBase) {
@@ -729,20 +787,21 @@ async function renderMovers(metric) {
     moversPanel.style.display = "none";
     return;
   }
-  const { latestYear, priorYear, movers } = result;
+  const { latestYear, priorYear, movers, cfg, category } = result;
   const sorted = movers.slice().sort((a, b) => b.rank - a.rank);
   const N = 8;
   const ups = sorted.filter((m) => m.rank > 0).slice(0, N);
   const downs = sorted.filter((m) => m.rank < 0).slice(-N).reverse();
 
   const label = metricSelect.options[metricSelect.selectedIndex].text;
-  moversTitle.textContent = `Biggest movers — ${label}`;
+  const catSuffix = category && category !== "all"
+    ? ` · ${DISCIPLINE_CATEGORIES[category].label}` : "";
+  moversTitle.textContent = `Biggest movers — ${label}${catSuffix}`;
   moversSub.textContent =
-    `Change from ${priorYear} to ${latestYear}, ${MOVERS_CONFIG[metric].note}. ` +
+    `Change from ${priorYear} to ${latestYear}, ${cfg.note}. ` +
     `A spike is a reporting lead, not a fact — verify before publishing.`;
-  const showBase = MOVERS_CONFIG[metric].showBase;
-  renderMoversList(moversUp, ups, "up", showBase);
-  renderMoversList(moversDown, downs, "down", showBase);
+  renderMoversList(moversUp, ups, "up", cfg.showBase);
+  renderMoversList(moversDown, downs, "down", cfg.showBase);
   moversPanel.style.display = "block";
 }
 
@@ -773,6 +832,9 @@ function renderCurrent() {
 
 async function onMetricChange(keepDistrict) {
   const metric = metricSelect.value;
+  // The removal-type toggle only applies to discipline (the only metric split
+  // into categories); hide it for everything else.
+  categoryField.style.display = metric === "discipline" ? "flex" : "none";
   const rows = await loadMetric(metric);
   const districts = districtsFor(rows);
   populateDistrictOptions(districts, keepDistrict);
@@ -791,6 +853,11 @@ async function onMetricChange(keepDistrict) {
   renderMovers(metric);
 }
 
+function onCategoryChange() {
+  renderCurrent();
+  renderMovers(metricSelect.value);
+}
+
 async function onDistrictChange() {
   await populateSchoolOptions(metricSelect.value, districtSelect.value);
   renderCurrent();
@@ -799,6 +866,7 @@ async function onDistrictChange() {
 metricSelect.addEventListener("change", () => onMetricChange(false));
 districtSelect.addEventListener("change", onDistrictChange);
 schoolSelect.addEventListener("change", renderCurrent);
+categorySelect.addEventListener("change", onCategoryChange);
 
 onMetricChange(false);
 </script>

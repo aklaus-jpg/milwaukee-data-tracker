@@ -75,6 +75,18 @@ SUSP_EXP_TYPES = {
     "Expulsion with Services Offered",
     "Expulsion without Services Offered",
 }
+OSS_TYPE = "Out of School Suspension"
+EXPULSION_TYPES = {"Expulsion with Services Offered", "Expulsion without Services Offered"}
+
+# Each school-year is emitted three ways (long format, one row per category).
+# Suspensions and the combined total are per-100 rates; expulsions are rare
+# enough that a raw count reads truer than a jittery sub-1 rate.
+CATEGORY_UNIT = {"all": "rate", "suspension": "rate", "expulsion": "count"}
+ZERO_NOTE = {
+    "all": "Zero suspensions/expulsions reported",
+    "suspension": "Zero out-of-school suspensions reported",
+    "expulsion": "Zero expulsions reported",
+}
 # How DPI marks a redacted count. Kept as a set so drift (e.g. a new literal) is
 # a one-line change.
 SUPPRESSION_MARKERS = {"*", "[Data Suppressed]", "[Suppressed]"}
@@ -114,123 +126,146 @@ def load_school_rows():
     return mke
 
 
-def aggregate_school_year(d):
-    """Collapse one school-year's rows into a single record.
+def _category_count(rows_of_type, reported):
+    """Reduce one removal category's rows for a school-year to a count.
 
-    Returns dict with: rate (or None for a gap), se_count (or None),
-    enrollment, and booleans suppressed / genuine_zero / small_count /
-    enroll_missing.
+    Returns (count_or_None, suppressed, genuine_zero). count is None for a gap
+    (suppressed, or the school didn't report at all this year); 0.0 is a real
+    reported zero.
     """
-    se = d[d["REMOVAL_TYPE_DESCRIPTION"].isin(SUSP_EXP_TYPES)]
-    suppressed = se["removal_raw"].isin(SUPPRESSION_MARKERS).any()
+    suppressed = rows_of_type["removal_raw"].isin(SUPPRESSION_MARKERS).any()
+    if suppressed:
+        return None, True, False  # fail safe: suppressed is NOT zero
+    nums = rows_of_type["removal_num"].dropna()
+    if len(nums) > 0:
+        return float(nums.sum()), False, False
+    if reported:
+        return 0.0, False, True  # school reported, just none of this type
+    return None, False, False
 
-    se_numeric = se["removal_num"].dropna()
+
+def aggregate_school_year(d):
+    """Collapse one school-year's rows into per-category counts.
+
+    Returns {enrollment, enroll_missing, cats: {category: {count, suppressed,
+    genuine_zero}}} for categories all / suspension / expulsion.
+    """
+    oss = d[d["REMOVAL_TYPE_DESCRIPTION"] == OSS_TYPE]
+    exp = d[d["REMOVAL_TYPE_DESCRIPTION"].isin(EXPULSION_TYPES)]
+
     enrollment = d["enroll_num"].max()
     enroll_missing = pd.isna(enrollment) or enrollment <= 0
 
     # A blank-removal-type row with count 0 is DPI's explicit "zero removals".
-    has_zero_row = (
-        (d["REMOVAL_TYPE_DESCRIPTION"].isna()) & (d["removal_num"] == 0)
-    ).any()
+    has_zero_row = ((d["REMOVAL_TYPE_DESCRIPTION"].isna()) & (d["removal_num"] == 0)).any()
+    reported = (len(oss) > 0) or (len(exp) > 0) or has_zero_row
 
-    result = {
-        "rate": None,
-        "se_count": None,
+    s_count, s_sup, s_zero = _category_count(oss, reported)
+    e_count, e_sup, e_zero = _category_count(exp, reported)
+
+    # "all" = suspensions + expulsions. Suppressed if either component is; a gap
+    # if either component is unknown (can't sum an unknown into a total).
+    if s_sup or e_sup:
+        a_count, a_sup, a_zero = None, True, False
+    elif s_count is None or e_count is None:
+        a_count, a_sup, a_zero = None, False, False
+    else:
+        a_count = s_count + e_count
+        a_count, a_sup, a_zero = a_count, False, (a_count == 0)
+
+    return {
         "enrollment": None if pd.isna(enrollment) else float(enrollment),
-        "suppressed": bool(suppressed),
-        "genuine_zero": False,
-        "small_count": False,
-        "enroll_missing": False,
+        "enroll_missing": bool(enroll_missing),
+        "cats": {
+            "all": {"count": a_count, "suppressed": a_sup, "genuine_zero": a_zero},
+            "suspension": {"count": s_count, "suppressed": s_sup, "genuine_zero": s_zero},
+            "expulsion": {"count": e_count, "suppressed": e_sup, "genuine_zero": e_zero},
+        },
     }
 
-    if suppressed:
-        # Fail safe: a suppressed suspension count is NOT zero. Leave a gap.
-        return result
 
-    if len(se_numeric) > 0:
-        se_count = float(se_numeric.sum())
-    elif has_zero_row:
-        se_count = 0.0
-        result["genuine_zero"] = True
-    else:
-        # No suspension/expulsion rows and no explicit zero row — nothing to
-        # stand on. Gap rather than an invented zero.
-        return result
-
-    result["se_count"] = se_count
-    if 0 < se_count < SMALL_COUNT_THRESHOLD:
-        result["small_count"] = True
-
-    if enroll_missing:
-        # Can't turn a count into a rate without a denominator.
-        result["enroll_missing"] = True
-        return result
-
-    result["rate"] = round(RATE_PER * se_count / enrollment, 2)
-    return result
+def _cat_value(agg, category, unit):
+    """The plotted value for a category: a per-100 rate, or a raw count."""
+    cat = agg["cats"][category]
+    if cat["suppressed"] or cat["count"] is None:
+        return None
+    if unit == "rate":
+        if agg["enroll_missing"]:
+            return None
+        return round(RATE_PER * cat["count"] / agg["enrollment"], 2)
+    return float(cat["count"])
 
 
 def build_school_trend_rows(school, g_df, latest_year, stitched):
     years = sorted(g_df["SCHOOL_YEAR"].unique())
     district_by_year = g_df.groupby("SCHOOL_YEAR")["district"].first()
-
     per_year = {yr: aggregate_school_year(g_df[g_df["SCHOOL_YEAR"] == yr]) for yr in years}
-
-    rate_series = pd.Series(
-        {yr: per_year[yr]["rate"] for yr in years}, dtype="float64"
-    ).sort_index()
-    yoy = rate_series.diff()
-    pct_change = rate_series.pct_change() * 100
-    pct_change = pct_change.replace([float("inf"), float("-inf")], pd.NA)
 
     last_year = max(years)
     is_closed_out = last_year < latest_year
     current_district = district_by_year.loc[last_year]
 
     rows = []
-    prev_district = None
-    for yr in years:
-        agg = per_year[yr]
-        this_district = district_by_year.loc[yr]
-        notes = []
+    for category, unit in CATEGORY_UNIT.items():
+        series = pd.Series(
+            {yr: _cat_value(per_year[yr], category, unit) for yr in years}, dtype="float64"
+        ).sort_index()
+        yoy = series.diff()
+        pct = (series.pct_change() * 100).replace([float("inf"), float("-inf")], pd.NA)
 
-        if stitched and prev_district is not None and this_district != prev_district:
-            notes.append(f"Authorizer/reporting changed to {this_district}, {yr}")
-        prev_district = this_district
+        prev_district = None
+        for yr in years:
+            agg = per_year[yr]
+            cat = agg["cats"][category]
+            count = cat["count"]
+            val = series.get(yr)
+            this_district = district_by_year.loc[yr]
 
-        if agg["suppressed"]:
-            notes.append("Suppressed (DPI privacy, count <10) — not zero")
-        elif agg["enroll_missing"]:
-            notes.append("Enrollment unavailable — rate not computable")
-        elif agg["rate"] is None:
-            notes.append("No discipline data reported")
-        elif agg["small_count"]:
-            notes.append("Small count (<10 removals) — rate imprecise")
-        elif agg["genuine_zero"]:
-            notes.append("Zero suspensions/expulsions reported")
+            notes = []
+            if stitched and prev_district is not None and this_district != prev_district:
+                notes.append(f"Authorizer/reporting changed to {this_district}, {yr}")
+            prev_district = this_district
 
-        if is_closed_out:
-            notes.append(f"No data after {last_year}")
+            # Small counts make a RATE imprecise; a COUNT of "3 expulsions" is
+            # exact, so that flag only applies to rate categories.
+            small = unit == "rate" and count is not None and 0 < count < SMALL_COUNT_THRESHOLD
+            if cat["suppressed"]:
+                notes.append("Suppressed (DPI privacy, count <10) — not zero")
+            elif unit == "rate" and agg["enroll_missing"] and count is not None:
+                notes.append("Enrollment unavailable — rate not computable")
+            elif count is None:
+                notes.append("No discipline data reported")
+            elif small:
+                notes.append("Small count (<10 removals) — rate imprecise")
+            elif cat["genuine_zero"]:
+                notes.append(ZERO_NOTE[category])
 
-        rows.append({
-            "metric": "discipline",
-            "district": current_district if stitched else this_district,
-            "school": school,
-            "group": f"{school} — All Students",
-            "year": yr,
-            "value": agg["rate"],
-            "yoy_change": None if pd.isna(yoy.get(yr)) else yoy.get(yr),
-            "pct_change": None if pd.isna(pct_change.get(yr)) else float(pct_change.get(yr)),
-            "status_flag": "; ".join(notes),
-            # enrollment (TFS denominator behind the rate) is a real output column
-            # so the rate's base size is visible — a per-100 rate on 40 students
-            # is far shakier than the same rate on 800.
-            "enrollment": agg["enrollment"],
-            # internal-only fields for the flags/movers tip sheets (dropped before write)
-            "_se_count": agg["se_count"],
-            "_reliable": not (agg["suppressed"] or agg["small_count"]
-                              or agg["enroll_missing"] or agg["rate"] is None),
-        })
+            if is_closed_out:
+                notes.append(f"No data after {last_year}")
+
+            if unit == "rate":
+                reliable = not (cat["suppressed"] or small
+                                or (agg["enroll_missing"] and count is not None) or val is None)
+            else:
+                reliable = not (cat["suppressed"] or val is None)
+
+            rows.append({
+                "metric": "discipline",
+                "category": category,
+                "unit": unit,
+                "district": current_district if stitched else this_district,
+                "school": school,
+                "group": f"{school} — All Students",
+                "year": yr,
+                "value": None if val is None or pd.isna(val) else val,
+                "yoy_change": None if pd.isna(yoy.get(yr)) else yoy.get(yr),
+                "pct_change": None if pd.isna(pct.get(yr)) else float(pct.get(yr)),
+                "status_flag": "; ".join(notes),
+                "enrollment": agg["enrollment"],
+                # internal-only (dropped before write), used by flags/movers
+                "_count": count,
+                "_reliable": reliable,
+            })
     return rows, is_closed_out
 
 
@@ -263,7 +298,8 @@ def build_flags(trend_df):
     Gated to reliable, non-tiny school-years so a 2->8 swing on a 30-student
     school doesn't drown out real trends.
     """
-    df = trend_df.copy()
+    # Tip sheet stays the combined suspension+expulsion rate (category "all").
+    df = trend_df[trend_df["category"] == "all"].copy()
     df = df[
         df["_reliable"]
         & df["yoy_change"].notna()
@@ -284,11 +320,11 @@ def build_flags(trend_df):
     )
     return df[[
         "district", "school", "year", "value", "yoy_change", "pct_change",
-        "_se_count", "enrollment", "note",
+        "_count", "enrollment", "note",
     ]].rename(columns={
         "value": "rate_per_100",
         "yoy_change": "rate_increase",
-        "_se_count": "removals",
+        "_count": "removals",
     })
 
 
@@ -298,25 +334,27 @@ def run():
 
     flags_df = build_flags(trend_df)
 
-    # enrollment appended after the shared enrollment-file schema so the rate's
-    # base size travels with the trend (needed to judge/gate small denominators).
-    schema_cols = ["metric", "district", "school", "group", "year", "value",
-                   "yoy_change", "pct_change", "status_flag", "enrollment"]
+    # category + unit added; enrollment kept after the shared enrollment-file
+    # schema so the rate's base size travels with the trend.
+    schema_cols = ["metric", "category", "unit", "district", "school", "group",
+                   "year", "value", "yoy_change", "pct_change", "status_flag",
+                   "enrollment"]
 
     PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
     trend_df[schema_cols].to_csv(PROCESSED_DIR / "discipline_school_trend.csv", index=False)
     flags_df.to_csv(PROCESSED_DIR / "discipline_school_flags.csv", index=False)
 
-    n_schools = trend_df.drop_duplicates(["district", "school"]).shape[0]
-    suppressed_years = int(trend_df["status_flag"].str.contains("Suppressed", na=False).sum())
-    small_years = int(trend_df["status_flag"].str.contains("Small count", na=False).sum())
-    zero_years = int(trend_df["status_flag"].str.contains("Zero suspensions", na=False).sum())
+    all_rows = trend_df[trend_df["category"] == "all"]
+    n_schools = all_rows.drop_duplicates(["district", "school"]).shape[0]
+    suppressed_years = int(all_rows["status_flag"].str.contains("Suppressed", na=False).sum())
+    small_years = int(all_rows["status_flag"].str.contains("Small count", na=False).sum())
+    zero_years = int(all_rows["status_flag"].str.contains("Zero suspensions", na=False).sum())
 
     print(f"[ok] discipline_school: {n_schools} district/school groups, "
-          f"{len(trend_df)} trend rows, latest year {latest_year}")
-    print(f"     suppression-flagged years: {suppressed_years}")
-    print(f"     small-count (<10) years:   {small_years}")
-    print(f"     genuine-zero years:        {zero_years}")
+          f"{len(trend_df)} trend rows (3 categories), latest year {latest_year}")
+    print(f"     [category=all] suppression-flagged years: {suppressed_years}")
+    print(f"     [category=all] small-count (<10) years:   {small_years}")
+    print(f"     [category=all] genuine-zero years:        {zero_years}")
     print(f"     closure-flagged groups:    {closure_count}")
     print(f"     rate-increase tip sheet:   {len(flags_df)} rows "
           f"-> {PROCESSED_DIR / 'discipline_school_flags.csv'}")
