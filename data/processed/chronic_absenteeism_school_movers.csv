@@ -1,0 +1,31 @@
+metric,category,unit,direction,district,school,enrollment,prior_year,latest_year,prior_value,latest_value,change,pct_change
+chronic_absenteeism,,,increase,Trans Center for Youth,Escuela Verde,116,2023-24,2024-25,50.0,70.7,20.7,41.4
+chronic_absenteeism,,,increase,Milwaukee,Doerfler Elementary,545,2023-24,2024-25,30.6,49.4,18.8,61.4
+chronic_absenteeism,,,increase,Milwaukee,Bruce Elementary,205,2023-24,2024-25,16.8,33.7,16.9,100.6
+chronic_absenteeism,,,increase,Milwaukee,Grandview High,197,2023-24,2024-25,75.0,85.8,10.8,14.4
+chronic_absenteeism,,,increase,Milwaukee,Jackson Elementary,190,2023-24,2024-25,53.0,63.7,10.7,20.2
+chronic_absenteeism,,,increase,Milwaukee,Green Tree Preparatory Academy,409,2023-24,2024-25,70.8,80.9,10.1,14.3
+chronic_absenteeism,,,increase,Milwaukee,Andrew S Douglas Middle,115,2023-24,2024-25,75.2,85.2,10.0,13.3
+chronic_absenteeism,,,increase,Milwaukee,Alliance School of Milwaukee,129,2023-24,2024-25,81.8,91.5,9.7,11.9
+chronic_absenteeism,,,increase,Milwaukee,Auer Avenue Elementary,135,2023-24,2024-25,54.3,63.0,8.7,16.0
+chronic_absenteeism,,,increase,Milwaukee,Bryant Elementary,180,2023-24,2024-25,46.6,55.0,8.4,18.0
+chronic_absenteeism,,,increase,Milwaukee,King Jr Elementary,258,2023-24,2024-25,60.4,68.2,7.8,12.9
+chronic_absenteeism,,,increase,Milwaukee,Wedgewood Park School,537,2023-24,2024-25,42.7,50.3,7.6,17.8
+chronic_absenteeism,,,increase,Milwaukee,Burbank Elementary,519,2023-24,2024-25,32.7,39.7,7.0,21.4
+chronic_absenteeism,,,increase,Pathways High,Pathways High,132,2023-24,2024-25,40.4,47.0,6.6,16.3
+chronic_absenteeism,,,increase,Milwaukee,Hi-Mount Elementary,148,2023-24,2024-25,60.4,66.9,6.5,10.8
+chronic_absenteeism,,,decrease,Milwaukee,River Trail School of Agricultural Science,371,2023-24,2024-25,52.4,28.6,-23.8,-45.4
+chronic_absenteeism,,,decrease,Milwaukee,Hawley Environmental School,248,2023-24,2024-25,59.9,36.3,-23.6,-39.4
+chronic_absenteeism,,,decrease,Rocketship Education Wisconsin,Rocketship Transformation Prep,252,2023-24,2024-25,57.4,41.3,-16.1,-28.0
+chronic_absenteeism,,,decrease,Rocketship Education Wisconsin,Rocketship Southside Community Prep,367,2023-24,2024-25,46.1,30.2,-15.9,-34.5
+chronic_absenteeism,,,decrease,Milwaukee,Browning Elementary,241,2023-24,2024-25,64.3,51.9,-12.4,-19.3
+chronic_absenteeism,,,decrease,Milwaukee,Holmes Elementary,229,2023-24,2024-25,68.6,56.3,-12.3,-17.9
+chronic_absenteeism,,,decrease,Central City Cyberschool of Milwaukee,Central City Cyberschool,306,2023-24,2024-25,45.8,34.0,-11.8,-25.8
+chronic_absenteeism,,,decrease,Milwaukee,Clarke Street Elementary,160,2023-24,2024-25,79.7,68.1,-11.6,-14.6
+chronic_absenteeism,,,decrease,Milwaukee,Hawthorne Elementary,214,2023-24,2024-25,53.8,42.5,-11.3,-21.0
+chronic_absenteeism,,,decrease,Milwaukee,Thurston Woods Elementary,210,2023-24,2024-25,73.4,62.4,-11.0,-15.0
+chronic_absenteeism,,,decrease,Glendale-River Hills,Parkway Elementary,392,2023-24,2024-25,17.0,7.4,-9.6,-56.5
+chronic_absenteeism,,,decrease,United Community Center,United Community Center Acosta Middle School,180,2023-24,2024-25,28.7,19.4,-9.3,-32.4
+chronic_absenteeism,,,decrease,Milwaukee,Gaenslen Elementary,588,2023-24,2024-25,43.8,34.7,-9.1,-20.8
+chronic_absenteeism,,,decrease,Milwaukee,Craig Montessori School,188,2023-24,2024-25,21.8,13.3,-8.5,-39.0
+chronic_absenteeism,,,decrease,Carmen High School of Science and Technology,Carmen Middle School South,192,2023-24,2024-25,49.0,40.6,-8.4,-17.1

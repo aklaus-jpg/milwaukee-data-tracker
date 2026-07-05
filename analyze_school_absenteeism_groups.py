@@ -144,10 +144,12 @@ def build_all_students_trend():
     mke["district"] = mke["DISTRICT_NAME"].apply(normalize_district)
     mke["school"] = mke["SCHOOL_NAME"].astype(str).str.strip().replace(SCHOOL_NAME_ALIASES)
     mke["value"] = pd.to_numeric(mke["ABSENCE_RATE"], errors="coerce")
+    mke["enroll"] = pd.to_numeric(mke["STUDENT_COUNT"], errors="coerce")
 
     rows = []
     for (district, school), g in mke.groupby(["district", "school"]):
         s = g.groupby("SCHOOL_YEAR")["value"].first().sort_index()
+        enr = g.groupby("SCHOOL_YEAR")["enroll"].max()
         yoy = s.diff()
         pct = (s.pct_change() * 100).replace([float("inf"), float("-inf")], pd.NA)
         for yr, v in s.items():
@@ -158,6 +160,7 @@ def build_all_students_trend():
                 "yoy_change": None if pd.isna(yoy.get(yr)) else round(float(yoy.get(yr)), 1),
                 "pct_change": None if pd.isna(pct.get(yr)) else round(float(pct.get(yr)), 1),
                 "status_flag": "",
+                "enrollment": None if pd.isna(enr.get(yr)) else float(enr.get(yr)),
             })
     return pd.DataFrame(rows)
 
@@ -171,7 +174,9 @@ def run():
     PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
     trend_df.to_csv(PROCESSED_DIR / "absenteeism_school_groups_trend.csv", index=False)
     disparity_df.to_csv(PROCESSED_DIR / "absenteeism_disparity.csv", index=False)
-    all_students_df.to_csv(PROCESSED_DIR / "absenteeism_school_trend.csv", index=False)
+    # File prefix matches the dashboard metric key (chronic_absenteeism) so the
+    # movers builder and SCHOOL_TREND_FILES find it by convention.
+    all_students_df.to_csv(PROCESSED_DIR / "chronic_absenteeism_school_trend.csv", index=False)
 
     n_schools = trend_df.drop_duplicates(["district", "school"]).shape[0]
     latest = trend_df["year"].max()

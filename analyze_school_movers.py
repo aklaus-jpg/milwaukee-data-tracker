@@ -39,6 +39,10 @@ CONFIG = {
                    "exclude_flags": ("Small count", "Suppressed")},
     "enrollment": {"rank": "pct", "min_latest": 50, "min_enroll": None,
                    "exclude_flags": ()},
+    # Chronic absenteeism is a percent; rank by the change in percentage points
+    # and require a real base so a tiny school's swing isn't the headline.
+    "chronic_absenteeism": {"rank": "delta", "min_latest": None,
+                            "min_enroll": DISCIPLINE_ENROLL_FLOOR, "exclude_flags": ()},
 }
 
 

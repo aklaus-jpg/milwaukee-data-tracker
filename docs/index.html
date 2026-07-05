@@ -474,7 +474,7 @@ const METRIC_LABELS = {
 const SCHOOL_TREND_FILES = {
   enrollment: `${REPO_RAW_BASE}/data/processed/enrollment_school_trend.csv`,
   discipline: `${REPO_RAW_BASE}/data/processed/discipline_school_trend.csv`,
-  chronic_absenteeism: `${REPO_RAW_BASE}/data/processed/absenteeism_school_trend.csv`,
+  chronic_absenteeism: `${REPO_RAW_BASE}/data/processed/chronic_absenteeism_school_trend.csv`,
 };
 
 // Metrics with a student-group breakdown + disparity view. hasCategory =
@@ -899,6 +899,15 @@ function moversConfig(metric, category) {
       reliable: () => true,
       fmtChange: (delta, pct) => `${pct >= 0 ? "+" : "−"}${Math.abs(pct).toFixed(1)}%`,
       note: "by percent change; schools under 50 students excluded",
+    };
+  }
+  if (metric === "chronic_absenteeism") {
+    // A percent; rank by the change in percentage points.
+    return {
+      rankBy: "delta", minLatest: null, minEnroll: 100, showBase: true,
+      reliable: () => true,
+      fmtChange: (delta) => `${delta >= 0 ? "+" : "−"}${Math.abs(delta).toFixed(1)} pts`,
+      note: "change in percentage points; schools under 100 students excluded",
     };
   }
   if (metric === "discipline") {
