@@ -131,30 +131,51 @@ def load_rows():
     df["group"] = df["GROUP_BY_VALUE"].astype(str).str.strip()
     df["cnt_raw"] = df["STUDENT_COUNT"].astype(str).str.strip()
     df["cnt"] = pd.to_numeric(df["STUDENT_COUNT"], errors="coerce")
+    df["gc"] = pd.to_numeric(df["GROUP_COUNT"], errors="coerce")  # DPI's full population per grade
     return df
 
 
 def proficiency(g):
-    """Aggregate one school x subject x group across grades.
-    Returns dict: value (% proficient or None), below (% Developing or None),
-    tested, suppressed (bool), any_rows (bool). Suppressed cells excluded from
-    both numerator and denominator (never zeroed)."""
-    lvl = g[g["TEST_RESULT"].isin(LEVELS)]
-    if lvl.empty:
-        return {"value": None, "below": None, "tested": 0, "suppressed": False, "any_rows": False}
-    suppressed_any = lvl["cnt_raw"].isin(SUPPRESSION_MARKERS).any()
-    by_level = lvl.groupby("TEST_RESULT")["cnt"].sum(min_count=1)
-    tested = float(by_level.sum())  # sum of visible counts across the 4 levels
-    if pd.isna(tested) or tested <= 0:
-        # rows exist but nothing visible -> suppressed gap
-        return {"value": None, "below": None, "tested": 0, "suppressed": True, "any_rows": True}
-    prof = float(by_level.reindex(list(PROFICIENT)).sum())
-    below = float(by_level.get(BELOW_LEVEL, 0.0) or 0.0)
+    """Aggregate one school x subject x group across grades, DPI-style.
+
+    DENOMINATOR is the full expected population (GROUP_COUNT — the per-grade
+    group total, which INCLUDES non-testers/"No Test"), NOT just those with a
+    score. This matches DPI/WISEdash (verified: Clarke Street ELA = 4/85 = 4.7%),
+    and it means low participation lowers the rate — as it should.
+
+    Returns value (% proficient), below (% Developing), notest (% No Test), the
+    tested count (test-takers, for the sample-size floor), the population, and
+    suppression. GROUP_COUNT is a single per-grade total, so it survives cell
+    suppression that hits individual level counts.
+    """
+    # DPI encodes a suppressed cell as a SEPARATE row with TEST_RESULT="*" (and
+    # STUDENT_COUNT="*") — it does NOT tell you which level was masked. So if this
+    # group has ANY "*" row we can't know how many were proficient: GAP it, never
+    # infer 0. (A genuinely-zero level is just an absent row, not a "*" row.)
+    if (g["TEST_RESULT"] == "*").any() or g["cnt_raw"].isin(SUPPRESSION_MARKERS).any():
+        return {"value": None, "below": None, "notest": None, "tested": None,
+                "pop": None, "suppressed": True, "any_rows": True}
+
+    # Clean group: GROUP_COUNT is the per-grade total (constant across a grade's
+    # level rows), and it IS DPI's denominator — the full expected population,
+    # including No Test. That's what makes Clarke Street read 4.7%, not 4.9%.
+    pop = g.groupby("GRADE_LEVEL")["gc"].first().sum(min_count=1)
+    if pd.isna(pop) or pop <= 0:
+        return {"value": None, "below": None, "notest": None, "tested": None,
+                "pop": None, "suppressed": True, "any_rows": True}
+
+    def count(levels):
+        return float(g[g["TEST_RESULT"].isin(levels)]["cnt"].sum())
+
+    prof = count(PROFICIENT)
+    notest = count(["No Test"])
     return {
-        "value": round(100 * prof / tested, 1),
-        "below": round(100 * below / tested, 1),
-        "tested": tested,
-        "suppressed": bool(suppressed_any),
+        "value": round(100 * prof / pop, 1),
+        "below": round(100 * count([BELOW_LEVEL]) / pop, 1),
+        "notest": round(100 * notest / pop, 1),
+        "tested": max(0.0, pop - notest),  # test-takers = population − non-testers
+        "pop": float(pop),
+        "suppressed": False,
         "any_rows": True,
     }
 
@@ -177,7 +198,9 @@ def build_trend(df):
             "metric": "forward", "dimension": dimension, "group": group,
             "subject": subject, "unit": "pct", "district": district, "school": school,
             "year": year, "value": p["value"], "pct_below": p["below"],
+            "pct_notest": p["notest"],  # participation is its own story — kept visible
             "tested": None if not p["tested"] else int(p["tested"]),
+            "population": None if p["pop"] is None else int(p["pop"]),
             "status_flag": "; ".join(notes),
         })
     return pd.DataFrame(rows)
@@ -262,9 +285,11 @@ def run(do_fetch=True):
     disparity = build_disparity(groups)
 
     schema = ["metric", "subject", "unit", "district", "school", "group", "year",
-              "value", "pct_below", "yoy_change", "pct_change", "status_flag", "tested"]
+              "value", "pct_below", "pct_notest", "yoy_change", "pct_change",
+              "status_flag", "tested", "population"]
     grp_schema = ["metric", "dimension", "group", "subject", "unit", "district",
-                  "school", "year", "value", "pct_below", "tested", "status_flag"]
+                  "school", "year", "value", "pct_below", "pct_notest", "tested",
+                  "population", "status_flag"]
 
     PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
     all_students[schema].to_csv(PROCESSED_DIR / "forward_school_trend.csv", index=False)

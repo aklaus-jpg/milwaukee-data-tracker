@@ -962,8 +962,18 @@ function renderSchoolChart(metric, district, school) {
       notes.add(part.includes(String(r.year)) ? part : `${r.year}: ${part}`);
     });
   });
-  if (notes.size > 0) {
-    schoolNote.innerHTML = Array.from(notes).map(n => `⚠ ${n}`).join("<br>");
+  // Forward: participation is its own story. Proficiency is out of ALL students
+  // (DPI counts non-testers), so surface the latest No Test rate rather than
+  // letting it hide in the denominator.
+  const noteList = Array.from(notes);
+  if (metric === "forward" && series.length) {
+    const last = series[series.length - 1];
+    if (last.pct_notest != null && !isNaN(last.pct_notest)) {
+      noteList.unshift(`${last.year}: ${Number(last.pct_notest).toFixed(1)}% did not test (counted against proficiency)`);
+    }
+  }
+  if (noteList.length > 0) {
+    schoolNote.innerHTML = noteList.map(n => `⚠ ${n}`).join("<br>");
     schoolNote.style.display = "block";
   } else {
     schoolNote.style.display = "none";
@@ -971,7 +981,7 @@ function renderSchoolChart(metric, district, school) {
 
   const opts = { school: true };
   if (catInfo) { opts.unitLabel = catInfo.axis; opts.decimals = catInfo.decimals; }
-  if (metric === "forward") { opts.unitLabel = `% proficient — ${FORWARD_SUBJECTS[subj]}`; opts.decimals = 1; }
+  if (metric === "forward") { opts.unitLabel = `% proficient (of all students) — ${FORWARD_SUBJECTS[subj]}`; opts.decimals = 1; }
   drawSeries(series, metric, opts);
 }
 
