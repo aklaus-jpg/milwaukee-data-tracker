@@ -60,6 +60,11 @@ SCHOOL_NAME_ALIASES = {
     "Luther Elementary": "E W Luther Elementary",
     "Maple Dale Elementary": "Maple Dale School",
     "Indian Hill Elementary": "Indian Hill School",
+    # Same school through a real program reconfiguration (not just a label): the
+    # building/community carried across, enrollment is continuous and the two
+    # names never co-occur. Stitched so the trend spans the conversion.
+    "Riley Elementary": "Riley Dual Language Montessori School",
+    "River Trail Elementary": "River Trail School of Agricultural Science",
 }
 
 # Exact-match overrides applied after generic ", Inc."/"Inc."/"Inc" stripping.
