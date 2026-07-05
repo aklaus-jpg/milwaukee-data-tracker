@@ -374,6 +374,7 @@
         <option value="discipline">Discipline (Suspensions/Expulsions)</option>
         <option value="forward">State Test (Forward Exam, gr 3–8)</option>
         <option value="act">ACT (11th grade)</option>
+        <option value="hs_completion">HS Completion (4-yr grad rate)</option>
         <option value="report_card">Report Card Score</option>
       </select>
     </div>
@@ -492,25 +493,37 @@ const METRIC_LABELS = {
   report_card: { unit: "Accountability Score", suffix: "" },
   forward: { unit: "% Proficient or Advanced", suffix: "%" },
   act: { unit: "% Proficient or Advanced", suffix: "%" },
+  hs_completion: { unit: "% 4-yr Completion", suffix: "%" },
 };
 
-// Assessment metrics with an ELA/Math subject toggle (Reading/Science/Social are
-// ingested but parked). value column is % proficient; y-axis reads "higher =
-// better". ACHIEVEMENT holds the per-metric copy that Forward and ACT differ on.
+// Per-school, higher-is-better outcome metrics. SUBJECT_METRICS (Forward/ACT)
+// also carry an ELA/Math subject toggle; HS completion has no subject. ACHIEVEMENT
+// holds the copy each metric differs on (empty state, axis, disparity framing).
 const FORWARD_SUBJECTS = { ela: "ELA", math: "Math" };
 const SUBJECT_METRICS = new Set(["forward", "act"]);
 const ACHIEVEMENT = {
   forward: {
     noGrade: "No Forward-tested grades here — the exam covers grades 3–8 only.",
     axis: (s) => `% proficient (of all students) — ${FORWARD_SUBJECTS[s]}`,
+    scatterAxis: (s) => `% proficient — ${FORWARD_SUBJECTS[s]}`,
     notest: "did not test (counted against proficiency)",
-    noun: "Forward", enrolLabel: "tested",
+    noun: "Forward", boardNoun: (s) => `Forward ${FORWARD_SUBJECTS[s]} proficiency`,
+    enrolLabel: "tested", nNoun: "tested",
   },
   act: {
     noGrade: "No ACT results here — the ACT is an 11th-grade test (high schools only).",
     axis: (s) => `% proficient (of all 11th graders) — ${FORWARD_SUBJECTS[s]}`,
+    scatterAxis: (s) => `% proficient — ${FORWARD_SUBJECTS[s]}`,
     notest: "did not test (counted against proficiency)",
-    noun: "ACT", enrolLabel: "tested",
+    noun: "ACT", boardNoun: (s) => `ACT ${FORWARD_SUBJECTS[s]} proficiency`,
+    enrolLabel: "tested", nNoun: "tested",
+  },
+  hs_completion: {
+    noGrade: "No graduating cohort here — completion is a high-school metric.",
+    axis: () => "% graduating in 4 years (regular diploma)",
+    scatterAxis: () => "% 4-yr grad rate",
+    noun: "HS completion", boardNoun: () => "4-year completion rate",
+    enrolLabel: "in cohort", nNoun: "in the cohort",
   },
 };
 function forwardSubject() {
@@ -525,6 +538,7 @@ const SCHOOL_TREND_FILES = {
   chronic_absenteeism: `${REPO_RAW_BASE}/data/processed/chronic_absenteeism_school_trend.csv`,
   forward: `${REPO_RAW_BASE}/data/processed/forward_school_trend.csv`,
   act: `${REPO_RAW_BASE}/data/processed/act_school_trend.csv`,
+  hs_completion: `${REPO_RAW_BASE}/data/processed/hs_completion_school_trend.csv`,
 };
 
 // Metrics with a student-group breakdown + disparity view. hasCategory =
@@ -556,6 +570,13 @@ const GROUP_METRICS = {
     disparity: `${REPO_RAW_BASE}/data/processed/act_disparity.csv`,
     hasCategory: false, hasSubject: true, disparityUnit: "pct",
     ratioNoun: "ACT proficiency", higherIsBetter: true,
+  },
+  hs_completion: {
+    mode: "disparity",
+    groups: `${REPO_RAW_BASE}/data/processed/hs_completion_school_groups.csv`,
+    disparity: `${REPO_RAW_BASE}/data/processed/hs_completion_disparity.csv`,
+    hasCategory: false, hasSubject: false, disparityUnit: "pct",
+    ratioNoun: "4-year completion rate", higherIsBetter: true,
   },
   // Enrollment by group is demographic COMPOSITION (share of school), not a rate
   // disparity — so no leaderboard, just a composition breakdown + a selectable
@@ -967,7 +988,7 @@ function renderSchoolChart(metric, district, school) {
   // Distinct empty state: a school with no grade 3–8 rows never took Forward —
   // that's different from a suppressed gap (which stays in the series) or a real
   // 0% (a plotted point).
-  if (SUBJECT_METRICS.has(metric) && series.length === 0) {
+  if (ACHIEVEMENT[metric] && series.length === 0) {
     if (currentChart) { currentChart.destroy(); currentChart = null; }
     canvas.style.display = "none";
     latestValueEl.innerHTML = "";
@@ -999,6 +1020,19 @@ function renderSchoolChart(metric, district, school) {
       noteList.unshift(`${last.year}: ${fmtPct1(last.pct_notest, metric)}% ${ACHIEVEMENT[metric].notest}`);
     }
   }
+  // HS completion: the same class keeps completing after year 4 — surface the
+  // extended (5-yr+) rate so a low 4-year number isn't read as "never finished."
+  // The newest cohort has no extended year yet, so anchor to the most recent
+  // cohort that DOES (same class, 4-yr vs its longest available timeframe).
+  if (metric === "hs_completion") {
+    const withExt = series.filter(r => r.ext_rate != null && !isNaN(r.ext_rate) && r.value != null);
+    const e = withExt[withExt.length - 1];
+    if (e) {
+      const tf = String(e.ext_timeframe || "").replace(" rate", "").toLowerCase();
+      noteList.unshift(`Class of ${e.cohort_class}: ${Number(e.value).toFixed(1)}% in 4 years → ` +
+        `${Number(e.ext_rate).toFixed(1)}% by ${tf} (same class, more time)`);
+    }
+  }
   if (noteList.length > 0) {
     schoolNote.innerHTML = noteList.map(n => `⚠ ${n}`).join("<br>");
     schoolNote.style.display = "block";
@@ -1008,7 +1042,7 @@ function renderSchoolChart(metric, district, school) {
 
   const opts = { school: true };
   if (catInfo) { opts.unitLabel = catInfo.axis; opts.decimals = catInfo.decimals; }
-  if (SUBJECT_METRICS.has(metric)) { opts.unitLabel = ACHIEVEMENT[metric].axis(subj); opts.decimals = 1; }
+  if (ACHIEVEMENT[metric]) { opts.unitLabel = ACHIEVEMENT[metric].axis(subj); opts.decimals = 1; }
   drawSeries(series, metric, opts);
 }
 
@@ -1065,6 +1099,16 @@ function moversConfig(metric, category) {
       reliable: (l, p) => !/Suppressed/.test(l.status_flag || "") && !/Suppressed/.test(p.status_flag || ""),
       fmtChange: (delta) => `${delta >= 0 ? "+" : "−"}${Math.abs(delta).toFixed(1)} pts`,
       note: "change in % proficient (percentage points); schools with under 100 tested excluded",
+    };
+  }
+  if (metric === "hs_completion") {
+    // 4-yr grad rate in percentage points; higher is better (goodWhenUp). Base
+    // is the cohort; consecutive cohorts (labeled by expected-grad year).
+    return {
+      rankBy: "delta", minLatest: null, minEnroll: 50, showBase: true, goodWhenUp: true,
+      reliable: () => true,
+      fmtChange: (delta) => `${delta >= 0 ? "+" : "−"}${Math.abs(delta).toFixed(1)} pts`,
+      note: "change in 4-yr completion rate (percentage points); cohorts under 50 excluded",
     };
   }
   if (metric === "discipline") {
@@ -1126,10 +1170,12 @@ function computeMovers(metric) {
     const lv = latest.value, pv = prior.value;
     if (lv == null || isNaN(lv) || pv == null || isNaN(pv)) return;
     if (cfg.minLatest != null && lv < cfg.minLatest) return;
-    // base size: discipline/absenteeism carry an enrollment column; Forward
-    // carries "tested"; enrollment's own value IS the headcount.
+    // base size: discipline/absenteeism carry an enrollment column; Forward/ACT
+    // carry "tested"; HS completion carries "cohort_count"; enrollment's own
+    // value IS the headcount.
     const base = latest.enrollment != null ? latest.enrollment
-      : (latest.tested != null ? latest.tested : lv);
+      : (latest.tested != null ? latest.tested
+      : (latest.cohort_count != null ? latest.cohort_count : lv));
     if (cfg.minEnroll != null && (base == null || isNaN(base) || base < cfg.minEnroll)) return;
     if (!cfg.reliable(latest, prior)) return;
     const delta = lv - pv;
@@ -1419,12 +1465,12 @@ async function renderDispBoard() {
     btn.addEventListener("click", () => selectDisparitySchool(r.district, r.school));
     dispBoardList.appendChild(btn);
   });
-  dispBoardTitle.textContent = `Biggest ${dimInfo.label} ${SUBJECT_METRICS.has(metric) ? "achievement gaps" : "disparities"}`;
+  dispBoardTitle.textContent = `Biggest ${dimInfo.label} ${ACHIEVEMENT[metric] ? "achievement gaps" : "disparities"}`;
   // Direction is data-driven (achievement's higher group is White, discipline's
   // is Black) — read it off the top row so the label matches the numbers.
-  const noun = SUBJECT_METRICS.has(metric) ? `${ACHIEVEMENT[metric].noun} ${FORWARD_SUBJECTS[subj]} proficiency` : gm.ratioNoun;
-  const floorNote = SUBJECT_METRICS.has(metric)
-    ? "Ranked spots require ≥30 tested in the smaller group; N=20–29 are shown but not ranked. " : "";
+  const noun = ACHIEVEMENT[metric] ? ACHIEVEMENT[metric].boardNoun(subj) : gm.ratioNoun;
+  const floorNote = ACHIEVEMENT[metric]
+    ? `Ranked spots require ≥30 ${ACHIEVEMENT[metric].nNoun} in the smaller group; N=20–29 are shown but not ranked. ` : "";
   dispBoardSub.textContent =
     `${noun[0].toUpperCase() + noun.slice(1)}, ${groupLabel(top[0].focus_group)} vs ${groupLabel(top[0].reference_group)}, ${top[0].year}. ` +
     `${floorNote}Click a school for its breakdown. A gap is a lead, not a finding — verify before publishing.`;
@@ -1432,7 +1478,7 @@ async function renderDispBoard() {
 }
 
 // ---- Cross-school scatter: student body (% Black) vs the selected outcome ----
-const SCATTER_METRICS = new Set(["discipline", "chronic_absenteeism", "forward", "act"]);
+const SCATTER_METRICS = new Set(["discipline", "chronic_absenteeism", "forward", "act", "hs_completion"]);
 
 function bubbleRadius(enr) {
   if (enr == null || isNaN(enr)) return 5;
@@ -1441,7 +1487,7 @@ function bubbleRadius(enr) {
 
 function scatterYInfo(metric) {
   if (metric === "chronic_absenteeism") return { label: "% chronically absent", suffix: "%", dec: 1 };
-  if (SUBJECT_METRICS.has(metric)) return { label: `% proficient — ${FORWARD_SUBJECTS[forwardSubject()]}`, suffix: "%", dec: 1 };
+  if (ACHIEVEMENT[metric]) return { label: ACHIEVEMENT[metric].scatterAxis(forwardSubject()), suffix: "%", dec: 1 };
   const ci = DISCIPLINE_CATEGORIES[disciplineCategory()];
   if (ci.unit === "count") return { label: "expulsions (count)", suffix: "", dec: 0 };
   return { label: ci.axis.replace(" students", ""), suffix: " /100", dec: 1 };
@@ -1491,7 +1537,8 @@ async function renderScatter(metric) {
     const key = `${r.district}||${r.school}`;
     const x = pctBlack[key], y = r.value;
     if (x == null || isNaN(x) || y == null || isNaN(y)) return;
-    const size = r.enrollment != null ? r.enrollment : r.tested; // Forward has tested, not enrollment
+    const size = r.enrollment != null ? r.enrollment
+      : (r.tested != null ? r.tested : r.cohort_count); // Forward/ACT: tested; HS: cohort
     bubbles.push({ x: +Number(x).toFixed(1), y, r: bubbleRadius(size),
       gap: gapBy[key] || null, school: r.school, district: r.district, enr: size });
   });
@@ -1528,7 +1575,7 @@ async function renderScatter(metric) {
           const p = c.raw;
           const gap = ringShown(p.gap)
             ? `, ${Number(p.gap.ratio).toFixed(1)}× race gap${p.gap.minN != null ? ` (smaller group n=${p.gap.minN})` : ""}` : "";
-          const enr = p.enr ? `, ${Math.round(p.enr).toLocaleString()} ${SUBJECT_METRICS.has(metric) ? "tested" : "students"}` : "";
+          const enr = p.enr ? `, ${Math.round(p.enr).toLocaleString()} ${ACHIEVEMENT[metric] ? ACHIEVEMENT[metric].enrolLabel : "students"}` : "";
           return `${p.school} (${p.district}): ${p.x}% Black, ${formatValue(p.y, metric, yInfo.dec)}${yInfo.suffix}${gap}${enr}`;
         } } },
       },
