@@ -39,12 +39,14 @@ SCHOOL_NAME_ALIASES = {
     # without this alias the code suffix fragments the trend into a phantom
     # closure (0419) plus a school that looks like it opened in 2019-20.
     "North Division High 0419": "North Division High",
-    # MPS renamed Vincent High -> Harold S Vincent School of Agricultural Science
-    # in 2023-24. Same school (named for Harold S. Vincent): enrollment is
-    # continuous across the rename (685 in 2022-23 -> 708 in 2023-24) and the two
-    # names never co-occur in a year. Without this alias "Vincent High" shows a
-    # false closure after 2022-23 and the new name looks like a brand-new school.
-    # (Vincent Accelerated Academy is a separate co-located alt program — not this.)
+    # Same MPS school recorded under two labels: DPI used the short "Vincent
+    # High" through 2022-23 and the full official "Harold S Vincent School of
+    # Agricultural Science" from 2023-24 on (not a real rename — just incomplete
+    # labeling in the source). Enrollment is continuous across the switch (685 in
+    # 2022-23 -> 708 in 2023-24) and the two labels never co-occur in a year.
+    # Without this alias "Vincent High" shows a false closure after 2022-23 and
+    # the full name looks like a brand-new school. (Vincent Accelerated Academy
+    # is a separate co-located alt program — not this.)
     "Vincent High": "Harold S Vincent School of Agricultural Science",
 }
 
