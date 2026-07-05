@@ -262,6 +262,80 @@
     margin: 0.4rem 0;
   }
 
+  .disp-row {
+    display: grid;
+    grid-template-columns: 130px 1fr 108px;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+    padding: 0.28rem 0;
+  }
+
+  .disp-row .grp { font-size: 0.85rem; font-weight: 600; }
+
+  .disp-track {
+    background: rgba(28, 35, 51, 0.06);
+    height: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .disp-fill { display: block; height: 100%; background: var(--gold-deep); }
+  .disp-row.suppressed .grp { color: var(--ink-soft); font-weight: 500; }
+
+  .disp-val {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-align: right;
+    white-space: nowrap;
+  }
+  .disp-val .base { display: block; font-weight: 400; font-size: 0.68rem; color: var(--ink-soft); }
+  .disp-val.muted { color: var(--ink-soft); font-weight: 500; font-style: italic; }
+
+  .disparity-callout {
+    font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 1rem 0 0;
+    padding-top: 0.85rem;
+    border-top: 1px solid var(--rule);
+  }
+  .disparity-callout .ratio { color: var(--down); }
+
+  .disp-board-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.75rem;
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: 0;
+    border-bottom: 1px solid var(--rule);
+    padding: 0.5rem 0.25rem;
+    cursor: pointer;
+    font-family: inherit;
+    color: inherit;
+  }
+  .disp-board-row:last-child { border-bottom: 0; }
+  .disp-board-row:hover { background: rgba(184, 135, 59, 0.08); }
+  .disp-board-row:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; }
+  .disp-board-row .db-name { font-size: 0.95rem; }
+  .disp-board-row .db-name .db-detail {
+    display: block;
+    font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.72rem;
+    color: var(--ink-soft);
+  }
+  .disp-board-row .db-ratio {
+    font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--down);
+    white-space: nowrap;
+  }
+
   footer {
     font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
     max-width: 1100px;
@@ -309,6 +383,19 @@
         <option value="expulsion">Expulsions</option>
       </select>
     </div>
+    <div class="field" id="groupField" style="display:none;">
+      <label for="group">Student group</label>
+      <select id="group">
+        <option value="">All students</option>
+        <option value="Black">Black</option>
+        <option value="Hispanic">Hispanic</option>
+        <option value="White">White</option>
+        <option value="Asian">Asian</option>
+        <option value="Two or More">Two or More</option>
+        <option value="Amer Indian">American Indian</option>
+        <option value="Pacific Isle">Pacific Islander</option>
+      </select>
+    </div>
   </div>
 
   <div class="chart-wrap">
@@ -319,6 +406,19 @@
     <p class="school-note" id="schoolNote" style="display:none;"></p>
     <canvas id="trendChart"></canvas>
     <p class="empty" id="emptyMsg" style="display:none;">No data found for this selection yet.</p>
+  </div>
+
+  <div class="movers" id="disparityPanel" style="display:none;">
+    <h3 id="disparityTitle">Racial disparity</h3>
+    <p class="movers-sub" id="disparitySub"></p>
+    <div id="disparityBars"></div>
+    <p class="disparity-callout" id="disparityCallout"></p>
+  </div>
+
+  <div class="movers" id="dispBoardPanel" style="display:none;">
+    <h3 id="dispBoardTitle">Biggest racial disparities</h3>
+    <p class="movers-sub" id="dispBoardSub"></p>
+    <div id="dispBoardList"></div>
   </div>
 
   <div class="movers" id="moversPanel" style="display:none;">
@@ -369,11 +469,25 @@ const SCHOOL_TREND_FILES = {
   discipline: `${REPO_RAW_BASE}/data/processed/discipline_school_trend.csv`,
 };
 
+// Phase 2: per-race discipline rates + the school disparity leaderboard.
+const GROUPS_TREND_FILE = `${REPO_RAW_BASE}/data/processed/discipline_school_groups_trend.csv`;
+const RACE_DISPARITY_FILE = `${REPO_RAW_BASE}/data/processed/discipline_race_disparity.csv`;
+
 const metricSelect = document.getElementById("metric");
 const districtSelect = document.getElementById("district");
 const schoolField = document.getElementById("schoolField");
 const categoryField = document.getElementById("categoryField");
 const categorySelect = document.getElementById("category");
+const groupField = document.getElementById("groupField");
+const groupSelect = document.getElementById("group");
+const disparityPanel = document.getElementById("disparityPanel");
+const disparityTitle = document.getElementById("disparityTitle");
+const disparitySub = document.getElementById("disparitySub");
+const disparityBars = document.getElementById("disparityBars");
+const disparityCallout = document.getElementById("disparityCallout");
+const dispBoardPanel = document.getElementById("dispBoardPanel");
+const dispBoardSub = document.getElementById("dispBoardSub");
+const dispBoardList = document.getElementById("dispBoardList");
 const schoolSelect = document.getElementById("school");
 const chartTitle = document.getElementById("chartTitle");
 const latestValueEl = document.getElementById("latestValue");
@@ -389,6 +503,23 @@ const moversDown = document.getElementById("moversDown");
 let currentChart = null;
 let cache = {}; // metric -> parsed district-level rows
 let schoolCache = {}; // metric -> parsed school-level rows
+let groupsCache = null; // per-race discipline rows
+let disparityCache = null; // race disparity leaderboard rows
+
+async function loadCsv(url) {
+  const res = await fetch(url);
+  if (!res.ok) return [];
+  const text = await res.text();
+  return Papa.parse(text, { header: true, dynamicTyping: true, skipEmptyLines: true }).data;
+}
+async function loadGroups() {
+  if (groupsCache === null) groupsCache = await loadCsv(GROUPS_TREND_FILE);
+  return groupsCache;
+}
+async function loadDisparity() {
+  if (disparityCache === null) disparityCache = await loadCsv(RACE_DISPARITY_FILE);
+  return disparityCache;
+}
 
 // District-level trend files aren't deduplicated for charter-network naming
 // drift (e.g. "X Inc", "X Inc.", "X, Inc." all show up as separate district
@@ -622,18 +753,28 @@ function disciplineCategory() {
   return (metricSelect.value === "discipline" && categorySelect.value) || "all";
 }
 
+function disciplineGroup() {
+  return (metricSelect.value === "discipline" && groupSelect.value) || "";
+}
+
 function renderSchoolChart(metric, district, school) {
-  const rows = schoolCache[metric] || [];
   const normDistrict = normalizeDistrictName(district);
   const cat = metric === "discipline" ? disciplineCategory() : null;
-  const series = rows
-    .filter(r => r.district === normDistrict && r.school === school
-                 && (cat === null || r.category === cat))
+  const grp = metric === "discipline" ? disciplineGroup() : "";
+
+  // A specific race group pulls from the per-group file; "All students" uses
+  // the standard school trend.
+  const source = grp
+    ? (groupsCache || []).filter(r => r.group === grp && r.category === cat)
+    : (schoolCache[metric] || []).filter(r => cat === null || r.category === cat);
+  const series = source
+    .filter(r => r.district === normDistrict && r.school === school)
     .sort((a, b) => String(a.year).localeCompare(String(b.year)));
 
   const catInfo = cat ? DISCIPLINE_CATEGORIES[cat] : null;
-  const suffix = catInfo && cat !== "all" ? ` · ${catInfo.label}` : "";
-  chartTitle.textContent = `${school}, ${normDistrict} — ${metricSelect.options[metricSelect.selectedIndex].text}${suffix}`;
+  const catSuffix = catInfo && cat !== "all" ? ` · ${catInfo.label}` : "";
+  const grpSuffix = grp ? ` · ${grp} students` : "";
+  chartTitle.textContent = `${school}, ${normDistrict} — ${metricSelect.options[metricSelect.selectedIndex].text}${catSuffix}${grpSuffix}`;
 
   // "No data after [year]" is identical on every row of a closed-out series —
   // show it once. Other flags (authorizer changes, small-count privacy notes)
@@ -819,6 +960,97 @@ async function selectMoverSchool(normDistrict, school) {
   document.querySelector(".chart-wrap").scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
+// ---- Racial disparity: one school's per-group breakdown ----
+function renderDisparity(district, school) {
+  const normDistrict = normalizeDistrictName(district);
+  const cat = disciplineCategory();
+  const catInfo = DISCIPLINE_CATEGORIES[cat];
+  const rows = (groupsCache || []).filter(r =>
+    r.district === normDistrict && r.school === school && r.category === cat);
+  if (rows.length === 0) { disparityPanel.style.display = "none"; return; }
+
+  const latestYear = rows.map(r => String(r.year)).sort().slice(-1)[0];
+  const yr = rows.filter(r => String(r.year) === latestYear);
+  const rated = yr.filter(r => r.value != null && !isNaN(r.value)).sort((a, b) => b.value - a.value);
+  const unrated = yr.filter(r => r.value == null || isNaN(r.value));
+  const maxv = rated.length ? rated[0].value : 1;
+  const unit = catInfo.unit, dec = catInfo.decimals;
+
+  disparityBars.innerHTML = "";
+  rated.forEach(r => {
+    const pct = maxv > 0 ? (r.value / maxv) * 100 : 0;
+    const base = r.group_enrollment != null
+      ? `<span class="base">${Math.round(r.group_enrollment).toLocaleString()} students</span>` : "";
+    const div = document.createElement("div");
+    div.className = "disp-row";
+    div.innerHTML =
+      `<span class="grp">${escapeHtml(r.group)}</span>` +
+      `<span class="disp-track"><span class="disp-fill" style="width:${pct.toFixed(1)}%"></span></span>` +
+      `<span class="disp-val">${formatValue(r.value, "discipline", dec)}${unit === "rate" ? " /100" : ""}${base}</span>`;
+    disparityBars.appendChild(div);
+  });
+  unrated.forEach(r => {
+    const reason = /Suppressed/.test(r.status_flag || "") ? "suppressed (privacy)"
+      : /under/.test(r.status_flag || "") ? "too few students"
+      : "no data";
+    const div = document.createElement("div");
+    div.className = "disp-row suppressed";
+    div.innerHTML =
+      `<span class="grp">${escapeHtml(r.group)}</span>` +
+      `<span class="disp-track"></span><span class="disp-val muted">${reason}</span>`;
+    disparityBars.appendChild(div);
+  });
+
+  const by = {}; yr.forEach(r => by[r.group] = r.value);
+  let callout = "";
+  if (unit === "rate" && by["Black"] != null && by["White"] != null && by["White"] > 0) {
+    callout = `Black students: <b>${by["Black"].toFixed(1)}</b> vs White students: <b>${by["White"].toFixed(1)}</b> per 100 — ` +
+      `<span class="ratio">${(by["Black"] / by["White"]).toFixed(1)}× gap</span>.`;
+  } else if (rated.length >= 2 && rated[rated.length - 1].value > 0) {
+    const hi = rated[0], lo = rated[rated.length - 1];
+    callout = `Highest: <b>${escapeHtml(hi.group)}</b> — <span class="ratio">${(hi.value / lo.value).toFixed(1)}× the lowest group</span>.`;
+  }
+  disparityCallout.innerHTML = callout
+    ? `${callout} A gap is a reporting lead, not a finding — verify before publishing.` : "";
+  disparityTitle.textContent = `Racial disparity — ${school} (${latestYear})`;
+  disparitySub.textContent = unit === "rate"
+    ? `${catInfo.label}, per 100 students of each race. Groups under 20 students and DPI-suppressed groups are omitted.`
+    : `${catInfo.label} counts by race (raw counts, not size-adjusted).`;
+  disparityPanel.style.display = "block";
+}
+
+// ---- Biggest racial disparities across schools ----
+async function renderDispBoard() {
+  await loadDisparity();
+  const rows = (disparityCache || []).filter(r => r.high_low_ratio != null && !isNaN(r.high_low_ratio));
+  if (rows.length === 0) { dispBoardPanel.style.display = "none"; return; }
+  const top = rows.slice().sort((a, b) => b.high_low_ratio - a.high_low_ratio).slice(0, 12);
+  dispBoardList.innerHTML = "";
+  top.forEach(r => {
+    const detail = (r.black_rate != null && r.white_rate != null)
+      ? `Black ${Number(r.black_rate).toFixed(1)} vs White ${Number(r.white_rate).toFixed(1)} per 100`
+      : `${escapeHtml(r.highest_group)} ${Number(r.highest_rate).toFixed(1)} vs ${escapeHtml(r.lowest_group)} ${Number(r.lowest_rate).toFixed(1)} per 100`;
+    const btn = document.createElement("button");
+    btn.className = "disp-board-row"; btn.type = "button";
+    btn.innerHTML =
+      `<span class="db-name">${escapeHtml(r.school)}<span class="db-detail">${escapeHtml(r.district)} · ${detail}</span></span>` +
+      `<span class="db-ratio">${Number(r.high_low_ratio).toFixed(1)}× gap</span>`;
+    btn.addEventListener("click", () => selectDisparitySchool(r.district, r.school));
+    dispBoardList.appendChild(btn);
+  });
+  dispBoardTitle.textContent = "Biggest racial disparities";
+  dispBoardSub.textContent =
+    `Out-of-school suspension rate, highest vs lowest race group, ${top[0].year}. ` +
+    `Click a school for its breakdown. A gap is a lead, not a finding — verify before publishing.`;
+  dispBoardPanel.style.display = "block";
+}
+
+async function selectDisparitySchool(district, school) {
+  categorySelect.value = "suspension";
+  groupSelect.value = "";
+  await selectMoverSchool(normalizeDistrictName(district), school);
+}
+
 function renderCurrent() {
   const metric = metricSelect.value;
   const district = districtSelect.value;
@@ -828,13 +1060,20 @@ function renderCurrent() {
   } else {
     renderChart(metric, district);
   }
+  if (metric === "discipline" && school) {
+    renderDisparity(district, school);
+  } else {
+    disparityPanel.style.display = "none";
+  }
 }
 
 async function onMetricChange(keepDistrict) {
   const metric = metricSelect.value;
-  // The removal-type toggle only applies to discipline (the only metric split
-  // into categories); hide it for everything else.
-  categoryField.style.display = metric === "discipline" ? "flex" : "none";
+  // Removal-type and student-group controls only apply to discipline.
+  const isDisc = metric === "discipline";
+  categoryField.style.display = isDisc ? "flex" : "none";
+  groupField.style.display = isDisc ? "flex" : "none";
+  if (isDisc) await loadGroups();
   const rows = await loadMetric(metric);
   const districts = districtsFor(rows);
   populateDistrictOptions(districts, keepDistrict);
@@ -846,16 +1085,28 @@ async function onMetricChange(keepDistrict) {
     schoolField.style.display = "none";
     schoolNote.style.display = "none";
     moversPanel.style.display = "none";
+    disparityPanel.style.display = "none";
+    dispBoardPanel.style.display = "none";
     return;
   }
   await populateSchoolOptions(metric, districtSelect.value);
   renderCurrent();
   renderMovers(metric);
+  if (isDisc) {
+    renderDispBoard();
+  } else {
+    dispBoardPanel.style.display = "none";
+    disparityPanel.style.display = "none";
+  }
 }
 
 function onCategoryChange() {
   renderCurrent();
   renderMovers(metricSelect.value);
+}
+
+function onGroupChange() {
+  renderCurrent();
 }
 
 async function onDistrictChange() {
@@ -867,6 +1118,7 @@ metricSelect.addEventListener("change", () => onMetricChange(false));
 districtSelect.addEventListener("change", onDistrictChange);
 schoolSelect.addEventListener("change", renderCurrent);
 categorySelect.addEventListener("change", onCategoryChange);
+groupSelect.addEventListener("change", onGroupChange);
 
 onMetricChange(false);
 </script>

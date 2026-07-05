@@ -56,10 +56,11 @@ DROP_GROUP_VALUES = {"Unknown", "[Data Suppressed]", "Unknown Race/Ethnicity"}
 MIN_GROUP_ENROLL = 20
 
 CATEGORY_TYPES = {
+    "all": {OSS_TYPE} | EXPULSION_TYPES,
     "suspension": {OSS_TYPE},
     "expulsion": EXPULSION_TYPES,
 }
-CATEGORY_UNIT = {"suspension": "rate", "expulsion": "count"}
+CATEGORY_UNIT = {"all": "rate", "suspension": "rate", "expulsion": "count"}
 
 
 def load_group_rows():
