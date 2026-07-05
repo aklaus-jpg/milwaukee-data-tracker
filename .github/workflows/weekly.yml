@@ -28,8 +28,35 @@ jobs:
       - name: Run pipeline
         run: python run_pipeline.py
 
+      # The fetch writes a dated, checksummed archive to data/archive/<date>/ —
+      # but that dir is gitignored and the runner is ephemeral, so the checksum
+      # trail would vanish. Copy this run's manifest to a NON-ignored path so the
+      # raw-source checksums are versioned in git permanently (tiny text, no bloat;
+      # the raws themselves stay re-fetchable + retained as an artifact below).
+      - name: Persist raw-source checksum manifest (versioned in git)
+        run: |
+          LATEST=$(ls -1d data/archive/*/ 2>/dev/null | sort | tail -1)
+          if [ -n "$LATEST" ] && [ -f "${LATEST}SHA256SUMS.txt" ]; then
+            DAY=$(basename "$LATEST")
+            mkdir -p data/archive_manifests
+            cp "${LATEST}SHA256SUMS.txt" "data/archive_manifests/${DAY}.txt"
+            echo "manifest committed: data/archive_manifests/${DAY}.txt"
+            cat "data/archive_manifests/${DAY}.txt"
+          else
+            echo "::warning::no archive manifest produced this run (no successful fetch?)"
+          fi
+
+      # Full raws for a dispute window — retained off the ephemeral runner.
+      - name: Upload raw archive (dispute-window retention)
+        uses: actions/upload-artifact@v4
+        with:
+          name: raw-archive-${{ github.run_number }}
+          path: data/archive/
+          retention-days: 90
+          if-no-files-found: warn
+
       - name: Commit updated data, charts, and summary
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Auto-update Milwaukee data (run ${{ github.run_number }})"
-          file_pattern: "data/** charts/** SUMMARY.md"
+          file_pattern: "data/** data/archive_manifests/** charts/** SUMMARY.md"
