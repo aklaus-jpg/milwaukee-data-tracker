@@ -347,6 +347,15 @@
   }
 
   footer a { color: var(--gold-deep); }
+  footer .methodology {
+    margin-top: 0.9rem;
+    padding-top: 0.9rem;
+    border-top: 1px solid var(--rule, rgba(0,0,0,0.12));
+    font-size: 0.72rem;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    opacity: 0.85;
+  }
 </style>
 </head>
 <body>
@@ -474,6 +483,12 @@
   <a href="https://dpi.wi.gov/wisedash/public" target="_blank" rel="noopener">WISEdash Public Portal</a>
   before citing. Full data and source code on
   <a href="https://github.com/aklaus-jpg/milwaukee-data-tracker" target="_blank" rel="noopener">GitHub</a>.
+  <p class="methodology">
+    Source: Wisconsin DPI WISEdash certified files. Each metric matches DPI&rsquo;s published denominator and
+    rounding convention (proficiency truncated to 1 decimal; completion rate rounded &mdash; matching how DPI
+    displays each). Groups too small to report are shown as gaps, never zeros. Figures reflect the most recent
+    certified data pull.
+  </p>
 </footer>
 
 <script>
