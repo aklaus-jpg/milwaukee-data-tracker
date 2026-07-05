@@ -211,6 +211,7 @@ def build_disparity(groups_df):
         if dimension not in DIMENSIONS:
             continue
         rates = dict(zip(g["group"], g["value"]))
+        tested = dict(zip(g["group"], g["tested"]))
         rated = {k: v for k, v in rates.items() if v is not None}
         if len(rated) < 2:
             continue
@@ -233,6 +234,10 @@ def build_disparity(groups_df):
             "focus_group": focus, "focus_rate": f_rate,
             "reference_group": reference, "reference_rate": r_rate,
             "focus_reference_ratio": fr,
+            # tested N behind each side of the gap — so a "biggest gap" school
+            # can't hide that its smaller group is a tiny sample.
+            "focus_n": None if tested.get(focus) is None else int(tested.get(focus)),
+            "reference_n": None if tested.get(reference) is None else int(tested.get(reference)),
             "highest_group": top, "highest_rate": rated[top],
             "lowest_group": bot, "lowest_rate": rated[bot],
             "high_low_ratio": high_low,

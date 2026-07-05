@@ -1344,9 +1344,10 @@ async function renderDispBoard() {
   if (rows.length === 0) { dispBoardPanel.style.display = "none"; return; }
   const top = rows.slice().sort((a, b) => b.focus_reference_ratio - a.focus_reference_ratio).slice(0, 12);
   dispBoardList.innerHTML = "";
+  const nTag = (v) => (v != null && !isNaN(v)) ? ` (n=${Math.round(v)})` : "";
   top.forEach(r => {
-    const detail = `${groupLabel(r.focus_group)} ${Number(r.focus_rate).toFixed(1)}${sfx} ` +
-      `vs ${groupLabel(r.reference_group)} ${Number(r.reference_rate).toFixed(1)}${sfx}${trail}`;
+    const detail = `${groupLabel(r.focus_group)} ${Number(r.focus_rate).toFixed(1)}${sfx}${nTag(r.focus_n)} ` +
+      `vs ${groupLabel(r.reference_group)} ${Number(r.reference_rate).toFixed(1)}${sfx}${nTag(r.reference_n)}${trail}`;
     const btn = document.createElement("button");
     btn.className = "disp-board-row"; btn.type = "button";
     btn.innerHTML =
@@ -1359,9 +1360,11 @@ async function renderDispBoard() {
   // Direction is data-driven (Forward's higher group is White, discipline's is
   // Black) — read it off the top row so the label matches the numbers.
   const noun = metric === "forward" ? `Forward ${FORWARD_SUBJECTS[subj]} proficiency` : gm.ratioNoun;
+  const floorNote = metric === "forward"
+    ? "Each race needs ≥20 tested; treat near-floor Ns (shown) cautiously. " : "";
   dispBoardSub.textContent =
     `${noun[0].toUpperCase() + noun.slice(1)}, ${groupLabel(top[0].focus_group)} vs ${groupLabel(top[0].reference_group)}, ${top[0].year}. ` +
-    `Click a school for its breakdown. A gap is a lead, not a finding — verify before publishing.`;
+    `${floorNote}Click a school for its breakdown. A gap is a lead, not a finding — verify before publishing.`;
   dispBoardPanel.style.display = "block";
 }
 
@@ -1398,12 +1401,20 @@ async function renderScatter(metric) {
       pctBlack[`${r.district}||${r.school}`] = r.share * 100;
   });
 
+  // Gap ring, with the smaller-group tested N so a "biggest gap" school can't
+  // hide a tiny sample. minN is null when the file doesn't record it (discipline
+  // — already floored at 20 enrollment upstream).
   const gapBy = {};
   (disparityCacheByMetric[metric] || []).forEach(r => {
     if (r.dimension === "Race/Ethnicity" && (subj === null || r.subject === subj)
-        && r.focus_reference_ratio != null && !isNaN(r.focus_reference_ratio))
-      gapBy[`${r.district}||${r.school}`] = r.focus_reference_ratio;
+        && r.focus_reference_ratio != null && !isNaN(r.focus_reference_ratio)) {
+      const minN = (r.focus_n != null && r.reference_n != null)
+        ? Math.min(r.focus_n, r.reference_n) : null;
+      gapBy[`${r.district}||${r.school}`] = { ratio: r.focus_reference_ratio, minN };
+    }
   });
+  const GAP_MIN_N = 20; // don't draw a race-gap ring on a smaller group below this
+  const ringShown = (g) => g && (g.minN == null || g.minN >= GAP_MIN_N);
 
   let rows = schoolCache[metric] || [];
   if (cat !== null) rows = rows.filter(r => r.category === cat);
@@ -1442,8 +1453,8 @@ async function renderScatter(metric) {
           borderWidth: 1.5, pointRadius: 0, fill: false, order: 2 },
         { type: "bubble", data: bubbles, order: 1,
           backgroundColor: "rgba(184,135,59,0.30)",
-          borderColor: (c) => (c.raw && c.raw.gap ? "rgba(164,72,47,0.9)" : "rgba(28,35,51,0.35)"),
-          borderWidth: (c) => (c.raw && c.raw.gap ? Math.min(1 + c.raw.gap, 7) : 1) },
+          borderColor: (c) => (ringShown(c.raw && c.raw.gap) ? "rgba(164,72,47,0.9)" : "rgba(28,35,51,0.35)"),
+          borderWidth: (c) => (ringShown(c.raw && c.raw.gap) ? Math.min(1 + c.raw.gap.ratio, 7) : 1) },
       ],
     },
     options: {
@@ -1452,8 +1463,9 @@ async function renderScatter(metric) {
         legend: { display: false },
         tooltip: { callbacks: { label: (c) => {
           const p = c.raw;
-          const gap = p.gap ? `, ${Number(p.gap).toFixed(1)}× B/W gap` : "";
-          const enr = p.enr ? `, ${Math.round(p.enr).toLocaleString()} students` : "";
+          const gap = ringShown(p.gap)
+            ? `, ${Number(p.gap.ratio).toFixed(1)}× race gap${p.gap.minN != null ? ` (smaller group n=${p.gap.minN})` : ""}` : "";
+          const enr = p.enr ? `, ${Math.round(p.enr).toLocaleString()} ${metric === "forward" ? "tested" : "students"}` : "";
           return `${p.school} (${p.district}): ${p.x}% Black, ${formatValue(p.y, "discipline", yInfo.dec)}${yInfo.suffix}${gap}${enr}`;
         } } },
       },
@@ -1472,9 +1484,10 @@ async function renderScatter(metric) {
   scatterTitle.textContent = `Student body vs ${yInfo.label} — ${bubbles.length} schools (${yYear})`;
   scatterSub.textContent =
     `Each dot is a school: x = share of students who are Black, y = ${yInfo.label}, size = enrollment. ` +
-    `A red ring marks the school's Black-vs-white gap (thicker = wider). The dashed line is the overall ` +
-    `trend — schools far above it are the outliers worth reporting out. A school's makeup isn't the same ` +
-    `as where its students live (Milwaukee school choice). A gap is a lead, not a finding — verify before publishing.`;
+    `A red ring marks the school's Black-vs-white gap (thicker = wider; shown only where each race has ` +
+    `≥20 tested — hover for the smaller group's N). The dashed line is the overall trend — schools far ` +
+    `above it are the outliers worth reporting out. A school's makeup isn't the same as where its students ` +
+    `live (Milwaukee school choice). A gap is a lead, not a finding — verify before publishing.`;
   scatterPanel.style.display = "block";
 }
 
