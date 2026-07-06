@@ -1,86 +1,80 @@
 metric,group,year,value,pct_change
-chronic_absenteeism,Brown Deer — All Students,2019-20,18.5,-17.7
-chronic_absenteeism,Brown Deer — All Students,2021-22,41.7,112.4
-chronic_absenteeism,Brown Deer — All Students,2022-23,34.333333333333336,-17.7
-chronic_absenteeism,Bruce Guadalupe — All Students,2020-21,17.15,185.8
-chronic_absenteeism,Bruce Guadalupe — All Students,2021-22,42.3,146.6
+chronic_absenteeism,Brown Deer — All Students,2021-22,48.4,131.6
+chronic_absenteeism,Brown Deer — All Students,2022-23,35.5,-26.7
+chronic_absenteeism,Bruce Guadalupe — All Students,2019-20,6.3,-18.2
+chronic_absenteeism,Bruce Guadalupe — All Students,2020-21,17.3,174.6
+chronic_absenteeism,Bruce Guadalupe — All Students,2021-22,43.0,148.6
 chronic_absenteeism,Central City Cyberschool — All Students,2019-20,27.2,16.7
 chronic_absenteeism,Central City Cyberschool — All Students,2020-21,47.5,74.6
 chronic_absenteeism,Central City Cyberschool — All Students,2021-22,59.8,25.9
 chronic_absenteeism,Central City Cyberschool of Milwaukee Inc — All Students,2024-25,34.0,-25.8
-chronic_absenteeism,Cudahy — All Students,2021-22,33.6625,37.8
-chronic_absenteeism,Darrell Lynn Hines Academy — All Students,2020-21,36.8,65.0
-chronic_absenteeism,Darrell Lynn Hines Academy — All Students,2021-22,48.8,32.6
-chronic_absenteeism,Downtown Montessori — All Students,2019-20,2.4,inf
-chronic_absenteeism,Downtown Montessori — All Students,2020-21,1.6,-33.3
-chronic_absenteeism,Downtown Montessori — All Students,2021-22,18.3,1043.8
-chronic_absenteeism,Downtown Montessori Academy Inc — All Students,2024-25,8.2,-16.3
+chronic_absenteeism,Cudahy — All Students,2020-21,28.0,17.2
+chronic_absenteeism,Cudahy — All Students,2021-22,32.7,16.8
 chronic_absenteeism,Dr Howard Fuller Collegiate Academy — All Students,2020-21,16.5,-39.3
 chronic_absenteeism,Dr Howard Fuller Collegiate Academy — All Students,2021-22,3.5,-78.8
-chronic_absenteeism,Fox Point J2 — All Students,2019-20,5.566666666666666,15.2
-chronic_absenteeism,Fox Point J2 — All Students,2020-21,0.9333333333333332,-83.2
-chronic_absenteeism,Fox Point J2 — All Students,2021-22,4.366666666666666,367.9
-chronic_absenteeism,Fox Point J2 — All Students,2022-23,7.533333333333334,72.5
-chronic_absenteeism,Fox Point J2 — All Students,2023-24,6.3999999999999995,-15.0
-chronic_absenteeism,Fox Point J2 — All Students,2024-25,4.6000000000000005,-28.1
-chronic_absenteeism,Franklin Public — All Students,2024-25,13.855555555555556,-25.2
-chronic_absenteeism,Glendale-River Hills — All Students,2020-21,2.7999999999999994,-60.6
-chronic_absenteeism,Glendale-River Hills — All Students,2021-22,10.466666666666667,273.8
-chronic_absenteeism,Glendale-River Hills — All Students,2022-23,13.5,29.0
-chronic_absenteeism,Glendale-River Hills — All Students,2024-25,8.799999999999999,-34.3
-chronic_absenteeism,Greendale — All Students,2019-20,5.316666666666666,28.1
-chronic_absenteeism,Greendale — All Students,2020-21,47.300000000000004,789.7
-chronic_absenteeism,Greendale — All Students,2021-22,5.616666666666666,-88.1
-chronic_absenteeism,Greendale — All Students,2022-23,6.966666666666666,24.0
-chronic_absenteeism,Greendale — All Students,2023-24,5.883333333333333,-15.6
-chronic_absenteeism,Greenfield — All Students,2019-20,4.042857142857143,-50.9
-chronic_absenteeism,Greenfield — All Students,2020-21,10.742857142857144,165.7
-chronic_absenteeism,Greenfield — All Students,2021-22,16.442857142857143,53.1
-chronic_absenteeism,Greenfield — All Students,2023-24,11.671428571428573,-17.6
-chronic_absenteeism,Maple Dale-Indian Hill — All Students,2020-21,1.4000000000000001,-78.6
-chronic_absenteeism,Maple Dale-Indian Hill — All Students,2021-22,10.766666666666666,669.0
-chronic_absenteeism,Maple Dale-Indian Hill — All Students,2022-23,7.366666666666667,-31.6
-chronic_absenteeism,Maple Dale-Indian Hill — All Students,2024-25,3.866666666666667,-41.7
-chronic_absenteeism,Milwaukee — All Students,2020-21,41.93481012658228,16.1
-chronic_absenteeism,Milwaukee — All Students,2021-22,61.43141025641025,46.5
+chronic_absenteeism,Fox Point J2 — All Students,2020-21,0.9,-83.6
+chronic_absenteeism,Fox Point J2 — All Students,2021-22,4.4,388.9
+chronic_absenteeism,Fox Point J2 — All Students,2022-23,7.6,72.7
+chronic_absenteeism,Fox Point J2 — All Students,2023-24,6.4,-15.8
+chronic_absenteeism,Fox Point J2 — All Students,2024-25,4.6,-28.1
+chronic_absenteeism,Franklin Public — All Students,2020-21,6.0,15.4
+chronic_absenteeism,Franklin Public — All Students,2021-22,7.3,21.7
+chronic_absenteeism,Franklin Public — All Students,2022-23,9.9,35.6
+chronic_absenteeism,Franklin Public — All Students,2024-25,7.6,-15.6
+chronic_absenteeism,Glendale-River Hills — All Students,2020-21,2.8,-60.6
+chronic_absenteeism,Glendale-River Hills — All Students,2021-22,10.4,271.4
+chronic_absenteeism,Glendale-River Hills — All Students,2022-23,13.5,29.8
+chronic_absenteeism,Glendale-River Hills — All Students,2024-25,8.9,-32.6
+chronic_absenteeism,Greendale — All Students,2019-20,5.2,23.8
+chronic_absenteeism,Greendale — All Students,2020-21,46.1,786.5
+chronic_absenteeism,Greendale — All Students,2021-22,7.1,-84.6
+chronic_absenteeism,Greendale — All Students,2022-23,8.2,15.5
+chronic_absenteeism,Greenfield — All Students,2019-20,5.4,-47.1
+chronic_absenteeism,Greenfield — All Students,2020-21,9.6,77.8
+chronic_absenteeism,Greenfield — All Students,2021-22,17.9,86.5
+chronic_absenteeism,Greenfield — All Students,2022-23,15.1,-15.6
+chronic_absenteeism,Maple Dale-Indian Hill — All Students,2019-20,6.8,17.2
+chronic_absenteeism,Maple Dale-Indian Hill — All Students,2020-21,1.5,-77.9
+chronic_absenteeism,Maple Dale-Indian Hill — All Students,2021-22,10.5,600.0
+chronic_absenteeism,Maple Dale-Indian Hill — All Students,2022-23,7.4,-29.5
+chronic_absenteeism,Maple Dale-Indian Hill — All Students,2024-25,4.0,-40.3
+chronic_absenteeism,Milwaukee — All Students,2021-22,58.0,58.5
 chronic_absenteeism,Milwaukee Academy of Science — All Students,2020-21,42.3,41.0
 chronic_absenteeism,Milwaukee Academy of Science — All Students,2021-22,54.6,29.1
-chronic_absenteeism,Milwaukee Math and Science Academy — All Students,2020-21,57.8,92.0
 chronic_absenteeism,Milwaukee Scholars Charter School — All Students,2020-21,36.2,17.5
 chronic_absenteeism,Milwaukee Scholars Charter School — All Students,2021-22,59.2,63.5
 chronic_absenteeism,Nicolet UHS — All Students,2019-20,4.8,-41.5
 chronic_absenteeism,Nicolet Union High School — All Students,2022-23,8.1,42.1
 chronic_absenteeism,Nicolet Union High School — All Students,2023-24,3.0,-63.0
-chronic_absenteeism,Oak Creek-Franklin Joint — All Students,2019-20,8.963636363636363,27.4
-chronic_absenteeism,Oak Creek-Franklin Joint — All Students,2021-22,14.272727272727273,66.7
-chronic_absenteeism,Oak Creek-Franklin Joint — All Students,2022-23,12.045454545454545,-15.6
-chronic_absenteeism,Rocketship Education Wisconsin Inc — All Students,2021-22,47.4,-18.4
-chronic_absenteeism,Rocketship Education Wisconsin Inc — All Students,2024-25,35.43333333333333,-30.8
-chronic_absenteeism,Saint Francis — All Students,2019-20,18.825,24.9
-chronic_absenteeism,Saint Francis — All Students,2021-22,35.325,77.1
-chronic_absenteeism,Saint Francis — All Students,2022-23,20.15,-43.0
-chronic_absenteeism,Seeds of Health Inc — All Students,2019-20,16.975,46.7
-chronic_absenteeism,Seeds of Health Inc — All Students,2020-21,36.75,116.5
-chronic_absenteeism,Seeds of Health Inc — All Students,2021-22,43.4,18.1
-chronic_absenteeism,Seeds of Health Inc — All Students,2023-24,28.8,-22.3
-chronic_absenteeism,Shorewood — All Students,2020-21,9.433333333333334,-52.9
-chronic_absenteeism,Shorewood — All Students,2021-22,35.699999999999996,278.4
-chronic_absenteeism,Shorewood — All Students,2023-24,19.533333333333335,-39.1
-chronic_absenteeism,South Milwaukee — All Students,2020-21,19.17142857142857,35.0
-chronic_absenteeism,South Milwaukee — All Students,2023-24,23.414285714285715,27.5
-chronic_absenteeism,Stellar Collegiate Charter School — All Students,2019-20,5.1,537.5
-chronic_absenteeism,Stellar Collegiate Charter School — All Students,2020-21,33.5,556.9
-chronic_absenteeism,United Community Center Inc — All Students,2024-25,17.23333333333333,-28.2
-chronic_absenteeism,Wauwatosa — All Students,2019-20,10.072222222222223,36.4
-chronic_absenteeism,Wauwatosa — All Students,2020-21,14.72777777777778,46.2
-chronic_absenteeism,Wauwatosa — All Students,2023-24,8.538888888888888,-47.3
-chronic_absenteeism,West Allis-West Milwaukee — All Students,2019-20,25.927777777777777,35.0
-chronic_absenteeism,Whitefish Bay — All Students,2021-22,4.24,19.1
-chronic_absenteeism,Whitefish Bay — All Students,2022-23,5.640000000000001,33.0
-chronic_absenteeism,Whitefish Bay — All Students,2023-24,2.42,-57.1
-chronic_absenteeism,Whitefish Bay — All Students,2024-25,2.96,22.3
-chronic_absenteeism,Whitnall — All Students,2023-24,6.9,-26.0
-chronic_absenteeism,Woodlands School — All Students,2019-20,10.75,36.9
-chronic_absenteeism,Woodlands School — All Students,2020-21,16.65,54.9
-chronic_absenteeism,Woodlands School — All Students,2021-22,24.9,49.5
-chronic_absenteeism,Woodlands School - State Street Campus — All Students,2019-20,17.4,34.9
+chronic_absenteeism,Oak Creek-Franklin Joint — All Students,2021-22,15.8,46.3
+chronic_absenteeism,Rocketship Education Wisconsin Inc — All Students,2021-22,46.0,-20.8
+chronic_absenteeism,Rocketship Education Wisconsin Inc — All Students,2024-25,34.8,-30.7
+chronic_absenteeism,Saint Francis — All Students,2019-20,19.7,23.1
+chronic_absenteeism,Saint Francis — All Students,2021-22,35.9,82.2
+chronic_absenteeism,Saint Francis — All Students,2022-23,21.5,-40.1
+chronic_absenteeism,Saint Francis — All Students,2023-24,17.6,-18.1
+chronic_absenteeism,Saint Francis — All Students,2024-25,20.4,15.9
+chronic_absenteeism,Seeds of Health Inc — All Students,2019-20,18.0,45.2
+chronic_absenteeism,Seeds of Health Inc — All Students,2020-21,37.6,108.9
+chronic_absenteeism,Seeds of Health Inc — All Students,2021-22,43.4,15.4
+chronic_absenteeism,Seeds of Health Inc — All Students,2023-24,29.3,-22.9
+chronic_absenteeism,Shorewood — All Students,2020-21,6.3,-50.4
+chronic_absenteeism,Shorewood — All Students,2021-22,27.3,333.3
+chronic_absenteeism,Shorewood — All Students,2023-24,12.4,-48.1
+chronic_absenteeism,Shorewood — All Students,2024-25,9.7,-21.8
+chronic_absenteeism,South Milwaukee — All Students,2020-21,20.1,30.5
+chronic_absenteeism,South Milwaukee — All Students,2021-22,24.3,20.9
+chronic_absenteeism,South Milwaukee — All Students,2023-24,27.9,25.1
+chronic_absenteeism,United Community Center Inc — All Students,2024-25,16.4,-25.8
+chronic_absenteeism,Wauwatosa — All Students,2020-21,22.6,93.2
+chronic_absenteeism,Wauwatosa — All Students,2021-22,17.5,-22.6
+chronic_absenteeism,Wauwatosa — All Students,2023-24,11.7,-31.2
+chronic_absenteeism,West Allis-West Milwaukee — All Students,2019-20,24.9,28.4
+chronic_absenteeism,Whitefish Bay — All Students,2022-23,5.3,29.3
+chronic_absenteeism,Whitefish Bay — All Students,2023-24,2.4,-54.7
+chronic_absenteeism,Whitefish Bay — All Students,2024-25,3.0,25.0
+chronic_absenteeism,Whitnall — All Students,2020-21,10.4,18.2
+chronic_absenteeism,Whitnall — All Students,2023-24,7.9,-24.0
+chronic_absenteeism,Woodlands School — All Students,2019-20,13.0,38.3
+chronic_absenteeism,Woodlands School — All Students,2020-21,21.2,63.1
+chronic_absenteeism,Woodlands School — All Students,2021-22,33.8,59.4

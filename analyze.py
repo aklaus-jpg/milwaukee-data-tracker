@@ -71,9 +71,16 @@ def analyze_source(name, src, geo_filter, geo_col_key, threshold, min_group_size
     # Prefer district-level rows (avoid double-counting individual schools) if a
     # school column exists and has an identifiable "district total" style row.
     if school_col and school_col in mps.columns:
+        # DPI's district roll-up row is SCHOOL_NAME "[Districtwide]" (older/other
+        # files use a blank school or "District Total"). It already equals the sum
+        # of the district's schools, so if we keep BOTH the roll-up and the school
+        # rows every district total doubles (MPS read 131,198 instead of 65,599).
+        # Prefer the authoritative roll-up row and drop the per-school rows.
+        school_names = mps[school_col].astype(str).str.strip()
         district_level = mps[
             mps[school_col].isna()
-            | mps[school_col].astype(str).str.contains("District Total", case=False, na=False)
+            | school_names.str.contains("District Total", case=False, na=False)
+            | school_names.isin(["[Districtwide]", "[Statewide]"])
         ]
         if not district_level.empty:
             mps = district_level
